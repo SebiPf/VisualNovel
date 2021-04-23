@@ -12,7 +12,7 @@ namespace Template {
       edge: 1
     }
   }
-  
+
   //define sound
   export let sound = {
     //musik
@@ -31,9 +31,9 @@ namespace Template {
     Narrator: {
       name: ""
     },
-    Protagonist:{
-      name:"Protagonist"
-    
+    Protagonist: {
+      name: "Protagonist"
+
     },
     Ryu: {
       name: "Ryu",
@@ -44,7 +44,7 @@ namespace Template {
       }
     }
   }
-  
+
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
     switch (_event.code) {
@@ -58,13 +58,12 @@ namespace Template {
         await ƒS.Progress.load();
         break;
     }
-
   }
   window.addEventListener("load", start);
-    function start(_event: Event): void {
-      let scenes: ƒS.Scenes = [
-        { scene: Text, name: "Scene" }
-      ];
-      ƒS.Progress.go(scenes);
-    }
+  function start(_event: Event): void {
+    let scenes: ƒS.Scenes = [
+      { scene: Text, name: "Scene" }
+    ];
+    ƒS.Progress.go(scenes);
+  }
 }
