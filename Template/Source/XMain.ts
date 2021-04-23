@@ -12,6 +12,7 @@ namespace Template {
       edge: 1
     }
   }
+  
   //define sound
   export let sound = {
     //musik
@@ -22,7 +23,7 @@ namespace Template {
   export let locations = {
     city: {
       name: "city",
-      background: "C:\Coding\VisualNovel-1\Template\Images\Backgrounds\Bild.jpg"
+      background: "./Images/Bild.jpg"
     }
   }
   // define Carr
@@ -43,6 +44,7 @@ namespace Template {
       }
     }
   }
+  
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
     switch (_event.code) {
@@ -56,12 +58,13 @@ namespace Template {
         await ƒS.Progress.load();
         break;
     }
-    window.addEventListener("load", start);
+
+  }
+  window.addEventListener("load", start);
     function start(_event: Event): void {
       let scenes: ƒS.Scenes = [
-        { scene: Scene, name: "Scene" }
+        { scene: Text, name: "Scene" }
       ];
       ƒS.Progress.go(scenes);
     }
-  }
 }

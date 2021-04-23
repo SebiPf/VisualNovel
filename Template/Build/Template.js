@@ -86,13 +86,13 @@ var Template;
                 await Template.ƒS.Progress.load();
                 break;
         }
-        window.addEventListener("load", start);
-        function start(_event) {
-            let scenes = [
-                { scene: Template.Scene, name: "Scene" }
-            ];
-            Template.ƒS.Progress.go(scenes);
-        }
+    }
+    window.addEventListener("load", start);
+    function start(_event) {
+        let scenes = [
+            { scene: Template.Text, name: "Scene" }
+        ];
+        Template.ƒS.Progress.go(scenes);
     }
 })(Template || (Template = {}));
 //# sourceMappingURL=Template.js.map
