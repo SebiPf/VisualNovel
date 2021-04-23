@@ -23,7 +23,11 @@ namespace Template {
   export let locations = {
     city: {
       name: "city",
-      background: "./Images/Bild.jpg"
+      background: ""
+    },
+    Akame:{
+      name: "style",
+      background: ""
     }
   }
   // define Carr

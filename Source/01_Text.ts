@@ -17,7 +17,7 @@ namespace Template {
             }
         };
         await ƒS.Location.show(locations.city);
-        await ƒS.update(1);
+        await ƒS.update(3);
         await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0000);
         await ƒS.Speech.tell(characters.Ryu, "Fremder");
 
