@@ -18,9 +18,10 @@ var Template;
             }
         };
         await Template.ƒS.Location.show(Template.locations.city);
-        await Template.ƒS.update(1);
+        await Template.ƒS.update(3);
         await Template.ƒS.Speech.tell(Template.characters.Ryu, text.Ryu.T0000);
         await Template.ƒS.Speech.tell(Template.characters.Ryu, "Fremder");
+        await Template.ƒS.update(1);
     }
     Template.Text = Text;
 })(Template || (Template = {}));
@@ -90,7 +91,7 @@ var Template;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: Template.Text, name: "Scene" }
+            { scene: Template.Text, name: "01_Text" }
         ];
         Template.ƒS.Progress.go(scenes);
     }

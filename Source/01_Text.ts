@@ -20,7 +20,7 @@ namespace Template {
         await ƒS.update(3);
         await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0000);
         await ƒS.Speech.tell(characters.Ryu, "Fremder");
-
+        await ƒS.update(1);
 
     }
 }

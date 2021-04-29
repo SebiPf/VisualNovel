@@ -11,7 +11,7 @@ namespace Template {
       alpha: "",
       edge: 1
     }
-  }
+  };
 
   //define sound
   export let sound = {
@@ -19,17 +19,13 @@ namespace Template {
     backgroundTheme: "",
     //Sound
     click: ""
-  }
+  };
   export let locations = {
     city: {
       name: "city",
-      background: ""
-    },
-    Akame:{
-      name: "style",
-      background: ""
+      background: "./Images/Bild.jpg"
     }
-  }
+  };
   // define Carr
   export let characters = {
     Narrator: {
@@ -47,7 +43,7 @@ namespace Template {
         smile: ""
       }
     }
-  }
+  };
 
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
@@ -66,7 +62,7 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: Text, name: "Scene" }
+      { scene: Text, name: "01_Text" }
     ];
     ƒS.Progress.go(scenes);
   }
