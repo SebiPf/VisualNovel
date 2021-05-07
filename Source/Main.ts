@@ -8,7 +8,7 @@ namespace Template {
   export let transition = {
     clock: {
       duration: 3,
-      alpha: "./Images/grau.jpg",
+      alpha: "./Images/Transitions/WipesAndOther/cw-side.jpg",
       edge: 1
     }
   };
@@ -75,7 +75,7 @@ namespace Template {
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
       { scene: Text, name: "01_Text"},
-      {scene: Test, name: "02_Test"} 
+      {scene: Decision, name: "02_Test"} 
     ];
     ƒS.Progress.go(scenes);
   }

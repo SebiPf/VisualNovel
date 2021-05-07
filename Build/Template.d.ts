@@ -2,7 +2,7 @@ declare namespace Template {
     function Text(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Test(): ƒS.SceneReturn;
+    function Decision(): ƒS.SceneReturn;
 }
 declare namespace Template {
     export import ƒ = FudgeCore;
