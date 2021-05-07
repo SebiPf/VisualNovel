@@ -1,5 +1,5 @@
 namespace Template {
-    export async function Text(): ƒS.SceneReturn {
+    export async function Test(): ƒS.SceneReturn {
         console.log("Tutorial");
 
         let text = {

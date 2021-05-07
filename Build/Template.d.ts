@@ -2,7 +2,7 @@ declare namespace Template {
     function Text(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Scene(): ƒS.SceneReturn;
+    function Test(): ƒS.SceneReturn;
 }
 declare namespace Template {
     export import ƒ = FudgeCore;
@@ -23,6 +23,10 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        school: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         Narrator: {
@@ -39,5 +43,16 @@ declare namespace Template {
                 smile: string;
             };
         };
+        Girl: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                smile: string;
+            };
+        };
     };
+}
+declare namespace Template {
+    function Scene(): ƒS.SceneReturn;
 }

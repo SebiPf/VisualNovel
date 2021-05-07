@@ -8,7 +8,7 @@ namespace Template {
   export let transition = {
     clock: {
       duration: 3,
-      alpha: "",
+      alpha: "./Images/grau.jpg",
       edge: 1
     }
   };
@@ -23,7 +23,11 @@ namespace Template {
   export let locations = {
     city: {
       name: "city",
-      background: "./Images/Bild.jpg"
+      background: "./Images/Backgrounds/bg_city_cloudy.png"
+    },
+    school: {
+      name:"school",
+      background: "./Images/Backgrounds/3955292.jpg"
     }
   };
   // define Carr
@@ -36,10 +40,18 @@ namespace Template {
 
     },
     Ryu: {
-      name: "Ryu",
-      origin: ƒ.ORIGIN2D.BOTTOMRIGHT,
+      name: "Ryu: ",
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        normal: "",
+        normal: "./Images/Characters/Ryu_normal.png",
+        smile: ""
+      }
+    },
+    Girl: {
+      name: "Girl: ",
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
+      pose: {
+        normal: "./Images/Characters/placeholder_girl.png",
         smile: ""
       }
     }
@@ -62,7 +74,8 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: Text, name: "01_Text" }
+      { scene: Text, name: "01_Text"},
+      {scene: Test, name: "02_Test"} 
     ];
     ƒS.Progress.go(scenes);
   }
