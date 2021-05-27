@@ -27,10 +27,10 @@ namespace Template {
         //ƒS.Sound.play(sound.click, 1);
 
         let firstDialogueElementAnswers ={
-            Char1: "1",
-            Char2: "2",
-            Char3: "3",
-            Char4: "4"
+            Char1: "",
+            Char2: "",
+            Char3: "",
+            Char4: ""
         };
 
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "button");
