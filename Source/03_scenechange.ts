@@ -9,7 +9,7 @@ namespace Template {
             }
         };
 
-        await ƒS.Location.show(locations.school);
+        await ƒS.Location.show(locations.shore);
         await ƒS.update();
         await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await ƒS.update();
@@ -27,10 +27,10 @@ namespace Template {
         //ƒS.Sound.play(sound.click, 1);
 
         let firstDialogueElementAnswers ={
-            Char1: "",
-            Char2: "",
-            Char3: "",
-            Char4: ""
+            Char1: "Option1",
+            Char2: "Option2",
+            Char3: "Option3",
+            Char4: "Option4"
         };
 
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "button");

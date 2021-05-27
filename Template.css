@@ -45,7 +45,6 @@ speech.Ryu content {
 
 
 button{
-  
   width: 22.2%;
   height: 100%;
   margin: 0px;
@@ -57,10 +56,9 @@ button:hover{
   opacity: 0;
   
 }
-button.button1{
-  width: 100%;
-  height: 100%;
-  
+button.buttonnew{
+color: teal;
+
 }
 
 dialog{

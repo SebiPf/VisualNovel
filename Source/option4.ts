@@ -13,7 +13,7 @@ namespace Template {
         Char4: "4"
     };
 
-    let secondDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "button1");
+    let secondDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "buttonnew");
     //stats.char1.points = stats.char1.points + 5;
     switch(secondDialogueElement) {
         case firstDialogueElementAnswers.Char1:

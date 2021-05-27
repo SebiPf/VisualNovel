@@ -22,7 +22,7 @@ namespace Template {
                 T0002: "Are you going to the part today?"
             }
         };
-        await ƒS.Location.show(locations.city);
+        await ƒS.Location.show(locations.seafire);
         await ƒS.update(1);
         //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positionPercent(30, 100))
         await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
@@ -55,7 +55,7 @@ namespace Template {
         await ƒS.Speech.tell(characters.Girl, text.Girl.T0001);
         await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0001);
         await ƒS.Character.hide(characters.Girl);
-        await ƒS.Location.show(locations.school);
+        await ƒS.Location.show(locations.shore);
         await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         //await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         

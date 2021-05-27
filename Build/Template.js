@@ -23,7 +23,7 @@ var Template;
                 T0002: "Are you going to the part today?"
             }
         };
-        await Template.ƒS.Location.show(Template.locations.city);
+        await Template.ƒS.Location.show(Template.locations.seafire);
         await Template.ƒS.update(1);
         //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positionPercent(30, 100))
         await Template.ƒS.Character.show(Template.characters.Ryu, Template.characters.Ryu.pose.normal, Template.ƒS.positions.bottomright);
@@ -50,7 +50,7 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.Girl, text.Girl.T0001);
         await Template.ƒS.Speech.tell(Template.characters.Narrator, text.Narrator.T0001);
         await Template.ƒS.Character.hide(Template.characters.Girl);
-        await Template.ƒS.Location.show(Template.locations.school);
+        await Template.ƒS.Location.show(Template.locations.shore);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         //await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
     }
@@ -66,7 +66,7 @@ var Template;
                 T0001: "Yes"
             }
         };
-        await Template.ƒS.Location.show(Template.locations.school);
+        await Template.ƒS.Location.show(Template.locations.shore);
         await Template.ƒS.update();
         await Template.ƒS.Character.show(Template.characters.Ryu, Template.characters.Ryu.pose.normal, Template.ƒS.positions.bottomright);
         await Template.ƒS.update();
@@ -82,10 +82,10 @@ var Template;
         await Template.ƒS.update();
         //ƒS.Sound.play(sound.click, 1);
         let firstDialogueElementAnswers = {
-            Char1: "",
-            Char2: "",
-            Char3: "",
-            Char4: ""
+            Char1: "Option1",
+            Char2: "Option2",
+            Char3: "Option3",
+            Char4: "Option4"
         };
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "button");
         //stats.char1.points = stats.char1.points + 5;
@@ -139,7 +139,7 @@ var Template;
         //ƒS.Inventory.open();
         //ƒS.Speech.setTickerDelays(30, 2)
         //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
-        await Template.ƒS.Location.show(Template.locations.school);
+        await Template.ƒS.Location.show(Template.locations.shore);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         await Template.ƒS.Character.show(Template.characters.Ryu, Template.characters.Ryu.pose.normal, Template.ƒS.positions.bottomright);
         await Template.ƒS.update();
@@ -213,13 +213,13 @@ var Template;
         click: ""
     };
     Template.locations = {
-        city: {
-            name: "city",
-            background: "./Images/Backgrounds/bg_city_cloudy.png"
+        seafire: {
+            name: "seafireplace",
+            background: "./Images/Backgrounds/sea_fireplace.jpg"
         },
-        school: {
-            name: "school",
-            background: "./Images/Backgrounds/3955292.jpg"
+        shore: {
+            name: "shore",
+            background: "./Images/Backgrounds/shore.jpg"
         },
         view: {
             name: "view",
@@ -315,7 +315,7 @@ var Template;
 (function (Template) {
     async function option1() {
         console.log("1stScene");
-        await Template.ƒS.Location.show(Template.locations.city);
+        await Template.ƒS.Location.show(Template.locations.seafire);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         Template.scenecount = ".";
         //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positionPercent(30, 100))
@@ -360,7 +360,7 @@ var Template;
             Char3: "3",
             Char4: "4"
         };
-        let secondDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "button1");
+        let secondDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "buttonnew");
         //stats.char1.points = stats.char1.points + 5;
         switch (secondDialogueElement) {
             case firstDialogueElementAnswers.Char1:

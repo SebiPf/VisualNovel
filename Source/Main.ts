@@ -21,13 +21,13 @@ namespace Template {
     click: ""
   };
   export let locations = {
-    city: {
-      name: "city",
-      background: "./Images/Backgrounds/bg_city_cloudy.png"
+    seafire: {
+      name: "seafireplace",
+      background: "./Images/Backgrounds/sea_fireplace.jpg"
     },
-    school: {
-      name:"school",
-      background: "./Images/Backgrounds/3955292.jpg"
+    shore: {
+      name:"shore",
+      background: "./Images/Backgrounds/shore.jpg"
     },
     view: {
       name:"view",

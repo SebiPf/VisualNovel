@@ -22,11 +22,11 @@ declare namespace Template {
         click: string;
     };
     let locations: {
-        city: {
+        seafire: {
             name: string;
             background: string;
         };
-        school: {
+        shore: {
             name: string;
             background: string;
         };
