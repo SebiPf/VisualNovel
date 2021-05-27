@@ -28,17 +28,30 @@ namespace Template {
     school: {
       name:"school",
       background: "./Images/Backgrounds/3955292.jpg"
-    }
+    },
+    view: {
+      name:"view",
+      background: "./Images/Backgrounds/view.jpg"
+    },
+    woodscamp: {
+      name:"woodscamp",
+      background: "./Images/Backgrounds/woods_camp.png"
+    },
+    waterfall: {
+      name:"waterfall",
+      background: "./Images/Backgrounds/waterfall.jpg"
+    },
+    charselect: {
+      name:"charselect",
+      background: "./Images/Backgrounds/CharSelect.png"
+    },
   };
   // define Carr
   export let characters = {
     Narrator: {
       name: ""
     },
-    Protagonist: {
-      name: "Protagonist"
-
-    },
+    
     Ryu: {
       name: "Ryu: ",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
@@ -57,6 +70,28 @@ namespace Template {
     }
   };
 
+  export let items ={
+    Healthpotion: {
+      name: "Healthpotion",
+      description: "Gives you some Health",
+      image: "pfad"
+
+
+
+    }
+  }
+  export let scenecount = "";
+  
+  export let stats ={
+    Protagonist: {
+      name: "Protagonist"
+
+    },
+    char1: {
+      points: 0
+    }
+  }
+
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
     switch (_event.code) {
@@ -74,9 +109,15 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: Text, name: "01_Text"},
-      {scene: Decision, name: "02_Test"} 
+      //{ scene: Text, name: "01_Text", next: scenecount.count},
+      //{scene: Decision, name: "02_Test"},
+      {scene: SceneChange, name: "1stScene", next: scenecount},
+      {id: "first", scene: option1, name: "1stScene", next: scenecount},
+      {id: "second", scene: option2, name: "2ndScene"}, 
+      {id: "third", scene: option3, name: "3rdScene"}, 
+      {id: "fourth", scene: option4, name: "4thScene"}  
     ];
+    ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);
   }
 }

@@ -8,37 +8,49 @@ namespace Template {
                 T0001: "Yes"
             }
         };
+        //verzögerung
+        //let signaldelay2: ƒS.Signal = ƒS.Progress.defineSignal([()=> ƒS.Progress.delay(2)]);
+        //aufruf
+        //await signaldelay2();
 
-        ƒS.Speech.setTickerDelays(30, 2)
-        ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
+        //ƒS.Text.addClass("cssClass");
+        //await ƒS.Text.print("HiHoy ich bin ein Text");
+        //ƒS.Text.close();
+
+
+
+        //ƒS.Inventory.add(items.Healthpotion)
+        //ƒS.Inventory.open();
+
+
+
+
+
+        //ƒS.Speech.setTickerDelays(30, 2)
+        //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
 
         await ƒS.Location.show(locations.school);
         await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await ƒS.update();
-        await ƒS.Speech.tell(characters.Ryu, text.Girl.T0000)
+        //names eingabe
+        stats.Protagonist.name = await ƒS.Speech.getInput();
 
-        ƒS.Sound.play(sound.click, 1);
+        // text ohne schreib animation
+        await ƒS.Speech.set(characters.Ryu, text.Girl.T0000)
+
+        //ƒS.Sound.play(sound.click, 1);
 
         let firstDialogueElementAnswers ={
-            iSayOk: "Okay",
             ISayYes: "Yes",
             ISayNo: "No"
         };
 
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "class");
-
+        //stats.char1.points = stats.char1.points + 5;
         switch(firstDialogueElement) {
-            case firstDialogueElementAnswers.iSayOk:
-                //continue write on this path here
-                await ƒS.Character.hide(characters.Ryu);
-                await ƒS.update();
-                await ƒS.Speech.tell(characters.Girl, "");
-                ƒS.Character.hide(characters.Girl);
-                ƒS.Speech.clear();
-                await ƒS.update(1);
-                break;
             case firstDialogueElementAnswers.ISayYes:
+                //continue write on this path here
                 await ƒS.Character.hide(characters.Ryu);
                 await ƒS.update();
                 await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positionPercent(30, 100))
@@ -50,6 +62,7 @@ namespace Template {
                 await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.Ryu, "sure")
+                stats.char1.points = stats.char1.points + 5;
                 break;
             case firstDialogueElementAnswers.ISayNo:
                 await ƒS.Character.hide(characters.Ryu);
@@ -64,10 +77,13 @@ namespace Template {
                 await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.Ryu, "yea");
+                stats.char1.points = stats.char1.points + 1;
                 break;
+                
         }
 
        //Musik aus
        ƒS.Sound.fade(sound.backgroundTheme, 0,1)
+       await ƒS.Speech.tell(characters.Narrator, stats.char1.points.toString())
     }
 }

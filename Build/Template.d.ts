@@ -2,6 +2,9 @@ declare namespace Template {
     function Text(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function SceneChange(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Decision(): ƒS.SceneReturn;
 }
 declare namespace Template {
@@ -27,12 +30,25 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        view: {
+            name: string;
+            background: string;
+        };
+        woodscamp: {
+            name: string;
+            background: string;
+        };
+        waterfall: {
+            name: string;
+            background: string;
+        };
+        charselect: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         Narrator: {
-            name: string;
-        };
-        Protagonist: {
             name: string;
         };
         Ryu: {
@@ -52,7 +68,35 @@ declare namespace Template {
             };
         };
     };
+    let items: {
+        Healthpotion: {
+            name: string;
+            description: string;
+            image: string;
+        };
+    };
+    let scenecount: string;
+    let stats: {
+        Protagonist: {
+            name: string;
+        };
+        char1: {
+            points: number;
+        };
+    };
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function option1(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function option2(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function option3(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function option4(): ƒS.SceneReturn;
 }
