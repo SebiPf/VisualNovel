@@ -28,7 +28,7 @@ speech {
   color: beige;
   background-color: rgba(11, 14, 19, 0.9);
   width: 100%;
-  height: 10vh;
+  height: 10%;
 }
 
 /* modifications for Ryu only */
@@ -43,7 +43,66 @@ speech.Ryu content {
   color: rgb(203, 253, 255);
 }
 
+#Char1{
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;  
+  transition-duration: 1s;
+  opacity: 0.6;
+  background: transparent;
+  background-image: url(/Images/Buttons/ArcherButton.png);
+  background-size:cover;
 
+}
+#Char1:hover{
+  opacity: 1;
+}
+#Char2{
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;  
+  transition-duration: 1s;
+  opacity: 0.6;
+  background: transparent;
+  background-image: url(/Images/Buttons/NightstalkerButton.png);
+  background-size: cover;
+}
+#Char2:hover{
+  opacity: 1;
+}
+#Char3{
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;  
+  transition-duration: 1s;
+  opacity: 0.6;
+  background: transparent;
+  background-image: url(/Images/Buttons//ArchMageButton.png);
+  background-size: cover;
+}
+#Char3:hover{
+  opacity: 1;
+}
+#Char4{
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;  
+  transition-duration: 1s;
+  opacity: 0.6;
+  background: transparent;
+  background-image: url(/Images/Buttons/SworWhielderButton.png);
+  background-size: cover;
+}
+#Char4:hover{
+  opacity: 1;
+}
+
+
+/*
 button{
   width: 22.2%;
   height: 100%;
@@ -56,12 +115,15 @@ button:hover{
   opacity: 0;
   
 }
-button.buttonnew{
-color: teal;
-
+*/
+dialog.dialog2{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: transparent;
 }
-
-dialog{
+dialog.dialog1{
   width: 100%;
   height: 100%;
   padding: 0px;

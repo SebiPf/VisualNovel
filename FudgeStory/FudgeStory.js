@@ -178,6 +178,8 @@ var FudgeStory;
             // _pose.cmpTransform.addEventListener(ƒ.EVENT.MUTATE, () => Base.viewport.draw());
             // ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, () => Base.viewport.draw());
             let cmpAnimator = new ƒ.ComponentAnimator(_animation, _playmode);
+            for (let cmpOldAnimator of _pose.getComponents(ƒ.ComponentAnimator))
+                _pose.removeComponent(cmpOldAnimator);
             _pose.addComponent(cmpAnimator);
             cmpAnimator.addEventListener("componentActivate" /* COMPONENT_ACTIVATE */, Animation.trackComponents);
             cmpAnimator.addEventListener("componentDeactivate" /* COMPONENT_DEACTIVATE */, Animation.trackComponents);
@@ -821,13 +823,13 @@ var FudgeStory;
         /**
          * Displays the [[Character]]s name and the given text at once
          */
-        static set(_character, _text) {
+        static set(_character, _text, _class) {
             Speech.show();
             let name = _character ? Reflect.get(_character, "name") : "";
             let nameTag = Speech.div.querySelector("name");
             let textTag = Speech.div.querySelector("content");
             nameTag.innerHTML = "";
-            Speech.div.className = name;
+            Speech.div.className = _class || name;
             if (name) {
                 nameTag.innerHTML = name;
             }
@@ -836,10 +838,10 @@ var FudgeStory;
         /**
          * Displays the [[Character]]s name and slowly writes the text letter by letter
          */
-        static async tell(_character, _text, _waitForSignalNext = true) {
+        static async tell(_character, _text, _waitForSignalNext = true, _class) {
             Speech.show();
             let done = false;
-            Speech.set(_character, "");
+            Speech.set(_character, "", _class);
             let buffer = document.createElement("div");
             let textTag = Speech.div.querySelector("content");
             buffer.innerHTML = _text;
