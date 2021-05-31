@@ -205,7 +205,7 @@ namespace Template {
         arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
         mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
         inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-        skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
+        skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.jpg",
         skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
         skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
         skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
