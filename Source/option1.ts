@@ -15,7 +15,7 @@ namespace Template {
         console.log(characters.Main.Skill1);
         await ƒS.Location.show(locations.seafire);
         await ƒS.update(1);
-        await ƒS.Character.show(characters.Main, characters.Main.pose.normal, ƒS.positions.bottomcenter);
+        await ƒS.Character.show(characters.Main, characters.Main.pose.normal, ƒS.positionPercent(50, 90));
         await ƒS.update(1);
 
         let firstDialogueElementAnswers ={

@@ -49,6 +49,63 @@ namespace Template {
       name:"Black",
       background: "./Images/Backgrounds/black.png"
     },
+    bridge: {
+      name:"bridge",
+      background: "./Images/Backgrounds/bridge.jpg"
+    },
+    camp: {
+      name:"camp",
+      background: "./Images/Backgrounds/camp.png"
+    },
+    dungeonentranceclose: {
+      name:"Dungeonentranceclose",
+      background: "./Images/Backgrounds/dungeon_entance_close.jpg"
+    },
+    dungeonentrance: {
+      name:"dungeonentrance",
+      background: "./Images/Backgrounds/dungeon_entrance.png"
+    },
+    dungeonstairs: {
+      name:"dungeonstair",
+      background: "./Images/Backgrounds/dungeon_stair.jpg"
+    },
+    moutain: {
+      name:"fieldmoutain",
+      background: "./Images/Backgrounds/field_moutain.png"
+    },
+    fight: {
+      name:"fight",
+      background: "./Images/Backgrounds/fight.jpg"
+    },
+    sea: {
+      name:"sea",
+      background: "./Images/Backgrounds/sea.jpg"
+    },
+    tower: {
+      name:"towerwoods",
+      background: "./Images/Backgrounds/tower_woods.png"
+    },
+    waterfallhideout: {
+      name:"waterfallhideout",
+      background: "./Images/Backgrounds/waterfall_hideout.jpg"
+    },
+    waterfalls: {
+      name:"waterfalls",
+      background: "./Images/Backgrounds/waterfalls.png"
+    },
+    window: {
+      name:"windowsunrise",
+      background: "./Images/Backgrounds/window_sunrise.gif"
+    },
+    woodsflowers: {
+      name:"woodsflowers",
+      background: "./Images/Backgrounds/woods_flowers.jpg"
+    },
+    woodspath: {
+      name:"woodspath",
+      background: "./Images/Backgrounds/woods_path.png"
+    },
+
   };
   // define Carr
   export let characters = {
@@ -205,7 +262,7 @@ namespace Template {
         arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
         mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
         inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-        skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.jpg",
+        skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
         skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
         skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
         skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
@@ -232,10 +289,32 @@ namespace Template {
     Healthpotion: {
       name: "Healthpotion",
       description: "Gives you some Health",
-      image: "pfad"
-
-
-
+      image: "./Images/PotionRed.png"
+    },
+    Flower: {
+      name: "Flower",
+      description: "Seems useless",
+      image: "./Images/flower.png"
+    },
+    WaterBottle: {
+      name: "WaterBottle",
+      description: "Adds Strength",
+      image: "./Images/WaterBottle.png"
+    },
+    EmptyBottle: {
+      name: "EmptyBottle",
+      description: "Seems useless",
+      image: "./Images/EmptyBottle.png"
+    },
+    Apple: {
+      name: "Apple",
+      description: "Adds Strenght",
+      image: "./Images/Apple.png"
+    },
+    Scroll: {
+      name: "Scroll",
+      description: "Seems usefull",
+      image: "./Images/Scroll.png"
     }
   }
   export let scenecount = "";

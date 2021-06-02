@@ -53,6 +53,62 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        bridge: {
+            name: string;
+            background: string;
+        };
+        camp: {
+            name: string;
+            background: string;
+        };
+        dungeonentranceclose: {
+            name: string;
+            background: string;
+        };
+        dungeonentrance: {
+            name: string;
+            background: string;
+        };
+        dungeonstairs: {
+            name: string;
+            background: string;
+        };
+        moutain: {
+            name: string;
+            background: string;
+        };
+        fight: {
+            name: string;
+            background: string;
+        };
+        sea: {
+            name: string;
+            background: string;
+        };
+        tower: {
+            name: string;
+            background: string;
+        };
+        waterfallhideout: {
+            name: string;
+            background: string;
+        };
+        waterfalls: {
+            name: string;
+            background: string;
+        };
+        window: {
+            name: string;
+            background: string;
+        };
+        woodsflowers: {
+            name: string;
+            background: string;
+        };
+        woodspath: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         Narrator: {
@@ -224,6 +280,31 @@ declare namespace Template {
     };
     let items: {
         Healthpotion: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        Flower: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        WaterBottle: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        EmptyBottle: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        Apple: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        Scroll: {
             name: string;
             description: string;
             image: string;

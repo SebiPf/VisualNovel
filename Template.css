@@ -131,3 +131,59 @@ dialog.dialog1{
   margin-bottom: 90px;
   background-color: transparent;
 }
+dialog[type="inventory"]{
+  background-color: transparent;
+  background-image: url(./Images/inventory_bag.png);
+  background-size:cover;
+  color: white;
+  width: 500px;
+  height: 636px;
+  border: none;
+  
+  
+}
+dialog[type="inventory"] > ul{
+  list-style-type: none;
+margin-top: 50%;
+border: none;
+}
+dialog[type="inventory"] > ul > li{
+background-size: cover;
+position: relative;
+width: 120px;
+height: 120px;
+padding: 0px;
+border: none;
+margin-top: 5%;
+
+
+}
+dialog[type="inventory"] h1{
+display: block;
+list-style: none;
+content: '/a';
+color: red;
+
+
+}
+dialog[type="inventory"] img{
+  float: left;
+  position: relative;
+}
+dialog[type="name"]{
+  float: left;
+  position: relative;
+}
+button.close{
+  border-radius: 10px;
+  background-color:transparent;
+  transition-duration: 1s;
+  
+}
+button.close:hover{
+  background-color: red;
+}
+button[type="buttoninv"]{
+  position: absolute;
+  right: 5%;
+}
