@@ -39,95 +39,90 @@ var Template;
 var Template;
 (function (Template) {
     async function SceneChange() {
-        try {
-            console.log("options");
-            await Template.ƒS.Location.show(Template.locations.shore);
-            await Template.ƒS.update();
-            await Template.ƒS.Speech.tell(Template.characters.Narrator, "Please ender your Name");
-            //names eingabe
-            //stats.Protagonist.name = await ƒS.Speech.getInput();
-            Template.characters.Main.name = await Template.ƒS.Speech.getInput();
-            Template.characters.Main.name += ":  ";
-            Template.ƒS.Inventory.add(Template.items.Healthpotion);
-            Template.ƒS.Inventory.add(Template.items.Scroll);
-            Template.ƒS.Inventory.add(Template.items.WaterBottle);
-            Template.ƒS.Inventory.add(Template.items.EmptyBottle);
-            Template.ƒS.Inventory.add(Template.items.Apple);
-            Template.ƒS.Inventory.add(Template.items.Flower);
-            await Template.ƒS.Inventory.open();
-            //await ƒS.Character.show(characters.Samara, characters.Samara.pose.normal, ƒS.positionPercent(10, 90))
-            //await ƒS.Character.show(characters.Hando, characters.Hando.pose.normal, ƒS.positionPercent(35, 90))
-            //await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.normal, ƒS.positionPercent(65, 90))
-            //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike2, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike3, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike4, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike5, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike6, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike7, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.update();
-            await Template.ƒS.Speech.tell(Template.characters.Narrator, "Test");
-            await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
-            // text ohne schreib animation
-            //await ƒS.Location.show(locations.charselect);
-            await Template.ƒS.Character.hideAll();
-            await Template.ƒS.Location.show(Template.locations.Black);
-            await Template.ƒS.update();
-            //ƒS.Sound.play(sound.click, 1);
-            let firstDialogueElementAnswers = {
-                Char1: "Option 1",
-                Char2: "Option 2",
-                Char3: "Option 3",
-                Char4: "Option 4"
-            };
-            let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog2");
-            //stats.char1.points = stats.char1.points + 5;
-            switch (firstDialogueElement) {
-                case firstDialogueElementAnswers.Char1:
-                    //continue write on this path here
-                    Template.scenecount = "first";
-                    return Template.scenecount;
-                    break;
-                case firstDialogueElementAnswers.Char2:
-                    Template.scenecount = "second";
-                    await Template.ƒS.update();
-                    return Template.scenecount;
-                    //stats.char1.points = stats.char1.points + 1;
-                    break;
-                case firstDialogueElementAnswers.Char3:
-                    Template.scenecount = "third";
-                    return Template.scenecount;
-                    break;
-                case firstDialogueElementAnswers.Char4:
-                    Template.scenecount = "fourth";
-                    //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
-                    //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;
-                    //characters.Main.pose.skystrike3 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png" ;
-                    //characters.Main.pose.skystrike4 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png" ;
-                    //characters.Main.pose.skystrike5 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_5.png" ;
-                    //characters.Main.pose.skystrike6 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_6.png" ;
-                    //characters.Main.pose.skystrike7 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_7.png" ;
-                    return Template.scenecount;
-                    break;
-            }
-        }
-        catch (e) {
-            console.log();
+        console.log("options");
+        await Template.ƒS.Location.show(Template.locations.shore);
+        await Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "Please ender your Name");
+        //names eingabe
+        //stats.Protagonist.name = await ƒS.Speech.getInput();
+        Template.characters.Main.name = await Template.ƒS.Speech.getInput();
+        Template.characters.Main.name += ":  ";
+        Template.ƒS.Inventory.add(Template.items.Healthpotion);
+        Template.ƒS.Inventory.add(Template.items.Scroll);
+        Template.ƒS.Inventory.add(Template.items.WaterBottle);
+        Template.ƒS.Inventory.add(Template.items.EmptyBottle);
+        Template.ƒS.Inventory.add(Template.items.Apple);
+        Template.ƒS.Inventory.add(Template.items.Flower);
+        await Template.ƒS.Inventory.open();
+        //await ƒS.Character.show(characters.Samara, characters.Samara.pose.normal, ƒS.positionPercent(10, 90))
+        //await ƒS.Character.show(characters.Hando, characters.Hando.pose.normal, ƒS.positionPercent(35, 90))
+        //await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.normal, ƒS.positionPercent(65, 90))
+        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike1, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike2, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike3, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike4, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike5, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike6, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike7, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "Test");
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
+        // text ohne schreib animation
+        //await ƒS.Location.show(locations.charselect);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Location.show(Template.locations.Black);
+        await Template.ƒS.update();
+        //ƒS.Sound.play(sound.click, 1);
+        let firstDialogueElementAnswers = {
+            Char1: "Option 1",
+            Char2: "Option 2",
+            Char3: "Option 3",
+            Char4: "Option 4"
+        };
+        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog2");
+        //stats.char1.points = stats.char1.points + 5;
+        switch (firstDialogueElement) {
+            case firstDialogueElementAnswers.Char1:
+                //continue write on this path here
+                Template.scenecount = "first";
+                return Template.scenecount;
+                break;
+            case firstDialogueElementAnswers.Char2:
+                Template.scenecount = "second";
+                await Template.ƒS.update();
+                return Template.scenecount;
+                //stats.char1.points = stats.char1.points + 1;
+                break;
+            case firstDialogueElementAnswers.Char3:
+                Template.scenecount = "third";
+                return Template.scenecount;
+                break;
+            case firstDialogueElementAnswers.Char4:
+                Template.scenecount = "fourth";
+                //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
+                //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;
+                //characters.Main.pose.skystrike3 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png" ;
+                //characters.Main.pose.skystrike4 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png" ;
+                //characters.Main.pose.skystrike5 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_5.png" ;
+                //characters.Main.pose.skystrike6 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_6.png" ;
+                //characters.Main.pose.skystrike7 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_7.png" ;
+                return Template.scenecount;
+                break;
         }
         //Musik aus
         //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
@@ -554,8 +549,8 @@ var Template;
         }
     }
     window.addEventListener("load", start);
-    async function start(_event) {
-        let scenes = await [
+    function start(_event) {
+        let scenes = [
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},

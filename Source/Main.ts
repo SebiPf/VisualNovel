@@ -344,8 +344,8 @@ namespace Template {
     }
   }
   window.addEventListener("load", start);
-  async function start(_event: Event): Promise<void> {
-    let scenes: ƒS.Scenes = await [
+  function start(_event: Event): void {
+    let scenes: ƒS.Scenes = [
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
