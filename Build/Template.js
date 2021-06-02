@@ -554,8 +554,8 @@ var Template;
         }
     }
     window.addEventListener("load", start);
-    function start(_event) {
-        let scenes = [
+    async function start(_event) {
+        let scenes = await [
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
