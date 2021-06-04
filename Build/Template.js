@@ -596,19 +596,19 @@ var Template;
 var Template;
 (function (Template) {
     async function audiouebung() {
-        await Template.ƒS.Location.show(Template.locations.schule);
+        await Template.ƒS.Location.show(Template.locations.pause);
         await Template.ƒS.update();
-        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 1);
+        //await ƒS.Sound.fade(sound.classroom, 0.1, 1);
         await Template.ƒS.Sound.fade(Template.sound.break, 0.1, 4);
         await Template.ƒS.Sound.play(Template.sound.bell, 0, false);
-        await Template.ƒS.Sound.play(Template.sound.steps, 1, true);
-        await Template.ƒS.Location.show(Template.locations.pause);
-        Template.ƒS.update();
+        await Template.ƒS.Sound.play(Template.sound.steps, 0.6, true);
+        await Template.ƒS.Location.show(Template.locations.schule);
+        Template.ƒS.update(2);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
-        await Template.ƒS.Sound.fade(Template.sound.steps, 0, 1);
-        await Template.ƒS.Sound.fade(Template.sound.break, 0, 6);
+        await Template.ƒS.Sound.fade(Template.sound.steps, 0, 0);
+        await Template.ƒS.Sound.fade(Template.sound.break, 0, 1);
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 4);
-        await Template.ƒS.Sound.play(Template.sound.steps, 1);
+        //await ƒS.Sound.play(sound.steps, 1)
     }
     Template.audiouebung = audiouebung;
 })(Template || (Template = {}));
