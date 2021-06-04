@@ -17,7 +17,7 @@ namespace Template {
         await ƒS.Sound.fade(sound.break, 0, 1);
         await ƒS.Sound.fade(sound.classroom, 0.1, 2);
         await ƒS.Sound.fade(sound.teacher, 0.1,1);
-        await ƒS.Sound.fade(sound.classroom, 0.1, 4);
+        await ƒS.Sound.fade(sound.classroom, 0.0, 1);
         //await ƒS.Sound.play(sound.steps, 1)
 
 
