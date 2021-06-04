@@ -594,7 +594,10 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.schule);
         await Template.ƒS.update();
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 1);
-        await Template.ƒS.Character.show;
+        await Template.ƒS.Sound.fade(Template.sound.break, 0.1, 4);
+        await Template.ƒS.Sound.play(Template.sound.bell, 0, false);
+        await Template.ƒS.Sound.fade(Template.sound.break, 0, 6);
+        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 4);
     }
     Template.audiouebung = audiouebung;
 })(Template || (Template = {}));
