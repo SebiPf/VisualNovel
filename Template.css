@@ -150,22 +150,30 @@ border: none;
 dialog[type="inventory"] > ul > li{
 background-size: cover;
 position: relative;
-width: 120px;
-height: 120px;
+width: 150px;
+height: 150px;
 padding: 0px;
 border: none;
 margin-top: 5%;
-
+display: block;
 
 }
-dialog[type="inventory"] h1{
+dialog[type="inventory"] name{
 display: block;
 list-style: none;
 content: '/a';
-color: red;
+color: gold;
 
 
 }
+
+  dialog[type="inventory"] description{
+    display: block;
+    list-style: none;
+    content: '/a';
+    
+    
+    }
 dialog[type="inventory"] img{
   float: left;
   position: relative;

@@ -83,7 +83,7 @@ namespace Template {
         }
 
        //Musik aus
-       ƒS.Sound.fade(sound.backgroundTheme, 0,1)
+       //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
        await ƒS.Speech.tell(characters.Narrator, stats.char1.points.toString())
     }
 }

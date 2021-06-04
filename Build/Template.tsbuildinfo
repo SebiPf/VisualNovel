@@ -8,6 +8,7 @@
       "../Source/Decision.ts",
       "../Source/Main.ts",
       "../Source/Scene.ts",
+      "../Source/audioübung.ts",
       "../Source/option1.ts",
       "../Source/option2.ts",
       "../Source/option3.ts",
@@ -33,7 +34,7 @@
         },
         {
           "pos": 15,
-          "end": 96134,
+          "end": 96633,
           "kind": "text"
         }
       ],
@@ -61,7 +62,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 10283,
+          "end": 10518,
           "kind": "text"
         }
       ]

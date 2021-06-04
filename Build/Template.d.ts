@@ -21,7 +21,10 @@ declare namespace Template {
         };
     };
     let sound: {
-        backgroundTheme: string;
+        classroom: string;
+        bell: string;
+        break: string;
+        teacher: string;
         click: string;
     };
     let locations: {
@@ -106,6 +109,10 @@ declare namespace Template {
             background: string;
         };
         woodspath: {
+            name: string;
+            background: string;
+        };
+        schule: {
             name: string;
             background: string;
         };
@@ -325,6 +332,9 @@ declare namespace Template {
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function audioübung(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function option1(): ƒS.SceneReturn;

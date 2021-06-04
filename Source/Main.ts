@@ -16,7 +16,10 @@ namespace Template {
   //define sound
   export let sound = {
     //musik
-    backgroundTheme: "",
+    classroom: "./sound/classroom.wav",
+    bell: "./sound/schoolbell.wav",
+    break: "./sound/schoolbreak.mp3",
+    teacher: "./sound/teacherscream.wav",
     //Sound
     click: ""
   };
@@ -104,6 +107,10 @@ namespace Template {
     woodspath: {
       name:"woodspath",
       background: "./Images/Backgrounds/woods_path.png"
+    },
+    schule: {
+      name: "schule",
+      background: "./Images/Backgrounds/859076.jpg"
     },
 
   };
@@ -353,17 +360,18 @@ namespace Template {
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
-      {id: "main", scene: scene1, name: "1stScene", next: scenecount},
-      {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
-      {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
-      {id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
-      {id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
-      {id: "skill1", scene: skill1, name: "skill1", next: scenecount},
-      {id: "skill2", scene: skill2, name: "skill2", next: scenecount},
-      {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
-      {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
-      {id: "scene4", scene: scene4, name: "scene4"},
+      //{id: "main", scene: scene1, name: "1stScene", next: scenecount},
+      //{id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
+      //{id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
+      //{id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
+      //{id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
+      //{id: "skill1", scene: skill1, name: "skill1", next: scenecount},
+      //{id: "skill2", scene: skill2, name: "skill2", next: scenecount},
+      //{id: "skill3", scene: skill3, name: "skill3", next: scenecount},
+      //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
+      //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
+      //{id: "scene4", scene: scene4, name: "scene4"},
+      {scene: audioübung, name: "audioübung"}
     ];
     ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);

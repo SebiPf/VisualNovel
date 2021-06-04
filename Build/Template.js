@@ -214,7 +214,7 @@ var Template;
                 break;
         }
         //Musik aus
-        Template.ƒS.Sound.fade(Template.sound.backgroundTheme, 0, 1);
+        //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
         await Template.ƒS.Speech.tell(Template.characters.Narrator, Template.stats.char1.points.toString());
     }
     Template.Decision = Decision;
@@ -235,7 +235,10 @@ var Template;
     //define sound
     Template.sound = {
         //musik
-        backgroundTheme: "",
+        classroom: "./sound/classroom.wav",
+        bell: "./sound/schoolbell.wav",
+        break: "./sound/schoolbreak.mp3",
+        teacher: "./sound/teacherscream.wav",
         //Sound
         click: ""
     };
@@ -323,6 +326,10 @@ var Template;
         woodspath: {
             name: "woodspath",
             background: "./Images/Backgrounds/woods_path.png"
+        },
+        schule: {
+            name: "schule",
+            background: "./Images/Backgrounds/859076.jpg"
         },
     };
     // define Carr
@@ -557,17 +564,18 @@ var Template;
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
-            { id: "main", scene: Template.scene1, name: "1stScene", next: Template.scenecount },
-            { id: "Archer1", scene: Template.option1, name: "1stScene", next: Template.scenecount },
-            { id: "Nightstalker1", scene: Template.option2, name: "2ndScene", next: Template.scenecount },
-            { id: "ArchMage1", scene: Template.option3, name: "3rdScene", next: Template.scenecount },
-            { id: "Swordwielder1", scene: Template.option4, name: "4thScene", next: Template.scenecount },
-            { id: "skill1", scene: Template.skill1, name: "skill1", next: Template.scenecount },
-            { id: "skill2", scene: Template.skill2, name: "skill2", next: Template.scenecount },
-            { id: "skill3", scene: Template.skill3, name: "skill3", next: Template.scenecount },
-            { id: "scene2", scene: Template.scene2, name: "scene2", next: Template.scenecount },
-            { id: "scene3", scene: Template.scene3, name: "scene3", next: Template.scenecount },
-            { id: "scene4", scene: Template.scene4, name: "scene4" },
+            //{id: "main", scene: scene1, name: "1stScene", next: scenecount},
+            //{id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
+            //{id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
+            //{id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
+            //{id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
+            //{id: "skill1", scene: skill1, name: "skill1", next: scenecount},
+            //{id: "skill2", scene: skill2, name: "skill2", next: scenecount},
+            //{id: "skill3", scene: skill3, name: "skill3", next: scenecount},
+            //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
+            //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
+            //{id: "scene4", scene: scene4, name: "scene4"},
+            { scene: Template.audioübung, name: "audioübung" }
         ];
         Template.ƒS.Progress.setData(Template.stats);
         Template.ƒS.Progress.go(scenes);
@@ -579,6 +587,16 @@ var Template;
         console.log("FudgeStory Template Scene starting");
     }
     Template.Scene = Scene;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function audioübung() {
+        await Template.ƒS.Location.show(Template.locations.schule);
+        await Template.ƒS.update();
+        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.5, 5);
+        await Template.ƒS.Character.show;
+    }
+    Template.audioübung = audioübung;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
