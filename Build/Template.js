@@ -599,6 +599,8 @@ var Template;
         let signalDelay2s = Template.ƒS.Progress.defineSignal([() => Template.ƒS.Progress.delay(2)]);
         await Template.ƒS.Location.show(Template.locations.pause);
         await Template.ƒS.update();
+        await Template.ƒS.Speech.set(Template.characters.Narrator, "Wir sollten uns solangsam beeilen, du weißt Herr Peters ist immer sehr streng was Pünktlichkeit angeht.");
+        Template.ƒS.update();
         //await ƒS.Sound.fade(sound.classroom, 0.1, 1);
         await Template.ƒS.Sound.fade(Template.sound.break, 0.1, 4);
         await Template.ƒS.Sound.fade(Template.sound.bell, 1, 1);
