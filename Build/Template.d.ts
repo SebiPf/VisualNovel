@@ -334,7 +334,7 @@ declare namespace Template {
     function Scene(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function audioübung(): ƒS.SceneReturn;
+    function audiouebung(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function option1(): ƒS.SceneReturn;

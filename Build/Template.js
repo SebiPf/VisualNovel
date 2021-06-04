@@ -561,7 +561,7 @@ var Template;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: Template.audioübung, name: "audioübung" }
+            { scene: Template.audiouebung, name: "audioübung" }
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
@@ -590,13 +590,13 @@ var Template;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
-    async function audioübung() {
+    async function audiouebung() {
         await Template.ƒS.Location.show(Template.locations.schule);
         await Template.ƒS.update();
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 1);
         await Template.ƒS.Character.show;
     }
-    Template.audioübung = audioübung;
+    Template.audiouebung = audiouebung;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
