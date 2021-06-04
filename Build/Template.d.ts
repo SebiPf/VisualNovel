@@ -2,7 +2,7 @@ declare namespace Template {
     function Text(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function SceneChange(): ƒS.SceneReturn;
+    function scene1(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Animation(): ƒS.SceneReturn;
@@ -311,6 +311,9 @@ declare namespace Template {
         };
     };
     let scenecount: string;
+    let scenecount2: string;
+    let test: number;
+    let teststring: string;
     let stats: {
         Protagonist: {
             name: string;
@@ -336,11 +339,32 @@ declare namespace Template {
     function option4(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function scene2(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function scene3(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function scene4(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function setscene(): string;
+}
+declare namespace Template {
     function skill1(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function skill1funktion(): Promise<void>;
 }
 declare namespace Template {
     function skill2(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function skill2funktion(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function skill3(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function skill3funktion(): ƒS.SceneReturn;
 }

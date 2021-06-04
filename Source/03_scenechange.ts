@@ -1,5 +1,5 @@
 namespace Template {
-    export async function SceneChange(): ƒS.SceneReturn {
+    export async function scene1(): ƒS.SceneReturn {
 
             console.log("options");
 
@@ -73,22 +73,22 @@ namespace Template {
             switch (firstDialogueElement) {
                 case firstDialogueElementAnswers.Char1:
                     //continue write on this path here
-                    scenecount = "first";
+                    scenecount = "Archer1";
                     return scenecount
                     break;
                 case firstDialogueElementAnswers.Char2:
-                    scenecount = "second";
+                    scenecount = "Nightstalker1";
                     await ƒS.update();
                     return scenecount
                     //stats.char1.points = stats.char1.points + 1;
                     break;
 
                 case firstDialogueElementAnswers.Char3:
-                    scenecount = "third";
+                    scenecount = "ArchMage1";
                     return scenecount
                     break;
                 case firstDialogueElementAnswers.Char4:
-                    scenecount = "fourth";
+                    scenecount = "Swordwielder1";
 
                     //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
                     //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;

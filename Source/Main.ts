@@ -318,6 +318,10 @@ namespace Template {
     }
   }
   export let scenecount = "";
+  export let scenecount2 = "";
+  export let test = 0;
+  export let teststring = "";
+
   
   export let stats ={
     Protagonist: {
@@ -349,14 +353,17 @@ namespace Template {
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
-      {id: "main", scene: SceneChange, name: "1stScene", next: scenecount},
-      {id: "first", scene: option1, name: "1stScene", next: scenecount},
-      {id: "second", scene: option2, name: "2ndScene"}, 
-      {id: "third", scene: option3, name: "3rdScene",next: scenecount}, 
-      {id: "fourth", scene: option4, name: "4thScene"},
-      {id: "skill1", scene: skill1, name: "skill1", next: "main"},
-      {id: "skill2", scene: skill2, name: "skill2", next: "main"},
-      {id: "skill3", scene: skill3, name: "skill3", next: "main"},
+      {id: "main", scene: scene1, name: "1stScene", next: scenecount},
+      {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
+      {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
+      {id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
+      {id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
+      {id: "skill1", scene: skill1, name: "skill1", next: scenecount},
+      {id: "skill2", scene: skill2, name: "skill2", next: scenecount},
+      {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
+      {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
+      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
+      {id: "scene4", scene: scene4, name: "scene4"},
     ];
     ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);

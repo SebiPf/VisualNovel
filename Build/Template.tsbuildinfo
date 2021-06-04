@@ -12,9 +12,16 @@
       "../Source/option2.ts",
       "../Source/option3.ts",
       "../Source/option4.ts",
+      "../Source/scene2.ts",
+      "../Source/scene3.ts",
+      "../Source/scene4.ts",
+      "../Source/setscene.ts",
       "../Source/skill1.ts",
+      "../Source/skill1funktion.ts",
       "../Source/skill2.ts",
-      "../Source/skill3.ts"
+      "../Source/skill2funktion.ts",
+      "../Source/skill3.ts",
+      "../Source/skill3funktion.ts"
     ],
     "js": {
       "sections": [
@@ -26,7 +33,7 @@
         },
         {
           "pos": 15,
-          "end": 66169,
+          "end": 96134,
           "kind": "text"
         }
       ],
@@ -54,7 +61,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 9678,
+          "end": 10283,
           "kind": "text"
         }
       ]

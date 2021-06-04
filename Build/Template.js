@@ -38,7 +38,7 @@ var Template;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
-    async function SceneChange() {
+    async function scene1() {
         console.log("options");
         await Template.ƒS.Location.show(Template.locations.shore);
         await Template.ƒS.update();
@@ -99,21 +99,21 @@ var Template;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
-                Template.scenecount = "first";
+                Template.scenecount = "Archer1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char2:
-                Template.scenecount = "second";
+                Template.scenecount = "Nightstalker1";
                 await Template.ƒS.update();
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             case firstDialogueElementAnswers.Char3:
-                Template.scenecount = "third";
+                Template.scenecount = "ArchMage1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char4:
-                Template.scenecount = "fourth";
+                Template.scenecount = "Swordwielder1";
                 //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
                 //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;
                 //characters.Main.pose.skystrike3 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png" ;
@@ -128,7 +128,7 @@ var Template;
         //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
         //await ƒS.Speech.tell(characters.Narrator, stats.char1.points.toString())
     }
-    Template.SceneChange = SceneChange;
+    Template.scene1 = scene1;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -527,6 +527,9 @@ var Template;
         }
     };
     Template.scenecount = "";
+    Template.scenecount2 = "";
+    Template.test = 0;
+    Template.teststring = "";
     Template.stats = {
         Protagonist: {
             name: "Protagonist"
@@ -554,14 +557,17 @@ var Template;
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
-            { id: "main", scene: Template.SceneChange, name: "1stScene", next: Template.scenecount },
-            { id: "first", scene: Template.option1, name: "1stScene", next: Template.scenecount },
-            { id: "second", scene: Template.option2, name: "2ndScene" },
-            { id: "third", scene: Template.option3, name: "3rdScene", next: Template.scenecount },
-            { id: "fourth", scene: Template.option4, name: "4thScene" },
-            { id: "skill1", scene: Template.skill1, name: "skill1", next: "main" },
-            { id: "skill2", scene: Template.skill2, name: "skill2", next: "main" },
-            { id: "skill3", scene: Template.skill3, name: "skill3", next: "main" },
+            { id: "main", scene: Template.scene1, name: "1stScene", next: Template.scenecount },
+            { id: "Archer1", scene: Template.option1, name: "1stScene", next: Template.scenecount },
+            { id: "Nightstalker1", scene: Template.option2, name: "2ndScene", next: Template.scenecount },
+            { id: "ArchMage1", scene: Template.option3, name: "3rdScene", next: Template.scenecount },
+            { id: "Swordwielder1", scene: Template.option4, name: "4thScene", next: Template.scenecount },
+            { id: "skill1", scene: Template.skill1, name: "skill1", next: Template.scenecount },
+            { id: "skill2", scene: Template.skill2, name: "skill2", next: Template.scenecount },
+            { id: "skill3", scene: Template.skill3, name: "skill3", next: Template.scenecount },
+            { id: "scene2", scene: Template.scene2, name: "scene2", next: Template.scenecount },
+            { id: "scene3", scene: Template.scene3, name: "scene3", next: Template.scenecount },
+            { id: "scene4", scene: Template.scene4, name: "scene4" },
         ];
         Template.ƒS.Progress.setData(Template.stats);
         Template.ƒS.Progress.go(scenes);
@@ -604,15 +610,18 @@ var Template;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char2:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill2";
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             case firstDialogueElementAnswers.Char3:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill3";
                 return Template.scenecount;
                 break;
@@ -650,16 +659,18 @@ var Template;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char2:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill2";
-                await Template.ƒS.update();
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             case firstDialogueElementAnswers.Char3:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill3";
                 return Template.scenecount;
                 break;
@@ -697,16 +708,18 @@ var Template;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char2:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill2";
-                await Template.ƒS.update();
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             case firstDialogueElementAnswers.Char3:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill3";
                 return Template.scenecount;
                 break;
@@ -744,22 +757,119 @@ var Template;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill1";
                 return Template.scenecount;
                 break;
             case firstDialogueElementAnswers.Char2:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill2";
-                await Template.ƒS.update();
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             case firstDialogueElementAnswers.Char3:
+                Template.scenecount2 = Template.scenecount;
                 Template.scenecount = "skill3";
                 return Template.scenecount;
                 break;
         }
     }
     Template.option4 = option4;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function scene2() {
+        console.log("scene2");
+        await Template.ƒS.Location.show(Template.locations.tower);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 2");
+        Template.scenecount = "scene3";
+        return Template.scenecount;
+    }
+    Template.scene2 = scene2;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function scene3() {
+        console.log("scene3");
+        await Template.ƒS.Location.show(Template.locations.seafire);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Character.show(Template.characters.Main, Template.characters.Main.pose.normal, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 3");
+        let firstDialogueElementAnswers = {
+            Char1: Template.characters.Main.Skill1,
+            Char2: Template.characters.Main.Skill2,
+            Char3: Template.characters.Main.Skill3,
+        };
+        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        //stats.char1.points = stats.char1.points + 5;
+        switch (firstDialogueElement) {
+            case firstDialogueElementAnswers.Char1:
+                //continue write on this path here
+                Template.scenecount2 = Template.scenecount;
+                Template.scenecount = "skill1";
+                return Template.scenecount;
+                break;
+            case firstDialogueElementAnswers.Char2:
+                Template.scenecount2 = Template.scenecount;
+                Template.scenecount = "skill2";
+                return Template.scenecount;
+                //stats.char1.points = stats.char1.points + 1;
+                break;
+            case firstDialogueElementAnswers.Char3:
+                Template.scenecount2 = Template.scenecount;
+                Template.scenecount = "skill3";
+                return Template.scenecount;
+                break;
+        }
+    }
+    Template.scene3 = scene3;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function scene4() {
+        console.log("scene4");
+        await Template.ƒS.Location.show(Template.locations.waterfallhideout);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 4");
+        Template.scenecount = "scene5";
+        let firstDialogueElementAnswers = {
+            Char1: Template.characters.Main.Skill1,
+            Char2: Template.characters.Main.Skill2,
+            Char3: Template.characters.Main.Skill3,
+        };
+        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        //stats.char1.points = stats.char1.points + 5;
+        switch (firstDialogueElement) {
+            case firstDialogueElementAnswers.Char1:
+                //continue write on this path here
+                Template.skill1funktion();
+                break;
+            case firstDialogueElementAnswers.Char2:
+                Template.skill2funktion();
+                //stats.char1.points = stats.char1.points + 1;
+                break;
+            case firstDialogueElementAnswers.Char3:
+                Template.skill3funktion();
+                break;
+        }
+        return Template.scenecount;
+    }
+    Template.scene4 = scene4;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    function setscene() {
+        Template.teststring = Template.scenecount2.match(/\d+/)[0];
+        Template.test = parseInt(Template.teststring);
+        Template.test += 1;
+        console.log(Template.test);
+        Template.scenecount = "scene" + String(Template.test);
+        console.log(Template.scenecount);
+        return Template.scenecount;
+    }
+    Template.setscene = setscene;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -866,8 +976,116 @@ var Template;
         }
         await Template.ƒS.Speech.tell(Template.characters.Narrator, "Test");
         Template.ƒS.update();
+        Template.setscene();
+        return Template.scenecount;
     }
     Template.skill1 = skill1;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function skill1funktion() {
+        console.log("skill1");
+        if (Template.characters.Main.Skill1 == "Skystrike") {
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill1 == "Bowshot") {
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill1 == "Blindinglight") {
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill1 == "Fireball") {
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball8, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball9, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+    }
+    Template.skill1funktion = skill1funktion;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -965,8 +1183,107 @@ var Template;
         }
         await Template.ƒS.Speech.tell(Template.characters.Narrator, "Test");
         Template.ƒS.update();
+        Template.setscene();
+        return Template.scenecount;
     }
     Template.skill2 = skill2;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function skill2funktion() {
+        console.log("skill2");
+        if (Template.characters.Main.Skill2 == "Swordattack") {
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordattack1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.2);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordattack2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.2);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordattack3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.2);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordattack4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.2);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.2);
+        }
+        else if (Template.characters.Main.Skill2 == "Fastshot") {
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.fastshot6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill2 == "Swordswing") {
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.swordswing7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill2 == "Lightning") {
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning8, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.lightning9, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+    }
+    Template.skill2funktion = skill2funktion;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -1091,7 +1408,133 @@ var Template;
         }
         await Template.ƒS.Speech.tell(Template.characters.Narrator, "Test");
         Template.ƒS.update();
+        Template.setscene();
+        return Template.scenecount;
     }
     Template.skill3 = skill3;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function skill3funktion() {
+        console.log("skill3");
+        if (Template.characters.Main.Skill3 == "Swordslash") {
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordslash1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordslash2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordslash3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordslash4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.swordslash5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill3 == "Rollshot") {
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot8, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot9, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot10, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot11, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.rollshot12, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill3 == "Windburst") {
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst8, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst9, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+        else if (Template.characters.Main.Skill3 == "Windstrike") {
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike1, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike2, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike3, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike4, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike5, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike6, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike7, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike8, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.windstrike9, Template.ƒS.positionPercent(50, 90));
+            await Template.ƒS.update(0.1);
+            await Template.ƒS.Character.hideAll();
+            await Template.ƒS.update(0.1);
+        }
+    }
+    Template.skill3funktion = skill3funktion;
 })(Template || (Template = {}));
 //# sourceMappingURL=Template.js.map

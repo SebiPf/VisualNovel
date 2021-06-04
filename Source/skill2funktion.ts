@@ -1,5 +1,5 @@
 namespace Template {
-    export async function skill2(): ƒS.SceneReturn {
+    export async function skill2funktion(): ƒS.SceneReturn {
         console.log("skill2");
 
 
@@ -100,12 +100,5 @@ namespace Template {
 
             
         }
-
-
-        await ƒS.Speech.tell(characters.Narrator, "Test")
-        ƒS.update();
-
-        setscene();
-        return scenecount;
     }
 }

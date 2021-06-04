@@ -29,18 +29,22 @@ namespace Template {
         switch(firstDialogueElement) {
             case firstDialogueElementAnswers.Char1:
                 //continue write on this path here
+                scenecount2 = scenecount;
                 scenecount = "skill1";
                 return scenecount
                 break;
             case firstDialogueElementAnswers.Char2:
+                scenecount2 = scenecount;
                 scenecount = "skill2";
-                await ƒS.update();
                 return scenecount
                 //stats.char1.points = stats.char1.points + 1;
                 break;
             
             case firstDialogueElementAnswers.Char3:
+                scenecount2 = scenecount;
                 scenecount = "skill3";
+                
+
                 return scenecount
                 break;
         }
