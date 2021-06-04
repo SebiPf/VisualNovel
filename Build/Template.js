@@ -239,6 +239,7 @@ var Template;
         bell: "./sound/schoolbell.wav",
         break: "./sound/schoolbreak.mp3",
         teacher: "./sound/teacherscream.wav",
+        steps: "./sound/steps.wav",
         //Sound
         click: ""
     };
@@ -330,6 +331,10 @@ var Template;
         schule: {
             name: "schule",
             background: "./Images/Backgrounds/859076.jpg"
+        },
+        pause: {
+            name: "pausen",
+            background: "./Images/Backgrounds/pause.png"
         },
     };
     // define Carr
@@ -596,8 +601,13 @@ var Template;
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 1);
         await Template.ƒS.Sound.fade(Template.sound.break, 0.1, 4);
         await Template.ƒS.Sound.play(Template.sound.bell, 0, false);
+        await Template.ƒS.Sound.play(Template.sound.steps, 1, true);
+        await Template.ƒS.Location.show(Template.locations.pause);
+        await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
+        await Template.ƒS.Sound.fade(Template.sound.steps, 0, 1);
         await Template.ƒS.Sound.fade(Template.sound.break, 0, 6);
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 4);
+        await Template.ƒS.Sound.play(Template.sound.steps, 1);
     }
     Template.audiouebung = audiouebung;
 })(Template || (Template = {}));

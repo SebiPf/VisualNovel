@@ -25,6 +25,7 @@ declare namespace Template {
         bell: string;
         break: string;
         teacher: string;
+        steps: string;
         click: string;
     };
     let locations: {
@@ -113,6 +114,10 @@ declare namespace Template {
             background: string;
         };
         schule: {
+            name: string;
+            background: string;
+        };
+        pause: {
             name: string;
             background: string;
         };

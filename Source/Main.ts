@@ -20,6 +20,7 @@ namespace Template {
     bell: "./sound/schoolbell.wav",
     break: "./sound/schoolbreak.mp3",
     teacher: "./sound/teacherscream.wav",
+    steps: "./sound/steps.wav",
     //Sound
     click: ""
   };
@@ -111,6 +112,10 @@ namespace Template {
     schule: {
       name: "schule",
       background: "./Images/Backgrounds/859076.jpg"
+    },
+    pause: {
+      name: "pausen",
+      background: "./Images/Backgrounds/pause.png"
     },
 
   };
