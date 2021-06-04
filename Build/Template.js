@@ -613,7 +613,7 @@ var Template;
         await Template.ƒS.Sound.fade(Template.sound.break, 0, 1);
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 2);
         await Template.ƒS.Sound.fade(Template.sound.teacher, 0.1, 1);
-        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.0, 1);
+        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.0, 5);
         //await ƒS.Sound.play(sound.steps, 1)
     }
     Template.audiouebung = audiouebung;
