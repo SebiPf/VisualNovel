@@ -593,7 +593,7 @@ var Template;
     async function audioübung() {
         await Template.ƒS.Location.show(Template.locations.schule);
         await Template.ƒS.update();
-        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 5);
+        await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 1);
         await Template.ƒS.Character.show;
     }
     Template.audioübung = audioübung;
