@@ -334,7 +334,7 @@ var Template;
         },
         pause: {
             name: "pausen",
-            background: "./Images/Backgrounds/pause.png"
+            background: "./Images/Backgrounds/pause.jpg"
         },
     };
     // define Carr
@@ -603,6 +603,7 @@ var Template;
         await Template.ƒS.Sound.play(Template.sound.bell, 0, false);
         await Template.ƒS.Sound.play(Template.sound.steps, 1, true);
         await Template.ƒS.Location.show(Template.locations.pause);
+        Template.ƒS.update();
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         await Template.ƒS.Sound.fade(Template.sound.steps, 0, 1);
         await Template.ƒS.Sound.fade(Template.sound.break, 0, 6);

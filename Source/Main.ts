@@ -115,7 +115,7 @@ namespace Template {
     },
     pause: {
       name: "pausen",
-      background: "./Images/Backgrounds/pause.png"
+      background: "./Images/Backgrounds/pause.jpg"
     },
 
   };

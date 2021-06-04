@@ -10,6 +10,7 @@ namespace Template {
 
 
         await ƒS.Location.show(locations.pause);
+        ƒS.update();
         await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         await ƒS.Sound.fade(sound.steps, 0,1);
         await ƒS.Sound.fade(sound.break, 0, 6);
