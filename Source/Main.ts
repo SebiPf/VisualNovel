@@ -357,6 +357,7 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
+      {scene: audioübung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
@@ -371,7 +372,7 @@ namespace Template {
       //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
       //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
       //{id: "scene4", scene: scene4, name: "scene4"},
-      {scene: audioübung, name: "audioübung"}
+      
     ];
     ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);

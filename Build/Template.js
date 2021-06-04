@@ -561,6 +561,7 @@ var Template;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
+            { scene: Template.audioübung, name: "audioübung" }
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
@@ -575,7 +576,6 @@ var Template;
             //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
             //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
             //{id: "scene4", scene: scene4, name: "scene4"},
-            { scene: Template.audioübung, name: "audioübung" }
         ];
         Template.ƒS.Progress.setData(Template.stats);
         Template.ƒS.Progress.go(scenes);
