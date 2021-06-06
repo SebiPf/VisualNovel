@@ -366,7 +366,7 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      {id: "meter", scene: meter, name: "meter"},
+      //{id: "meter", scene: meter, name: "meter"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
