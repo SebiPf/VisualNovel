@@ -548,6 +548,9 @@ var Template;
         },
         char1: {
             points: 0
+        },
+        state: {
+            a: 0
         }
     };
     document.addEventListener("keydown", hndKeypress);
@@ -566,23 +569,26 @@ var Template;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: Template.audiouebung, name: "audioübung" }
+            { id: "meter", scene: Template.meter, name: "meter" },
+            //{scene: audiouebung, name: "audioübung"}
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
             //{scene: Animation, name: "animation"},
-            //{id: "main", scene: scene1, name: "1stScene", next: scenecount},
-            //{id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
-            //{id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
-            //{id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
-            //{id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
-            //{id: "skill1", scene: skill1, name: "skill1", next: scenecount},
-            //{id: "skill2", scene: skill2, name: "skill2", next: scenecount},
-            //{id: "skill3", scene: skill3, name: "skill3", next: scenecount},
-            //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-            //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
-            //{id: "scene4", scene: scene4, name: "scene4"},
+            { id: "main", scene: Template.scene1, name: "1stScene", next: Template.scenecount },
+            { id: "Archer1", scene: Template.option1, name: "1stScene", next: Template.scenecount },
+            { id: "Nightstalker1", scene: Template.option2, name: "2ndScene", next: Template.scenecount },
+            { id: "ArchMage1", scene: Template.option3, name: "3rdScene", next: Template.scenecount },
+            { id: "Swordwielder1", scene: Template.option4, name: "4thScene", next: Template.scenecount },
+            { id: "skill1", scene: Template.skill1, name: "skill1", next: Template.scenecount },
+            { id: "skill2", scene: Template.skill2, name: "skill2", next: Template.scenecount },
+            { id: "skill3", scene: Template.skill3, name: "skill3", next: Template.scenecount },
+            { id: "scene2", scene: Template.scene2, name: "scene2", next: Template.scenecount },
+            { id: "scene3", scene: Template.scene3, name: "scene3", next: Template.scenecount },
+            { id: "scene4", scene: Template.scene4, name: "scene4" },
         ];
-        Template.ƒS.Progress.setData(Template.stats);
+        let uiElement = document.querySelector("[type= interface]");
+        Template.stats.state = Template.ƒS.Progress.setDataInterface(Template.stats.state, uiElement);
+        //ƒS.Progress.setData(stats);
         Template.ƒS.Progress.go(scenes);
     }
 })(Template || (Template = {}));
@@ -601,8 +607,8 @@ var Template;
         await Template.ƒS.update();
         await Template.ƒS.Speech.set(Template.characters.Narrator, "Wir sollten uns solangsam beeilen, du weißt Herr Peters ist immer sehr streng was Pünktlichkeit angeht.");
         Template.ƒS.update();
-        //await ƒS.Sound.fade(sound.classroom, 0.1, 1);
-        await Template.ƒS.Sound.fade(Template.sound.break, 0.1, 4);
+        await Template.ƒS.Sound.play(Template.sound.break, 0);
+        await Template.ƒS.Sound.fade(Template.sound.break, 0.3, 4);
         await Template.ƒS.Sound.fade(Template.sound.bell, 1, 1);
         signalDelay2s();
         await Template.ƒS.Sound.play(Template.sound.steps, 0.6, true);
@@ -612,11 +618,22 @@ var Template;
         await Template.ƒS.Sound.fade(Template.sound.steps, 0, 0);
         await Template.ƒS.Sound.fade(Template.sound.break, 0, 1);
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.1, 2);
-        await Template.ƒS.Sound.fade(Template.sound.teacher, 0.1, 1);
+        await Template.ƒS.Sound.play(Template.sound.teacher, 0.001, false);
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.0, 5);
-        //await ƒS.Sound.play(sound.steps, 1)
     }
     Template.audiouebung = audiouebung;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function meter() {
+        console.log("4thScene");
+        await Template.ƒS.Location.show(Template.locations.seafire);
+        Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "hi");
+        Template.stats.state.a += 55;
+        Template.ƒS.update();
+    }
+    Template.meter = meter;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {

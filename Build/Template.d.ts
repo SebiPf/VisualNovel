@@ -333,6 +333,9 @@ declare namespace Template {
         char1: {
             points: number;
         };
+        state: {
+            a: number;
+        };
     };
 }
 declare namespace Template {
@@ -340,6 +343,9 @@ declare namespace Template {
 }
 declare namespace Template {
     function audiouebung(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function meter(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function option1(): ƒS.SceneReturn;

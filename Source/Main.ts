@@ -342,8 +342,12 @@ namespace Template {
     },
     char1: {
       points: 0
+    },
+    state:{
+      a: 0
     }
   }
+  
 
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
@@ -362,24 +366,27 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      {scene: audiouebung, name: "audioübung"}
+      {id: "meter", scene: meter, name: "meter"},
+      //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
-      //{id: "main", scene: scene1, name: "1stScene", next: scenecount},
-      //{id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
-      //{id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
-      //{id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
-      //{id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
-      //{id: "skill1", scene: skill1, name: "skill1", next: scenecount},
-      //{id: "skill2", scene: skill2, name: "skill2", next: scenecount},
-      //{id: "skill3", scene: skill3, name: "skill3", next: scenecount},
-      //{id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-      //{id: "scene3", scene: scene3, name: "scene3", next: scenecount},
-      //{id: "scene4", scene: scene4, name: "scene4"},
+      {id: "main", scene: scene1, name: "1stScene", next: scenecount},
+      {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
+      {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
+      {id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
+      {id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
+      {id: "skill1", scene: skill1, name: "skill1", next: scenecount},
+      {id: "skill2", scene: skill2, name: "skill2", next: scenecount},
+      {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
+      {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
+      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
+      {id: "scene4", scene: scene4, name: "scene4"},
       
     ];
-    ƒS.Progress.setData(stats);
+    let uiElement: HTMLElement =document.querySelector("[type= interface]");
+    stats.state = ƒS.Progress.setDataInterface(stats.state, uiElement);
+    //ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);
   }
 }

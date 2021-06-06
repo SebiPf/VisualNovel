@@ -195,3 +195,6 @@ button[type="buttoninv"]{
   position: absolute;
   right: 5%;
 }
+meter::-webkit-meter-optimum-value{
+  background-color: red;
+}

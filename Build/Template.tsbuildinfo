@@ -9,6 +9,7 @@
       "../Source/Main.ts",
       "../Source/Scene.ts",
       "../Source/audioübung.ts",
+      "../Source/meter.ts",
       "../Source/option1.ts",
       "../Source/option2.ts",
       "../Source/option3.ts",
@@ -34,7 +35,7 @@
         },
         {
           "pos": 15,
-          "end": 97909,
+          "end": 98748,
           "kind": "text"
         }
       ],
@@ -62,7 +63,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 10633,
+          "end": 10759,
           "kind": "text"
         }
       ]
