@@ -461,7 +461,7 @@ var Template;
                 arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
                 mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
                 inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-                skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
+                skystrike1: "../Images/Characters/Swordwhielder/SkyStrike/SW_SkyStrike_1.jpg",
                 skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
                 skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
                 skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
@@ -1319,14 +1319,16 @@ var Template;
             case firstDialogueElementAnswers.sayYes:
                 await Template.ƒS.Character.hideAll();
                 Template.ƒS.update(1);
-                await Template.ƒS.Text.print("You and " + Template.stats.Side3 + " decide to go together to get the wood");
+                await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " decide to go together to get the wood");
                 await Template.ƒS.Location.show(Template.locations.woodscamp);
                 Template.ƒS.update(1);
                 await Template.ƒS.Text.print("As you are further away from the others " + Template.stats.Side3.name + " decides to start a conversation with you");
                 await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+                Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.stats.Side3, "I am happy you decided to come");
                 await Template.ƒS.Speech.tell(Template.stats.Side3, "I wanted to talk to you about something");
                 await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+                Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.stats.Main, "What is bothering you you know you can always talk to me about everything");
                 await Template.ƒS.Speech.tell(Template.stats.Side3, "I just wanted to thank you for helping me with my training");
                 await Template.ƒS.Speech.tell(Template.stats.Side3, "I had my training battle with guy from another village 2 days ago");
@@ -1354,12 +1356,13 @@ var Template;
                         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea");
                         await Template.ƒS.Speech.tell(Template.stats.Main, "I never really talked with anybody about it. So I felt like I can talk woth you about it");
                         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea");
-                        await Template.ƒS.Text.print("You and " + Template.stats.Side3 + " had a long conversation about your parents and their accident");
+                        await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " had a long conversation about your parents and their accident");
                         Template.stats.Main.relside3 += 10;
                         await Template.ƒS.Location.show(Template.locations.Black);
+                        await Template.ƒS.Character.hideAll();
                         Template.ƒS.update(1);
-                        await Template.ƒS.Text.print("The conversation with " + Template.stats.Side3 + " really help you.");
-                        await Template.ƒS.Text.print("After the conversation you and " + Template.stats.Side3 + " went back to the camp");
+                        await Template.ƒS.Text.print("The conversation with " + Template.stats.Side3.name + " really help you.");
+                        await Template.ƒS.Text.print("After the conversation you and " + Template.stats.Side3.name + " went back to the camp");
                         await Template.ƒS.Location.show(Template.locations.seafire);
                         Template.ƒS.update(1);
                         await Template.ƒS.Character.hideAll();
@@ -1371,12 +1374,12 @@ var Template;
                 Template.scenecount = "scene2b";
                 return Template.scenecount;
             case secondDialogueElementAnswers.sayNo:
-                await Template.ƒS.Text.print("You decided to stay and let " + Template.stats.Side3 + "get the wood");
-                await Template.ƒS.Text.print("You walk up to " + Template.stats.Side1 + " and " + Template.stats.Side2 + " and decide to start a conversation");
+                await Template.ƒS.Text.print("You decided to stay and let " + Template.stats.Side3.name + "get the wood");
+                await Template.ƒS.Text.print("You walk up to " + Template.stats.Side1.name + " and " + Template.stats.Side2.name + " and decide to start a conversation");
                 await Template.ƒS.Text.print("You who do you want to start a conversation with?");
                 let thirdDialogueElementAnswers = {
-                    sayYes: "1. " + Template.stats.Side1,
-                    sayNo: "2. " + Template.stats.Side2,
+                    sayYes: "1. " + Template.stats.Side1.name,
+                    sayNo: "2. " + Template.stats.Side2.name,
                 };
                 let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                 switch (thirdDialogueElement) {
@@ -1390,7 +1393,7 @@ var Template;
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Probably not as long if you helped");
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Ahh just kidding I don`t think that long");
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Afterall I am cold too");
-                        await Template.ƒS.Text.print("As you are talking to " + Template.stats.Side1.name + Template.stats.Side2 + " walks to the shore");
+                        await Template.ƒS.Text.print("As you are talking to " + Template.stats.Side1.name + Template.stats.Side2.name + " walks to the shore");
                         await Template.ƒS.Text.print("Do you want to stop the conversation and go after " + Template.stats.Side2.name + "?");
                         let fourthDialogueElementAnswers = {
                             sayYes: "Yes",
@@ -1450,7 +1453,7 @@ var Template;
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "Yea I hope so");
                                 await Template.ƒS.Speech.tell(Template.stats.Main, "I`ll tell you something if I find one I`ll give it to you");
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "That would be so nice of you");
-                                await Template.ƒS.Speech.tell(Template.stats.Side1, "Oh look " + Template.stats.Side2 + " and " + Template.stats.Side3 + " are coming back");
+                                await Template.ƒS.Speech.tell(Template.stats.Side1, "Oh look " + Template.stats.Side2.name + " and " + Template.stats.Side3.name + " are coming back");
                                 Template.stats.Main.relside2 -= 5;
                                 Template.stats.Main.relside1 += 10;
                                 Template.scenecount = "scene3";

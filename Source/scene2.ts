@@ -37,14 +37,16 @@ namespace Template {
             case firstDialogueElementAnswers.sayYes:
                 await ƒS.Character.hideAll();
                 ƒS.update(1);
-                await ƒS.Text.print("You and " + stats.Side3 + " decide to go together to get the wood");
+                await ƒS.Text.print("You and " + stats.Side3.name + " decide to go together to get the wood");
                 await ƒS.Location.show(locations.woodscamp);
                 ƒS.update(1);
                 await ƒS.Text.print("As you are further away from the others " + stats.Side3.name + " decides to start a conversation with you");
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90,90));
+                ƒS.update(1);
                 await ƒS.Speech.tell(stats.Side3, "I am happy you decided to come");
                 await ƒS.Speech.tell(stats.Side3, "I wanted to talk to you about something");
                 await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5,90));
+                ƒS.update(1);
                 await ƒS.Speech.tell(stats.Main, "What is bothering you you know you can always talk to me about everything");
                 await ƒS.Speech.tell(stats.Side3, "I just wanted to thank you for helping me with my training");
                 await ƒS.Speech.tell(stats.Side3, "I had my training battle with guy from another village 2 days ago");
@@ -74,12 +76,13 @@ namespace Template {
                         await ƒS.Speech.tell(stats.Side3, "Yea");
                         await ƒS.Speech.tell(stats.Main, "I never really talked with anybody about it. So I felt like I can talk woth you about it");
                         await ƒS.Speech.tell(stats.Side3, "Yea");
-                        await ƒS.Text.print("You and " + stats.Side3 + " had a long conversation about your parents and their accident");
+                        await ƒS.Text.print("You and " + stats.Side3.name + " had a long conversation about your parents and their accident");
                         stats.Main.relside3 += 10;
                         await ƒS.Location.show(locations.Black);
+                        await ƒS.Character.hideAll();
                         ƒS.update(1);
-                        await ƒS.Text.print("The conversation with " + stats.Side3 + " really help you.");
-                        await ƒS.Text.print("After the conversation you and " + stats.Side3 + " went back to the camp");
+                        await ƒS.Text.print("The conversation with " + stats.Side3.name + " really help you.");
+                        await ƒS.Text.print("After the conversation you and " + stats.Side3.name + " went back to the camp");
                         await ƒS.Location.show(locations.seafire);
                         ƒS.update(1);
                         await ƒS.Character.hideAll();
@@ -94,13 +97,13 @@ namespace Template {
                 scenecount = "scene2b";
                 return scenecount
             case secondDialogueElementAnswers.sayNo:
-                await ƒS.Text.print("You decided to stay and let " + stats.Side3 + "get the wood");
-                await ƒS.Text.print("You walk up to " + stats.Side1 + " and " + stats.Side2 + " and decide to start a conversation");
+                await ƒS.Text.print("You decided to stay and let " + stats.Side3.name + "get the wood");
+                await ƒS.Text.print("You walk up to " + stats.Side1.name + " and " + stats.Side2.name + " and decide to start a conversation");
                 await ƒS.Text.print("You who do you want to start a conversation with?");
 
                 let thirdDialogueElementAnswers = {
-                    sayYes: "1. " + stats.Side1, 
-                    sayNo: "2. " + stats.Side2,
+                    sayYes: "1. " + stats.Side1.name, 
+                    sayNo: "2. " + stats.Side2.name,
                 };
         
                 let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
@@ -116,7 +119,7 @@ namespace Template {
                         await ƒS.Speech.tell(stats.Side1, "Probably not as long if you helped");
                         await ƒS.Speech.tell(stats.Side1, "Ahh just kidding I don`t think that long");
                         await ƒS.Speech.tell(stats.Side1, "Afterall I am cold too");
-                        await ƒS.Text.print("As you are talking to " + stats.Side1.name + stats.Side2 + " walks to the shore");
+                        await ƒS.Text.print("As you are talking to " + stats.Side1.name + stats.Side2.name + " walks to the shore");
                         await ƒS.Text.print("Do you want to stop the conversation and go after " + stats.Side2.name + "?");
                         let fourthDialogueElementAnswers = {
                             sayYes: "Yes",
@@ -183,7 +186,7 @@ namespace Template {
                                 await ƒS.Speech.tell(stats.Side1, "Yea I hope so");
                                 await ƒS.Speech.tell(stats.Main, "I`ll tell you something if I find one I`ll give it to you");
                                 await ƒS.Speech.tell(stats.Side1, "That would be so nice of you");
-                                await ƒS.Speech.tell(stats.Side1, "Oh look " + stats.Side2 + " and " + stats.Side3 + " are coming back");
+                                await ƒS.Speech.tell(stats.Side1, "Oh look " + stats.Side2.name + " and " + stats.Side3.name + " are coming back");
                                 stats.Main.relside2 -= 5;
                                 stats.Main.relside1 += 10;
                                 scenecount = "scene3";
