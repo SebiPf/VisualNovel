@@ -51,7 +51,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(./Images/Buttons/ArcherButton.png);
+  background-image: url(Images/Buttons/ArcherButton.png);
   background-size:cover;
 
 }
@@ -66,7 +66,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(./Images/Buttons/NightstalkerButton.png);
+  background-image: url(Images/Buttons/NightstalkerButton.png);
   background-size: cover;
 }
 #Char2:hover{
@@ -80,7 +80,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(./Images/Buttons//ArchMageButton.png);
+  background-image: url(/Images/Buttons//ArchMageButton.png);
   background-size: cover;
   
 }
@@ -95,7 +95,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(./Images/Buttons/SworWhielderButton.png);
+  background-image: url(../Images/Buttons/SworWhielderButton.png);
   background-size: cover;
 }
 #Char4:hover{
