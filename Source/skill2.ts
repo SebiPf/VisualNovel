@@ -3,7 +3,7 @@ namespace Template {
         console.log("skill2");
 
 
-        if(characters.Main.Skill2 == "Swordattack"){
+        if(stats.Main.Skill2 == "Swordattack"){
             await ƒS.Character.show(characters.Adira, characters.Adira.pose.swordattack1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
@@ -19,7 +19,7 @@ namespace Template {
             await ƒS.update(0.2);
             
         }
-        else if(characters.Main.Skill2 == "Fastshot"){
+        else if(stats.Main.Skill2 == "Fastshot"){
             await ƒS.Character.show(characters.Hando, characters.Hando.pose.fastshot1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -42,7 +42,7 @@ namespace Template {
 
 
         }
-        else if(characters.Main.Skill2 == "Swordswing"){
+        else if(stats.Main.Skill2 == "Swordswing"){
             await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.swordswing1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -68,7 +68,7 @@ namespace Template {
 
             
         }
-        else if(characters.Main.Skill2 == "Lightning"){
+        else if(stats.Main.Skill2 == "Lightning"){
             await ƒS.Character.show(characters.Samara, characters.Samara.pose.lightning1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();

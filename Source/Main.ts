@@ -117,6 +117,11 @@ namespace Template {
       name: "pausen",
       background: "./Images/Backgrounds/pause.jpg"
     },
+    white: {
+      name: "white",
+      background: "./Images/Backgrounds/White.png"
+    },
+
 
   };
   // define Carr
@@ -124,23 +129,8 @@ namespace Template {
     Narrator: {
       name: ""
     },
-    Main:{
-      name: "",
-      origin: ƒS.ORIGIN.BOTTOMCENTER,
-      pose: {
-        normal: "",
-        happy: ".",
-        veryhappy: "",
-        unhappy: "",
-        angry: "",
-        arrogant: "",
-        mediumlove: "",
-        inlove: "",
-      },
-      Skill1: "",
-      Skill2: "",
-      Skill3: ""
-    },
+    
+    
     
     Samara: {
       name: "Samara: ",
@@ -274,7 +264,7 @@ namespace Template {
         arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
         mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
         inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-        skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
+        skystrike1: "../Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
         skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
         skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
         skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
@@ -296,6 +286,7 @@ namespace Template {
       }
     }
   };
+  
 
   export let items ={
     Healthpotion: {
@@ -345,7 +336,79 @@ namespace Template {
     },
     state:{
       a: 0
-    }
+    },
+    Main:{
+      name: "",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        normal: "",
+        happy: ".",
+        veryhappy: "",
+        unhappy: "",
+        angry: "",
+        arrogant: "",
+        mediumlove: "",
+        inlove: "",
+      },
+      Skill1: "",
+      Skill2: "",
+      Skill3: "",
+      Strength: 0,
+      relside1: 0,
+      relside2: 0,
+      relside3: 0,
+    },
+    Side1:{
+      name: "",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        normal: "",
+        happy: ".",
+        veryhappy: "",
+        unhappy: "",
+        angry: "",
+        arrogant: "",
+        mediumlove: "",
+        inlove: "",
+      },
+      Skill1: "",
+      Skill2: "",
+      Skill3: ""
+    },
+    Side2:{
+      name: "",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        normal: "",
+        happy: ".",
+        veryhappy: "",
+        unhappy: "",
+        angry: "",
+        arrogant: "",
+        mediumlove: "",
+        inlove: "",
+      },
+      Skill1: "",
+      Skill2: "",
+      Skill3: ""
+    },
+    Side3:{
+      name: "",
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
+      pose: {
+        normal: "",
+        happy: ".",
+        veryhappy: "",
+        unhappy: "",
+        angry: "",
+        arrogant: "",
+        mediumlove: "",
+        inlove: "",
+      },
+      Skill1: "",
+      Skill2: "",
+      Skill3: ""
+    },
   }
   
 
@@ -380,13 +443,13 @@ namespace Template {
       {id: "skill2", scene: skill2, name: "skill2", next: scenecount},
       {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
       {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
+      {id: "scene2b", scene: scene2b, name: "scene2b", next: scenecount},
       {id: "scene4", scene: scene4, name: "scene4"},
       
     ];
-    let uiElement: HTMLElement =document.querySelector("[type= interface]");
-    stats.state = ƒS.Progress.setDataInterface(stats.state, uiElement);
-    //ƒS.Progress.setData(stats);
+    //let uiElement: HTMLElement =document.querySelector("[type= interface]");
+    //stats.state = ƒS.Progress.setDataInterface(stats.state, uiElement);
+    ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);
   }
 }

@@ -121,27 +121,14 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        white: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         Narrator: {
             name: string;
-        };
-        Main: {
-            name: string;
-            origin: ƒ.ORIGIN2D;
-            pose: {
-                normal: string;
-                happy: string;
-                veryhappy: string;
-                unhappy: string;
-                angry: string;
-                arrogant: string;
-                mediumlove: string;
-                inlove: string;
-            };
-            Skill1: string;
-            Skill2: string;
-            Skill3: string;
         };
         Samara: {
             name: string;
@@ -336,6 +323,78 @@ declare namespace Template {
         state: {
             a: number;
         };
+        Main: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                veryhappy: string;
+                unhappy: string;
+                angry: string;
+                arrogant: string;
+                mediumlove: string;
+                inlove: string;
+            };
+            Skill1: string;
+            Skill2: string;
+            Skill3: string;
+            Strength: number;
+            relside1: number;
+            relside2: number;
+            relside3: number;
+        };
+        Side1: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                veryhappy: string;
+                unhappy: string;
+                angry: string;
+                arrogant: string;
+                mediumlove: string;
+                inlove: string;
+            };
+            Skill1: string;
+            Skill2: string;
+            Skill3: string;
+        };
+        Side2: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                veryhappy: string;
+                unhappy: string;
+                angry: string;
+                arrogant: string;
+                mediumlove: string;
+                inlove: string;
+            };
+            Skill1: string;
+            Skill2: string;
+            Skill3: string;
+        };
+        Side3: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                veryhappy: string;
+                unhappy: string;
+                angry: string;
+                arrogant: string;
+                mediumlove: string;
+                inlove: string;
+            };
+            Skill1: string;
+            Skill2: string;
+            Skill3: string;
+        };
     };
 }
 declare namespace Template {
@@ -361,6 +420,9 @@ declare namespace Template {
 }
 declare namespace Template {
     function scene2(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function scene2b(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function scene3(): ƒS.SceneReturn;

@@ -4,14 +4,14 @@ namespace Template {
         
         await ƒS.Location.show(locations.seafire);
         await ƒS.update(1);
-        await ƒS.Character.show(characters.Main, characters.Main.pose.normal, ƒS.positionPercent(50, 90));
+        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(50, 90));
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.Narrator, "scene 3")
 
         let firstDialogueElementAnswers ={
-            Char1: characters.Main.Skill1,
-            Char2: characters.Main.Skill2,
-            Char3: characters.Main.Skill3,
+            Char1: stats.Main.Skill1,
+            Char2: stats.Main.Skill2,
+            Char3: stats.Main.Skill3,
         };
 
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
