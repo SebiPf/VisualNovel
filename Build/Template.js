@@ -41,7 +41,7 @@ var Template;
     async function scene1() {
         console.log("options");
         await Template.ƒS.Location.show(Template.locations.white);
-        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike1, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.normal, Template.ƒS.positionPercent(50, 90));
         await Template.ƒS.update();
         await Template.ƒS.Text.print("Please enter your Name");
         //names eingabe
@@ -461,7 +461,7 @@ var Template;
                 arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
                 mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
                 inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-                skystrike1: "../Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
+                skystrike1: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png",
                 skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
                 skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
                 skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
