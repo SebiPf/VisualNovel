@@ -256,7 +256,7 @@ namespace Template {
       name: "Adira: ",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
-        normal: "./Images/Characters/SwordWhielder/SwordWhielder.png",
+        normal: "../Images/Characters/SwordWhielder/SwordWhielder.png",
         happy: "./Images/Characters/SwordWhielder/SwordWhielderHappy.png",
         veryhappy: "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png",
         unhappy: "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png",
