@@ -80,7 +80,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(/Images/Buttons/ArchMageButton.png);
+  background-image: url(Images/Buttons/ArchMageButton.png);
   background-size: cover;
   
 }
@@ -95,7 +95,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(../Images/Buttons/SwordWhielderButton.png);
+  background-image: url(Images/Buttons/SwordWhielderButton.png);
   background-size: cover;
 }
 #Char4:hover{
@@ -173,7 +173,7 @@ dialog.dialog1{
 }
 dialog[type="inventory"]{
   background-color: transparent;
-  background-image: url(./Images/inventory_bag.png);
+  background-image: url(Images/inventory_bag.png);
   background-size:cover;
   color: white;
   width: 500px;
