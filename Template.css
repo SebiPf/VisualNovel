@@ -95,7 +95,7 @@ speech.Ryu content {
   transition-duration: 1s;
   opacity: 0.6;
   background: transparent;
-  background-image: url(../Images/Buttons/SworWhielderButton.png);
+  background-image: url(../Images/Buttons/SwordWhielderButton.png);
   background-size: cover;
 }
 #Char4:hover{
