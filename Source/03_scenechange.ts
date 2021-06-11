@@ -35,6 +35,7 @@ namespace Template {
             await ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure")
             await ƒS.Text.print("Even if some decisions seem insignificant")
             await ƒS.Text.print("So always choose wisely")
+            await ƒS.Text.print("You may open your Inventory with I")
             // text ohne schreib animation
             //await ƒS.Location.show(locations.charselect);
             await ƒS.Character.hideAll()

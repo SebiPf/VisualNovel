@@ -183,26 +183,30 @@ dialog[type="inventory"]{
   
 }
 dialog[type="inventory"] > ul{
-  list-style-type: none;
-margin-top: 50%;
-border: none;
+  margin-left: 10%;
+  margin-top: 50%;
+  border: none;
+  width: 25%;
+  
+  columns: 2;
 }
 dialog[type="inventory"] > ul > li{
-background-size: cover;
-position: relative;
-width: 150px;
-height: 150px;
-padding: 0px;
-border: none;
-margin-top: 5%;
-display: block;
+  
+  
+  width: 150px;
+  height: 120px;
+  padding: 0px;
+  border: none;
+  margin-top: 1%;
+  display: block;
+  
 
 }
 dialog[type="inventory"] name{
-display: block;
-list-style: none;
-content: '/a';
-color: gold;
+  
+  list-style: none;
+  
+  color: gold;
 
 
 }
@@ -215,8 +219,9 @@ color: gold;
     
     }
 dialog[type="inventory"] img{
+  position: absolute;
   float: left;
-  position: relative;
+  
 }
 dialog[type="name"]{
   float: left;

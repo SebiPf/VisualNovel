@@ -65,6 +65,7 @@ var Template;
         await Template.ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure");
         await Template.ƒS.Text.print("Even if some decisions seem insignificant");
         await Template.ƒS.Text.print("So always choose wisely");
+        await Template.ƒS.Text.print("You may open your Inventory with I");
         // text ohne schreib animation
         //await ƒS.Location.show(locations.charselect);
         await Template.ƒS.Character.hideAll();
@@ -610,6 +611,10 @@ var Template;
                 console.log("Load");
                 await Template.ƒS.Progress.load();
                 break;
+            case Template.ƒ.KEYBOARD_CODE.I:
+                console.log("InventoryOpen");
+                await Template.ƒS.Inventory.open();
+                break;
         }
     }
     window.addEventListener("load", start);
@@ -825,6 +830,7 @@ var Template;
                         await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
                         await Template.ƒS.Text.print("They are really happy that you came to look after them");
                         await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                        await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;

@@ -424,6 +424,10 @@ namespace Template {
         console.log("Load");
         await ƒS.Progress.load();
         break;
+      case ƒ.KEYBOARD_CODE.I:
+        console.log("InventoryOpen");
+        await ƒS.Inventory.open();
+        break;
     }
   }
   window.addEventListener("load", start);

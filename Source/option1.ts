@@ -161,9 +161,12 @@ namespace Template {
                                 await ƒS.update();
                                 return scenecount;   
                         }
+                        
                         await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
                         await ƒS.Text.print("They are really happy that you came to look after them");
                         await ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                        await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
+                        
                         scenecount = "scene3";
                         await ƒS.update();
                         return scenecount
