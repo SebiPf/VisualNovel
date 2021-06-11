@@ -6,7 +6,7 @@ namespace Template {
 
 
             await ƒS.Location.show(locations.white);
-            await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
+            //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
             await ƒS.update();
             await ƒS.Text.print("Please enter your Name")
             //names eingabe
