@@ -8,7 +8,7 @@ namespace Template {
             duration: 1,
             playmode: ƒS.ANIMATION_PLAYMODE.REVERSELOOP
         };
-        await ƒS.Location.show(locations.waterfall);
+        await ƒS.Location.show(locations.Black);
         await ƒS.Character.animate(characters.Adira, characters.Adira.pose.normal, animation);
         await ƒS.update(2);
 

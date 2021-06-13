@@ -52,6 +52,10 @@ namespace Template {
         stats.Side3.Skill2 = "Swordattack";
         stats.Side3.Skill3 = "Swordslash";
 
+        stats.scoreside1 = "Samara"
+        stats.scoreside2 = "Hando"
+        stats.scoreside3 = "Adira"
+
 
 
 
@@ -81,9 +85,9 @@ namespace Template {
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                stats.Main.relside1 += 10;
-                stats.Main.relside2 += 10;
-                stats.Main.relside3 += 10;
+                stats.relside1 += 10;
+                stats.relside2 += 10;
+                stats.relside3 += 10;
                 stats.char1.points += 5;
                 scenecount = "scene2";
                 return scenecount
@@ -117,9 +121,9 @@ namespace Template {
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        stats.Main.relside1 += 5;
-                        stats.Main.relside2 += 15;
-                        stats.Main.relside3 += 5;
+                        stats.relside1 += 5;
+                        stats.relside2 += 15;
+                        stats.relside3 += 5;
                         await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
                         await ƒS.Character.hide(stats.Main)
                         await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(5, 90))

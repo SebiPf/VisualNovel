@@ -27,100 +27,33 @@ namespace Template {
   export let locations = {
     seafire: {
       name: "seafireplace",
-      background: "./Images/Backgrounds/sea_fireplace.jpg"
-    },
-    shore: {
-      name:"shore",
-      background: "./Images/Backgrounds/shore.jpg"
-    },
-    view: {
-      name:"view",
-      background: "./Images/Backgrounds/view.jpg"
-    },
-    woodscamp: {
-      name:"woodscamp",
-      background: "./Images/Backgrounds/woods_camp.png"
-    },
-    waterfall: {
-      name:"waterfall",
-      background: "./Images/Backgrounds/waterfall.jpg"
-    },
-    charselect: {
-      name:"charselect",
-      background: "./Images/Backgrounds/CharSelect.png"
-    },
-    Black: {
-      name:"Black",
-      background: "./Images/Backgrounds/black.png"
-    },
-    bridge: {
-      name:"bridge",
-      background: "./Images/Backgrounds/bridge.jpg"
+      background: "./Images/Backgrounds/shore.png"
     },
     camp: {
-      name:"camp",
-      background: "./Images/Backgrounds/camp.png"
+      name: "camp",
+      background: "./Images/Backgrounds/dorf.png"
     },
-    dungeonentranceclose: {
-      name:"Dungeonentranceclose",
-      background: "./Images/Backgrounds/dungeon_entance_close.jpg"
+    woods: {
+      name: "woods",
+      background: "./Images/Backgrounds/Forest.png"
     },
-    dungeonentrance: {
-      name:"dungeonentrance",
-      background: "./Images/Backgrounds/dungeon_entrance.png"
+    mountain: {
+      name: "mountain",
+      background: "./Images/Backgrounds/mountain.png"
     },
-    dungeonstairs: {
-      name:"dungeonstair",
-      background: "./Images/Backgrounds/dungeon_stair.jpg"
+    cave: {
+      name: "cave",
+      background: "./Images/Backgrounds/cave.png"
     },
-    moutain: {
-      name:"fieldmoutain",
-      background: "./Images/Backgrounds/field_moutain.png"
-    },
-    fight: {
-      name:"fight",
-      background: "./Images/Backgrounds/fight.jpg"
-    },
-    sea: {
-      name:"sea",
-      background: "./Images/Backgrounds/sea.jpg"
-    },
-    tower: {
-      name:"towerwoods",
-      background: "./Images/Backgrounds/tower_woods.png"
-    },
-    waterfallhideout: {
-      name:"waterfallhideout",
-      background: "./Images/Backgrounds/waterfall_hideout.jpg"
-    },
-    waterfalls: {
-      name:"waterfalls",
-      background: "./Images/Backgrounds/waterfalls.png"
-    },
-    window: {
-      name:"windowsunrise",
-      background: "./Images/Backgrounds/window_sunrise.gif"
-    },
-    woodsflowers: {
-      name:"woodsflowers",
-      background: "./Images/Backgrounds/woods_flowers.jpg"
-    },
-    woodspath: {
-      name:"woodspath",
-      background: "./Images/Backgrounds/woods_path.png"
-    },
-    schule: {
-      name: "schule",
-      background: "./Images/Backgrounds/859076.jpg"
-    },
-    pause: {
-      name: "pausen",
-      background: "./Images/Backgrounds/pause.jpg"
+    Black: {
+      name: "black",
+      background: "./Images/Backgrounds/black.png"
     },
     white: {
       name: "white",
       background: "./Images/Backgrounds/White.png"
     },
+    
 
 
   };
@@ -337,6 +270,7 @@ namespace Template {
     state:{
       a: 0
     },
+    
     Main:{
       name: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
@@ -354,10 +288,15 @@ namespace Template {
       Skill2: "",
       Skill3: "",
       Strength: 0,
-      relside1: 0,
-      relside2: 0,
-      relside3: 0,
     },
+    relside1: 0,
+    scoreside1: "",
+    relside2: 0,
+    scoreside2: "",
+    relside3: 0,
+    scoreside3: "",
+    
+    
     Side1:{
       name: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
@@ -410,6 +349,66 @@ namespace Template {
       Skill3: ""
     },
   }
+
+  let volume: number = 1.0;
+
+  export function volplus(): void{
+    if (volume < 10){
+      volume += 0.1;
+      ƒS.Sound.setVolume(sound.classroom, volume);
+    }
+    
+  }
+  export function volminus(): void{
+    if (volume > 0){
+      volume -= 0.1;
+      ƒS.Sound.setVolume(sound.classroom, volume);
+    }
+    
+  }
+
+
+
+
+  let inGameMenue = {
+    save: "Save",
+    load: "Load",
+    close: "Close",
+    volplus: "+",
+    volminus: "-",
+    credits: "Credits",
+    about: "about"
+  };
+  let gameMenue: ƒS.Menu;
+  gameMenue;
+
+
+
+
+
+  async function buttonfunc(_option: string): Promise<void>{
+    if (_option == inGameMenue.save){
+      await ƒS.Progress.save();
+    }
+    else if (_option == inGameMenue.load){
+      await ƒS.Progress.load();
+    }
+    else if (_option == inGameMenue.close){
+      close();
+    }
+    else if (_option == inGameMenue.volplus){
+      volplus();
+    }
+    else if (_option == inGameMenue.volminus){
+      volminus();
+    }
+    else if (_option == inGameMenue.credits){
+      credits();
+    }
+    else if (_option == inGameMenue.about){
+      
+    }
+  }
   
 
   document.addEventListener("keydown", hndKeypress);
@@ -432,6 +431,12 @@ namespace Template {
   }
   window.addEventListener("load", start);
   function start(_event: Event): void {
+
+    gameMenue = 
+      ƒS.Menu.create(inGameMenue, buttonfunc, "gameMenue")
+
+
+
     let scenes: ƒS.Scenes = [
       //{id: "meter", scene: meter, name: "meter"},
       //{scene: audiouebung, name: "audioübung"}
@@ -448,12 +453,14 @@ namespace Template {
       {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
       {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
       {id: "scene2b", scene: scene2b, name: "scene2b", next: scenecount},
+      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
       {id: "scene4", scene: scene4, name: "scene4"},
+      {id: "credits", scene: credits, name: "credits"},
       
     ];
-    //let uiElement: HTMLElement =document.querySelector("[type= interface]");
-    //stats.state = ƒS.Progress.setDataInterface(stats.state, uiElement);
-    ƒS.Progress.setData(stats);
+    let uiElement: HTMLElement =document.querySelector("[type= interface]");
+    stats = ƒS.Progress.setData(stats, uiElement);
+    //ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);
   }
 }

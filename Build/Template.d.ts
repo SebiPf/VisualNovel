@@ -33,91 +33,23 @@ declare namespace Template {
             name: string;
             background: string;
         };
-        shore: {
-            name: string;
-            background: string;
-        };
-        view: {
-            name: string;
-            background: string;
-        };
-        woodscamp: {
-            name: string;
-            background: string;
-        };
-        waterfall: {
-            name: string;
-            background: string;
-        };
-        charselect: {
-            name: string;
-            background: string;
-        };
-        Black: {
-            name: string;
-            background: string;
-        };
-        bridge: {
-            name: string;
-            background: string;
-        };
         camp: {
             name: string;
             background: string;
         };
-        dungeonentranceclose: {
+        woods: {
             name: string;
             background: string;
         };
-        dungeonentrance: {
+        mountain: {
             name: string;
             background: string;
         };
-        dungeonstairs: {
+        cave: {
             name: string;
             background: string;
         };
-        moutain: {
-            name: string;
-            background: string;
-        };
-        fight: {
-            name: string;
-            background: string;
-        };
-        sea: {
-            name: string;
-            background: string;
-        };
-        tower: {
-            name: string;
-            background: string;
-        };
-        waterfallhideout: {
-            name: string;
-            background: string;
-        };
-        waterfalls: {
-            name: string;
-            background: string;
-        };
-        window: {
-            name: string;
-            background: string;
-        };
-        woodsflowers: {
-            name: string;
-            background: string;
-        };
-        woodspath: {
-            name: string;
-            background: string;
-        };
-        schule: {
-            name: string;
-            background: string;
-        };
-        pause: {
+        Black: {
             name: string;
             background: string;
         };
@@ -340,10 +272,13 @@ declare namespace Template {
             Skill2: string;
             Skill3: string;
             Strength: number;
-            relside1: number;
-            relside2: number;
-            relside3: number;
         };
+        relside1: number;
+        scoreside1: string;
+        relside2: number;
+        scoreside2: string;
+        relside3: number;
+        scoreside3: string;
         Side1: {
             name: string;
             origin: ƒ.ORIGIN2D;
@@ -396,12 +331,17 @@ declare namespace Template {
             Skill3: string;
         };
     };
+    function volplus(): void;
+    function volminus(): void;
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function audiouebung(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function credits(): Promise<void>;
 }
 declare namespace Template {
     function meter(): ƒS.SceneReturn;

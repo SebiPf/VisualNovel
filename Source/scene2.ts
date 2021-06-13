@@ -6,13 +6,16 @@ namespace Template {
         await ƒS.Character.hideAll();
         ƒS.update();
         await ƒS.Location.show(locations.Black);
-        ƒS.update(1);
+        ƒS.update(0);
         await ƒS.Text.print("A few Hours later...");
+        
         await ƒS.Location.show(locations.camp);
         await ƒS.update(1);
         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90,90));
+        await ƒS.update(1);
         await ƒS.Speech.tell(stats.Side3, "Hey are you ready to go?");
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5,90));
+        await ƒS.update(1);
         await ƒS.Speech.tell(stats.Main, "Yes let`s go");
         await ƒS.Speech.tell(stats.Side3, "Let`s get the others");
         await ƒS.Character.hideAll();
@@ -22,10 +25,17 @@ namespace Template {
         ƒS.update(1);
         await ƒS.Text.print("After you arrive at the shore you realise the weather is getting worse.");
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5,90));
+        ƒS.update(1);
         await ƒS.Speech.tell(stats.Main, "Guys should we go back? It seems the weather is getting really bad...");
+        await ƒS.Character.hideAll();
+        await ƒS.update(1);
         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90,90));
+        ƒS.update(1);
         await ƒS.Speech.tell(stats.Side2, "No we will be fine lets just make a fire");
+        await ƒS.Character.hideAll();
+        await ƒS.update(1);
         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90,90));
+        ƒS.update(1);
         await ƒS.Speech.tell(stats.Side3, "Yea I`ll go get firewood do you want to help me " + stats.Main.name + "?");
         let firstDialogueElementAnswers = {
             sayYes: "Yes",
@@ -38,7 +48,7 @@ namespace Template {
                 await ƒS.Character.hideAll();
                 ƒS.update(1);
                 await ƒS.Text.print("You and " + stats.Side3.name + " decide to go together to get the wood");
-                await ƒS.Location.show(locations.woodscamp);
+                await ƒS.Location.show(locations.woods);
                 ƒS.update(1);
                 await ƒS.Text.print("As you are further away from the others " + stats.Side3.name + " decides to start a conversation with you");
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90,90));
@@ -65,7 +75,7 @@ namespace Template {
                     case secondDialogueElementAnswers.sayYes:
                         await ƒS.Speech.tell(stats.Main, "Lets go back I think we have enough wood");
                         await ƒS.Speech.tell(stats.Side3, "Yes I think so too");
-                        stats.Main.relside3 += 5;
+                        stats.relside3 += 5;
                         await ƒS.Character.hideAll();
                         await ƒS.update();
 
@@ -77,7 +87,7 @@ namespace Template {
                         await ƒS.Speech.tell(stats.Main, "I never really talked with anybody about it. So I felt like I can talk woth you about it");
                         await ƒS.Speech.tell(stats.Side3, "Yea");
                         await ƒS.Text.print("You and " + stats.Side3.name + " had a long conversation about your parents and their accident");
-                        stats.Main.relside3 += 10;
+                        stats.relside3 += 10;
                         await ƒS.Location.show(locations.Black);
                         await ƒS.Character.hideAll();
                         ƒS.update(1);
@@ -87,14 +97,14 @@ namespace Template {
                         ƒS.update(1);
                         await ƒS.Character.hideAll();
                         ƒS.update();
-                        scenecount = "scene2b";
+                        scenecount = "scene3";
                         await ƒS.update();
                         return scenecount;   
                 }
                 
 
 
-                scenecount = "scene2b";
+                scenecount = "scene3";
                 return scenecount
             case secondDialogueElementAnswers.sayNo:
                 await ƒS.Text.print("You decided to stay and let " + stats.Side3.name + "get the wood");
@@ -163,8 +173,8 @@ namespace Template {
         
         
         
-                                stats.Main.relside1 -= 5;
-                                stats.Main.relside2 += 10;
+                                stats.relside1 -= 5;
+                                stats.relside2 += 10;
                                 scenecount = "scene3";
                                 return scenecount;  
         
@@ -187,8 +197,8 @@ namespace Template {
                                 await ƒS.Speech.tell(stats.Main, "I`ll tell you something if I find one I`ll give it to you");
                                 await ƒS.Speech.tell(stats.Side1, "That would be so nice of you");
                                 await ƒS.Speech.tell(stats.Side1, "Oh look " + stats.Side2.name + " and " + stats.Side3.name + " are coming back");
-                                stats.Main.relside2 -= 5;
-                                stats.Main.relside1 += 10;
+                                stats.relside2 -= 5;
+                                stats.relside1 += 10;
                                 scenecount = "scene3";
                                 return scenecount;  
                         }
@@ -206,15 +216,10 @@ namespace Template {
                         await ƒS.Speech.tell(stats.Main, "Thats a great Idea I`ll take you on that offer some day");
                         await ƒS.Speech.tell(stats.Side2, "Hey look " + stats.Side3.name + " is voming back with the fire wood");
                         await ƒS.Speech.tell(stats.Main, "Finally");
-                        stats.Main.relside2 += 10;
+                        stats.relside2 += 10;
                         scenecount = "scene3";
                         return scenecount;  
                 }
-
-
-
-
-
 
                 scenecount = "scene3";
                 await ƒS.update();

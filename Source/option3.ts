@@ -13,7 +13,7 @@ namespace Template {
         stats.Main.Skill1 = "Fireball";
         stats.Main.Skill2 = "Lightning";
         stats.Main.Skill3 = "Windstrike";
-
+        
         stats.Side1.name = "Hando"
         stats.Side1.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Side1.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
@@ -53,6 +53,9 @@ namespace Template {
         stats.Side3.Skill2 = "Swordattack";
         stats.Side3.Skill3 = "Swordslash";
 
+        stats.scoreside1 = "Hando"
+        stats.scoreside2 = "Liraz"
+        stats.scoreside3 = "Adira"
 
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);
@@ -80,9 +83,9 @@ namespace Template {
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                stats.Main.relside1 += 10;
-                stats.Main.relside2 += 10;
-                stats.Main.relside3 += 10;
+                stats.relside1 += 10;
+                stats.relside2 += 10;
+                stats.relside3 += 10;
                 stats.char1.points += 5;
                 scenecount = "scene2";
                 return scenecount
@@ -116,9 +119,9 @@ namespace Template {
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        stats.Main.relside1 += 5;
-                        stats.Main.relside2 += 15;
-                        stats.Main.relside3 += 5;
+                        stats.relside1 += 5;
+                        stats.relside2 += 15;
+                        stats.relside3 += 5;
                         await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
                         await ƒS.Character.hide(stats.Main)
                         await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(5, 90))

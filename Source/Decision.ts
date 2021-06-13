@@ -29,7 +29,7 @@ namespace Template {
         //ƒS.Speech.setTickerDelays(30, 2)
         //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
 
-        await ƒS.Location.show(locations.shore);
+        await ƒS.Location.show(locations.seafire);
         await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
        // await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await ƒS.update();

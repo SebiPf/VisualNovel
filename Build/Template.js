@@ -30,7 +30,7 @@ var Template;
         //await ƒS.Speech.tell(characters.Girl, text.Girl.T0001);
         //await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0001);
         //await ƒS.Character.hide(characters.Girl);
-        await Template.ƒS.Location.show(Template.locations.shore);
+        await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         //await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
     }
@@ -41,7 +41,7 @@ var Template;
     async function scene1() {
         console.log("options");
         await Template.ƒS.Location.show(Template.locations.white);
-        await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.normal, Template.ƒS.positionPercent(50, 90));
+        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
         await Template.ƒS.update();
         await Template.ƒS.Text.print("Please enter your Name");
         //names eingabe
@@ -127,7 +127,7 @@ var Template;
             duration: 1,
             playmode: Template.ƒS.ANIMATION_PLAYMODE.REVERSELOOP
         };
-        await Template.ƒS.Location.show(Template.locations.waterfall);
+        await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.Character.animate(Template.characters.Adira, Template.characters.Adira.pose.normal, animation);
         await Template.ƒS.update(2);
     }
@@ -154,7 +154,7 @@ var Template;
         //ƒS.Inventory.open();
         //ƒS.Speech.setTickerDelays(30, 2)
         //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
-        await Template.ƒS.Location.show(Template.locations.shore);
+        await Template.ƒS.Location.show(Template.locations.seafire);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         // await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await Template.ƒS.update();
@@ -234,95 +234,27 @@ var Template;
     Template.locations = {
         seafire: {
             name: "seafireplace",
-            background: "./Images/Backgrounds/sea_fireplace.jpg"
-        },
-        shore: {
-            name: "shore",
-            background: "./Images/Backgrounds/shore.jpg"
-        },
-        view: {
-            name: "view",
-            background: "./Images/Backgrounds/view.jpg"
-        },
-        woodscamp: {
-            name: "woodscamp",
-            background: "./Images/Backgrounds/woods_camp.png"
-        },
-        waterfall: {
-            name: "waterfall",
-            background: "./Images/Backgrounds/waterfall.jpg"
-        },
-        charselect: {
-            name: "charselect",
-            background: "./Images/Backgrounds/CharSelect.png"
-        },
-        Black: {
-            name: "Black",
-            background: "./Images/Backgrounds/black.png"
-        },
-        bridge: {
-            name: "bridge",
-            background: "./Images/Backgrounds/bridge.jpg"
+            background: "./Images/Backgrounds/shore.png"
         },
         camp: {
             name: "camp",
-            background: "./Images/Backgrounds/camp.png"
+            background: "./Images/Backgrounds/dorf.png"
         },
-        dungeonentranceclose: {
-            name: "Dungeonentranceclose",
-            background: "./Images/Backgrounds/dungeon_entance_close.jpg"
+        woods: {
+            name: "woods",
+            background: "./Images/Backgrounds/Forest.png"
         },
-        dungeonentrance: {
-            name: "dungeonentrance",
-            background: "./Images/Backgrounds/dungeon_entrance.png"
+        mountain: {
+            name: "mountain",
+            background: "./Images/Backgrounds/mountain.png"
         },
-        dungeonstairs: {
-            name: "dungeonstair",
-            background: "./Images/Backgrounds/dungeon_stair.jpg"
+        cave: {
+            name: "cave",
+            background: "./Images/Backgrounds/cave.png"
         },
-        moutain: {
-            name: "fieldmoutain",
-            background: "./Images/Backgrounds/field_moutain.png"
-        },
-        fight: {
-            name: "fight",
-            background: "./Images/Backgrounds/fight.jpg"
-        },
-        sea: {
-            name: "sea",
-            background: "./Images/Backgrounds/sea.jpg"
-        },
-        tower: {
-            name: "towerwoods",
-            background: "./Images/Backgrounds/tower_woods.png"
-        },
-        waterfallhideout: {
-            name: "waterfallhideout",
-            background: "./Images/Backgrounds/waterfall_hideout.jpg"
-        },
-        waterfalls: {
-            name: "waterfalls",
-            background: "./Images/Backgrounds/waterfalls.png"
-        },
-        window: {
-            name: "windowsunrise",
-            background: "./Images/Backgrounds/window_sunrise.gif"
-        },
-        woodsflowers: {
-            name: "woodsflowers",
-            background: "./Images/Backgrounds/woods_flowers.jpg"
-        },
-        woodspath: {
-            name: "woodspath",
-            background: "./Images/Backgrounds/woods_path.png"
-        },
-        schule: {
-            name: "schule",
-            background: "./Images/Backgrounds/859076.jpg"
-        },
-        pause: {
-            name: "pausen",
-            background: "./Images/Backgrounds/pause.jpg"
+        Black: {
+            name: "black",
+            background: "./Images/Backgrounds/black.png"
         },
         white: {
             name: "white",
@@ -544,10 +476,13 @@ var Template;
             Skill2: "",
             Skill3: "",
             Strength: 0,
-            relside1: 0,
-            relside2: 0,
-            relside3: 0,
         },
+        relside1: 0,
+        scoreside1: "",
+        relside2: 0,
+        scoreside2: "",
+        relside3: 0,
+        scoreside3: "",
         Side1: {
             name: "",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
@@ -600,6 +535,54 @@ var Template;
             Skill3: ""
         },
     };
+    let volume = 1.0;
+    function volplus() {
+        if (volume < 10) {
+            volume += 0.1;
+            Template.ƒS.Sound.setVolume(Template.sound.classroom, volume);
+        }
+    }
+    Template.volplus = volplus;
+    function volminus() {
+        if (volume > 0) {
+            volume -= 0.1;
+            Template.ƒS.Sound.setVolume(Template.sound.classroom, volume);
+        }
+    }
+    Template.volminus = volminus;
+    let inGameMenue = {
+        save: "Save",
+        load: "Load",
+        close: "Close",
+        volplus: "+",
+        volminus: "-",
+        credits: "Credits",
+        about: "about"
+    };
+    let gameMenue;
+    gameMenue;
+    async function buttonfunc(_option) {
+        if (_option == inGameMenue.save) {
+            await Template.ƒS.Progress.save();
+        }
+        else if (_option == inGameMenue.load) {
+            await Template.ƒS.Progress.load();
+        }
+        else if (_option == inGameMenue.close) {
+            close();
+        }
+        else if (_option == inGameMenue.volplus) {
+            volplus();
+        }
+        else if (_option == inGameMenue.volminus) {
+            volminus();
+        }
+        else if (_option == inGameMenue.credits) {
+            Template.credits();
+        }
+        else if (_option == inGameMenue.about) {
+        }
+    }
     document.addEventListener("keydown", hndKeypress);
     async function hndKeypress(_event) {
         switch (_event.code) {
@@ -619,6 +602,8 @@ var Template;
     }
     window.addEventListener("load", start);
     function start(_event) {
+        gameMenue =
+            Template.ƒS.Menu.create(inGameMenue, buttonfunc, "gameMenue");
         let scenes = [
             //{id: "meter", scene: meter, name: "meter"},
             //{scene: audiouebung, name: "audioübung"}
@@ -635,11 +620,13 @@ var Template;
             { id: "skill3", scene: Template.skill3, name: "skill3", next: Template.scenecount },
             { id: "scene2", scene: Template.scene2, name: "scene2", next: Template.scenecount },
             { id: "scene2b", scene: Template.scene2b, name: "scene2b", next: Template.scenecount },
+            { id: "scene3", scene: Template.scene3, name: "scene3", next: Template.scenecount },
             { id: "scene4", scene: Template.scene4, name: "scene4" },
+            { id: "credits", scene: Template.credits, name: "credits" },
         ];
-        //let uiElement: HTMLElement =document.querySelector("[type= interface]");
-        //stats.state = ƒS.Progress.setDataInterface(stats.state, uiElement);
-        Template.ƒS.Progress.setData(Template.stats);
+        let uiElement = document.querySelector("[type= interface]");
+        Template.stats = Template.ƒS.Progress.setData(Template.stats, uiElement);
+        //ƒS.Progress.setData(stats);
         Template.ƒS.Progress.go(scenes);
     }
 })(Template || (Template = {}));
@@ -654,7 +641,7 @@ var Template;
 (function (Template) {
     async function audiouebung() {
         let signalDelay2s = Template.ƒS.Progress.defineSignal([() => Template.ƒS.Progress.delay(2)]);
-        await Template.ƒS.Location.show(Template.locations.pause);
+        await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.update();
         await Template.ƒS.Speech.set(Template.characters.Narrator, "Wir sollten uns solangsam beeilen, du weißt Herr Peters ist immer sehr streng was Pünktlichkeit angeht.");
         Template.ƒS.update();
@@ -663,7 +650,7 @@ var Template;
         await Template.ƒS.Sound.fade(Template.sound.bell, 1, 1);
         signalDelay2s();
         await Template.ƒS.Sound.play(Template.sound.steps, 0.6, true);
-        await Template.ƒS.Location.show(Template.locations.schule);
+        await Template.ƒS.Location.show(Template.locations.Black);
         Template.ƒS.update(2);
         await Template.ƒS.update(Template.transition.clock.duration, Template.transition.clock.alpha, Template.transition.clock.edge);
         await Template.ƒS.Sound.fade(Template.sound.steps, 0, 0);
@@ -673,6 +660,24 @@ var Template;
         await Template.ƒS.Sound.fade(Template.sound.classroom, 0.0, 5);
     }
     Template.audiouebung = audiouebung;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function credits() {
+        console.log("credits");
+        await Template.ƒS.Location.show(Template.locations.mountain);
+        Template.ƒS.update();
+        await Template.ƒS.Text.print("The Image that is currently in the Background was created by Vicente Nitti (@vnitti)");
+        await Template.ƒS.Text.print("The socials are the following");
+        await Template.ƒS.Text.print("Twitter:   https://twitter.com/vnitti_art");
+        await Template.ƒS.Text.print("Itch.io:   https://vnitti.itch.io/");
+        await Template.ƒS.Text.print("Patreon:   https://patreon.com/vnitti");
+        await Template.ƒS.Text.print("Portfolio: https://deviantart.com/vnitti");
+        await Template.ƒS.Text.print(" All other images and Assets are free to use and can be found on the following website");
+        await Template.ƒS.Text.print("https://itch.io/game-assets/free/tag-pixel-art");
+        await Template.ƒS.Text.print("Feel free to support any of the creators");
+    }
+    Template.credits = credits;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -737,6 +742,9 @@ var Template;
         Template.stats.Side3.Skill1 = "Skystrike";
         Template.stats.Side3.Skill2 = "Swordattack";
         Template.stats.Side3.Skill3 = "Swordslash";
+        Template.stats.scoreside1 = "Samara";
+        Template.stats.scoreside2 = "Liraz";
+        Template.stats.scoreside3 = "Adira";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
@@ -760,10 +768,13 @@ var Template;
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                Template.stats.Main.relside1 += 10;
-                Template.stats.Main.relside2 += 10;
-                Template.stats.Main.relside3 += 10;
-                Template.stats.char1.points += 5;
+                Template.stats.relside1 += 10;
+                Template.stats.relside2 += 10;
+                Template.stats.relside3 += 10;
+                //stats.char1.points += 5;
+                //stats.relside1 += 5;
+                console.log("relside1" + Template.stats.relside1);
+                Template.ƒS.update();
                 Template.scenecount = "scene2";
                 return Template.scenecount;
                 break;
@@ -778,7 +789,8 @@ var Template;
                 Template.ƒS.update(1);
                 await Template.ƒS.Text.print("A few minutes later " + Template.stats.Side2.name + " walks up to you");
                 await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(90, 90));
-                Template.ƒS.update();
+                await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(90, 90));
+                Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.stats.Side2, "Hey can we talk for a second?");
                 await Template.ƒS.Speech.tell(Template.stats.Main, "Sure what is bothering you?");
                 await Template.ƒS.Speech.tell(Template.stats.Side2, "I was worried because you said you don`t want to come with us is everything allright?");
@@ -793,9 +805,9 @@ var Template;
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        Template.stats.Main.relside1 += 5;
-                        Template.stats.Main.relside2 += 15;
-                        Template.stats.Main.relside3 += 5;
+                        Template.stats.relside1 += 5;
+                        Template.stats.relside2 += 15;
+                        Template.stats.relside3 += 5;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         await Template.ƒS.Character.hide(Template.stats.Main);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.happy, Template.ƒS.positionPercent(5, 90));
@@ -890,6 +902,9 @@ var Template;
         Template.stats.Side3.Skill1 = "Skystrike";
         Template.stats.Side3.Skill2 = "Swordattack";
         Template.stats.Side3.Skill3 = "Swordslash";
+        Template.stats.scoreside1 = "Samara";
+        Template.stats.scoreside2 = "Hando";
+        Template.stats.scoreside3 = "Adira";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
@@ -913,9 +928,9 @@ var Template;
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                Template.stats.Main.relside1 += 10;
-                Template.stats.Main.relside2 += 10;
-                Template.stats.Main.relside3 += 10;
+                Template.stats.relside1 += 10;
+                Template.stats.relside2 += 10;
+                Template.stats.relside3 += 10;
                 Template.stats.char1.points += 5;
                 Template.scenecount = "scene2";
                 return Template.scenecount;
@@ -946,9 +961,9 @@ var Template;
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        Template.stats.Main.relside1 += 5;
-                        Template.stats.Main.relside2 += 15;
-                        Template.stats.Main.relside3 += 5;
+                        Template.stats.relside1 += 5;
+                        Template.stats.relside2 += 15;
+                        Template.stats.relside3 += 5;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         await Template.ƒS.Character.hide(Template.stats.Main);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.happy, Template.ƒS.positionPercent(5, 90));
@@ -1039,6 +1054,9 @@ var Template;
         Template.stats.Side3.Skill1 = "Skystrike";
         Template.stats.Side3.Skill2 = "Swordattack";
         Template.stats.Side3.Skill3 = "Swordslash";
+        Template.stats.scoreside1 = "Hando";
+        Template.stats.scoreside2 = "Liraz";
+        Template.stats.scoreside3 = "Adira";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
@@ -1062,9 +1080,9 @@ var Template;
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                Template.stats.Main.relside1 += 10;
-                Template.stats.Main.relside2 += 10;
-                Template.stats.Main.relside3 += 10;
+                Template.stats.relside1 += 10;
+                Template.stats.relside2 += 10;
+                Template.stats.relside3 += 10;
                 Template.stats.char1.points += 5;
                 Template.scenecount = "scene2";
                 return Template.scenecount;
@@ -1095,9 +1113,9 @@ var Template;
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        Template.stats.Main.relside1 += 5;
-                        Template.stats.Main.relside2 += 15;
-                        Template.stats.Main.relside3 += 5;
+                        Template.stats.relside1 += 5;
+                        Template.stats.relside2 += 15;
+                        Template.stats.relside3 += 5;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         await Template.ƒS.Character.hide(Template.stats.Main);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.happy, Template.ƒS.positionPercent(5, 90));
@@ -1188,6 +1206,9 @@ var Template;
         Template.stats.Side3.Skill1 = "Bowshot";
         Template.stats.Side3.Skill2 = "Fastshot";
         Template.stats.Side3.Skill3 = "Rollshot";
+        Template.stats.scoreside1 = "Samara";
+        Template.stats.scoreside2 = "Liraz";
+        Template.stats.scoreside3 = "Hando";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
@@ -1211,9 +1232,9 @@ var Template;
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                Template.stats.Main.relside1 += 10;
-                Template.stats.Main.relside2 += 10;
-                Template.stats.Main.relside3 += 10;
+                Template.stats.relside1 += 10;
+                Template.stats.relside2 += 10;
+                Template.stats.relside3 += 10;
                 Template.stats.char1.points += 5;
                 Template.scenecount = "scene2";
                 return Template.scenecount;
@@ -1244,9 +1265,9 @@ var Template;
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        Template.stats.Main.relside1 += 5;
-                        Template.stats.Main.relside2 += 15;
-                        Template.stats.Main.relside3 += 5;
+                        Template.stats.relside1 += 5;
+                        Template.stats.relside2 += 15;
+                        Template.stats.relside3 += 5;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         await Template.ƒS.Character.hide(Template.stats.Main);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.happy, Template.ƒS.positionPercent(5, 90));
@@ -1295,13 +1316,15 @@ var Template;
         await Template.ƒS.Character.hideAll();
         Template.ƒS.update();
         await Template.ƒS.Location.show(Template.locations.Black);
-        Template.ƒS.update(1);
+        Template.ƒS.update(0);
         await Template.ƒS.Text.print("A few Hours later...");
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Side3, "Hey are you ready to go?");
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+        await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Main, "Yes let`s go");
         await Template.ƒS.Speech.tell(Template.stats.Side3, "Let`s get the others");
         await Template.ƒS.Character.hideAll();
@@ -1311,10 +1334,17 @@ var Template;
         Template.ƒS.update(1);
         await Template.ƒS.Text.print("After you arrive at the shore you realise the weather is getting worse.");
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+        Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Main, "Guys should we go back? It seems the weather is getting really bad...");
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Side2, "No we will be fine lets just make a fire");
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea I`ll go get firewood do you want to help me " + Template.stats.Main.name + "?");
         let firstDialogueElementAnswers = {
             sayYes: "Yes",
@@ -1326,7 +1356,7 @@ var Template;
                 await Template.ƒS.Character.hideAll();
                 Template.ƒS.update(1);
                 await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " decide to go together to get the wood");
-                await Template.ƒS.Location.show(Template.locations.woodscamp);
+                await Template.ƒS.Location.show(Template.locations.woods);
                 Template.ƒS.update(1);
                 await Template.ƒS.Text.print("As you are further away from the others " + Template.stats.Side3.name + " decides to start a conversation with you");
                 await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
@@ -1352,7 +1382,7 @@ var Template;
                     case secondDialogueElementAnswers.sayYes:
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Lets go back I think we have enough wood");
                         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yes I think so too");
-                        Template.stats.Main.relside3 += 5;
+                        Template.stats.relside3 += 5;
                         await Template.ƒS.Character.hideAll();
                         await Template.ƒS.update();
                     case secondDialogueElementAnswers.sayNo:
@@ -1363,7 +1393,7 @@ var Template;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "I never really talked with anybody about it. So I felt like I can talk woth you about it");
                         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea");
                         await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " had a long conversation about your parents and their accident");
-                        Template.stats.Main.relside3 += 10;
+                        Template.stats.relside3 += 10;
                         await Template.ƒS.Location.show(Template.locations.Black);
                         await Template.ƒS.Character.hideAll();
                         Template.ƒS.update(1);
@@ -1373,11 +1403,11 @@ var Template;
                         Template.ƒS.update(1);
                         await Template.ƒS.Character.hideAll();
                         Template.ƒS.update();
-                        Template.scenecount = "scene2b";
+                        Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;
                 }
-                Template.scenecount = "scene2b";
+                Template.scenecount = "scene3";
                 return Template.scenecount;
             case secondDialogueElementAnswers.sayNo:
                 await Template.ƒS.Text.print("You decided to stay and let " + Template.stats.Side3.name + "get the wood");
@@ -1437,8 +1467,8 @@ var Template;
                                 await Template.ƒS.Character.hideAll();
                                 await Template.ƒS.update();
                                 await Template.ƒS.Text.print("you and " + Template.stats.Side2.name + " went back to the fireplace");
-                                Template.stats.Main.relside1 -= 5;
-                                Template.stats.Main.relside2 += 10;
+                                Template.stats.relside1 -= 5;
+                                Template.stats.relside2 += 10;
                                 Template.scenecount = "scene3";
                                 return Template.scenecount;
                             case fourthDialogueElementAnswers.sayNo:
@@ -1460,8 +1490,8 @@ var Template;
                                 await Template.ƒS.Speech.tell(Template.stats.Main, "I`ll tell you something if I find one I`ll give it to you");
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "That would be so nice of you");
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "Oh look " + Template.stats.Side2.name + " and " + Template.stats.Side3.name + " are coming back");
-                                Template.stats.Main.relside2 -= 5;
-                                Template.stats.Main.relside1 += 10;
+                                Template.stats.relside2 -= 5;
+                                Template.stats.relside1 += 10;
                                 Template.scenecount = "scene3";
                                 return Template.scenecount;
                         }
@@ -1478,7 +1508,7 @@ var Template;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Thats a great Idea I`ll take you on that offer some day");
                         await Template.ƒS.Speech.tell(Template.stats.Side2, "Hey look " + Template.stats.Side3.name + " is voming back with the fire wood");
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Finally");
-                        Template.stats.Main.relside2 += 10;
+                        Template.stats.relside2 += 10;
                         Template.scenecount = "scene3";
                         return Template.scenecount;
                 }
@@ -1514,33 +1544,71 @@ var Template;
         console.log("scene3");
         await Template.ƒS.Location.show(Template.locations.seafire);
         await Template.ƒS.update(1);
-        await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.Text.print("As everyone was back at the fire you wanted to get the Fire Going");
+        await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+        await Template.ƒS.Speech.tell(Template.stats.Main, "Lets go guys lets get the Fire going");
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 3");
+        await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
+        await Template.ƒS.Speech.tell(Template.stats.Side1, "Yea its getting a bit cold now");
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(1);
+        await Template.ƒS.Text.print("You took out your firestone and started the fire when " + Template.stats.Side3.name + " started to talk");
+        await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+        await Template.ƒS.Speech.tell(Template.stats.Side3, "So Guys since we have time the next few weeks I wanted to do something");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.stats.Side2, "What do you want to do?");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.stats.Side3, "Well I was thinking about something bigger maybe do a Training Camp or something");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update();
+        await Template.ƒS.Speech.tell(Template.stats.Side1, "What about an Adventure?");
+        await Template.ƒS.Speech.tell(Template.stats.Side1, "We never went on an real Adventure together did we?");
+        await Template.ƒS.Speech.tell(Template.stats.Side1, "And this way we would be training together and its more fun than a Training Camp in my Opinion");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
+        await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+        Template.ƒS.update(1);
         let firstDialogueElementAnswers = {
-            Char1: Template.stats.Main.Skill1,
-            Char2: Template.stats.Main.Skill2,
-            Char3: Template.stats.Main.Skill3,
+            sayYes: "A Great Adventure with my Friends I am in",
+            sayNo: "Oh yea that will be great training"
         };
         let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
         //stats.char1.points = stats.char1.points + 5;
         switch (firstDialogueElement) {
-            case firstDialogueElementAnswers.Char1:
-                //continue write on this path here
-                Template.scenecount2 = Template.scenecount;
-                Template.scenecount = "skill1";
+            case firstDialogueElementAnswers.sayYes:
+                await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
+                await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(85, 90));
+                await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(80, 90));
+                Template.ƒS.update(1);
+                await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea lets to that");
+                await Template.ƒS.Speech.tell(Template.stats.Side2, "That sounds like fun");
+                await Template.ƒS.Speech.tell(Template.stats.Side1, "Since we are already here lets just go tomorrow");
+                Template.stats.relside1 += 5;
+                Template.stats.relside2 += 5;
+                Template.stats.relside2 += 5;
+                Template.scenecount = "scene4";
                 return Template.scenecount;
                 break;
-            case firstDialogueElementAnswers.Char2:
-                Template.scenecount2 = Template.scenecount;
-                Template.scenecount = "skill2";
+            case firstDialogueElementAnswers.sayNo:
+                await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
+                await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(80, 90));
+                await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(70, 90));
+                Template.ƒS.update(1);
+                await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea lets to that");
+                await Template.ƒS.Speech.tell(Template.stats.Side2, "That sounds like fun");
+                await Template.ƒS.Speech.tell(Template.stats.Side1, "Since we are already here lets just go tomorrow");
+                Template.stats.Main.Strength += 5;
+                Template.scenecount = "scene4";
                 return Template.scenecount;
                 //stats.char1.points = stats.char1.points + 1;
-                break;
-            case firstDialogueElementAnswers.Char3:
-                Template.scenecount2 = Template.scenecount;
-                Template.scenecount = "skill3";
-                return Template.scenecount;
                 break;
         }
     }
@@ -1550,31 +1618,24 @@ var Template;
 (function (Template) {
     async function scene4() {
         console.log("scene4");
-        await Template.ƒS.Location.show(Template.locations.waterfallhideout);
+        await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 4");
-        Template.scenecount = "scene5";
-        let firstDialogueElementAnswers = {
-            Char1: Template.stats.Main.Skill1,
-            Char2: Template.stats.Main.Skill2,
-            Char3: Template.stats.Main.Skill3,
-        };
-        let firstDialogueElement = await Template.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
-        //stats.char1.points = stats.char1.points + 5;
-        switch (firstDialogueElement) {
-            case firstDialogueElementAnswers.Char1:
-                //continue write on this path here
-                Template.skill1funktion();
-                break;
-            case firstDialogueElementAnswers.Char2:
-                Template.skill2funktion();
-                //stats.char1.points = stats.char1.points + 1;
-                break;
-            case firstDialogueElementAnswers.Char3:
-                Template.skill3funktion();
-                break;
-        }
-        return Template.scenecount;
+        await Template.ƒS.Text.print("You Agreed to go on an Adventure with your friends");
+        await Template.ƒS.Text.print("This is the End of this Preview");
+        await Template.ƒS.Text.print("Feel free to play again since every choice leads to a different experience");
+        await Template.ƒS.Text.print("In this rund you achived the following things");
+        await Template.ƒS.Text.print("Strength: " + Template.stats.Main.Strength);
+        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side1.name + ": " + Template.stats.relside1);
+        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side2.name + ": " + Template.stats.relside2);
+        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side3.name + ": " + Template.stats.relside3);
+        await Template.ƒS.Text.print("Also you collected those items");
+        Template.ƒS.Inventory.open();
+        await Template.ƒS.Text.print("And if you wonder what will await you in the full version of this Novel");
+        await Template.ƒS.Text.print("Expect some Action");
+        Template.skill1funktion();
+        Template.skill2funktion();
+        Template.skill3funktion();
+        await Template.ƒS.Text.print("As well As some charakter development");
     }
     Template.scene4 = scene4;
 })(Template || (Template = {}));

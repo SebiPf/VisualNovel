@@ -36,7 +36,7 @@ namespace Template {
         //await ƒS.Speech.tell(characters.Girl, text.Girl.T0001);
         //await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0001);
         //await ƒS.Character.hide(characters.Girl);
-        await ƒS.Location.show(locations.shore);
+        await ƒS.Location.show(locations.Black);
         await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         //await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
         

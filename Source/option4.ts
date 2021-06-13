@@ -12,6 +12,7 @@ namespace Template {
         stats.Main.Skill1 = "Skystrike";
         stats.Main.Skill2 = "Swordattack";
         stats.Main.Skill3 = "Swordslash";
+        
 
         stats.Side1.name = "Samara"
         stats.Side1.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
@@ -25,6 +26,7 @@ namespace Template {
         stats.Side1.Skill1 = "FireBall";
         stats.Side1.Skill2 = "Lightning";
         stats.Side1.Skill3 = "Windstrike";
+        
 
         stats.Side2.name = "Liraz"
         stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
@@ -39,6 +41,7 @@ namespace Template {
         stats.Side2.Skill2 = "Swordswing";
         stats.Side2.Skill3 = "Windburst";
         
+
         stats.Side3.name = "Hando"
         stats.Side3.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Side3.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
@@ -51,8 +54,11 @@ namespace Template {
         stats.Side3.Skill1 = "Bowshot";
         stats.Side3.Skill2 = "Fastshot";
         stats.Side3.Skill3 = "Rollshot";
-
-
+        
+        stats.scoreside1 = "Samara"
+        stats.scoreside2 = "Liraz"
+        stats.scoreside3 = "Hando"
+        
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));
@@ -79,9 +85,9 @@ namespace Template {
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                stats.Main.relside1 += 10;
-                stats.Main.relside2 += 10;
-                stats.Main.relside3 += 10;
+                stats.relside1 += 10;
+                stats.relside2 += 10;
+                stats.relside3 += 10;
                 stats.char1.points += 5;
                 scenecount = "scene2";
                 return scenecount
@@ -115,9 +121,9 @@ namespace Template {
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
-                        stats.Main.relside1 += 5;
-                        stats.Main.relside2 += 15;
-                        stats.Main.relside3 += 5;
+                        stats.relside1 += 5;
+                        stats.relside2 += 15;
+                        stats.relside3 += 5;
                         await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
                         await ƒS.Character.hide(stats.Main)
                         await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(5, 90))

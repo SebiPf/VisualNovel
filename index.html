@@ -9,10 +9,26 @@
   <script src="FudgeStory/FudgeStory.js"></script>
   <script src="./Build/Template.js"></script>
   <title>Fantasy RPG </title>
+  <splash src=""/>
 </head>
 
 <body>
   <scene>
+    <div type="interface">
+      <input name= "scoreside1" type="text" disabled/>
+
+      <meter id = "side1" name="relside1" min="0" max="100" disabled></meter>
+    
+      <input name= "scoreside2" type="text" disabled/>
+
+      <meter id = "side2" name="relside2" min="0" max="100" disabled></meter>
+    
+      <input name= "scoreside3" type="text" disabled/>
+
+      <meter id = "side3" name="relside3" min="0" max="100" disabled></meter>
+    </div>
+
+    
     <canvas></canvas>
     <dialog type= "text" class="Text"></dialog>
     <speech>
@@ -32,13 +48,7 @@
       <button type="buttoninv" class="close">X</button>
       <ul></ul>
     </dialog>
-    <div>
-      <input name= "a" type="text" disabled/>
-
-      <meter name="a" min="0" max="100" disabled/>
-
-
-    </div>
+    
 
   </scene>
 </body>

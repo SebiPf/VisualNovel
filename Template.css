@@ -240,11 +240,52 @@ button[type="buttoninv"]{
   position: absolute;
   right: 5%;
 }
-meter::-webkit-meter-optimum-value{
-  background-color: red;
-}
+
 input{
 
   width: 100%;
+  
+}
+meter::-webkit-meter-bar {
+  background-color: #ececec;
+}
+
+
+meter[id="side1"] {
+  padding: 0px;
+}
+
+input[name="scoreside1"] {
+  width: 5vw;
+}
+
+meter[id="side1"]::-webkit-meter-optimum-value {
+  background-color: #719fd1;
+  
+}
+meter[id="side2"] {
+  padding: 0px;
+  
+}
+
+input[name="scoreside2"] {
+  width: 5vw;
+}
+
+meter[id="side2"]::-webkit-meter-optimum-value {
+  background-color: #719fd1;
+  
+}
+meter[id="side3"] {
+  padding: 0px;
+  
+}
+
+input[name="scoreside3"] {
+  width: 5vw;
+}
+
+meter[id="side3"]::-webkit-meter-optimum-value {
+  background-color: #719fd1;
   
 }
