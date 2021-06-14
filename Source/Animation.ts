@@ -1,16 +1,33 @@
 namespace Template {
     export async function Animation(): ƒS.SceneReturn {
 
-        let animation: ƒS.AnimationDefinition = {
-
-            start: { translation: ƒS.positions.bottomcenter, rotation: -20, scaling: new ƒS.Position(0.5, 1.5), color: ƒS.Color.CSS("red", 1) },
-            end: { translation: ƒS.positions.bottomright, rotation: 20, scaling: new ƒS.Position(1.5, 0.5), color: ƒS.Color.CSS("blue", 1) },
-            duration: 1,
-            playmode: ƒS.ANIMATION_PLAYMODE.REVERSELOOP
-        };
-        await ƒS.Location.show(locations.Black);
-        await ƒS.Character.animate(characters.Adira, characters.Adira.pose.normal, animation);
-        await ƒS.update(2);
-
+        await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst1, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst2, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst3);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst3, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst4);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst4, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst5);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst5, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst6);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst6, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst7);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst7, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst8);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst8, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst9);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst9, ƒS.positionPercent(50, 90))
+            await ƒS.update(0.1, characters.Liraz.pose.windburst9);
+            await ƒS.Character.hideAll();
+            await ƒS.update(0.1);
     }
 }

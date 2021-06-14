@@ -60,6 +60,8 @@ var Template;
         //await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.normal, ƒS.positionPercent(65, 90))
         //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
         await Template.ƒS.update();
+        await Template.ƒS.Text.print("Clarifikation Images and story is not final");
+        await Template.ƒS.Text.print("This is only a Preview of what direktion the Novel will take");
         await Template.ƒS.Text.print("Welcome to your Adventure " + Template.stats.Main.name);
         await Template.ƒS.Text.print("The first think you need to do is choose a Class");
         await Template.ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure");
@@ -121,15 +123,34 @@ var Template;
 var Template;
 (function (Template) {
     async function Animation() {
-        let animation = {
-            start: { translation: Template.ƒS.positions.bottomcenter, rotation: -20, scaling: new Template.ƒS.Position(0.5, 1.5), color: Template.ƒS.Color.CSS("red", 1) },
-            end: { translation: Template.ƒS.positions.bottomright, rotation: 20, scaling: new Template.ƒS.Position(1.5, 0.5), color: Template.ƒS.Color.CSS("blue", 1) },
-            duration: 1,
-            playmode: Template.ƒS.ANIMATION_PLAYMODE.REVERSELOOP
-        };
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.Character.animate(Template.characters.Adira, Template.characters.Adira.pose.normal, animation);
-        await Template.ƒS.update(2);
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst1, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst2);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst2, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst3);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst3, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst4);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst4, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst5);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst5, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst6);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst6, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst7);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst7, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst8);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst8, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst9);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst9, Template.ƒS.positionPercent(50, 90));
+        await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst9);
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(0.1);
     }
     Template.Animation = Animation;
 })(Template || (Template = {}));
@@ -668,14 +689,17 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.mountain);
         Template.ƒS.update();
         await Template.ƒS.Text.print("The Image that is currently in the Background was created by Vicente Nitti (@vnitti)");
+        await Template.ƒS.Text.print("It was used 1 more time where it was cut in 4 and some characters and text were put over it");
+        await Template.ƒS.Text.print("Lizenz: https://creativecommons.org/licenses/by/4.0/");
         await Template.ƒS.Text.print("The socials are the following");
         await Template.ƒS.Text.print("Twitter:   https://twitter.com/vnitti_art");
         await Template.ƒS.Text.print("Itch.io:   https://vnitti.itch.io/");
         await Template.ƒS.Text.print("Patreon:   https://patreon.com/vnitti");
         await Template.ƒS.Text.print("Portfolio: https://deviantart.com/vnitti");
-        await Template.ƒS.Text.print(" All other images and Assets are free to use and can be found on the following website");
+        await Template.ƒS.Text.print(" All other images and Assets are either free to use and can be found on the following website");
         await Template.ƒS.Text.print("https://itch.io/game-assets/free/tag-pixel-art");
         await Template.ƒS.Text.print("Feel free to support any of the creators");
+        await Template.ƒS.Text.print("Or from Adobe Stock and are lizenzes are held bei me");
     }
     Template.credits = credits;
 })(Template || (Template = {}));
@@ -818,6 +842,8 @@ var Template;
                         return Template.scenecount;
                     case secondDialogueElementAnswers.sayNo:
                         Template.stats.Main.Strength += 10;
+                        await Template.ƒS.Character.hide(Template.stats.Side2);
+                        Template.ƒS.update();
                         await Template.ƒS.Text.print("Instead of going with your friends you decided to practice");
                         await Template.ƒS.Text.print("As the day progresses you notice that the weather get really bad");
                         await Template.ƒS.Text.print("You get worried about your friends so you decide to go look for them");
@@ -831,18 +857,24 @@ var Template;
                         let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 Template.ƒS.Inventory.add(Template.items.EmptyBottle);
                                 Template.scenecount = "scene3";
                                 return Template.scenecount;
                             case thirdDialogueElementAnswers.sayNo:
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 Template.scenecount = "scene3";
                                 await Template.ƒS.update();
                                 return Template.scenecount;
                         }
-                        await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
-                        await Template.ƒS.Text.print("They are really happy that you came to look after them");
-                        await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
-                        await Template.ƒS.Speech.tell(Template.stats.Main, "Okay I`ll join you! See you later");
                         Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;
@@ -974,6 +1006,8 @@ var Template;
                         return Template.scenecount;
                     case secondDialogueElementAnswers.sayNo:
                         Template.stats.Main.Strength += 10;
+                        await Template.ƒS.Character.hide(Template.stats.Side2);
+                        Template.ƒS.update();
                         await Template.ƒS.Text.print("Instead of going with your friends you decided to practice");
                         await Template.ƒS.Text.print("As the day progresses you notice that the weather get really bad");
                         await Template.ƒS.Text.print("You get worried about your friends so you decide to go look for them");
@@ -987,15 +1021,25 @@ var Template;
                         let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 Template.ƒS.Inventory.add(Template.items.EmptyBottle);
-                                Template.scenecount = "scene2b";
+                                Template.scenecount = "scene3";
                                 return Template.scenecount;
                             case thirdDialogueElementAnswers.sayNo:
-                                Template.scenecount = "scene2b";
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                                Template.scenecount = "scene3";
                                 await Template.ƒS.update();
                                 return Template.scenecount;
                         }
-                        Template.scenecount = "scene2b";
+                        Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;
                 }
@@ -1126,6 +1170,8 @@ var Template;
                         return Template.scenecount;
                     case secondDialogueElementAnswers.sayNo:
                         Template.stats.Main.Strength += 10;
+                        await Template.ƒS.Character.hide(Template.stats.Side2);
+                        Template.ƒS.update();
                         await Template.ƒS.Text.print("Instead of going with your friends you decided to practice");
                         await Template.ƒS.Text.print("As the day progresses you notice that the weather get really bad");
                         await Template.ƒS.Text.print("You get worried about your friends so you decide to go look for them");
@@ -1139,15 +1185,25 @@ var Template;
                         let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 Template.ƒS.Inventory.add(Template.items.EmptyBottle);
-                                Template.scenecount = "scene2b";
+                                Template.scenecount = "scene3";
                                 return Template.scenecount;
                             case thirdDialogueElementAnswers.sayNo:
-                                Template.scenecount = "scene2b";
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                                Template.scenecount = "scene3";
                                 await Template.ƒS.update();
                                 return Template.scenecount;
                         }
-                        Template.scenecount = "scene2b";
+                        Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;
                 }
@@ -1278,6 +1334,8 @@ var Template;
                         return Template.scenecount;
                     case secondDialogueElementAnswers.sayNo:
                         Template.stats.Main.Strength += 10;
+                        await Template.ƒS.Character.hide(Template.stats.Side2);
+                        Template.ƒS.update();
                         await Template.ƒS.Text.print("Instead of going with your friends you decided to practice");
                         await Template.ƒS.Text.print("As the day progresses you notice that the weather get really bad");
                         await Template.ƒS.Text.print("You get worried about your friends so you decide to go look for them");
@@ -1291,15 +1349,25 @@ var Template;
                         let thirdDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
                                 Template.ƒS.Inventory.add(Template.items.EmptyBottle);
-                                Template.scenecount = "scene2b";
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                                Template.scenecount = "scene3";
                                 return Template.scenecount;
                             case thirdDialogueElementAnswers.sayNo:
-                                Template.scenecount = "scene2b";
+                                await Template.ƒS.Location.show(Template.locations.seafire);
+                                Template.ƒS.update(1);
+                                await Template.ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await Template.ƒS.Text.print("They are really happy that you came to look after them");
+                                await Template.ƒS.Text.print("You decide to stay with them since you`re already there now.");
+                                Template.scenecount = "scene3";
                                 await Template.ƒS.update();
                                 return Template.scenecount;
                         }
-                        Template.scenecount = "scene2b";
+                        Template.scenecount = "scene3";
                         await Template.ƒS.update();
                         return Template.scenecount;
                 }
@@ -1329,7 +1397,7 @@ var Template;
         await Template.ƒS.Speech.tell(Template.stats.Side3, "Let`s get the others");
         await Template.ƒS.Character.hideAll();
         await Template.ƒS.update(1);
-        await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " went to " + Template.stats.Side1.name + Template.stats.Side2.name + " to meet up.");
+        await Template.ƒS.Text.print("You and " + Template.stats.Side3.name + " went to " + Template.stats.Side1.name + " and " + Template.stats.Side2.name + " to meet up.");
         await Template.ƒS.Location.show(Template.locations.seafire);
         Template.ƒS.update(1);
         await Template.ƒS.Text.print("After you arrive at the shore you realise the weather is getting worse.");
@@ -1346,6 +1414,8 @@ var Template;
         await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
         Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea I`ll go get firewood do you want to help me " + Template.stats.Main.name + "?");
+        await Template.ƒS.Character.hideAll();
+        await Template.ƒS.update(1);
         let firstDialogueElementAnswers = {
             sayYes: "Yes",
             sayNo: "No you got this",
@@ -1385,6 +1455,9 @@ var Template;
                         Template.stats.relside3 += 5;
                         await Template.ƒS.Character.hideAll();
                         await Template.ƒS.update();
+                        Template.scenecount = "scene3";
+                        await Template.ƒS.update();
+                        return Template.scenecount;
                     case secondDialogueElementAnswers.sayNo:
                         await Template.ƒS.Speech.tell(Template.stats.Main, "So can I ask you something too?");
                         await Template.ƒS.Speech.tell(Template.stats.Side3, "Sure go for it");
@@ -1407,9 +1480,7 @@ var Template;
                         await Template.ƒS.update();
                         return Template.scenecount;
                 }
-                Template.scenecount = "scene3";
-                return Template.scenecount;
-            case secondDialogueElementAnswers.sayNo:
+            case firstDialogueElementAnswers.sayNo:
                 await Template.ƒS.Text.print("You decided to stay and let " + Template.stats.Side3.name + "get the wood");
                 await Template.ƒS.Text.print("You walk up to " + Template.stats.Side1.name + " and " + Template.stats.Side2.name + " and decide to start a conversation");
                 await Template.ƒS.Text.print("You who do you want to start a conversation with?");
@@ -1424,8 +1495,10 @@ var Template;
                         await Template.ƒS.update();
                         await Template.ƒS.Text.print("As you are sitting next to the fireplace you start a conversation with " + Template.stats.Side1.name);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+                        await Template.ƒS.update();
                         await Template.ƒS.Speech.tell(Template.stats.Main, "So what do you think how long will " + Template.stats.Side3.name + " need to get the firewood?");
                         await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.happy, Template.ƒS.positionPercent(90, 90));
+                        await Template.ƒS.update();
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Probably not as long if you helped");
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Ahh just kidding I don`t think that long");
                         await Template.ƒS.Speech.tell(Template.stats.Side1, "Afterall I am cold too");
@@ -1435,10 +1508,11 @@ var Template;
                             sayYes: "Yes",
                             sayNo: "No",
                         };
-                        let fourthDialogueElement = await Template.ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
+                        let fourthDialogueElement = await Template.ƒS.Menu.getInput(fourthDialogueElementAnswers, "dialog1");
                         switch (fourthDialogueElement) {
                             case fourthDialogueElementAnswers.sayYes:
                                 await Template.ƒS.Character.hideAll();
+                                await Template.ƒS.update();
                                 await Template.ƒS.Speech.tell(Template.stats.Main, "Sorry give me a second");
                                 await Template.ƒS.Text.print("You stand up and go after " + Template.stats.Side2.name);
                                 await Template.ƒS.Text.print("You arrive at the shore and decide to sit next to " + Template.stats.Side2.name);
@@ -1490,6 +1564,8 @@ var Template;
                                 await Template.ƒS.Speech.tell(Template.stats.Main, "I`ll tell you something if I find one I`ll give it to you");
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "That would be so nice of you");
                                 await Template.ƒS.Speech.tell(Template.stats.Side1, "Oh look " + Template.stats.Side2.name + " and " + Template.stats.Side3.name + " are coming back");
+                                await Template.ƒS.Character.hideAll();
+                                await Template.ƒS.update();
                                 Template.stats.relside2 -= 5;
                                 Template.stats.relside1 += 10;
                                 Template.scenecount = "scene3";
@@ -1498,8 +1574,10 @@ var Template;
                     case thirdDialogueElementAnswers.sayNo:
                         await Template.ƒS.Text.print("As you are sitting next to the fireplace you start a conversation with " + Template.stats.Side2.name);
                         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+                        await Template.ƒS.update();
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Are we just relaxing today or do you guys have more plans for tonight?");
                         await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.happy, Template.ƒS.positionPercent(90, 90));
+                        await Template.ƒS.update();
                         await Template.ƒS.Speech.tell(Template.stats.Side2, "No today we just planned to relax");
                         await Template.ƒS.Speech.tell(Template.stats.Side2, "Oh and how did you do on your hunting trip did you catch something?");
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Great I cought a Dragon but one of the smaller once");
@@ -1508,6 +1586,8 @@ var Template;
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Thats a great Idea I`ll take you on that offer some day");
                         await Template.ƒS.Speech.tell(Template.stats.Side2, "Hey look " + Template.stats.Side3.name + " is voming back with the fire wood");
                         await Template.ƒS.Speech.tell(Template.stats.Main, "Finally");
+                        await Template.ƒS.Character.hideAll();
+                        await Template.ƒS.update();
                         Template.stats.relside2 += 10;
                         Template.scenecount = "scene3";
                         return Template.scenecount;
@@ -1518,7 +1598,6 @@ var Template;
         }
         await Template.ƒS.Location.show(Template.locations.seafire);
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Narrator, "scene 2");
         Template.scenecount = "scene3";
         return Template.scenecount;
     }
@@ -1546,14 +1625,17 @@ var Template;
         await Template.ƒS.update(1);
         await Template.ƒS.Text.print("As everyone was back at the fire you wanted to get the Fire Going");
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
+        Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.stats.Main, "Lets go guys lets get the Fire going");
         await Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.stats.Side1, "Yea its getting a bit cold now");
         await Template.ƒS.Character.hideAll();
         await Template.ƒS.update(1);
         await Template.ƒS.Text.print("You took out your firestone and started the fire when " + Template.stats.Side3.name + " started to talk");
         await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(90, 90));
+        Template.ƒS.update();
         await Template.ƒS.Speech.tell(Template.stats.Side3, "So Guys since we have time the next few weeks I wanted to do something");
         await Template.ƒS.Character.hideAll();
         Template.ƒS.update();
@@ -1599,8 +1681,8 @@ var Template;
                 break;
             case firstDialogueElementAnswers.sayNo:
                 await Template.ƒS.Character.show(Template.stats.Side1, Template.stats.Side1.pose.normal, Template.ƒS.positionPercent(90, 90));
-                await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(80, 90));
-                await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(70, 90));
+                await Template.ƒS.Character.show(Template.stats.Side2, Template.stats.Side2.pose.normal, Template.ƒS.positionPercent(75, 90));
+                await Template.ƒS.Character.show(Template.stats.Side3, Template.stats.Side3.pose.normal, Template.ƒS.positionPercent(60, 90));
                 Template.ƒS.update(1);
                 await Template.ƒS.Speech.tell(Template.stats.Side3, "Yea lets to that");
                 await Template.ƒS.Speech.tell(Template.stats.Side2, "That sounds like fun");
@@ -1618,23 +1700,34 @@ var Template;
 (function (Template) {
     async function scene4() {
         console.log("scene4");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
         await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
         await Template.ƒS.Text.print("You Agreed to go on an Adventure with your friends");
         await Template.ƒS.Text.print("This is the End of this Preview");
         await Template.ƒS.Text.print("Feel free to play again since every choice leads to a different experience");
         await Template.ƒS.Text.print("In this rund you achived the following things");
         await Template.ƒS.Text.print("Strength: " + Template.stats.Main.Strength);
-        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side1.name + ": " + Template.stats.relside1);
-        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side2.name + ": " + Template.stats.relside2);
-        await Template.ƒS.Text.print("Affection to : " + Template.stats.Side3.name + ": " + Template.stats.relside3);
+        await Template.ƒS.Text.print("Affection to " + Template.stats.Side1.name + ": " + Template.stats.relside1);
+        await Template.ƒS.Text.print("Affection to " + Template.stats.Side2.name + ": " + Template.stats.relside2);
+        await Template.ƒS.Text.print("Affection to " + Template.stats.Side3.name + ": " + Template.stats.relside3);
         await Template.ƒS.Text.print("Also you collected those items");
         Template.ƒS.Inventory.open();
+        await Template.ƒS.Location.show(Template.locations.Black);
+        Template.ƒS.update(3);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
+        Template.ƒS.Inventory.close();
         await Template.ƒS.Text.print("And if you wonder what will await you in the full version of this Novel");
         await Template.ƒS.Text.print("Expect some Action");
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
         Template.skill1funktion();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
         Template.skill2funktion();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
         Template.skill3funktion();
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "");
         await Template.ƒS.Text.print("As well As some charakter development");
     }
     Template.scene4 = scene4;
@@ -1768,102 +1861,102 @@ var Template;
         console.log("skill1");
         if (Template.stats.Main.Skill1 == "Skystrike") {
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike2, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike3, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike4, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike5, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike6, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Adira, Template.characters.Adira.pose.skystrike7, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
         }
         else if (Template.stats.Main.Skill1 == "Bowshot") {
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot2, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot3, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot4, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot5, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Hando, Template.characters.Hando.pose.bowshot6, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
         }
         else if (Template.stats.Main.Skill1 == "Blindinglight") {
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight2, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight3, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight4, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight5, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight6, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.blindinglight7, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
         }
         else if (Template.stats.Main.Skill1 == "Fireball") {
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball2, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball3, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball4, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball5, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball6, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball7, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball8, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Samara, Template.characters.Samara.pose.fireball9, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
             await Template.ƒS.Character.hideAll();
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.2);
         }
     }
     Template.skill1funktion = skill1funktion;
@@ -2257,7 +2350,7 @@ var Template;
         }
         else if (Template.stats.Main.Skill3 == "Windburst") {
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst1, Template.ƒS.positionPercent(50, 90));
-            await Template.ƒS.update(0.1);
+            await Template.ƒS.update(0.1, Template.characters.Liraz.pose.windburst2);
             await Template.ƒS.Character.hideAll();
             await Template.ƒS.Character.show(Template.characters.Liraz, Template.characters.Liraz.pose.windburst2, Template.ƒS.positionPercent(50, 90));
             await Template.ƒS.update(0.1);

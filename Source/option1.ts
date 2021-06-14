@@ -144,6 +144,8 @@ namespace Template {
                         
                     case secondDialogueElementAnswers.sayNo:
                         stats.Main.Strength += 10;
+                        await ƒS.Character.hide(stats.Side2);
+                        ƒS.update();
                         await ƒS.Text.print("Instead of going with your friends you decided to practice");
                         await ƒS.Text.print("As the day progresses you notice that the weather get really bad");
                         await ƒS.Text.print("You get worried about your friends so you decide to go look for them");
@@ -159,19 +161,27 @@ namespace Template {
                         let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
+                                await ƒS.Location.show(locations.seafire);
+                                ƒS.update(1);
+                                await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await ƒS.Text.print("They are really happy that you came to look after them");
+                                await ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 ƒS.Inventory.add(items.EmptyBottle);
                                 scenecount = "scene3";
                                 return scenecount
                             case thirdDialogueElementAnswers.sayNo:
+                                await ƒS.Location.show(locations.seafire);
+                                ƒS.update(1);
+                                await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
+                                await ƒS.Text.print("They are really happy that you came to look after them");
+                                await ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 scenecount = "scene3";
                                 await ƒS.update();
                                 return scenecount;   
                         }
                         
-                        await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
-                        await ƒS.Text.print("They are really happy that you came to look after them");
-                        await ƒS.Text.print("You decide to stay with them since you`re already there now.");
-                        await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
+                        
+                        
                         
                         scenecount = "scene3";
                         await ƒS.update();

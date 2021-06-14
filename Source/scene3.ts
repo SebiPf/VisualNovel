@@ -6,14 +6,17 @@ namespace Template {
         await ƒS.update(1);
         await ƒS.Text.print("As everyone was back at the fire you wanted to get the Fire Going");
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));
+        ƒS.update();
         await ƒS.Speech.tell(stats.Main, "Lets go guys lets get the Fire going");
         await ƒS.update(1);
         await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90));
+        ƒS.update();
         await ƒS.Speech.tell(stats.Side1, "Yea its getting a bit cold now");
         await ƒS.Character.hideAll();
         await ƒS.update(1);
         await ƒS.Text.print("You took out your firestone and started the fire when " + stats.Side3.name + " started to talk");
         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90));
+        ƒS.update();
         await ƒS.Speech.tell(stats.Side3, "So Guys since we have time the next few weeks I wanted to do something");
         await ƒS.Character.hideAll();
         ƒS.update();
@@ -64,8 +67,8 @@ namespace Template {
             case firstDialogueElementAnswers.sayNo:
                 
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90));
-                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(80, 90));
-                await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(70, 90));
+                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(75, 90));
+                await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(60, 90));
                 ƒS.update(1);
                 await ƒS.Speech.tell(stats.Side3, "Yea lets to that");
                 await ƒS.Speech.tell(stats.Side2, "That sounds like fun");

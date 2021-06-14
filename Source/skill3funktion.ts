@@ -65,7 +65,7 @@ namespace Template {
         }
         else if(stats.Main.Skill3 == "Windburst"){
             await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst1, ƒS.positionPercent(50, 90))
-            await ƒS.update(0.1);
+            await ƒS.update(0.1, characters.Liraz.pose.windburst2);
             await ƒS.Character.hideAll();
             await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst2, ƒS.positionPercent(50, 90))
             await ƒS.update(0.1);
