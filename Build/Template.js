@@ -46,7 +46,11 @@ var Template;
         await Template.ƒS.Text.print("Please enter your Name");
         //names eingabe
         //stats.Protagonist.name = await ƒS.Speech.getInput();
+        await Template.ƒS.Location.show(Template.locations.whitename);
+        await Template.ƒS.update();
         Template.stats.Main.name = await Template.ƒS.Speech.getInput();
+        await Template.ƒS.Location.show(Template.locations.white);
+        await Template.ƒS.update();
         //characters.Main.name += ":  ";
         //ƒS.Inventory.add(items.Healthpotion);
         //ƒS.Inventory.add(items.Scroll);
@@ -280,6 +284,10 @@ var Template;
         white: {
             name: "white",
             background: "./Images/Backgrounds/White.png"
+        },
+        whitename: {
+            name: "whitename",
+            background: "./Images/Backgrounds/whiteentername.png"
         },
     };
     // define Carr

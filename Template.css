@@ -243,7 +243,8 @@ button[type="buttoninv"]{
 
 input{
 
-  width: 100%;
+  width: 20%;
+  
   
 }
 meter::-webkit-meter-bar {

@@ -53,7 +53,10 @@ namespace Template {
       name: "white",
       background: "./Images/Backgrounds/White.png"
     },
-    
+    whitename: {
+      name: "whitename",
+      background: "./Images/Backgrounds/whiteentername.png"
+    },
 
 
   };

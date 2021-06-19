@@ -57,6 +57,10 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        whitename: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         Narrator: {

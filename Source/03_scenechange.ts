@@ -11,7 +11,11 @@ namespace Template {
             await ƒS.Text.print("Please enter your Name")
             //names eingabe
             //stats.Protagonist.name = await ƒS.Speech.getInput();
+            await ƒS.Location.show(locations.whitename);
+            await ƒS.update();
             stats.Main.name = await ƒS.Speech.getInput();
+            await ƒS.Location.show(locations.white);
+            await ƒS.update();
             //characters.Main.name += ":  ";
             //ƒS.Inventory.add(items.Healthpotion);
             //ƒS.Inventory.add(items.Scroll);
