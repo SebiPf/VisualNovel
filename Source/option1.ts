@@ -13,31 +13,31 @@ namespace Template {
         stats.Main.Skill2 = "Fastshot";
         stats.Main.Skill3 = "Rollshot";
 
-        stats.Side1.name = "Samara"
-        stats.Side1.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
-        stats.Side1.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
-        stats.Side1.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
-        stats.Side1.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
-        stats.Side1.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
-        stats.Side1.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
-        stats.Side1.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
-        stats.Side1.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
-        stats.Side1.Skill1 = "FireBall";
-        stats.Side1.Skill2 = "Lightning";
-        stats.Side1.Skill3 = "Windstrike";
+        stats.Side2.name = "Samara"
+        stats.Side2.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
+        stats.Side2.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
+        stats.Side2.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
+        stats.Side2.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
+        stats.Side2.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
+        stats.Side2.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
+        stats.Side2.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
+        stats.Side2.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
+        stats.Side2.Skill1 = "FireBall";
+        stats.Side2.Skill2 = "Lightning";
+        stats.Side2.Skill3 = "Windstrike";
         
-        stats.Side2.name = "Liraz"
-        stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
-        stats.Side2.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
-        stats.Side2.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
-        stats.Side2.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
-        stats.Side2.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
-        stats.Side2.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
-        stats.Side2.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
-        stats.Side2.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
-        stats.Side2.Skill1 = "Blindinglight";
-        stats.Side2.Skill2 = "Swordswing";
-        stats.Side2.Skill3 = "Windburst";
+        stats.Side1.name = "Liraz"
+        stats.Side1.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
+        stats.Side1.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
+        stats.Side1.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
+        stats.Side1.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
+        stats.Side1.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
+        stats.Side1.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
+        stats.Side1.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
+        stats.Side1.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
+        stats.Side1.Skill1 = "Blindinglight";
+        stats.Side1.Skill2 = "Swordswing";
+        stats.Side1.Skill3 = "Windburst";
         
         stats.Side3.name = "Adira"
         stats.Side3.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
@@ -53,8 +53,8 @@ namespace Template {
         stats.Side3.Skill3 = "Swordslash";
 
 
-        stats.scoreside1 = "Samara"
-        stats.scoreside2 = "Liraz"
+        stats.scoreside2 = "Samara"
+        stats.scoreside1 = "Liraz"
         stats.scoreside3 = "Adira"
 
 

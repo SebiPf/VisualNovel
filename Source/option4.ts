@@ -46,7 +46,7 @@ namespace Template {
         stats.Side3.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Side3.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         stats.Side3.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
-        stats.Side3.pose.unhappy = "../Images/Characters/Archer/ArcherUnHappy.png";
+        stats.Side3.pose.unhappy = "./Images/Characters/Archer/ArcherUnHappy.png";
         stats.Side3.pose.angry = "./Images/Characters/Archer/ArcherAngry.png";
         stats.Side3.pose.arrogant = "./Images/Characters/Archer/ArcherArrogant.png";
         stats.Side3.pose.mediumlove = "./Images/Characters/Archer/ArcherMediumLove.png";

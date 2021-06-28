@@ -259,6 +259,8 @@ declare namespace Template {
         state: {
             a: number;
         };
+        number: number;
+        random: number;
         Main: {
             name: string;
             origin: ƒ.ORIGIN2D;
@@ -375,6 +377,9 @@ declare namespace Template {
     function scene4(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function scene5(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function setscene(): string;
 }
 declare namespace Template {
@@ -387,11 +392,14 @@ declare namespace Template {
     function skill2(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function skill2funktion(): ƒS.SceneReturn;
+    function skill2funktion(): Promise<void>;
 }
 declare namespace Template {
     function skill3(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function skill3funktion(): ƒS.SceneReturn;
+    function skill3funktion(): Promise<void>;
+}
+declare namespace Template {
+    function throwdice(): Promise<void>;
 }

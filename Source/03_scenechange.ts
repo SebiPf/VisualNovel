@@ -8,6 +8,7 @@ namespace Template {
             await ƒS.Location.show(locations.white);
             //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
             await ƒS.update();
+            throwdice();
             await ƒS.Text.print("Please enter your Name")
             //names eingabe
             //stats.Protagonist.name = await ƒS.Speech.getInput();
@@ -16,6 +17,7 @@ namespace Template {
             stats.Main.name = await ƒS.Speech.getInput();
             await ƒS.Location.show(locations.white);
             await ƒS.update();
+            
             //characters.Main.name += ":  ";
             //ƒS.Inventory.add(items.Healthpotion);
             //ƒS.Inventory.add(items.Scroll);

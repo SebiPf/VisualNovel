@@ -125,6 +125,9 @@ speech.Ryu content {
   padding: 10px;  
 
 }
+canvas{
+  background-size: cover;
+}
 #sayYes{
   position: relative;
   width: 50%;

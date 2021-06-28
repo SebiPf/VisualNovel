@@ -18,7 +18,7 @@ namespace Template {
         stats.Side1.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Side1.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         stats.Side1.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
-        stats.Side1.pose.unhappy = "../Images/Characters/Archer/ArcherUnHappy.png";
+        stats.Side1.pose.unhappy = "./Images/Characters/Archer/ArcherUnHappy.png";
         stats.Side1.pose.angry = "./Images/Characters/Archer/ArcherAngry.png";
         stats.Side1.pose.arrogant = "./Images/Characters/Archer/ArcherArrogant.png";
         stats.Side1.pose.mediumlove = "./Images/Characters/Archer/ArcherMediumLove.png";
@@ -27,35 +27,35 @@ namespace Template {
         stats.Side1.Skill2 = "Fastshot";
         stats.Side1.Skill3 = "Rollshot";
 
-        stats.Side2.name = "Liraz"
-        stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
-        stats.Side2.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
-        stats.Side2.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
-        stats.Side2.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
-        stats.Side2.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
-        stats.Side2.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
-        stats.Side2.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
-        stats.Side2.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
-        stats.Side2.Skill1 = "Blindinglight";
-        stats.Side2.Skill2 = "Swordswing";
-        stats.Side2.Skill3 = "Windburst";
+        stats.Side3.name = "Liraz"
+        stats.Side3.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
+        stats.Side3.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
+        stats.Side3.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
+        stats.Side3.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
+        stats.Side3.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
+        stats.Side3.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
+        stats.Side3.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
+        stats.Side3.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
+        stats.Side3.Skill1 = "Blindinglight";
+        stats.Side3.Skill2 = "Swordswing";
+        stats.Side3.Skill3 = "Windburst";
         
-        stats.Side3.name = "Adira"
-        stats.Side3.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
-        stats.Side3.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
-        stats.Side3.pose.veryhappy = "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png";
-        stats.Side3.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
-        stats.Side3.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
-        stats.Side3.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
-        stats.Side3.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
-        stats.Side3.Skill1 = "Skystrike";
-        stats.Side3.Skill2 = "Swordattack";
-        stats.Side3.Skill3 = "Swordslash";
+        stats.Side2.name = "Adira"
+        stats.Side2.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
+        stats.Side2.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
+        stats.Side2.pose.veryhappy = "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png";
+        stats.Side2.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
+        stats.Side2.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
+        stats.Side2.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
+        stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        stats.Side2.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
+        stats.Side2.Skill1 = "Skystrike";
+        stats.Side2.Skill2 = "Swordattack";
+        stats.Side2.Skill3 = "Swordslash";
 
         stats.scoreside1 = "Hando"
-        stats.scoreside2 = "Liraz"
-        stats.scoreside3 = "Adira"
+        stats.scoreside3 = "Liraz"
+        stats.scoreside2 = "Adira"
 
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);

@@ -273,6 +273,8 @@ namespace Template {
     state:{
       a: 0
     },
+    number: 0,
+    random: 0,
     
     Main:{
       name: "",

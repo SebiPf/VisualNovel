@@ -43,6 +43,7 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.white);
         //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
         await Template.ƒS.update();
+        Template.throwdice();
         await Template.ƒS.Text.print("Please enter your Name");
         //names eingabe
         //stats.Protagonist.name = await ƒS.Speech.getInput();
@@ -184,7 +185,7 @@ var Template;
         // await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await Template.ƒS.update();
         //names eingabe
-        Template.stats.Protagonist.name = await Template.ƒS.Speech.getInput();
+        //stats.Protagonist.name = await ƒS.Speech.getInput();
         // text ohne schreib animation
         //await ƒS.Speech.set(characters.Ryu, text.Girl.T0000)
         //ƒS.Sound.play(sound.click, 1);
@@ -488,6 +489,8 @@ var Template;
         state: {
             a: 0
         },
+        number: 0,
+        random: 0,
         Main: {
             name: "",
             origin: Template.ƒS.ORIGIN.BOTTOMCENTER,
@@ -738,30 +741,30 @@ var Template;
         Template.stats.Main.Skill1 = "Bowshot";
         Template.stats.Main.Skill2 = "Fastshot";
         Template.stats.Main.Skill3 = "Rollshot";
-        Template.stats.Side1.name = "Samara";
-        Template.stats.Side1.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
-        Template.stats.Side1.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
-        Template.stats.Side1.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
-        Template.stats.Side1.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
-        Template.stats.Side1.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
-        Template.stats.Side1.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
-        Template.stats.Side1.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
-        Template.stats.Side1.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
-        Template.stats.Side1.Skill1 = "FireBall";
-        Template.stats.Side1.Skill2 = "Lightning";
-        Template.stats.Side1.Skill3 = "Windstrike";
-        Template.stats.Side2.name = "Liraz";
-        Template.stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
-        Template.stats.Side2.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
-        Template.stats.Side2.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
-        Template.stats.Side2.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
-        Template.stats.Side2.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
-        Template.stats.Side2.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
-        Template.stats.Side2.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
-        Template.stats.Side2.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
-        Template.stats.Side2.Skill1 = "Blindinglight";
-        Template.stats.Side2.Skill2 = "Swordswing";
-        Template.stats.Side2.Skill3 = "Windburst";
+        Template.stats.Side2.name = "Samara";
+        Template.stats.Side2.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
+        Template.stats.Side2.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
+        Template.stats.Side2.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
+        Template.stats.Side2.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
+        Template.stats.Side2.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
+        Template.stats.Side2.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
+        Template.stats.Side2.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
+        Template.stats.Side2.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
+        Template.stats.Side2.Skill1 = "FireBall";
+        Template.stats.Side2.Skill2 = "Lightning";
+        Template.stats.Side2.Skill3 = "Windstrike";
+        Template.stats.Side1.name = "Liraz";
+        Template.stats.Side1.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
+        Template.stats.Side1.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
+        Template.stats.Side1.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
+        Template.stats.Side1.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
+        Template.stats.Side1.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
+        Template.stats.Side1.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
+        Template.stats.Side1.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
+        Template.stats.Side1.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
+        Template.stats.Side1.Skill1 = "Blindinglight";
+        Template.stats.Side1.Skill2 = "Swordswing";
+        Template.stats.Side1.Skill3 = "Windburst";
         Template.stats.Side3.name = "Adira";
         Template.stats.Side3.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
         Template.stats.Side3.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
@@ -774,8 +777,8 @@ var Template;
         Template.stats.Side3.Skill1 = "Skystrike";
         Template.stats.Side3.Skill2 = "Swordattack";
         Template.stats.Side3.Skill3 = "Swordslash";
-        Template.stats.scoreside1 = "Samara";
-        Template.stats.scoreside2 = "Liraz";
+        Template.stats.scoreside2 = "Samara";
+        Template.stats.scoreside1 = "Liraz";
         Template.stats.scoreside3 = "Adira";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
@@ -922,7 +925,7 @@ var Template;
         Template.stats.Side2.pose.normal = "./Images/Characters/Archer/Archer1.png";
         Template.stats.Side2.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         Template.stats.Side2.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
-        Template.stats.Side2.pose.unhappy = "../Images/Characters/Archer/ArcherUnHappy.png";
+        Template.stats.Side2.pose.unhappy = "./Images/Characters/Archer/ArcherUnHappy.png";
         Template.stats.Side2.pose.angry = "./Images/Characters/Archer/ArcherAngry.png";
         Template.stats.Side2.pose.arrogant = "./Images/Characters/Archer/ArcherArrogant.png";
         Template.stats.Side2.pose.mediumlove = "./Images/Characters/Archer/ArcherMediumLove.png";
@@ -1074,7 +1077,7 @@ var Template;
         Template.stats.Side1.pose.normal = "./Images/Characters/Archer/Archer1.png";
         Template.stats.Side1.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         Template.stats.Side1.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
-        Template.stats.Side1.pose.unhappy = "../Images/Characters/Archer/ArcherUnHappy.png";
+        Template.stats.Side1.pose.unhappy = "./Images/Characters/Archer/ArcherUnHappy.png";
         Template.stats.Side1.pose.angry = "./Images/Characters/Archer/ArcherAngry.png";
         Template.stats.Side1.pose.arrogant = "./Images/Characters/Archer/ArcherArrogant.png";
         Template.stats.Side1.pose.mediumlove = "./Images/Characters/Archer/ArcherMediumLove.png";
@@ -1082,33 +1085,33 @@ var Template;
         Template.stats.Side1.Skill1 = "Bowshot";
         Template.stats.Side1.Skill2 = "Fastshot";
         Template.stats.Side1.Skill3 = "Rollshot";
-        Template.stats.Side2.name = "Liraz";
-        Template.stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
-        Template.stats.Side2.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
-        Template.stats.Side2.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
-        Template.stats.Side2.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
-        Template.stats.Side2.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
-        Template.stats.Side2.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
-        Template.stats.Side2.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
-        Template.stats.Side2.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
-        Template.stats.Side2.Skill1 = "Blindinglight";
-        Template.stats.Side2.Skill2 = "Swordswing";
-        Template.stats.Side2.Skill3 = "Windburst";
-        Template.stats.Side3.name = "Adira";
-        Template.stats.Side3.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
-        Template.stats.Side3.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
-        Template.stats.Side3.pose.veryhappy = "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png";
-        Template.stats.Side3.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
-        Template.stats.Side3.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
-        Template.stats.Side3.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        Template.stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
-        Template.stats.Side3.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
-        Template.stats.Side3.Skill1 = "Skystrike";
-        Template.stats.Side3.Skill2 = "Swordattack";
-        Template.stats.Side3.Skill3 = "Swordslash";
+        Template.stats.Side3.name = "Liraz";
+        Template.stats.Side3.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
+        Template.stats.Side3.pose.happy = "./Images/Characters/Nightstalker/NightstalkerHappy.png";
+        Template.stats.Side3.pose.veryhappy = "./Images/Characters/Nightstalker/NightstalkerVeryHappy.png";
+        Template.stats.Side3.pose.unhappy = "./Images/Characters/Nightstalker/NightstalkerUnHappy.png";
+        Template.stats.Side3.pose.angry = "./Images/Characters/Nightstalker/NightstalkerAngry.png";
+        Template.stats.Side3.pose.arrogant = "./Images/Characters/Nightstalker/NightstalkerArrogant.png";
+        Template.stats.Side3.pose.mediumlove = "./Images/Characters/Nightstalker/NightstalkerMediumLove.png";
+        Template.stats.Side3.pose.inlove = "./Images/Characters/Nightstalker/NightstalkerInLove.png";
+        Template.stats.Side3.Skill1 = "Blindinglight";
+        Template.stats.Side3.Skill2 = "Swordswing";
+        Template.stats.Side3.Skill3 = "Windburst";
+        Template.stats.Side2.name = "Adira";
+        Template.stats.Side2.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
+        Template.stats.Side2.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
+        Template.stats.Side2.pose.veryhappy = "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png";
+        Template.stats.Side2.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
+        Template.stats.Side2.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
+        Template.stats.Side2.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
+        Template.stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        Template.stats.Side2.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
+        Template.stats.Side2.Skill1 = "Skystrike";
+        Template.stats.Side2.Skill2 = "Swordattack";
+        Template.stats.Side2.Skill3 = "Swordslash";
         Template.stats.scoreside1 = "Hando";
-        Template.stats.scoreside2 = "Liraz";
-        Template.stats.scoreside3 = "Adira";
+        Template.stats.scoreside3 = "Liraz";
+        Template.stats.scoreside2 = "Adira";
         await Template.ƒS.Location.show(Template.locations.camp);
         await Template.ƒS.update(2);
         await Template.ƒS.Character.show(Template.stats.Main, Template.stats.Main.pose.normal, Template.ƒS.positionPercent(5, 90));
@@ -1262,7 +1265,7 @@ var Template;
         Template.stats.Side3.pose.normal = "./Images/Characters/Archer/Archer1.png";
         Template.stats.Side3.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         Template.stats.Side3.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
-        Template.stats.Side3.pose.unhappy = "../Images/Characters/Archer/ArcherUnHappy.png";
+        Template.stats.Side3.pose.unhappy = "./Images/Characters/Archer/ArcherUnHappy.png";
         Template.stats.Side3.pose.angry = "./Images/Characters/Archer/ArcherAngry.png";
         Template.stats.Side3.pose.arrogant = "./Images/Characters/Archer/ArcherArrogant.png";
         Template.stats.Side3.pose.mediumlove = "./Images/Characters/Archer/ArcherMediumLove.png";
@@ -1739,6 +1742,17 @@ var Template;
         await Template.ƒS.Text.print("As well As some charakter development");
     }
     Template.scene4 = scene4;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function scene5() {
+        console.log("scene5");
+        await Template.ƒS.Character.hideAll();
+        Template.ƒS.update();
+        Template.scenecount = "scene6";
+        return Template.scenecount;
+    }
+    Template.scene5 = scene5;
 })(Template || (Template = {}));
 var Template;
 (function (Template) {
@@ -2418,5 +2432,14 @@ var Template;
         }
     }
     Template.skill3funktion = skill3funktion;
+})(Template || (Template = {}));
+var Template;
+(function (Template) {
+    async function throwdice() {
+        console.log("throw dice");
+        Template.stats.random = Math.floor(Math.random() * Template.stats.number + 1);
+        console.log("random number is " + Template.stats.random);
+    }
+    Template.throwdice = throwdice;
 })(Template || (Template = {}));
 //# sourceMappingURL=Template.js.map

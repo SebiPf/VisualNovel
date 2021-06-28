@@ -1,5 +1,5 @@
 namespace Template {
-    export async function skill2funktion(): ƒS.SceneReturn {
+    export async function skill2funktion(){
         console.log("skill2");
 
 

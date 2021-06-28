@@ -34,7 +34,7 @@ namespace Template {
        // await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
         await ƒS.update();
         //names eingabe
-        stats.Protagonist.name = await ƒS.Speech.getInput();
+        //stats.Protagonist.name = await ƒS.Speech.getInput();
 
         // text ohne schreib animation
         //await ƒS.Speech.set(characters.Ryu, text.Girl.T0000)
