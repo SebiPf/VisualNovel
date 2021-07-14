@@ -1,7 +1,8 @@
-namespace Template {
+namespace fantasyrpg {
     export async function scene3(): ƒS.SceneReturn {
         console.log("scene3");
         
+        //console.log(await ƒS.Inventory.open())
         await ƒS.Location.show(locations.seafire);
         await ƒS.update(1);
         await ƒS.Text.print("As everyone was back at the fire you wanted to get the Fire Going");
@@ -61,7 +62,7 @@ namespace Template {
                 stats.relside1 += 5;
                 stats.relside2 += 5;
                 stats.relside2 += 5;
-                scenecount = "scene4";
+                scenecount = "scene5";
                 return scenecount;
                 break;
             case firstDialogueElementAnswers.sayNo:
@@ -74,7 +75,7 @@ namespace Template {
                 await ƒS.Speech.tell(stats.Side2, "That sounds like fun");
                 await ƒS.Speech.tell(stats.Side1, "Since we are already here lets just go tomorrow");
                 stats.Main.Strength += 5;
-                scenecount = "scene4";
+                scenecount = "scene5";
                 return scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;

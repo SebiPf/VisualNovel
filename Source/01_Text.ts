@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function Text(): ƒS.SceneReturn {
         console.log("Tutorial");
 

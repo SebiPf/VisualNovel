@@ -1,6 +1,7 @@
-namespace Template {
+namespace fantasyrpg {
     export async function option1(): ƒS.SceneReturn {
         console.log("1stScene");
+        stats.Main.name = "Hando"
         stats.Main.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Main.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         stats.Main.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
@@ -166,7 +167,7 @@ namespace Template {
                                 await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
                                 await ƒS.Text.print("They are really happy that you came to look after them");
                                 await ƒS.Text.print("You decide to stay with them since you`re already there now.");
-                                ƒS.Inventory.add(items.EmptyBottle);
+                                //ƒS.Inventory.add(items.EmptyBottle);
                                 scenecount = "scene3";
                                 return scenecount
                             case thirdDialogueElementAnswers.sayNo:

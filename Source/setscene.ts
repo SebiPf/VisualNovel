@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export function setscene(){
         teststring = scenecount2.match(/\d+/)[0];
         test = parseInt(teststring);

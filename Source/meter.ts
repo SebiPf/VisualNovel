@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function meter(): ƒS.SceneReturn {
         console.log("4thScene");
         await ƒS.Location.show(locations.seafire);

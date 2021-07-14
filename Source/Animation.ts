@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function Animation(): ƒS.SceneReturn {
 
         await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.windburst1, ƒS.positionPercent(50, 90))

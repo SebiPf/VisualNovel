@@ -1,5 +1,5 @@
-namespace Template {
-  export async function Scene(): ƒS.SceneReturn {
+namespace fantasyrpg {
+  export async function scene(): ƒS.SceneReturn {
     console.log("FudgeStory Template Scene starting");
   }
 }

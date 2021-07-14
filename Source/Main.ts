@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
 
@@ -9,6 +9,11 @@ namespace Template {
     clock: {
       duration: 3,
       alpha: "./Images/Transitions/WipesAndOther/cw-side.jpg",
+      edge: 1
+    },
+    pixel:{
+      duration: 3,
+      alpha: "./Images/Transitions/Others/29.png",
       edge: 1
     }
   };
@@ -60,10 +65,19 @@ namespace Template {
 
 
   };
+  
   // define Carr
   export let characters = {
     Narrator: {
       name: ""
+    },
+    Scroll:{
+      name: "Advice",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "./Images/normal.png",
+        incave: "./Images/incave.png"
+      }
     },
     
     
@@ -216,44 +230,308 @@ namespace Template {
         swordslash3: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_3.png",
         swordslash4: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_4.png",
         swordslash5: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_5.png",
-
-
-
+        
+      }
+    },
+    dice:{
+      name: "dice",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        dice1: "./Images/1.png",
+        dice2: "./Images/2.png",
+        dice3: "./Images/3.png",
+        dice4: "./Images/4.png",
+        dice5: "./Images/5.png",
+        dice6: "./Images/6.png",
+      }
+    },
+    dice2:{
+      name: "dice2",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        dice1: "./Images/11.png",
+        dice2: "./Images/22.png",
+        dice3: "./Images/33.png",
+        dice4: "./Images/44.png",
+        dice5: "./Images/55.png",
+        dice6: "./Images/66.png",
+      }
+    },
+    dice3:{
+      name: "dice3",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        dice1: "./Images/111.png",
+        dice2: "./Images/222.png",
+        dice3: "./Images/333.png",
+        dice4: "./Images/444.png",
+        dice5: "./Images/555.png",
+        dice6: "./Images/666.png",
       }
     }
   };
+  	//Animation for dice
+
+  export function diceani1(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 0},
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 180 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani2(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 190},
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 360 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani3(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 370 },
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 540 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani4(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 550},
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 720 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani5(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 730},
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 900 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani6(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 910},
+      end: { translation: ƒS.positionPercent(50, 80), rotation: 1080 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani1left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80) , rotation: 0},
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 90 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani2left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 90},
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 180 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani3left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 180 },
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 270 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani4left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 270},
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 360 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani5left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 360},
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 450 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani6left(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 450},
+      end: { translation: ƒS.positionPercent(20, 80), rotation: 360 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani1right(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80) , rotation: 0},
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 90 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani2right(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 90},
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 180 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani3right(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 180 },
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 270 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani4right(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 270},
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 360 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani5right() {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 360},
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 450 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function diceani6right(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 450},
+      end: { translation: ƒS.positionPercent(80, 80), rotation: 360 },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+
+
+
+
+
+
+  function addfriendship(_event: CustomEvent): void {
+    console.log(_event);
+    if(stats.flowercheck == true){
+      ƒS.Text.print("You give " + stats.chosenrel + " the flower you found");
+      ƒS.Text.print(stats.chosenrel +" really likes them and gives you a kiss");
+      
+      if( stats.chosenrel in stats.Side1){
+        stats.relside1 +=20;
+        ƒS.Character.show(stats.Side1, stats.Side1.pose.inlove, ƒS.positionPercent(90, 90))
+      }
+      else if( stats.chosenrel in stats.Side2){
+        stats.relside2 +=20;
+        ƒS.Character.show(stats.Side2, stats.Side2.pose.inlove, ƒS.positionPercent(90, 90))
+      }
+      else if( stats.chosenrel in stats.Side3){
+        stats.relside3 +=20;
+        ƒS.Character.show(stats.Side3, stats.Side3.pose.inlove, ƒS.positionPercent(90, 90))
+      }
+
+    }
+    else{
+      ƒS.Inventory.add(items.Flower)
+      ƒS.Speech.tell(characters.Narrator, "You can not use that here");
+
+    }
+  }
+  
+ 
+  function addstrength(_event: CustomEvent): void {
+    console.log(_event);
+    stats.Main.Strength += 10
+  }
+  function openadvice(_event: CustomEvent): void {
+    console.log(_event);
+    
+    if(stats.incave == true){
+      let Throwdice = {
+        e1: "Feel Lucky?", 
+      };
+      let Dicethrow = ƒS.Menu.getInput(Throwdice, "dialog3");
+      stats.retreat= true;
+      }
+      else{
+        let Throwdice1 = {
+          e2: "Feel Lucky?", 
+        };
+        let Dicethrow1 = ƒS.Menu.getInput(Throwdice1, "dialog4");
+        
+        
+      }
+
+    ƒS.Character.hideAll();
+    ƒS.update(5);
+    console.log("test")
+  }
+  function usescroll(_event: CustomEvent): void {
+    console.log(_event);
+    if(stats.bossfight = true && stats.Main.name == "Samara"){
+      ƒS.Text.print("Something is happening you feel very strong all of the sudden");
+      ƒS.Text.print("You decide to fire off all your spells");
+      skill1funktion();
+      skill2funktion();
+      skill3funktion();
+      scenecount = "victory";
+      
+    }
+    else{
+      ƒS.Inventory.add(items.Scroll)
+      ƒS.Speech.tell(characters.Narrator, "You can not use that here");
+    }
+  }
+  
   
 
   export let items ={
     Healthpotion: {
       name: "Healthpotion",
       description: "Gives you some Health",
-      image: "./Images/PotionRed.png"
+      image: "./Images/PotionRed.png",
+      static: true
     },
     Flower: {
       name: "Flower",
       description: "Seems useless",
-      image: "./Images/flower.png"
+      image: "./Images/flower.png",
+      handler: addfriendship
     },
-    WaterBottle: {
-      name: "WaterBottle",
-      description: "Adds Strength",
-      image: "./Images/WaterBottle.png"
+    advice: {
+      name: "Advice",
+      description: "Has something writen on it",
+      image: "./Images/Scroll.png",
+      static: true,
+      handler: openadvice
     },
     EmptyBottle: {
       name: "EmptyBottle",
       description: "Seems useless",
-      image: "./Images/EmptyBottle.png"
+      image: "./Images/EmptyBottle.png",
     },
     Apple: {
       name: "Apple",
       description: "Adds Strenght",
-      image: "./Images/Apple.png"
+      image: "./Images/Apple.png",
+      handler: addstrength
     },
     Scroll: {
       name: "Scroll",
       description: "Seems usefull",
-      image: "./Images/Scroll.png"
+      image: "./Images/Scroll.png",
+      handler: usescroll
     }
   }
   export let scenecount = "";
@@ -273,8 +551,19 @@ namespace Template {
     state:{
       a: 0
     },
+    bossfight: false,
     number: 0,
     random: 0,
+    makePotiontest: false,
+    flowercheck: false,
+    chosenrel: "",
+    bonus: false,
+    incave: false,
+    message: "",
+    retreat: false,
+    potionamount: 0,
+
+    
     
     Main:{
       name: "",
@@ -300,6 +589,7 @@ namespace Template {
     scoreside2: "",
     relside3: 0,
     scoreside3: "",
+    relzwischenablage: 0,
     
     
     Side1:{
@@ -357,20 +647,20 @@ namespace Template {
 
   let volume: number = 1.0;
 
-  export function volplus(): void{
-    if (volume < 10){
-      volume += 0.1;
-      ƒS.Sound.setVolume(sound.classroom, volume);
-    }
+   export function volplus(): void{
+     if (volume < 10){
+       volume += 0.1;
+       ƒS.Sound.setMasterVolume(volume);
+     }
     
-  }
-  export function volminus(): void{
-    if (volume > 0){
-      volume -= 0.1;
-      ƒS.Sound.setVolume(sound.classroom, volume);
-    }
+   }
+   export function volminus(): void{
+     if (volume > 0){
+       volume -= 0.1;
+       ƒS.Sound.setMasterVolume(volume);
+     }
     
-  }
+   }
 
 
 
@@ -401,12 +691,12 @@ namespace Template {
     else if (_option == inGameMenue.close){
       close();
     }
-    else if (_option == inGameMenue.volplus){
-      volplus();
-    }
-    else if (_option == inGameMenue.volminus){
-      volminus();
-    }
+     else if (_option == inGameMenue.volplus){
+       volplus();
+     }
+     else if (_option == inGameMenue.volminus){
+       volminus();
+     }
     else if (_option == inGameMenue.credits){
       credits();
     }
@@ -414,6 +704,7 @@ namespace Template {
       
     }
   }
+  
   
 
   document.addEventListener("keydown", hndKeypress);
@@ -433,7 +724,11 @@ namespace Template {
         await ƒS.Inventory.open();
         break;
     }
+     
   }
+  
+
+
   window.addEventListener("load", start);
   function start(_event: Event): void {
 
@@ -443,12 +738,12 @@ namespace Template {
 
 
     let scenes: ƒS.Scenes = [
-      //{id: "meter", scene: meter, name: "meter"},
+      {id: "scene6", scene: testing, name: "scene6"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},
       //{scene: Animation, name: "animation"},
-      {id: "main", scene: scene1, name: "1stScene", next: scenecount},
+      {id: "scene1", scene: scene1, name: "1stScene", next: scenecount},
       {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
       {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
       {id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
@@ -459,8 +754,15 @@ namespace Template {
       {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
       {id: "scene2b", scene: scene2b, name: "scene2b", next: scenecount},
       {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
-      {id: "scene4", scene: scene4, name: "scene4"},
+      {id: "scene4", scene: scene4, name: "scene4", next: scenecount},
+      {id: "scene5", scene: scene5, name: "scene5", next: scenecount},
+      {id: "scene6", scene: scene6, name: "scene6", next: scenecount},
+      {id: "scene7", scene: scene7, name: "scene7", next: scenecount},
+      {id: "scene8", scene: scene8, name: "scene8", next: scenecount},
+      {id: "scene9", scene: scene9, name: "scene9", next: scenecount},
+      {id: "getinput", scene: getinput, name: "getinput", next: scenecount},
       {id: "credits", scene: credits, name: "credits"},
+      {id: "end", scene: end, name: "end"},
       
     ];
     let uiElement: HTMLElement =document.querySelector("[type= interface]");

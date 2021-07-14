@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function credits(){
         console.log("credits");
 

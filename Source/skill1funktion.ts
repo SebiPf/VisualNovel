@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function skill1funktion(){
         console.log("skill1");
 

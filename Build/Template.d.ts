@@ -1,26 +1,31 @@
-declare namespace Template {
+declare namespace fantasyrpg {
     function Text(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function scene1(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function Animation(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function Decision(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
-    let transition: {
+    export let transition: {
         clock: {
             duration: number;
             alpha: string;
             edge: number;
         };
+        pixel: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
     };
-    let sound: {
+    export let sound: {
         classroom: string;
         bell: string;
         break: string;
@@ -28,7 +33,7 @@ declare namespace Template {
         steps: string;
         click: string;
     };
-    let locations: {
+    export let locations: {
         seafire: {
             name: string;
             background: string;
@@ -62,9 +67,17 @@ declare namespace Template {
             background: string;
         };
     };
-    let characters: {
+    export let characters: {
         Narrator: {
             name: string;
+        };
+        Scroll: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                incave: string;
+            };
         };
         Samara: {
             name: string;
@@ -212,22 +225,95 @@ declare namespace Template {
                 swordslash5: string;
             };
         };
+        dice: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                dice1: string;
+                dice2: string;
+                dice3: string;
+                dice4: string;
+                dice5: string;
+                dice6: string;
+            };
+        };
+        dice2: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                dice1: string;
+                dice2: string;
+                dice3: string;
+                dice4: string;
+                dice5: string;
+                dice6: string;
+            };
+        };
+        dice3: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                dice1: string;
+                dice2: string;
+                dice3: string;
+                dice4: string;
+                dice5: string;
+                dice6: string;
+            };
+        };
     };
-    let items: {
+    export function diceani1(): ƒS.AnimationDefinition;
+    export function diceani2(): ƒS.AnimationDefinition;
+    export function diceani3(): ƒS.AnimationDefinition;
+    export function diceani4(): ƒS.AnimationDefinition;
+    export function diceani5(): ƒS.AnimationDefinition;
+    export function diceani6(): ƒS.AnimationDefinition;
+    export function diceani1left(): ƒS.AnimationDefinition;
+    export function diceani2left(): ƒS.AnimationDefinition;
+    export function diceani3left(): ƒS.AnimationDefinition;
+    export function diceani4left(): ƒS.AnimationDefinition;
+    export function diceani5left(): ƒS.AnimationDefinition;
+    export function diceani6left(): ƒS.AnimationDefinition;
+    export function diceani1right(): ƒS.AnimationDefinition;
+    export function diceani2right(): ƒS.AnimationDefinition;
+    export function diceani3right(): ƒS.AnimationDefinition;
+    export function diceani4right(): ƒS.AnimationDefinition;
+    export function diceani5right(): {
+        start: {
+            translation: ƒ.Vector2;
+            rotation: number;
+        };
+        end: {
+            translation: ƒ.Vector2;
+            rotation: number;
+        };
+        duration: number;
+        playmode: ƒ.ANIMATION_PLAYMODE;
+    };
+    export function diceani6right(): ƒS.AnimationDefinition;
+    function addfriendship(_event: CustomEvent): void;
+    function addstrength(_event: CustomEvent): void;
+    function openadvice(_event: CustomEvent): void;
+    function usescroll(_event: CustomEvent): void;
+    export let items: {
         Healthpotion: {
             name: string;
             description: string;
             image: string;
+            static: boolean;
         };
         Flower: {
             name: string;
             description: string;
             image: string;
+            handler: typeof addfriendship;
         };
-        WaterBottle: {
+        advice: {
             name: string;
             description: string;
             image: string;
+            static: boolean;
+            handler: typeof openadvice;
         };
         EmptyBottle: {
             name: string;
@@ -238,18 +324,20 @@ declare namespace Template {
             name: string;
             description: string;
             image: string;
+            handler: typeof addstrength;
         };
         Scroll: {
             name: string;
             description: string;
             image: string;
+            handler: typeof usescroll;
         };
     };
-    let scenecount: string;
-    let scenecount2: string;
-    let test: number;
-    let teststring: string;
-    let stats: {
+    export let scenecount: string;
+    export let scenecount2: string;
+    export let test: number;
+    export let teststring: string;
+    export let stats: {
         Protagonist: {
             name: string;
         };
@@ -259,8 +347,17 @@ declare namespace Template {
         state: {
             a: number;
         };
+        bossfight: boolean;
         number: number;
         random: number;
+        makePotiontest: boolean;
+        flowercheck: boolean;
+        chosenrel: string;
+        bonus: boolean;
+        incave: boolean;
+        message: string;
+        retreat: boolean;
+        potionamount: number;
         Main: {
             name: string;
             origin: ƒ.ORIGIN2D;
@@ -285,6 +382,7 @@ declare namespace Template {
         scoreside2: string;
         relside3: number;
         scoreside3: string;
+        relzwischenablage: number;
         Side1: {
             name: string;
             origin: ƒ.ORIGIN2D;
@@ -337,69 +435,94 @@ declare namespace Template {
             Skill3: string;
         };
     };
-    function volplus(): void;
-    function volminus(): void;
+    export function volplus(): void;
+    export function volminus(): void;
+    export {};
 }
-declare namespace Template {
-    function Scene(): ƒS.SceneReturn;
+declare namespace fantasyrpg {
+    function scene(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function audiouebung(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function credits(): Promise<void>;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
+    function end(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
+    function getinput(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
     function meter(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function option1(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function option2(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function option3(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function option4(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
+    function returnscene(): Promise<string>;
+}
+declare namespace fantasyrpg {
     function scene2(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function scene2b(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function scene3(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function scene4(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function scene5(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
+    function scene6(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
+    function scene7(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
+    function scene8(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
+    function scene9(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
     function setscene(): string;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill1(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill1funktion(): Promise<void>;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill2(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill2funktion(): Promise<void>;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill3(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
     function skill3funktion(): Promise<void>;
 }
-declare namespace Template {
+declare namespace fantasyrpg {
+    function testing(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
     function throwdice(): Promise<void>;
 }

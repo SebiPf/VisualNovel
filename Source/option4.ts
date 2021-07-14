@@ -1,6 +1,7 @@
-namespace Template {
+namespace fantasyrpg {
     export async function option4(): ƒS.SceneReturn {
         console.log("4thScene");
+        stats.Main.name = "Adira"
         stats.Main.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
         stats.Main.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
         stats.Main.pose.veryhappy = "./Images/Characters/SwordWhielder/SwordWhielderVeryHappy.png";
@@ -155,7 +156,7 @@ namespace Template {
                             case thirdDialogueElementAnswers.sayYes:
                                 await ƒS.Location.show(locations.seafire);
                                 ƒS.update(1);
-                                ƒS.Inventory.add(items.EmptyBottle);
+                                //ƒS.Inventory.add(items.EmptyBottle);
                                 await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
                                 await ƒS.Text.print("They are really happy that you came to look after them");
                                 await ƒS.Text.print("You decide to stay with them since you`re already there now.");

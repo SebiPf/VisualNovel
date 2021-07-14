@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function scene2(): ƒS.SceneReturn {
         console.log("scene2");
         stats.char1.points += 5;

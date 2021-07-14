@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function audiouebung(): ƒS.SceneReturn {
         let signalDelay2s: ƒS.Signal = ƒS.Progress.defineSignal([() => ƒS.Progress.delay(2)]);
         await ƒS.Location.show(locations.Black);

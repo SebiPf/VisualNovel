@@ -101,6 +101,27 @@ speech.Ryu content {
 #Char4:hover{
   opacity: 1;
 }
+#Throwdice{
+  color: red;
+  font-size: 5vh;
+  width: 20vh;
+  height: 20vh;
+  margin-left: 37%;
+  margin-top: 15%;
+  transition-duration: 1s;
+  opacity: 0.8;
+  border-radius:   2vh;
+  background-image: url(Images/2.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+#Throwdice:hover{
+  opacity: 1;
+  background-image: url(Images/5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 #skill1{
   position: relative;
   width: 33%;
@@ -124,6 +145,36 @@ speech.Ryu content {
   margin: 25;
   padding: 10px;  
 
+}
+
+dialog.dialog4{
+  width: 100%;
+  height: 100%;
+  background-image: url(Images/normal.png); 
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+dialog.dialog3{
+  width: 100%;
+  height: 100%;
+  background-image: url(Images/incave.png); 
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+#e1{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+#e2{
+  width: 100%;
+  height: 100%;
+  background: transparent;
 }
 canvas{
   background-size: cover;
@@ -188,23 +239,27 @@ dialog[type="inventory"]{
 dialog[type="inventory"] > ul{
   margin-left: 10%;
   margin-top: 50%;
-  border: none;
-  width: 25%;
   
-  columns: 2;
+  border: none;
+  width: 100%;
+  
+  
+  
 }
 dialog[type="inventory"] > ul > li{
   
   
-  width: 150px;
-  height: 120px;
-  padding: 0px;
+  width: 200px;
+  height: 150px;
   border: none;
   margin-top: 1%;
-  display: block;
+  
+  
+
   
 
 }
+
 dialog[type="inventory"] name{
   
   list-style: none;
@@ -213,6 +268,7 @@ dialog[type="inventory"] name{
 
 
 }
+
 
   dialog[type="inventory"] description{
     display: block;

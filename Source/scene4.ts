@@ -1,4 +1,4 @@
-namespace Template {
+namespace fantasyrpg {
     export async function scene4(): ƒS.SceneReturn {
         console.log("scene4");
         await ƒS.Character.hideAll();

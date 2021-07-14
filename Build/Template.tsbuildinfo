@@ -10,16 +10,23 @@
       "../Source/Scene.ts",
       "../Source/audioübung.ts",
       "../Source/credits.ts",
+      "../Source/end.ts",
+      "../Source/getinput.ts",
       "../Source/meter.ts",
       "../Source/option1.ts",
       "../Source/option2.ts",
       "../Source/option3.ts",
       "../Source/option4.ts",
+      "../Source/returnscene.ts",
       "../Source/scene2.ts",
       "../Source/scene2b.ts",
       "../Source/scene3.ts",
       "../Source/scene4.ts",
       "../Source/scene5.ts",
+      "../Source/scene6.ts",
+      "../Source/scene7.ts",
+      "../Source/scene8.ts",
+      "../Source/scene9.ts",
       "../Source/setscene.ts",
       "../Source/skill1.ts",
       "../Source/skill1funktion.ts",
@@ -27,6 +34,7 @@
       "../Source/skill2funktion.ts",
       "../Source/skill3.ts",
       "../Source/skill3funktion.ts",
+      "../Source/test.ts",
       "../Source/throwdice.ts"
     ],
     "js": {
@@ -39,7 +47,7 @@
         },
         {
           "pos": 15,
-          "end": 167768,
+          "end": 287456,
           "kind": "text"
         }
       ],
@@ -67,7 +75,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 11403,
+          "end": 15485,
           "kind": "text"
         }
       ]
