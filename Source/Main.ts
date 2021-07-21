@@ -12,10 +12,20 @@ namespace fantasyrpg {
       edge: 1
     },
     pixel:{
-      duration: 3,
-      alpha: "./Images/Transitions/Others/29.png",
+      duration: 1,
+      alpha: "./Images/Transitions/Others/029.png",
       edge: 1
-    }
+    },
+    fight: {
+      duration: 3,
+      alpha: "./Images/Transitions/Others/005.png",
+      edge: 1
+    },
+    speed: {
+      duration: 3,
+      alpha: "./Images/Transitions/Others/034.png",
+      edge: 1
+    },
   };
 
   //define sound
@@ -46,10 +56,6 @@ namespace fantasyrpg {
       name: "mountain",
       background: "./Images/Backgrounds/mountain.png"
     },
-    cave: {
-      name: "cave",
-      background: "./Images/Backgrounds/cave.png"
-    },
     Black: {
       name: "black",
       background: "./Images/Backgrounds/black.png"
@@ -61,6 +67,62 @@ namespace fantasyrpg {
     whitename: {
       name: "whitename",
       background: "./Images/Backgrounds/whiteentername.png"
+    },
+    alchemist: {
+      name: "alchemist",
+      background: "./Images/Backgrounds/alchemist.png"
+    },
+    cave: {
+      name: "cave",
+      background: "./Images/Backgrounds/cave.png"
+    },
+    caveboss: {
+      name: "caveboss",
+      background: "./Images/Backgrounds/caveboss.png"
+    },
+    hotspring: {
+      name: "hotspring",
+      background: "./Images/Backgrounds/hotspring.png"
+    },
+    kreuzung2: {
+      name: "kreuzung2",
+      background: "./Images/Backgrounds/kreuzung2.png"
+    },
+    tower: {
+      name: "tower",
+      background: "./Images/Backgrounds/tower.png"
+    },
+    trailblocked: {
+      name: "trailblocked",
+      background: "./Images/Backgrounds/trailblocked.png"
+    },
+    trailtomountain: {
+      name: "trailtomountain",
+      background: "./Images/Backgrounds/trailtomountain.png"
+    },
+    trailwithlake: {
+      name: "trailwithlake",
+      background: "./Images/Backgrounds/trailwithlake.png"
+    },
+    villagecenter: {
+      name: "villagecenter",
+      background: "./Images/Backgrounds/villagecenter.png"
+    },
+    waterfall: {
+      name: "waterfall",
+      background: "./Images/Backgrounds/waterfall.png"
+    },
+    zweigung: {
+      name: "zweigung",
+      background: "./Images/Backgrounds/zweigung.png"
+    },
+    trail: {
+      name: "trail",
+      background: "./Images/Backgrounds/trail.png"
+    },
+    fight: {
+      name: "fight",
+      background: "./Images/Backgrounds/fight.png"
     },
 
 
@@ -77,6 +139,58 @@ namespace fantasyrpg {
       pose: {
         normal: "./Images/normal.png",
         incave: "./Images/incave.png"
+      }
+    },
+    Stone:{
+      name: "Stone",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "./Images/Characters/Stone.png"
+      }
+    },
+    Stone2:{
+      name: "Stone1",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "./Images/Characters/Stone1.png"
+      }
+    },
+    Stone3:{
+      name: "Stone2",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "./Images/Characters/Stone2.png"
+      }
+    },
+    Knife:{
+      name: "Knife",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        normal: "./Images/Characters/Golem/Knife.png"
+      }
+    },
+    Golem:{
+      name: "Golem",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        normal: "./Images/Characters/Golem/Golem_Normal.png",
+        dead: "./Images/Characters/Golem/Golem_Dead.png",
+        knife: "./Images/Characters/Golem/Golem_Knife.png",
+        attack1: "./Images/Characters/Golem/Attack/Golem_Attack_1.png",
+        attack2: "./Images/Characters/Golem/Attack/Golem_Attack_2.png",
+        attack3: "./Images/Characters/Golem/Attack/Golem_Attack_3.png",
+        attack4: "./Images/Characters/Golem/Attack/Golem_Attack_4.png",
+        attack5: "./Images/Characters/Golem/Attack/Golem_Attack_5.png",
+        attack6: "./Images/Characters/Golem/Attack/Golem_Attack_6.png",
+        attack7: "./Images/Characters/Golem/Attack/Golem_Attack_7.png",
+        death1: "./Images/Characters/Golem/Death/Golem_Death_1.png",
+        death2: "./Images/Characters/Golem/Death/Golem_Death_2.png",
+        death3: "./Images/Characters/Golem/Death/Golem_Death_3.png",
+        death4: "./Images/Characters/Golem/Death/Golem_Death_4.png",
+        death5: "./Images/Characters/Golem/Death/Golem_Death_5.png",
+        death6: "./Images/Characters/Golem/Death/Golem_Death_6.png",
+        death7: "./Images/Characters/Golem/Death/Golem_Death_7.png",
+
       }
     },
     
@@ -271,7 +385,30 @@ namespace fantasyrpg {
     }
   };
   	//Animation for dice
-
+    export function stones(): ƒS.AnimationDefinition {
+      return {
+        start: { translation: ƒS.positionPercent(0, 0)},
+        end: { translation: ƒS.positionPercent(40, 120)},
+        duration: 3,
+        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+      };
+    }
+    export function stones1(): ƒS.AnimationDefinition {
+      return {
+        start: { translation: ƒS.positionPercent(30, 0)},
+        end: { translation: ƒS.positionPercent(70, 120)},
+        duration: 3,
+        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+      };
+    }
+    export function stones2(): ƒS.AnimationDefinition {
+      return {
+        start: { translation: ƒS.positionPercent(60, 0)},
+        end: { translation: ƒS.positionPercent(120, 120)},
+        duration: 3,
+        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+      };
+    }
   export function diceani1(): ƒS.AnimationDefinition {
     return {
       start: { translation: ƒS.positionPercent(50, 80), rotation: 0},
@@ -416,6 +553,14 @@ namespace fantasyrpg {
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
   }
+  export function knifethrow(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(80, 80)},
+      end: { translation: ƒS.positionPercent(10, 80)},
+      duration: 3,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
 
 
 
@@ -462,6 +607,7 @@ namespace fantasyrpg {
         e1: "Feel Lucky?", 
       };
       let Dicethrow = ƒS.Menu.getInput(Throwdice, "dialog3");
+      Dicethrow = Dicethrow;
       stats.retreat= true;
       }
       else{
@@ -469,7 +615,7 @@ namespace fantasyrpg {
           e2: "Feel Lucky?", 
         };
         let Dicethrow1 = ƒS.Menu.getInput(Throwdice1, "dialog4");
-        
+         Dicethrow1 = Dicethrow1;
         
       }
 
@@ -738,7 +884,7 @@ namespace fantasyrpg {
 
 
     let scenes: ƒS.Scenes = [
-      {id: "scene6", scene: testing, name: "scene6"},
+      //{id: "scene6", scene: scene9, name: "scene6"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},

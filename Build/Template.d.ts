@@ -24,6 +24,16 @@ declare namespace fantasyrpg {
             alpha: string;
             edge: number;
         };
+        fight: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
+        speed: {
+            duration: number;
+            alpha: string;
+            edge: number;
+        };
     };
     export let sound: {
         classroom: string;
@@ -50,10 +60,6 @@ declare namespace fantasyrpg {
             name: string;
             background: string;
         };
-        cave: {
-            name: string;
-            background: string;
-        };
         Black: {
             name: string;
             background: string;
@@ -63,6 +69,62 @@ declare namespace fantasyrpg {
             background: string;
         };
         whitename: {
+            name: string;
+            background: string;
+        };
+        alchemist: {
+            name: string;
+            background: string;
+        };
+        cave: {
+            name: string;
+            background: string;
+        };
+        caveboss: {
+            name: string;
+            background: string;
+        };
+        hotspring: {
+            name: string;
+            background: string;
+        };
+        kreuzung2: {
+            name: string;
+            background: string;
+        };
+        tower: {
+            name: string;
+            background: string;
+        };
+        trailblocked: {
+            name: string;
+            background: string;
+        };
+        trailtomountain: {
+            name: string;
+            background: string;
+        };
+        trailwithlake: {
+            name: string;
+            background: string;
+        };
+        villagecenter: {
+            name: string;
+            background: string;
+        };
+        waterfall: {
+            name: string;
+            background: string;
+        };
+        zweigung: {
+            name: string;
+            background: string;
+        };
+        trail: {
+            name: string;
+            background: string;
+        };
+        fight: {
             name: string;
             background: string;
         };
@@ -77,6 +139,57 @@ declare namespace fantasyrpg {
             pose: {
                 normal: string;
                 incave: string;
+            };
+        };
+        Stone: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        Stone2: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        Stone3: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        Knife: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        Golem: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                dead: string;
+                knife: string;
+                attack1: string;
+                attack2: string;
+                attack3: string;
+                attack4: string;
+                attack5: string;
+                attack6: string;
+                attack7: string;
+                death1: string;
+                death2: string;
+                death3: string;
+                death4: string;
+                death5: string;
+                death6: string;
+                death7: string;
             };
         };
         Samara: {
@@ -262,6 +375,9 @@ declare namespace fantasyrpg {
             };
         };
     };
+    export function stones(): ƒS.AnimationDefinition;
+    export function stones1(): ƒS.AnimationDefinition;
+    export function stones2(): ƒS.AnimationDefinition;
     export function diceani1(): ƒS.AnimationDefinition;
     export function diceani2(): ƒS.AnimationDefinition;
     export function diceani3(): ƒS.AnimationDefinition;
@@ -291,6 +407,7 @@ declare namespace fantasyrpg {
         playmode: ƒ.ANIMATION_PLAYMODE;
     };
     export function diceani6right(): ƒS.AnimationDefinition;
+    export function knifethrow(): ƒS.AnimationDefinition;
     function addfriendship(_event: CustomEvent): void;
     function addstrength(_event: CustomEvent): void;
     function openadvice(_event: CustomEvent): void;

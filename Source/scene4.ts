@@ -5,6 +5,7 @@ namespace fantasyrpg {
         ƒS.update();
         await ƒS.Location.show(locations.Black);
         await ƒS.update(1);
+        
         await ƒS.Speech.tell(characters.Narrator, "");
         await ƒS.Text.print("You Agreed to go on an Adventure with your friends");
         await ƒS.Text.print("This is the End of this Preview");
