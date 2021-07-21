@@ -57,7 +57,8 @@ namespace fantasyrpg {
         stats.scoreside2 = "Hando"
         stats.scoreside3 = "Adira"
 
-
+        scenecount = "scene5"
+        return scenecount
 
 
         await ƒS.Location.show(locations.camp);

@@ -41,6 +41,10 @@ declare namespace fantasyrpg {
         break: string;
         teacher: string;
         steps: string;
+        normal: string;
+        fight: string;
+        nois: string;
+        town: string;
         click: string;
     };
     export let locations: {

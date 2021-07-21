@@ -18,7 +18,7 @@ namespace fantasyrpg {
     },
     fight: {
       duration: 3,
-      alpha: "./Images/Transitions/Others/005.png",
+      alpha: "./Images/Transitions/Others/005.jpg",
       edge: 1
     },
     speed: {
@@ -36,6 +36,10 @@ namespace fantasyrpg {
     break: "./sound/schoolbreak.mp3",
     teacher: "./sound/teacherscream.wav",
     steps: "./sound/steps.wav",
+    normal: "./sound/steps.wav",
+    fight: "./sound/steps.wav",
+    nois: "./sound/steps.wav",
+    town: "./sound/steps.wav",
     //Sound
     click: ""
   };

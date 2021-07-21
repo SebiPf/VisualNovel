@@ -60,6 +60,12 @@ namespace fantasyrpg {
         stats.scoreside2 = "Liraz"
         stats.scoreside3 = "Hando"
         
+
+        scenecount = "scene5"
+                        return scenecount
+
+
+                        
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));

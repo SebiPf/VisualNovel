@@ -58,7 +58,8 @@ namespace fantasyrpg {
         stats.scoreside1 = "Liraz"
         stats.scoreside3 = "Adira"
 
-
+        scenecount = "scene5"
+        return scenecount
 
 
 
@@ -184,8 +185,7 @@ namespace fantasyrpg {
                         
                         
                         
-                        scenecount = "scene3";
-                        await ƒS.update();
+                        scenecount = "scene3"
                         return scenecount
 
                         

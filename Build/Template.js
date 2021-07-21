@@ -252,7 +252,7 @@ var fantasyrpg;
         },
         fight: {
             duration: 3,
-            alpha: "./Images/Transitions/Others/005.png",
+            alpha: "./Images/Transitions/Others/005.jpg",
             edge: 1
         },
         speed: {
@@ -269,6 +269,10 @@ var fantasyrpg;
         break: "./sound/schoolbreak.mp3",
         teacher: "./sound/teacherscream.wav",
         steps: "./sound/steps.wav",
+        normal: "./sound/steps.wav",
+        fight: "./sound/steps.wav",
+        nois: "./sound/steps.wav",
+        town: "./sound/steps.wav",
         //Sound
         click: ""
     };
@@ -1262,6 +1266,8 @@ var fantasyrpg;
         fantasyrpg.stats.scoreside2 = "Samara";
         fantasyrpg.stats.scoreside1 = "Liraz";
         fantasyrpg.stats.scoreside3 = "Adira";
+        fantasyrpg.scenecount = "scene5";
+        return fantasyrpg.scenecount;
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.camp);
         await fantasyrpg.ƒS.update(2);
         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
@@ -1369,7 +1375,6 @@ var fantasyrpg;
                                 return fantasyrpg.scenecount;
                         }
                         fantasyrpg.scenecount = "scene3";
-                        await fantasyrpg.ƒS.update();
                         return fantasyrpg.scenecount;
                 }
         }
@@ -1431,6 +1436,8 @@ var fantasyrpg;
         fantasyrpg.stats.scoreside1 = "Samara";
         fantasyrpg.stats.scoreside2 = "Hando";
         fantasyrpg.stats.scoreside3 = "Adira";
+        fantasyrpg.scenecount = "scene5";
+        return fantasyrpg.scenecount;
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.camp);
         await fantasyrpg.ƒS.update(2);
         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
@@ -1596,6 +1603,8 @@ var fantasyrpg;
         fantasyrpg.stats.scoreside1 = "Hando";
         fantasyrpg.stats.scoreside3 = "Liraz";
         fantasyrpg.stats.scoreside2 = "Adira";
+        fantasyrpg.scenecount = "scene5";
+        return fantasyrpg.scenecount;
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.camp);
         await fantasyrpg.ƒS.update(2);
         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
@@ -1761,6 +1770,8 @@ var fantasyrpg;
         fantasyrpg.stats.scoreside1 = "Samara";
         fantasyrpg.stats.scoreside2 = "Liraz";
         fantasyrpg.stats.scoreside3 = "Hando";
+        fantasyrpg.scenecount = "scene5";
+        return fantasyrpg.scenecount;
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.camp);
         await fantasyrpg.ƒS.update(2);
         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
