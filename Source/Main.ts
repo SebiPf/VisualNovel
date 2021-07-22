@@ -894,7 +894,7 @@ namespace fantasyrpg {
 
 
     let scenes: ƒS.Scenes = [
-      {id: "scene6", scene: scene9, name: "scene6"},
+      //{id: "scene6", scene: scene9, name: "scene6"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},

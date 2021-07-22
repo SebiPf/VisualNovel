@@ -1084,7 +1084,7 @@ var fantasyrpg;
         gameMenue =
             fantasyrpg.ƒS.Menu.create(inGameMenue, buttonfunc, "gameMenue");
         let scenes = [
-            { id: "scene6", scene: fantasyrpg.scene9, name: "scene6" },
+            //{id: "scene6", scene: scene9, name: "scene6"},
             //{scene: audiouebung, name: "audioübung"}
             //{ scene: Text, name: "01_Text", next: scenecount.count},
             //{scene: Decision, name: "02_Test"},
