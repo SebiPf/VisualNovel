@@ -332,7 +332,7 @@ namespace fantasyrpg {
         arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
         mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
         inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-        skystrike1: "../Images/Characters/Swordwhielder/SkyStrike/SW_SkyStrike_1.jpg",
+        skystrike1: "./Images/Characters/Swordwhielder/SkyStrike/SW_SkyStrike_1.jpg",
         skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
         skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
         skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
@@ -578,15 +578,15 @@ namespace fantasyrpg {
       ƒS.Text.print(stats.chosenrel +" really likes them and gives you a kiss");
       
       if( stats.chosenrel in stats.Side1){
-        stats.relside1 +=20;
+        stats.relside1 +=50;
         ƒS.Character.show(stats.Side1, stats.Side1.pose.inlove, ƒS.positionPercent(90, 90))
       }
       else if( stats.chosenrel in stats.Side2){
-        stats.relside2 +=20;
+        stats.relside2 +=50;
         ƒS.Character.show(stats.Side2, stats.Side2.pose.inlove, ƒS.positionPercent(90, 90))
       }
       else if( stats.chosenrel in stats.Side3){
-        stats.relside3 +=20;
+        stats.relside3 +=50;
         ƒS.Character.show(stats.Side3, stats.Side3.pose.inlove, ƒS.positionPercent(90, 90))
       }
 

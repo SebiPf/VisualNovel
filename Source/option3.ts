@@ -47,7 +47,7 @@ namespace fantasyrpg {
         stats.Side2.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         stats.Side2.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         stats.Side2.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         stats.Side2.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         stats.Side2.Skill1 = "Skystrike";
         stats.Side2.Skill2 = "Swordattack";

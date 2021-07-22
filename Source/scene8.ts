@@ -58,7 +58,7 @@ namespace fantasyrpg {
 
         };
 
-        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.city:
                 await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
@@ -94,7 +94,7 @@ namespace fantasyrpg {
 
                 };
 
-                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alchemist:
                         await ƒS.Speech.tell(stats.Main, "I really think we should go to the Alchemist first");
@@ -426,7 +426,7 @@ namespace fantasyrpg {
 
                 };
 
-                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.alone:
                         
@@ -451,7 +451,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection2 = await ƒS.Menu.getInput(skillselectionAnswer2, "dialog1");
+                        let skillselection2 = await ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
                         switch (skillselection2) {
                             case skillselectionAnswer2.skill1:
 
@@ -587,7 +587,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
 

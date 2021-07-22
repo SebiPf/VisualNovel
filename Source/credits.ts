@@ -1,33 +1,49 @@
 namespace fantasyrpg {
-    export async function credits(){
+    export async function credits() {
         console.log("credits");
         await ƒS.Location.show(locations.Black);
         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
         ƒS.Sound.play(sound.credits, 0.3, true);
         await ƒS.Location.show(locations.mountain)
         ƒS.update();
-        await ƒS.Text.print("This Game was made with Fudge(Fudge Story");
-        await ƒS.Text.print("Writing, Gamedesigne, adjusting Assets and Programming was done by Sebastian Pfeiffer");
-        await ƒS.Text.print("The Image that is currently in the Background was created by Vicente Nitti (@vnitti)");
-        await ƒS.Text.print("It was used 1 more time where it was cut in 4 and some characters and text were put over it");
-        await ƒS.Text.print("Lizenz: https://creativecommons.org/licenses/by/4.0/");
-        await ƒS.Text.print("The socials are the following");
-        await ƒS.Text.print("Twitter:   https://twitter.com/vnitti_art");
-        await ƒS.Text.print("Itch.io:   https://vnitti.itch.io/");
-        await ƒS.Text.print("Patreon:   https://patreon.com/vnitti");
-        await ƒS.Text.print("Portfolio: https://deviantart.com/vnitti");
-        await ƒS.Text.print(" All other images and Assets are either free to use and can be found on the following website");
-        await ƒS.Text.print("https://itch.io/game-assets/free/tag-pixel-art");
-        await ƒS.Text.print("Feel free to support any of the creators");
-        await ƒS.Text.print("or are drawn by Sebastian Pfeiffer");
-        
+        ƒS.Text.addClass("contract");
+        ƒS.Speech.hide();
+        let pages: string[] = ["<strong>Credits</strong> \
+      <br>This Game was made with Fudge(Fudge Story)</br>\
+      <br>Writing, Gamedesigne, adjusting Assets and Programming was done by Sebastian Pfeiffer</br>\
+      <br>The Image that is currently in the Background was created by Vicente Nitti (@vnitti)</br>\
+      <br>It was used 1 more time where it was cut in 4 and some characters and text were put over it</br>\
+      <br>Lizenz: https://creativecommons.org/licenses/by/4.0/</br>\
+      <br>The socials are the following</br>\
+      <br>Twitter:   https://twitter.com/vnitti_art</br>\
+      <br>Itch.io:   https://vnitti.itch.io/</br>\
+      <br>Patreon:   https://patreon.com/vnitti</br>\
+      <br>Portfolio: https://deviantart.com/vnitti</br>\
+      <br>Seite 1</br>", "<strong>Credits</strong>\
+      <br>All other images and Assets are either free to use and can be found on the following website</br>\
+      <br>https://itch.io/game-assets/free/tag-pixel-art</br>\
+      <br>Feel free to support any of the creators</br>\
+      <br>or are drawn by Sebastian Pfeiffer</br>\
+      <br>Musik during fights by Brian Paul Zimmerman</br>\
+      <br>https://www.youtube.com/watch?v=x6qEh02qAfU&t=3s&ab_channel=TheBigBossTheory</br>\
+      <br>Ever other Musik is from VGcomposer and free to use</br>\
+      <br><https://vgcomposer.itch.io/action-rpg-music-free/br>\
+      <br>Soundeffekts are licence free</br>\
+      <br>Seite 2</br>", "<strong>Credits</strong>"];
+        let current: number = 0;
+        let flip = { back: "Back", next: "Next", done: "Close" };
+        let choice: string;
+        ƒS.Text.addClass("flip");
+        do {
+            ƒS.Text.print(pages[current]);
+            choice = await ƒS.Menu.getInput(flip, "flip");
+            switch (choice) {
+                case flip.back: current = Math.max(0, current - 1); break;
+                case flip.next: current = Math.min(pages.length - 1, current + 1); break;
 
-
-        await ƒS.Text.print("Musik during fights by Brian Paul Zimmerman");
-        await ƒS.Text.print("https://www.youtube.com/watch?v=x6qEh02qAfU&t=3s&ab_channel=TheBigBossTheory");
-        await ƒS.Text.print("Ever other Musik is from VGcomposer and free to use");
-        await ƒS.Text.print("https://vgcomposer.itch.io/action-rpg-music-free");
-        await ƒS.Text.print("Soundeffekts are licence free");
+            }
+        } while (choice != flip.done);
+        ƒS.Text.close();
         
 
     }

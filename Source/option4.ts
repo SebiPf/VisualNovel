@@ -8,7 +8,7 @@ namespace fantasyrpg {
         stats.Main.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         stats.Main.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         stats.Main.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        stats.Main.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        stats.Main.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         stats.Main.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         stats.Main.Skill1 = "Skystrike";
         stats.Main.Skill2 = "Swordattack";
@@ -89,9 +89,9 @@ namespace fantasyrpg {
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                stats.relside1 += 10;
-                stats.relside2 += 10;
-                stats.relside3 += 10;
+                stats.relside1 += 15;
+                stats.relside2 += 15;
+                stats.relside3 += 15;
                 stats.char1.points += 5;
                 scenecount = "scene2";
                 return scenecount
@@ -126,7 +126,7 @@ namespace fantasyrpg {
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
                         stats.relside1 += 5;
-                        stats.relside2 += 15;
+                        stats.relside2 += 25;
                         stats.relside3 += 5;
                         await ƒS.Speech.tell(stats.Main, "Okay I`ll join you! See you later");
                         await ƒS.Character.hide(stats.Main)

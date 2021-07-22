@@ -15,7 +15,7 @@ namespace fantasyrpg {
         await ƒS.update();
         await ƒS.Speech.tell(stats.Side3, "I heard if you go right here there are a lot of monsters");
         await ƒS.Speech.tell(stats.Side3, "But I was never here soo...");
-        await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90));
+        await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90));
         await ƒS.update();
         await ƒS.Speech.tell(stats.Side2, "The left path looks like it is going to lead to a lake");
         await ƒS.Speech.tell(stats.Side2, "What do you think " + stats.Main.name + " where should we go?");
@@ -27,7 +27,7 @@ namespace fantasyrpg {
 
         };
 
-        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.left:
                 await ƒS.Location.show(locations.trailtomountain);
@@ -56,7 +56,7 @@ namespace fantasyrpg {
 
                 };
 
-                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
 
                     case secondDecisionElementAnswers.pick:
@@ -87,6 +87,9 @@ namespace fantasyrpg {
                 await ƒS.Speech.tell(stats.Side3, "but I did not give it back so we had a little dispute");
                 await ƒS.Speech.tell(stats.Main, "Ahh a \"little\" dispute");
 
+                stats.relside1 += 5;
+                stats.relside2 += 5;
+                stats.relside3 += 5;
                 scenecount = "scene7";
                 return scenecount
                 
@@ -113,7 +116,7 @@ namespace fantasyrpg {
 
                 };
 
-                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alone:
                         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(70, 90));
@@ -130,7 +133,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
 
@@ -155,8 +158,7 @@ namespace fantasyrpg {
                             await ƒS.update();
                             await ƒS.Speech.tell(stats.Main, "Ah that was nothing");
                             await ƒS.Speech.tell(stats.Main, "For you I would do anything");
-                            await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90));
-                            await ƒS.update();
+                            
                             
 
 
@@ -268,7 +270,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection1 = await ƒS.Menu.getInput(skillselectionAnswer1, "dialog1");
+                        let skillselection1 = await ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
                         switch (skillselection1) {
                             case skillselectionAnswer1.skill1:
 

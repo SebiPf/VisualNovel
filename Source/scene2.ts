@@ -184,7 +184,7 @@ namespace fantasyrpg {
         
         
                                 stats.relside1 -= 5;
-                                stats.relside2 += 10;
+                                stats.relside2 += 15;
                                 scenecount = "scene3";
                                 return scenecount;  
         

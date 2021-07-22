@@ -47,7 +47,7 @@ namespace fantasyrpg {
 
     };
 
-    let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+    let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
     switch (firstDecisionElement) {
       case firstDecisionElementAnswers.city:
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
@@ -74,7 +74,7 @@ namespace fantasyrpg {
             no: "No",
           };
 
-          let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+          let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
           switch (secondDecisionElement) {
             case secondDecisionElementAnswers.yes:
               await ƒS.Text.print("Who are you thinking of?");
@@ -86,7 +86,7 @@ namespace fantasyrpg {
                   side3: stats.Side3.name,
                 };
 
-                let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
+                let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
                 switch (firstDialogueElement) {
                   case firstDialogueElementAnswers.side1:
                     if (stats.relside1 >= 50) {
@@ -100,7 +100,7 @@ namespace fantasyrpg {
                       await ƒS.Speech.tell(stats.Side1, "Lets go there together");
                       await ƒS.Speech.tell(stats.Side1, "I think the other 2 will manage to get supplies by them selfes");
                       await ƒS.Speech.tell(stats.Main, "Yea I think so to");
-                      await ƒS.Speech.tell(stats.Main, "Hey " + stats.Side2.name + " and " + stats.Side3 + " can you guys get the supplies?");
+                      await ƒS.Speech.tell(stats.Main, "Hey " + stats.Side2.name + " and " + stats.Side3.name + " can you guys get the supplies?");
                       await ƒS.Character.show(stats.Side2, stats.Side2.pose.happy, ƒS.positionPercent(70, 90));
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Side2, "Sure what are you two going to do?");
@@ -201,7 +201,7 @@ namespace fantasyrpg {
                       await ƒS.Speech.tell(stats.Side2, "I think the other 2 will manage to get supplies by them selfes");
                       await ƒS.Speech.tell(stats.Main, "Yea I think so to");
                       await ƒS.Speech.tell(stats.Main, "Hey " + stats.Side1.name + " and " + stats.Side3 + " can you guys get the supplies?");
-                      await ƒS.Character.show(stats.Side1, stats.Side2.pose.happy, ƒS.positionPercent(70, 90));
+                      await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(70, 90));
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Side1, "Sure what are you two going to do?");
                       await ƒS.Speech.tell(stats.Main, "We'll just search for the Alchemist");
@@ -410,7 +410,7 @@ namespace fantasyrpg {
               let Throwdice = {
                 Throwdice: "Can you finde the Tavern?",
               };
-              let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog1");
+              let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog");
               switch (Dicethrow) {
                 case Throwdice.Throwdice:
                   throwdice();
@@ -496,7 +496,7 @@ namespace fantasyrpg {
           let Throwdice = {
             Throwdice: "Feel Lucky?",
           };
-          let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog1");
+          let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog");
           switch (Dicethrow) {
             case Throwdice.Throwdice:
               throwdice();
@@ -626,7 +626,7 @@ namespace fantasyrpg {
 
 
           };
-          let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+          let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
           switch (true && thirdDecisionElement) {
 
             case thirdDecisionElementAnswers.friends:

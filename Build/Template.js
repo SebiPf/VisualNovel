@@ -552,7 +552,7 @@ var fantasyrpg;
                 arrogant: "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png",
                 mediumlove: "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png",
                 inlove: "./Images/Characters/SwordWhielder/SwordWhielderInLove.png",
-                skystrike1: "../Images/Characters/Swordwhielder/SkyStrike/SW_SkyStrike_1.jpg",
+                skystrike1: "./Images/Characters/Swordwhielder/SkyStrike/SW_SkyStrike_1.jpg",
                 skystrike2: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png",
                 skystrike3: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png",
                 skystrike4: "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png",
@@ -812,15 +812,15 @@ var fantasyrpg;
             fantasyrpg.ƒS.Text.print("You give " + fantasyrpg.stats.chosenrel + " the flower you found");
             fantasyrpg.ƒS.Text.print(fantasyrpg.stats.chosenrel + " really likes them and gives you a kiss");
             if (fantasyrpg.stats.chosenrel in fantasyrpg.stats.Side1) {
-                fantasyrpg.stats.relside1 += 20;
+                fantasyrpg.stats.relside1 += 50;
                 fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.inlove, fantasyrpg.ƒS.positionPercent(90, 90));
             }
             else if (fantasyrpg.stats.chosenrel in fantasyrpg.stats.Side2) {
-                fantasyrpg.stats.relside2 += 20;
+                fantasyrpg.stats.relside2 += 50;
                 fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.inlove, fantasyrpg.ƒS.positionPercent(90, 90));
             }
             else if (fantasyrpg.stats.chosenrel in fantasyrpg.stats.Side3) {
-                fantasyrpg.stats.relside3 += 20;
+                fantasyrpg.stats.relside3 += 50;
                 fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side3, fantasyrpg.stats.Side3.pose.inlove, fantasyrpg.ƒS.positionPercent(90, 90));
             }
         }
@@ -1156,25 +1156,47 @@ var fantasyrpg;
         fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.credits, 0.3, true);
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.mountain);
         fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Text.print("This Game was made with Fudge(Fudge Story");
-        await fantasyrpg.ƒS.Text.print("Writing, Gamedesigne, adjusting Assets and Programming was done by Sebastian Pfeiffer");
-        await fantasyrpg.ƒS.Text.print("The Image that is currently in the Background was created by Vicente Nitti (@vnitti)");
-        await fantasyrpg.ƒS.Text.print("It was used 1 more time where it was cut in 4 and some characters and text were put over it");
-        await fantasyrpg.ƒS.Text.print("Lizenz: https://creativecommons.org/licenses/by/4.0/");
-        await fantasyrpg.ƒS.Text.print("The socials are the following");
-        await fantasyrpg.ƒS.Text.print("Twitter:   https://twitter.com/vnitti_art");
-        await fantasyrpg.ƒS.Text.print("Itch.io:   https://vnitti.itch.io/");
-        await fantasyrpg.ƒS.Text.print("Patreon:   https://patreon.com/vnitti");
-        await fantasyrpg.ƒS.Text.print("Portfolio: https://deviantart.com/vnitti");
-        await fantasyrpg.ƒS.Text.print(" All other images and Assets are either free to use and can be found on the following website");
-        await fantasyrpg.ƒS.Text.print("https://itch.io/game-assets/free/tag-pixel-art");
-        await fantasyrpg.ƒS.Text.print("Feel free to support any of the creators");
-        await fantasyrpg.ƒS.Text.print("or are drawn by Sebastian Pfeiffer");
-        await fantasyrpg.ƒS.Text.print("Musik during fights by Brian Paul Zimmerman");
-        await fantasyrpg.ƒS.Text.print("https://www.youtube.com/watch?v=x6qEh02qAfU&t=3s&ab_channel=TheBigBossTheory");
-        await fantasyrpg.ƒS.Text.print("Ever other Musik is from VGcomposer and free to use");
-        await fantasyrpg.ƒS.Text.print("https://vgcomposer.itch.io/action-rpg-music-free");
-        await fantasyrpg.ƒS.Text.print("Soundeffekts are licence free");
+        fantasyrpg.ƒS.Text.addClass("contract");
+        fantasyrpg.ƒS.Speech.hide();
+        let pages = ["<strong>Credits</strong> \
+      <br>This Game was made with Fudge(Fudge Story)</br>\
+      <br>Writing, Gamedesigne, adjusting Assets and Programming was done by Sebastian Pfeiffer</br>\
+      <br>The Image that is currently in the Background was created by Vicente Nitti (@vnitti)</br>\
+      <br>It was used 1 more time where it was cut in 4 and some characters and text were put over it</br>\
+      <br>Lizenz: https://creativecommons.org/licenses/by/4.0/</br>\
+      <br>The socials are the following</br>\
+      <br>Twitter:   https://twitter.com/vnitti_art</br>\
+      <br>Itch.io:   https://vnitti.itch.io/</br>\
+      <br>Patreon:   https://patreon.com/vnitti</br>\
+      <br>Portfolio: https://deviantart.com/vnitti</br>\
+      <br>Seite 1</br>", "<strong>Credits</strong>\
+      <br>All other images and Assets are either free to use and can be found on the following website</br>\
+      <br>https://itch.io/game-assets/free/tag-pixel-art</br>\
+      <br>Feel free to support any of the creators</br>\
+      <br>or are drawn by Sebastian Pfeiffer</br>\
+      <br>Musik during fights by Brian Paul Zimmerman</br>\
+      <br>https://www.youtube.com/watch?v=x6qEh02qAfU&t=3s&ab_channel=TheBigBossTheory</br>\
+      <br>Ever other Musik is from VGcomposer and free to use</br>\
+      <br><https://vgcomposer.itch.io/action-rpg-music-free/br>\
+      <br>Soundeffekts are licence free</br>\
+      <br>Seite 2</br>", "<strong>Credits</strong>"];
+        let current = 0;
+        let flip = { back: "Back", next: "Next", done: "Close" };
+        let choice;
+        fantasyrpg.ƒS.Text.addClass("flip");
+        do {
+            fantasyrpg.ƒS.Text.print(pages[current]);
+            choice = await fantasyrpg.ƒS.Menu.getInput(flip, "flip");
+            switch (choice) {
+                case flip.back:
+                    current = Math.max(0, current - 1);
+                    break;
+                case flip.next:
+                    current = Math.min(pages.length - 1, current + 1);
+                    break;
+            }
+        } while (choice != flip.done);
+        fantasyrpg.ƒS.Text.close();
     }
     fantasyrpg.credits = credits;
 })(fantasyrpg || (fantasyrpg = {}));
@@ -1324,7 +1346,7 @@ var fantasyrpg;
         fantasyrpg.stats.Side3.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         fantasyrpg.stats.Side3.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         fantasyrpg.stats.Side3.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        fantasyrpg.stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        fantasyrpg.stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         fantasyrpg.stats.Side3.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         fantasyrpg.stats.Side3.Skill1 = "Skystrike";
         fantasyrpg.stats.Side3.Skill2 = "Swordattack";
@@ -1493,7 +1515,7 @@ var fantasyrpg;
         fantasyrpg.stats.Side3.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         fantasyrpg.stats.Side3.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         fantasyrpg.stats.Side3.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        fantasyrpg.stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        fantasyrpg.stats.Side3.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         fantasyrpg.stats.Side3.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         fantasyrpg.stats.Side3.Skill1 = "Skystrike";
         fantasyrpg.stats.Side3.Skill2 = "Swordattack";
@@ -1659,7 +1681,7 @@ var fantasyrpg;
         fantasyrpg.stats.Side2.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         fantasyrpg.stats.Side2.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         fantasyrpg.stats.Side2.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        fantasyrpg.stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        fantasyrpg.stats.Side2.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         fantasyrpg.stats.Side2.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         fantasyrpg.stats.Side2.Skill1 = "Skystrike";
         fantasyrpg.stats.Side2.Skill2 = "Swordattack";
@@ -1789,7 +1811,7 @@ var fantasyrpg;
         fantasyrpg.stats.Main.pose.unhappy = "./Images/Characters/SwordWhielder/SwordWhielderUnHappy.png";
         fantasyrpg.stats.Main.pose.angry = "./Images/Characters/SwordWhielder/SwordWhielderAngry.png";
         fantasyrpg.stats.Main.pose.arrogant = "./Images/Characters/SwordWhielder/SwordWhielderArrogant.png";
-        fantasyrpg.stats.Main.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove";
+        fantasyrpg.stats.Main.pose.mediumlove = "./Images/Characters/SwordWhielder/SwordWhielderMediumLove.png";
         fantasyrpg.stats.Main.pose.inlove = "./Images/Characters/SwordWhielder/SwordWhielderInLove.png";
         fantasyrpg.stats.Main.Skill1 = "Skystrike";
         fantasyrpg.stats.Main.Skill2 = "Swordattack";
@@ -1857,9 +1879,9 @@ var fantasyrpg;
         let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
-                fantasyrpg.stats.relside1 += 10;
-                fantasyrpg.stats.relside2 += 10;
-                fantasyrpg.stats.relside3 += 10;
+                fantasyrpg.stats.relside1 += 15;
+                fantasyrpg.stats.relside2 += 15;
+                fantasyrpg.stats.relside3 += 15;
                 fantasyrpg.stats.char1.points += 5;
                 fantasyrpg.scenecount = "scene2";
                 return fantasyrpg.scenecount;
@@ -1891,7 +1913,7 @@ var fantasyrpg;
                 switch (secondDialogueElement) {
                     case secondDialogueElementAnswers.sayYes:
                         fantasyrpg.stats.relside1 += 5;
-                        fantasyrpg.stats.relside2 += 15;
+                        fantasyrpg.stats.relside2 += 25;
                         fantasyrpg.stats.relside3 += 5;
                         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Okay I`ll join you! See you later");
                         await fantasyrpg.ƒS.Character.hide(fantasyrpg.stats.Main);
@@ -2122,7 +2144,7 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Text.print("you and " + fantasyrpg.stats.Side2.name + " went back to the fireplace");
                                 fantasyrpg.stats.relside1 -= 5;
-                                fantasyrpg.stats.relside2 += 10;
+                                fantasyrpg.stats.relside2 += 15;
                                 fantasyrpg.scenecount = "scene3";
                                 return fantasyrpg.scenecount;
                             case fourthDialogueElementAnswers.sayNo:
@@ -2335,7 +2357,7 @@ var fantasyrpg;
             side2: fantasyrpg.stats.Side2.name,
             side3: fantasyrpg.stats.Side3.name,
         };
-        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
+        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.side1:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
@@ -2376,7 +2398,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
                 await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Haha Yea you might be right with that");
-                fantasyrpg.stats.relside1 += 5;
+                fantasyrpg.stats.relside1 += 10;
                 await fantasyrpg.ƒS.Character.hideAll();
                 await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0, true);
                 fantasyrpg.scenecount = "scene6";
@@ -2421,7 +2443,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Haha Yea you might be right with that");
                 await fantasyrpg.ƒS.Character.hideAll();
-                fantasyrpg.stats.relside2 += 5;
+                fantasyrpg.stats.relside2 += 10;
                 await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0, true);
                 fantasyrpg.scenecount = "scene6";
                 return fantasyrpg.scenecount;
@@ -2468,7 +2490,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Haha Yea you might be right with that");
                 await fantasyrpg.ƒS.Character.hideAll();
                 await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0, true);
-                fantasyrpg.stats.relside3 += 5;
+                fantasyrpg.stats.relside3 += 10;
                 fantasyrpg.scenecount = "scene6";
                 return fantasyrpg.scenecount;
         }
@@ -2496,7 +2518,7 @@ var fantasyrpg;
         await fantasyrpg.ƒS.update();
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "I heard if you go right here there are a lot of monsters");
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "But I was never here soo...");
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
+        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.normal, fantasyrpg.ƒS.positionPercent(70, 90));
         await fantasyrpg.ƒS.update();
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "The left path looks like it is going to lead to a lake");
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "What do you think " + fantasyrpg.stats.Main.name + " where should we go?");
@@ -2505,7 +2527,7 @@ var fantasyrpg;
             left: "Go Left",
             right: "Go Right",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.left:
                 await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.trailtomountain);
@@ -2527,7 +2549,7 @@ var fantasyrpg;
                     pick: "Pick up Flower",
                     nopick: "Leave it be",
                 };
-                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.pick:
                         fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Flower);
@@ -2553,6 +2575,9 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "anyways he did not belive me and wanted his money back");
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "but I did not give it back so we had a little dispute");
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Ahh a \"little\" dispute");
+                fantasyrpg.stats.relside1 += 5;
+                fantasyrpg.stats.relside2 += 5;
+                fantasyrpg.stats.relside3 += 5;
                 fantasyrpg.scenecount = "scene7";
                 return fantasyrpg.scenecount;
             case firstDecisionElementAnswers.right:
@@ -2576,7 +2601,7 @@ var fantasyrpg;
                     alone: "Take on the monster by yourselfe",
                     together: "Ask your friends to help you",
                 };
-                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alone:
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(70, 90));
@@ -2588,7 +2613,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
                                 fantasyrpg.skill1funktion();
@@ -2609,8 +2634,6 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Ah that was nothing");
                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "For you I would do anything");
-                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
-                            await fantasyrpg.ƒS.update();
                             fantasyrpg.stats.Main.Strength += 10;
                             fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.fight, 0, true);
                             fantasyrpg.scenecount = "scene7";
@@ -2709,7 +2732,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog1");
+                        let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
                         switch (skillselection1) {
                             case skillselectionAnswer1.skill1:
                                 fantasyrpg.skill1funktion();
@@ -2825,7 +2848,7 @@ var fantasyrpg;
             city: "Go to the town",
             mountain: "Go to the Mountains",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.city:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -2847,7 +2870,7 @@ var fantasyrpg;
                         yes: "Yes",
                         no: "No",
                     };
-                    let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+                    let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                     switch (secondDecisionElement) {
                         case secondDecisionElementAnswers.yes:
                             await fantasyrpg.ƒS.Text.print("Who are you thinking of?");
@@ -2858,7 +2881,7 @@ var fantasyrpg;
                                     side2: fantasyrpg.stats.Side2.name,
                                     side3: fantasyrpg.stats.Side3.name,
                                 };
-                                let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
+                                let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
                                 switch (firstDialogueElement) {
                                     case firstDialogueElementAnswers.side1:
                                         if (fantasyrpg.stats.relside1 >= 50) {
@@ -2872,7 +2895,7 @@ var fantasyrpg;
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "Lets go there together");
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "I think the other 2 will manage to get supplies by them selfes");
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Yea I think so to");
-                                            await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Hey " + fantasyrpg.stats.Side2.name + " and " + fantasyrpg.stats.Side3 + " can you guys get the supplies?");
+                                            await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Hey " + fantasyrpg.stats.Side2.name + " and " + fantasyrpg.stats.Side3.name + " can you guys get the supplies?");
                                             await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.happy, fantasyrpg.ƒS.positionPercent(70, 90));
                                             await fantasyrpg.ƒS.update();
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "Sure what are you two going to do?");
@@ -2964,7 +2987,7 @@ var fantasyrpg;
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "I think the other 2 will manage to get supplies by them selfes");
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Yea I think so to");
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Hey " + fantasyrpg.stats.Side1.name + " and " + fantasyrpg.stats.Side3 + " can you guys get the supplies?");
-                                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side2.pose.happy, fantasyrpg.ƒS.positionPercent(70, 90));
+                                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.normal, fantasyrpg.ƒS.positionPercent(70, 90));
                                             await fantasyrpg.ƒS.update();
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "Sure what are you two going to do?");
                                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "We'll just search for the Alchemist");
@@ -3142,7 +3165,7 @@ var fantasyrpg;
                             let Throwdice = {
                                 Throwdice: "Can you finde the Tavern?",
                             };
-                            let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog1");
+                            let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog");
                             switch (Dicethrow) {
                                 case Throwdice.Throwdice:
                                     fantasyrpg.throwdice();
@@ -3225,7 +3248,7 @@ var fantasyrpg;
                     let Throwdice = {
                         Throwdice: "Feel Lucky?",
                     };
-                    let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog1");
+                    let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog");
                     switch (Dicethrow) {
                         case Throwdice.Throwdice:
                             fantasyrpg.throwdice();
@@ -3344,7 +3367,7 @@ var fantasyrpg;
                         around: "Go around",
                         alone: "Try push them alone"
                     };
-                    let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+                    let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                     switch (true && thirdDecisionElement) {
                         case thirdDecisionElementAnswers.friends:
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -3523,7 +3546,7 @@ var fantasyrpg;
             city: "Go to the town",
             continue: "Go to the lake",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.city:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -3552,7 +3575,7 @@ var fantasyrpg;
                     tower: "Inspect the tower",
                     center: "Go to the town center"
                 };
-                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog1");
+                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alchemist:
                         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "I really think we should go to the Alchemist first");
@@ -3820,7 +3843,7 @@ var fantasyrpg;
                     alone: "Attack it alone",
                     together: "Fight with your friends",
                 };
-                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog1");
+                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.alone:
                         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.fight);
@@ -3842,7 +3865,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog1");
+                        let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
                         switch (skillselection2) {
                             case skillselectionAnswer2.skill1:
                                 fantasyrpg.skill1funktion();
@@ -3965,7 +3988,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
                                 fantasyrpg.skill1funktion();
@@ -4123,7 +4146,7 @@ var fantasyrpg;
                 retreat: "Run away from the golem",
                 continue: "Attack the Golem",
             };
-            let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog1");
+            let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
             switch (firstDecisionElement) {
                 case firstDecisionElementAnswers.retreat:
                     await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
@@ -4142,7 +4165,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+                    let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
                     switch (skillselection) {
                         case skillselectionAnswer.skill1:
                             fantasyrpg.skill1funktion();
@@ -4303,7 +4326,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog1");
+                    let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
                     switch (skillselection1) {
                         case skillselectionAnswer1.skill1:
                             fantasyrpg.skill1funktion();
@@ -4479,7 +4502,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog1");
+                    let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
                     switch (skillselection2) {
                         case skillselectionAnswer2.skill1:
                             fantasyrpg.skill1funktion();
@@ -4724,7 +4747,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+            let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
             switch (skillselection) {
                 case skillselectionAnswer.skill1:
                     fantasyrpg.skill1funktion();
@@ -4887,7 +4910,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog1");
+            let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
             switch (skillselection1) {
                 case skillselectionAnswer1.skill1:
                     fantasyrpg.skill1funktion();
@@ -5063,7 +5086,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog1");
+            let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
             switch (skillselection2) {
                 case skillselectionAnswer2.skill1:
                     fantasyrpg.skill1funktion();

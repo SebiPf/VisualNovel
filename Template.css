@@ -242,7 +242,7 @@ dialog.dialog1{
   width: 60%;
   height: 50%;
   background-color: transparent;
-  border: none;
+  border: none
 }
 dialog[type="inventory"]{
   background-color: transparent;
@@ -366,5 +366,36 @@ input[name="scoreside3"] {
 
 meter[id="side3"]::-webkit-meter-optimum-value {
   background-color: #719fd1;
+  
+}
+dialog.flip {
+  background: transparent;
+  width: 100%;
+  height: 80%;
+  padding-top: 20%;
+  padding-left: 20%;
+  padding-bottom: 20%;
+  
+  
+}
+
+dialog.contract {
+  color: black;
+
+}
+
+
+dialog.flip>button {
+  cursor: pointer;
+  margin-top: 50em;
+}
+
+dialog.text {
+  color: rgb(255, 255, 255);
+  font-size: 2vh;
+  font-weight: bold;
+  width: 20vw;
+  height: 20vh;
+  font-family: 'Century Gothic';
   
 }
