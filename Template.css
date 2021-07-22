@@ -121,7 +121,26 @@ speech.Ryu content {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
+#Throwdice2{
+  color: red;
+  font-size: 5vh;
+  width: 20vh;
+  height: 20vh;
+  margin-left: 37%;
+  margin-top: 15%;
+  transition-duration: 1s;
+  opacity: 0.8;
+  border-radius:   2vh;
+  background-image: url(Images/2.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+#Throwdice2:hover{
+  opacity: 1;
+  background-image: url(Images/5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 #skill1{
   position: relative;
   width: 33%;

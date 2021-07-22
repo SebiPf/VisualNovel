@@ -17,12 +17,12 @@ namespace fantasyrpg {
       edge: 1
     },
     fight: {
-      duration: 3,
+      duration: 2,
       alpha: "./Images/Transitions/Others/005.jpg",
       edge: 1
     },
     speed: {
-      duration: 3,
+      duration: 1,
       alpha: "./Images/Transitions/Others/034.png",
       edge: 1
     },
@@ -35,11 +35,11 @@ namespace fantasyrpg {
     bell: "./sound/schoolbell.wav",
     break: "./sound/schoolbreak.mp3",
     teacher: "./sound/teacherscream.wav",
-    steps: "./sound/steps.wav",
-    normal: "./sound/steps.wav",
-    fight: "./sound/steps.wav",
-    nois: "./sound/steps.wav",
-    town: "./sound/steps.wav",
+    steps: "./sound/stomp.wav",
+    normal: "./sound/08travel2.wav",
+    fight: "./sound/Boss.wav",
+    town: "./sound/01town1.wav",
+    credits: "./sound/10credits1.wav",
     //Sound
     click: ""
   };
@@ -559,7 +559,7 @@ namespace fantasyrpg {
   }
   export function knifethrow(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 70)},
+      start: { translation: ƒS.positionPercent(80, 80)},
       end: { translation: ƒS.positionPercent(10, 80)},
       duration: 3,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -635,7 +635,12 @@ namespace fantasyrpg {
       skill1funktion();
       skill2funktion();
       skill3funktion();
-      scenecount = "victory";
+      ƒS.Text.print("You managed to defeat the Golem in one blow");
+      ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
+      ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
+      scenecount = "end";
+      //reurn scenecount; /switch to different scene here
+      
       
     }
     else{
@@ -717,6 +722,7 @@ namespace fantasyrpg {
     
     Main:{
       name: "",
+      namechar: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
         normal: "",
@@ -888,7 +894,7 @@ namespace fantasyrpg {
 
 
     let scenes: ƒS.Scenes = [
-      //{id: "scene6", scene: scene9, name: "scene6"},
+      {id: "scene6", scene: scene9, name: "scene6"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},

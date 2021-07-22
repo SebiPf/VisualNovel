@@ -1,21 +1,60 @@
 namespace fantasyrpg {
   export async function scene9(): ƒS.SceneReturn {
     console.log("scene9 start");
-    await ƒS.Location.show(locations.cave);
-    await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
+    await ƒS.Character.hideAll();
+    await ƒS.update();
+    //await ƒS.Location.show(locations.cave);
+    //await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
+    //ƒS.Sound.play(sound.normal, 0.3, true);
+    
+    //await ƒS.Inventory.add(items.Scroll)
+    
+    //stats.Main.name = "Samara"
+    
+    await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(60, 90))
+    await ƒS.update();
+    
+    await ƒS.Speech.tell(stats.Side2, "What do you guys think will we find at the end of this cave?");
+    await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(40, 90))
+    await ƒS.update();
+    await ƒS.Speech.tell(stats.Side1, "Maybe we will come out on the other side of the hill");
+    await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(20, 90))
+    await ƒS.update();
+    await ƒS.Speech.tell(stats.Side3, "Na I don't think we will find anything here");
+    await ƒS.Speech.tell(stats.Side3, "I don't even think anyone was ever here");
+    await ƒS.Speech.tell(stats.Side3, "Like it was a suprise we saw the tiny entrance");
+    await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+    await ƒS.update();
+    await ƒS.Speech.tell(stats.Main, "Might be but exploring is always fun even if you can't find anything");
+
+
+
+    await ƒS.Character.hideAll();
+    await ƒS.update();
     await ƒS.Text.print("After walking for a while you arrive in a huge room");
     await ƒS.Location.show(locations.caveboss);
     await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 80))
+    ƒS.Sound.fade(sound.normal, 0,1);
+    ƒS.Sound.play(sound.fight, 0.3, true);
+    
+    ƒS.Sound.play(sound.steps, 0.4, false);
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
     await ƒS.update();
     await ƒS.Text.print("You see a strange rock formation and walk toward it");
     await ƒS.Text.print("As you walk close it starts to shine");
-    await ƒS.Text.print("You take a step back");
-    await ƒS.Text.print("You and your friends look at the awakening of a golem");
-
+    ƒS.Sound.play(sound.steps, 0.4, false);
     await ƒS.Character.animate(characters.Stone, characters.Stone.pose.normal, stones());
-    await ƒS.Character.animate(characters.Stone2, characters.Stone2.pose.normal, stones1());
+    await ƒS.Text.print("You take a step back");
+    ƒS.Sound.play(sound.steps, 0.4, false);
     await ƒS.Character.animate(characters.Stone3, characters.Stone3.pose.normal, stones2());
+    await ƒS.Text.print("You and your friends look at the awakening of a golem");
+    await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(40, 90))
+    await ƒS.update();
+    await ƒS.Speech.tell(stats.Side1, "Guys I don't know about this one");
+    ƒS.Sound.play(sound.steps, 0.4, false);
+    await ƒS.Character.animate(characters.Stone2, characters.Stone2.pose.normal, stones1());
+
+
     await ƒS.update();
     await ƒS.Character.hide(characters.Stone);
     await ƒS.Character.hide(characters.Stone2);
@@ -23,29 +62,29 @@ namespace fantasyrpg {
     await ƒS.update();
 
 
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death7, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death7, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death6, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death6, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death5, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death5, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death4, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death4, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death3, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death3, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death2, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death2, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
     await ƒS.Character.hideAll();
     await ƒS.update(0.2);
-    await ƒS.Character.show(characters.Golem, characters.Golem.pose.normal, ƒS.positionPercent(90, 80))
+    await ƒS.Character.show(characters.Golem, characters.Golem.pose.normal, ƒS.positionPercent(90, 90))
     await ƒS.update(0.2);
 
     if (stats.retreat == true) {
@@ -64,10 +103,11 @@ namespace fantasyrpg {
           await ƒS.Text.print("You and your friends ran away from the golem and went back to your village to continue your life");
           await ƒS.Character.hideAll();
           await ƒS.update(1);
+          ƒS.Sound.play(sound.fight, 0, true);
           scenecount = "end";
           return scenecount;
         case firstDecisionElementAnswers.continue:
-
+          stats.bossfight = true;
           await ƒS.Text.print("You and your friends Decided to fight the golem");
 
           let skillselectionAnswer = {
@@ -82,8 +122,7 @@ namespace fantasyrpg {
             case skillselectionAnswer.skill1:
 
               skill1funktion();
-              await ƒS.update();
-              await ƒS.Speech.tell(characters.Narrator, "");
+              
 
             case skillselectionAnswer.skill2:
 
@@ -103,32 +142,32 @@ namespace fantasyrpg {
               stats.potionamount = ƒS.Inventory.getAmount(items.Healthpotion)
               await ƒS.Text.print("You did not damage the golem");
               await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
               await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-              if (stats.Main.name == "Samara") {
+              if (stats.Main.namechar == "Samara") {
                 await ƒS.Character.show(characters.Adira, characters.Adira.pose.skystrike1, ƒS.positionPercent(50, 90))
                 await ƒS.update(0.2);
                 await ƒS.Character.hideAll();
@@ -197,6 +236,7 @@ namespace fantasyrpg {
                 await ƒS.Text.print("The village will always remember you as a hero");
                 await ƒS.Character.hideAll();
                 await ƒS.update(1);
+                ƒS.Sound.play(sound.fight, 0, true);
                 scenecount = "end";
                 return scenecount;
               }
@@ -204,25 +244,25 @@ namespace fantasyrpg {
             else {
               await ƒS.Text.print("You did not damage the golem");
               await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -234,6 +274,7 @@ namespace fantasyrpg {
               await ƒS.Text.print("The village will always remember you as a hero");
               await ƒS.Character.hideAll();
               await ƒS.update(1);
+              ƒS.Sound.play(sound.fight, 0, true);
               scenecount = "end";
               return scenecount;
             }
@@ -299,7 +340,7 @@ namespace fantasyrpg {
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
               await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-              if (stats.Main.name == "Samara") {
+              if (stats.Main.namechar == "Samara") {
                 await ƒS.Character.show(characters.Hando, characters.Hando.pose.rollshot1, ƒS.positionPercent(50, 90))
                 await ƒS.update(0.1);
                 await ƒS.Character.hideAll();
@@ -383,6 +424,7 @@ namespace fantasyrpg {
                 await ƒS.Text.print("The village will always remember you as a hero");
                 await ƒS.Character.hideAll();
                 await ƒS.update(1);
+                ƒS.Sound.play(sound.fight, 0, true);
                 scenecount = "end";
                 return scenecount;
               }
@@ -390,25 +432,25 @@ namespace fantasyrpg {
             else {
               await ƒS.Text.print("You did not damage the golem");
               await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -420,6 +462,7 @@ namespace fantasyrpg {
               await ƒS.Text.print("The village will always remember you as a hero");
               await ƒS.Character.hideAll();
               await ƒS.update(1);
+              ƒS.Sound.play(sound.fight, 0, true);
               scenecount = "end";
               return scenecount;
             }
@@ -511,7 +554,7 @@ namespace fantasyrpg {
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
               await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-              if (stats.Main.name == "Samara") {
+              if (stats.Main.namechar == "Samara") {
                 await ƒS.Character.show(characters.Adira, characters.Adira.pose.swordattack1, ƒS.positionPercent(50, 90))
                 await ƒS.update(0.2);
                 await ƒS.Character.hideAll();
@@ -586,11 +629,12 @@ namespace fantasyrpg {
                 await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
                 await ƒS.update(0.2);
 
-
+                await ƒS.Text.print("Your friends helped you defeat the Golem");
                 await ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
                 await ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
                 await ƒS.Character.hideAll();
                 await ƒS.update(1);
+                ƒS.Sound.play(sound.fight, 0, true);
                 scenecount = "end";
                 return scenecount;
               }
@@ -627,6 +671,7 @@ namespace fantasyrpg {
                 await ƒS.Text.print("The village will always remember you as a hero");
                 await ƒS.Character.hideAll();
                 await ƒS.update(1);
+                ƒS.Sound.play(sound.fight, 0, true);
                 scenecount = "end";
                 return scenecount;
               }
@@ -634,25 +679,25 @@ namespace fantasyrpg {
             else {
               await ƒS.Text.print("You did not damage the golem");
               await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.hideAll();
-              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+              await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -664,6 +709,7 @@ namespace fantasyrpg {
               await ƒS.Text.print("The village will always remember you as a hero");
               await ƒS.Character.hideAll();
               await ƒS.update(1);
+              ƒS.Sound.play(sound.fight, 0, true);
               scenecount = "end";
               return scenecount;
             }
@@ -677,6 +723,7 @@ namespace fantasyrpg {
           await ƒS.Character.hideAll();
           await ƒS.update(1);
           stats.Main.Strength += 10;
+          ƒS.Sound.play(sound.fight, 0, true);
           scenecount = "end";
           return scenecount;
 
@@ -687,6 +734,7 @@ namespace fantasyrpg {
       }
     }
     else {
+      stats.bossfight = true;
       await ƒS.Text.print("You and your friends Decided to fight the golem");
 
       let skillselectionAnswer = {
@@ -722,32 +770,32 @@ namespace fantasyrpg {
           stats.potionamount = ƒS.Inventory.getAmount(items.Healthpotion)
           await ƒS.Text.print("You did not damage the golem");
           await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
           await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-          if (stats.Main.name == "Samara") {
+          if (stats.Main.namechar == "Samara") {
             await ƒS.Character.show(characters.Adira, characters.Adira.pose.skystrike1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
@@ -816,6 +864,7 @@ namespace fantasyrpg {
             await ƒS.Text.print("The village will always remember you as a hero");
             await ƒS.Character.hideAll();
             await ƒS.update(1);
+            ƒS.Sound.play(sound.fight, 0, true);
             scenecount = "end";
             return scenecount;
           }
@@ -823,25 +872,25 @@ namespace fantasyrpg {
         else {
           await ƒS.Text.print("You did not damage the golem");
           await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -853,6 +902,7 @@ namespace fantasyrpg {
           await ƒS.Text.print("The village will always remember you as a hero");
           await ƒS.Character.hideAll();
           await ƒS.update(1);
+          ƒS.Sound.play(sound.fight, 0, true);
           scenecount = "end";
           return scenecount;
         }
@@ -918,7 +968,7 @@ namespace fantasyrpg {
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
           await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-          if (stats.Main.name == "Samara") {
+          if (stats.Main.namechar == "Samara") {
             await ƒS.Character.show(characters.Hando, characters.Hando.pose.rollshot1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -1002,6 +1052,7 @@ namespace fantasyrpg {
             await ƒS.Text.print("The village will always remember you as a hero");
             await ƒS.Character.hideAll();
             await ƒS.update(1);
+            ƒS.Sound.play(sound.fight, 0, true);
             scenecount = "end";
             return scenecount;
           }
@@ -1009,25 +1060,25 @@ namespace fantasyrpg {
         else {
           await ƒS.Text.print("You did not damage the golem");
           await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -1039,6 +1090,7 @@ namespace fantasyrpg {
           await ƒS.Text.print("The village will always remember you as a hero");
           await ƒS.Character.hideAll();
           await ƒS.update(1);
+          ƒS.Sound.play(sound.fight, 0, true);
           scenecount = "end";
           return scenecount;
         }
@@ -1130,7 +1182,7 @@ namespace fantasyrpg {
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
           await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
-          if (stats.Main.name == "Samara") {
+          if (stats.Main.namechar == "Samara") {
             await ƒS.Character.show(characters.Adira, characters.Adira.pose.swordattack1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
@@ -1210,6 +1262,7 @@ namespace fantasyrpg {
             await ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
             await ƒS.Character.hideAll();
             await ƒS.update(1);
+            ƒS.Sound.play(sound.fight, 0, true);
             scenecount = "end";
             return scenecount;
           }
@@ -1246,6 +1299,7 @@ namespace fantasyrpg {
             await ƒS.Text.print("The village will always remember you as a hero");
             await ƒS.Character.hideAll();
             await ƒS.update(1);
+            ƒS.Sound.play(sound.fight, 0, true);
             scenecount = "end";
             return scenecount;
           }
@@ -1253,25 +1307,25 @@ namespace fantasyrpg {
         else {
           await ƒS.Text.print("You did not damage the golem");
           await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack2, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack3, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack4, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack5, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack6, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.hideAll();
-          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 80))
+          await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -1283,6 +1337,7 @@ namespace fantasyrpg {
           await ƒS.Text.print("The village will always remember you as a hero");
           await ƒS.Character.hideAll();
           await ƒS.update(1);
+          ƒS.Sound.play(sound.fight, 0, true);
           scenecount = "end";
           return scenecount;
         }
@@ -1296,6 +1351,7 @@ namespace fantasyrpg {
       await ƒS.Character.hideAll();
       await ƒS.update(1);
       stats.Main.Strength += 10;
+      ƒS.Sound.play(sound.fight, 0, true);
       scenecount = "end";
       return scenecount;
     }

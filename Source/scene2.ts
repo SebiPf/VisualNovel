@@ -1,6 +1,7 @@
 namespace fantasyrpg {
     export async function scene2(): ƒS.SceneReturn {
         console.log("scene2");
+        await ƒS.Sound.play(sound.town, 0.3, true);
         stats.char1.points += 5;
         console.log(stats.char1.points);
         await ƒS.Character.hideAll();
@@ -22,6 +23,7 @@ namespace fantasyrpg {
         await ƒS.update(1);
         await ƒS.Text.print("You and " + stats.Side3.name + " went to " + stats.Side1.name + " and " + stats.Side2.name + " to meet up.");
         await ƒS.Location.show(locations.seafire);
+        await ƒS.Sound.play(sound.normal, 0.3, true);
         ƒS.update(1);
         await ƒS.Text.print("After you arrive at the shore you realise the weather is getting worse.");
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5,90));

@@ -1,14 +1,11 @@
 namespace fantasyrpg {
     export async function scene1(): ƒS.SceneReturn {
 
-            console.log("options");
-
-
+            console.log("scene1");
 
             await ƒS.Location.show(locations.white);
             //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
             await ƒS.update();
-            throwdice();
             await ƒS.Text.print("Please enter your Name")
             //names eingabe
             //stats.Protagonist.name = await ƒS.Speech.getInput();
@@ -36,8 +33,6 @@ namespace fantasyrpg {
             //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
 
             await ƒS.update();
-            await ƒS.Text.print("Clarifikation Images and story is not final")
-            await ƒS.Text.print("This is only a Preview of what direktion the Novel will take")
             await ƒS.Text.print("Welcome to your Adventure " + stats.Main.name);
             await ƒS.Text.print("The first think you need to do is choose a Class")
             await ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure")
@@ -51,7 +46,7 @@ namespace fantasyrpg {
             await ƒS.Location.show(locations.Black);
             await ƒS.update();
             //ƒS.Sound.play(sound.click, 1);
-
+            await ƒS.Sound.play(sound.normal, 0.3, true);
             let firstDialogueElementAnswers = {
                 Char1: "char 1",
                 Char2: "char 2",

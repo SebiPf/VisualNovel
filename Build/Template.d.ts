@@ -43,8 +43,8 @@ declare namespace fantasyrpg {
         steps: string;
         normal: string;
         fight: string;
-        nois: string;
         town: string;
+        credits: string;
         click: string;
     };
     export let locations: {
@@ -481,6 +481,7 @@ declare namespace fantasyrpg {
         potionamount: number;
         Main: {
             name: string;
+            namechar: string;
             origin: ƒ.ORIGIN2D;
             pose: {
                 normal: string;
@@ -574,6 +575,9 @@ declare namespace fantasyrpg {
 }
 declare namespace fantasyrpg {
     function getinput(): ƒS.SceneReturn;
+}
+declare namespace fantasyrpg {
+    function loveending(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
     function meter(): ƒS.SceneReturn;

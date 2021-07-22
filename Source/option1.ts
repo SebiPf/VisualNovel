@@ -1,7 +1,7 @@
 namespace fantasyrpg {
     export async function option1(): ƒS.SceneReturn {
         console.log("1stScene");
-        stats.Main.name = "Hando"
+        stats.Main.namechar = "Hando"
         stats.Main.pose.normal = "./Images/Characters/Archer/Archer1.png";
         stats.Main.pose.happy = "./Images/Characters/Archer/ArcherHappy.png";
         stats.Main.pose.veryhappy = "./Images/Characters/Archer/ArcherVeryHappy.png";
@@ -58,13 +58,9 @@ namespace fantasyrpg {
         stats.scoreside1 = "Liraz"
         stats.scoreside3 = "Adira"
 
-        scenecount = "scene5"
-        return scenecount
+     
 
-
-
-
-
+        await ƒS.Sound.play(sound.normal, 0.3, true);
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));
