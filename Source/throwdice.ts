@@ -1,7 +1,7 @@
 namespace fantasyrpg {
     export async function throwdice() {
         console.log("throw dice");
-        stats.random = Math.floor(Math.random() * (stats.number + 4));
+        stats.random = Math.floor(Math.random() * stats.number + 4);
         console.log("random number is " + stats.random);
 
 

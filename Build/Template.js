@@ -5639,7 +5639,7 @@ var fantasyrpg;
 (function (fantasyrpg) {
     async function throwdice() {
         console.log("throw dice");
-        fantasyrpg.stats.random = Math.floor(Math.random() * (fantasyrpg.stats.number + 4));
+        fantasyrpg.stats.random = Math.floor(Math.random() * fantasyrpg.stats.number + 4);
         console.log("random number is " + fantasyrpg.stats.random);
         if (fantasyrpg.stats.number <= 3) {
             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice1, fantasyrpg.diceani1());
