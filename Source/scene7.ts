@@ -47,7 +47,7 @@ namespace fantasyrpg {
 
     };
 
-    let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+    let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
     switch (firstDecisionElement) {
       case firstDecisionElementAnswers.city:
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
@@ -74,7 +74,7 @@ namespace fantasyrpg {
             no: "No",
           };
 
-          let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
+          let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog5");
           switch (secondDecisionElement) {
             case secondDecisionElementAnswers.yes:
               await ƒS.Text.print("Who are you thinking of?");
@@ -86,7 +86,7 @@ namespace fantasyrpg {
                   side3: stats.Side3.name,
                 };
 
-                let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+                let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog5");
                 switch (firstDialogueElement) {
                   case firstDialogueElementAnswers.side1:
                     if (stats.relside1 >= 50) {
@@ -410,12 +410,12 @@ namespace fantasyrpg {
               let Throwdice = {
                 Throwdice: "Can you finde the Tavern?",
               };
-              let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog");
+              let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog1");
               switch (Dicethrow) {
                 case Throwdice.Throwdice:
                   throwdice();
               }
-              if (stats.random >= 8) {
+              if (stats.random >= 6) {
                 await ƒS.Location.show(locations.alchemist);
                 await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
@@ -629,7 +629,7 @@ namespace fantasyrpg {
 
 
           };
-          let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
+          let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog5");
           switch (true && thirdDecisionElement) {
 
             case thirdDecisionElementAnswers.friends:

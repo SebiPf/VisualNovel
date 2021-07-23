@@ -46,7 +46,7 @@ namespace fantasyrpg {
             sayNo: "Oh yea that will be great training"
         };
 
-        let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         //stats.char1.points = stats.char1.points + 5;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
@@ -60,7 +60,7 @@ namespace fantasyrpg {
                 await ƒS.Speech.tell(stats.Side1, "Since we are already here lets just go tomorrow");
 
                 stats.relside1 += 5;
-                stats.relside2 += 5;
+                stats.relside2 += 0;
                 stats.relside2 += 5;
                 scenecount = "scene5";
                 return scenecount;

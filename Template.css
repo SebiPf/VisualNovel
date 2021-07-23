@@ -180,6 +180,13 @@ dialog.dialog3{
   background-size: contain;
   background-repeat: no-repeat;
 }
+button{
+  position: relative;
+  width: 50%;
+  height: 20%;
+  margin-top: 255;
+}
+
 
 
 
@@ -239,6 +246,12 @@ dialog.dialog2{
   background-color: transparent;
 }
 dialog.dialog1{
+  width: 60%;
+  height: 50%;
+  background-color: transparent;
+  border: none
+}
+dialog.dialog5{
   width: 60%;
   height: 50%;
   background-color: transparent;
@@ -306,6 +319,8 @@ dialog[type="name"]{
   position: relative;
 }
 button.close{
+  width: 5%;
+  height: 5%;
   border-radius: 10px;
   background-color:transparent;
   transition-duration: 1s;

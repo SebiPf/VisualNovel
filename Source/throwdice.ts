@@ -4,12 +4,6 @@ namespace fantasyrpg {
         stats.random = Math.floor(Math.random() * stats.number + 4);
         console.log("random number is " + stats.random);
 
-
-
-
-
-
-
         if (stats.number <= 3) {
 
             await ƒS.Character.animate(characters.dice, characters.dice.pose.dice1, diceani1());

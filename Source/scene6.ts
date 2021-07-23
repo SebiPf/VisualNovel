@@ -28,7 +28,7 @@ namespace fantasyrpg {
 
         };
 
-        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+        let firstDecisionElement = await ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.left:
                 await ƒS.Location.show(locations.trailtomountain);
@@ -57,7 +57,7 @@ namespace fantasyrpg {
 
                 };
 
-                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
+                let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog5");
                 switch (secondDecisionElement) {
 
                     case secondDecisionElementAnswers.pick:
@@ -89,7 +89,7 @@ namespace fantasyrpg {
                 await ƒS.Speech.tell(stats.Main, "Ahh a \"little\" dispute");
 
                 stats.relside1 += 10;
-                stats.relside2 += 10;
+                stats.relside2 += 5;
                 stats.relside3 += 10;
                 scenecount = "scene7";
                 return scenecount
@@ -117,7 +117,7 @@ namespace fantasyrpg {
 
                 };
 
-                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
+                let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog5");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alone:
                         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
@@ -134,7 +134,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog");
+                        let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog5");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
 
@@ -280,7 +280,7 @@ namespace fantasyrpg {
 
                         };
 
-                        let skillselection1 = await ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
+                        let skillselection1 = await ƒS.Menu.getInput(skillselectionAnswer1, "dialog5");
                         switch (skillselection1) {
                             case skillselectionAnswer1.skill1:
 

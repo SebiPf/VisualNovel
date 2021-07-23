@@ -798,7 +798,6 @@ var fantasyrpg;
         volplus: "+",
         volminus: "-",
         credits: "Credits",
-        about: "about"
     };
     let gameMenue;
     gameMenue;
@@ -820,8 +819,6 @@ var fantasyrpg;
         }
         else if (_option == inGameMenue.credits) {
             fantasyrpg.credits();
-        }
-        else if (_option == inGameMenue.about) {
         }
     }
     document.addEventListener("keydown", hndKeypress);
@@ -2013,7 +2010,7 @@ var fantasyrpg;
             sayYes: "A Great Adventure with my Friends I am in",
             sayNo: "Oh yea that will be great training"
         };
-        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         //stats.char1.points = stats.char1.points + 5;
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
@@ -2025,7 +2022,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "That sounds like fun");
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "Since we are already here lets just go tomorrow");
                 fantasyrpg.stats.relside1 += 5;
-                fantasyrpg.stats.relside2 += 5;
+                fantasyrpg.stats.relside2 += 0;
                 fantasyrpg.stats.relside2 += 5;
                 fantasyrpg.scenecount = "scene5";
                 return fantasyrpg.scenecount;
@@ -2108,7 +2105,7 @@ var fantasyrpg;
             side2: fantasyrpg.stats.Side2.name,
             side3: fantasyrpg.stats.Side3.name,
         };
-        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.side1:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(5, 90));
@@ -2195,7 +2192,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Haha Yea you might be right with that");
                 await fantasyrpg.ƒS.Character.hideAll();
-                fantasyrpg.stats.relside2 += 15;
+                fantasyrpg.stats.relside2 += 10;
                 await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0, true);
                 fantasyrpg.scenecount = "scene6";
                 return fantasyrpg.scenecount;
@@ -2281,7 +2278,7 @@ var fantasyrpg;
             left: "Go Left",
             right: "Go Right",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.left:
                 await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.trailtomountain);
@@ -2303,7 +2300,7 @@ var fantasyrpg;
                     pick: "Pick up Flower",
                     nopick: "Leave it be",
                 };
-                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
+                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog5");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.pick:
                         fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Flower);
@@ -2330,7 +2327,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "but I did not give it back so we had a little dispute");
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Ahh a \"little\" dispute");
                 fantasyrpg.stats.relside1 += 10;
-                fantasyrpg.stats.relside2 += 10;
+                fantasyrpg.stats.relside2 += 5;
                 fantasyrpg.stats.relside3 += 10;
                 fantasyrpg.scenecount = "scene7";
                 return fantasyrpg.scenecount;
@@ -2355,7 +2352,7 @@ var fantasyrpg;
                     alone: "Take on the monster by yourselfe",
                     together: "Ask your friends to help you",
                 };
-                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
+                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog5");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alone:
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -2367,7 +2364,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
+                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog5");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
                                 fantasyrpg.skill1funktion();
@@ -2493,7 +2490,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
+                        let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog5");
                         switch (skillselection1) {
                             case skillselectionAnswer1.skill1:
                                 fantasyrpg.skill1funktion();
@@ -2618,7 +2615,7 @@ var fantasyrpg;
             city: "Go to the town",
             mountain: "Go to the Mountains",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.city:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -2640,7 +2637,7 @@ var fantasyrpg;
                         yes: "Yes",
                         no: "No",
                     };
-                    let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
+                    let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog5");
                     switch (secondDecisionElement) {
                         case secondDecisionElementAnswers.yes:
                             await fantasyrpg.ƒS.Text.print("Who are you thinking of?");
@@ -2651,7 +2648,7 @@ var fantasyrpg;
                                     side2: fantasyrpg.stats.Side2.name,
                                     side3: fantasyrpg.stats.Side3.name,
                                 };
-                                let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+                                let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog5");
                                 switch (firstDialogueElement) {
                                     case firstDialogueElementAnswers.side1:
                                         if (fantasyrpg.stats.relside1 >= 50) {
@@ -2935,12 +2932,12 @@ var fantasyrpg;
                             let Throwdice = {
                                 Throwdice: "Can you finde the Tavern?",
                             };
-                            let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog");
+                            let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog1");
                             switch (Dicethrow) {
                                 case Throwdice.Throwdice:
                                     fantasyrpg.throwdice();
                             }
-                            if (fantasyrpg.stats.random >= 8) {
+                            if (fantasyrpg.stats.random >= 6) {
                                 await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.alchemist);
                                 await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
@@ -3141,7 +3138,7 @@ var fantasyrpg;
                         around: "Go around",
                         alone: "Try push them alone"
                     };
-                    let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
+                    let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog5");
                     switch (true && thirdDecisionElement) {
                         case thirdDecisionElementAnswers.friends:
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -3320,7 +3317,7 @@ var fantasyrpg;
             city: "Go to the town",
             continue: "Go to the lake",
         };
-        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+        let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
         switch (firstDecisionElement) {
             case firstDecisionElementAnswers.city:
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -3349,7 +3346,7 @@ var fantasyrpg;
                     tower: "Inspect the tower",
                     center: "Go to the town center"
                 };
-                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
+                let thirdDecisionElement = await fantasyrpg.ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog5");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alchemist:
                         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "I really think we should go to the Alchemist first");
@@ -3625,7 +3622,7 @@ var fantasyrpg;
                     alone: "Attack it alone",
                     together: "Fight with your friends",
                 };
-                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
+                let secondDecisionElement = await fantasyrpg.ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog5");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.alone:
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
@@ -3637,7 +3634,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
+                        let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog5");
                         switch (skillselection2) {
                             case skillselectionAnswer2.skill1:
                                 fantasyrpg.skill1funktion();
@@ -3772,7 +3769,7 @@ var fantasyrpg;
                             skill2: fantasyrpg.stats.Main.Skill2,
                             skill3: fantasyrpg.stats.Main.Skill3,
                         };
-                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
+                        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog5");
                         switch (skillselection) {
                             case skillselectionAnswer.skill1:
                                 fantasyrpg.skill1funktion();
@@ -3939,7 +3936,7 @@ var fantasyrpg;
                 retreat: "Run away from the golem",
                 continue: "Attack the Golem",
             };
-            let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog");
+            let firstDecisionElement = await fantasyrpg.ƒS.Menu.getInput(firstDecisionElementAnswers, "dialog5");
             switch (firstDecisionElement) {
                 case firstDecisionElementAnswers.retreat:
                     await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
@@ -4001,7 +3998,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog");
+                    let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog5");
                     switch (skillselection) {
                         case skillselectionAnswer.skill1:
                             fantasyrpg.skill1funktion();
@@ -4177,7 +4174,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
+                    let skillselection1 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer1, "dialog5");
                     switch (skillselection1) {
                         case skillselectionAnswer1.skill1:
                             fantasyrpg.skill1funktion();
@@ -4368,7 +4365,7 @@ var fantasyrpg;
                         skill2: fantasyrpg.stats.Main.Skill2,
                         skill3: fantasyrpg.stats.Main.Skill3,
                     };
-                    let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
+                    let skillselection2 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer2, "dialog5");
                     switch (skillselection2) {
                         case skillselectionAnswer2.skill1:
                             fantasyrpg.skill1funktion();
@@ -4680,7 +4677,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection3 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer3, "dialog");
+            let skillselection3 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer3, "dialog5");
             switch (skillselection3) {
                 case skillselectionAnswer3.skill1:
                     fantasyrpg.skill1funktion();
@@ -4855,7 +4852,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection4 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer4, "dialog");
+            let skillselection4 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer4, "dialog5");
             switch (skillselection4) {
                 case skillselectionAnswer4.skill1:
                     fantasyrpg.skill1funktion();
@@ -5046,7 +5043,7 @@ var fantasyrpg;
                 skill2: fantasyrpg.stats.Main.Skill2,
                 skill3: fantasyrpg.stats.Main.Skill3,
             };
-            let skillselection5 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer5, "dialog");
+            let skillselection5 = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer5, "dialog5");
             switch (skillselection5) {
                 case skillselectionAnswer5.skill1:
                     fantasyrpg.skill1funktion();

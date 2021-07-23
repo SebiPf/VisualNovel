@@ -823,7 +823,6 @@ namespace fantasyrpg {
     volplus: "+",
     volminus: "-",
     credits: "Credits",
-    about: "about"
   };
   let gameMenue: ƒS.Menu;
   gameMenue;
@@ -850,9 +849,6 @@ namespace fantasyrpg {
     }
     else if (_option == inGameMenue.credits) {
       credits();
-    }
-    else if (_option == inGameMenue.about) {
-
     }
   }
 

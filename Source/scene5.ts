@@ -19,7 +19,7 @@ namespace fantasyrpg {
             side3: stats.Side3.name,
         };
 
-        let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
+        let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog1");
         switch (firstDialogueElement) {
             case firstDialogueElementAnswers.side1:
 
@@ -123,7 +123,7 @@ namespace fantasyrpg {
 
 
                 await ƒS.Character.hideAll();
-                stats.relside2 += 15;
+                stats.relside2 += 10;
                 await ƒS.Sound.play(sound.normal, 0, true);
                 scenecount = "scene6";
                 return scenecount
