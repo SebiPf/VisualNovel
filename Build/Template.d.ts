@@ -421,7 +421,6 @@ declare namespace fantasyrpg {
             name: string;
             description: string;
             image: string;
-            static: boolean;
         };
         Flower: {
             name: string;
@@ -479,6 +478,8 @@ declare namespace fantasyrpg {
         message: string;
         retreat: boolean;
         potionamount: number;
+        scrollused: boolean;
+        skillused: boolean;
         Main: {
             name: string;
             namechar: string;

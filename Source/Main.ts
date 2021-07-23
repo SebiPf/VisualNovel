@@ -629,17 +629,23 @@ namespace fantasyrpg {
   }
   function usescroll(_event: CustomEvent): void {
     console.log(_event);
-    if(stats.bossfight = true && stats.Main.name == "Samara"){
-      ƒS.Text.print("Something is happening you feel very strong all of the sudden");
-      ƒS.Text.print("You decide to fire off all your spells");
-      skill1funktion();
-      skill2funktion();
-      skill3funktion();
-      ƒS.Text.print("You managed to defeat the Golem in one blow");
-      ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
-      ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
-      scenecount = "end";
-      //reurn scenecount; /switch to different scene here
+    if(stats.bossfight = true && stats.Main.namechar == "Samara"){
+      stats.scrollused = true;
+
+//das hier war angedacht bei scrolluse aber ich hab es nicht hinbekommen hier in der funktion eine neue Szene aufzurufen, 
+//deshalb hab ich eine notlösung gemacht die zwar funktioniert aber nich so geil ist
+//(jetzt kann man die scroll nur an ganz bestimmten punkten benutzen anstatt während des gesamten endkampfes)
+
+      //ƒS.Text.print("Something is happening you feel very strong all of the sudden");
+      //ƒS.Text.print("You decide to fire off all your spells");
+      //skill1funktion();
+      //skill2funktion();
+      //skill3funktion();
+      //ƒS.Text.print("You managed to defeat the Golem in one blow");
+      //ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
+      //ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
+      //scenecount = "end";
+      //return scenecount; /switch to different scene here
       
       
     }
@@ -653,10 +659,9 @@ namespace fantasyrpg {
 
   export let items ={
     Healthpotion: {
-      name: "Healthpotion",
+      name: "Healingpotion",
       description: "Gives you some Health",
       image: "./Images/PotionRed.png",
-      static: true
     },
     Flower: {
       name: "Flower",
@@ -717,7 +722,8 @@ namespace fantasyrpg {
     message: "",
     retreat: false,
     potionamount: 0,
-
+    scrollused: false,
+    skillused: false,
     
     
     Main:{
@@ -894,7 +900,7 @@ namespace fantasyrpg {
 
 
     let scenes: ƒS.Scenes = [
-      //{id: "scene6", scene: scene9, name: "scene6"},
+      {id: "scene6", scene: testing, name: "scene6"},
       //{scene: audiouebung, name: "audioübung"}
       //{ scene: Text, name: "01_Text", next: scenecount.count},
       //{scene: Decision, name: "02_Test"},

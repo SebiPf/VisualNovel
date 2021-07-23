@@ -2,20 +2,20 @@ namespace fantasyrpg {
     export async function scene8(): ƒS.SceneReturn {
         console.log("scene8 start");
         await ƒS.Character.hideAll();
-    await ƒS.update();
+        await ƒS.update();
 
         await ƒS.Location.show(locations.Black); //add view img
         await ƒS.update(2);
         await ƒS.Text.print("On the next day you and your friends continue your adventure");
         //await ƒS.Text.print("You and your friends walked ");
         ƒS.Sound.play(sound.normal, 0.3, true);
-        
+
         await ƒS.Location.show(locations.trailtomountain);
         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
 
 
 
-        
+
 
 
 
@@ -128,8 +128,8 @@ namespace fantasyrpg {
                             await ƒS.Speech.tell(stats.Side1, "Wow look at that");
                             await ƒS.Speech.tell(stats.Side1, "She gave you a Healing Potion");
                             ƒS.Inventory.add(items.Healthpotion)
-                            
-                            
+
+
                         }
                         else {
 
@@ -144,7 +144,7 @@ namespace fantasyrpg {
                             await ƒS.Text.print("Open your inventor and look at it maybe you can decifer what it is saying");
                             stats.message = await ƒS.Speech.getInput();
 
-                            if (stats.message == "You can't defeat the Golem" || stats.message == "You can`t defeat the Golem"|| stats.message == "You cant defeat the Golem"|| stats.message == "You can not defeat the Golem") {
+                            if (stats.message == "You can't defeat the Golem" || stats.message == "You can`t defeat the Golem" || stats.message == "You cant defeat the Golem" || stats.message == "You can not defeat the Golem") {
                                 await ƒS.Text.print("You decifered the code but what does it mean?");
                                 stats.retreat = true;
                             }
@@ -190,7 +190,7 @@ namespace fantasyrpg {
                         await ƒS.Speech.tell(stats.Side2, "You got a point there");
 
 
-                        
+
                         stats.number = (stats.relside1 + stats.relside2 + stats.relside3) / 10
                         let Throwdice2 = {
                             Throwdice2: "Can you finde something?",
@@ -293,14 +293,14 @@ namespace fantasyrpg {
                         // conversation
 
                         if (stats.chosenrel != "") {
-                            await ƒS.Text.print("After talking for a while you started to walk with "+ stats.chosenrel + " and you felt like talking to " + stats.chosenrel);
+                            await ƒS.Text.print("After talking for a while you started to walk with " + stats.chosenrel + " and you felt like talking to " + stats.chosenrel);
                             stats.flowercheck = true;
 
                             //conversation can use flower here
                             await ƒS.Character.show(stats.Main, stats.Main.pose.mediumlove, ƒS.positionPercent(10, 90))
                             await ƒS.update();
                             await ƒS.Speech.tell(stats.Main, "I really think this was a great adventure");
-                            if( stats.chosenrel in stats.Side1){
+                            if (stats.chosenrel in stats.Side1) {
                                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.mediumlove, ƒS.positionPercent(90, 90))
                                 await ƒS.update();
                                 await ƒS.Speech.tell(stats.Side1, "Yea It was");
@@ -314,8 +314,8 @@ namespace fantasyrpg {
                                 await ƒS.Speech.tell(stats.Side1, "But I don't regret it afterall I had a really great time with you");
                                 await ƒS.Speech.tell(stats.Main, "Yea me too");
                                 await ƒS.Text.print("After talking for a while you went back to the others");
-                              }
-                              else if( stats.chosenrel in stats.Side2){
+                            }
+                            else if (stats.chosenrel in stats.Side2) {
                                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.mediumlove, ƒS.positionPercent(90, 90))
                                 await ƒS.update();
                                 await ƒS.Speech.tell(stats.Side2, "Yea It was");
@@ -329,8 +329,8 @@ namespace fantasyrpg {
                                 await ƒS.Speech.tell(stats.Side2, "But I don't regret it afterall I had a really great time with you");
                                 await ƒS.Speech.tell(stats.Main, "Yea me too");
                                 await ƒS.Text.print("After talking for a while you went back to the others");
-                              }
-                              else if( stats.chosenrel in stats.Side3){
+                            }
+                            else if (stats.chosenrel in stats.Side3) {
                                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.mediumlove, ƒS.positionPercent(90, 90))
                                 await ƒS.update();
                                 await ƒS.Speech.tell(stats.Side3, "Yea It was");
@@ -344,14 +344,14 @@ namespace fantasyrpg {
                                 await ƒS.Speech.tell(stats.Side3, "But I don't regret it afterall I had a really great time with you");
                                 await ƒS.Speech.tell(stats.Main, "Yea me too");
                                 await ƒS.Text.print("After talking for a while you went back to the others");
-                                
-                              }
-                            
 
-                              await ƒS.Character.hideAll();
-                              await ƒS.update();
-                            
-                            
+                            }
+
+
+                            await ƒS.Character.hideAll();
+                            await ƒS.update();
+
+
 
                             if (stats.relside1 >= 100 || stats.relside2 >= 100 || stats.relside3 >= 100) {
                                 ƒS.Sound.play(sound.town, 0, true);
@@ -407,7 +407,7 @@ namespace fantasyrpg {
             case firstDecisionElementAnswers.continue:
                 await ƒS.Location.show(locations.waterfall);
                 await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-                ƒS.Sound.fade(sound.normal, 0,1);
+                ƒS.Sound.fade(sound.normal, 0, 1);
                 ƒS.Sound.play(sound.fight, 0.3, true);
                 await ƒS.Text.print("On your way beneath the waterfalls you encounter another monster");
                 await ƒS.Text.print("The monster looks like it`s going to attack!");
@@ -418,7 +418,7 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "Let's attack it together!");
-                
+
 
                 let secondDecisionElementAnswers = {
                     alone: "Attack it alone",
@@ -429,7 +429,7 @@ namespace fantasyrpg {
                 let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.alone:
-                        
+
                         await ƒS.Location.show(locations.fight);
                         await ƒS.update(transition.fight.duration, transition.fight.alpha, transition.fight.edge);
                         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(90, 90))
@@ -457,12 +457,19 @@ namespace fantasyrpg {
 
                                 skill1funktion();
 
-                            case skillselectionAnswer2.skill1:
 
-                                skill2funktion();
+                            case skillselectionAnswer2.skill2:
+                                if (stats.skillused == false) {
+                                    skill2funktion();
+                                }
 
-                            case skillselectionAnswer2.skill1:
-                                skill3funktion();
+
+                            case skillselectionAnswer2.skill3:
+                                if (stats.skillused == false) {
+                                    skill3funktion();
+                                }
+                                stats.skillused = false;
+
                         }
 
 
@@ -475,9 +482,9 @@ namespace fantasyrpg {
                             await ƒS.Speech.tell(stats.Side3, "Showoff");
                             await ƒS.Speech.tell(stats.Side3, "You should let us help you sometimes");
                             await ƒS.Speech.tell(stats.Side3, "It is dangerous to fight alone");
-                            
+
                             stats.Main.Strength += 10;
-                            
+
                         }
                         else {
                             await ƒS.Text.print("You tired to defeat it alone but failed");
@@ -559,7 +566,7 @@ namespace fantasyrpg {
                             await ƒS.update();
                             await ƒS.Text.print("Your friends came to save you");
                             await ƒS.Speech.tell(stats.Side3, "See if you let us help from time to time its easier");
-                            
+
                             stats.Main.Strength += 5
                         }
                         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90))
@@ -593,12 +600,19 @@ namespace fantasyrpg {
 
                                 skill1funktion();
 
-                            case skillselectionAnswer.skill1:
 
-                                skill2funktion();
+                            case skillselectionAnswer.skill2:
+                                if (stats.skillused == false) {
+                                    skill2funktion();
+                                }
 
-                            case skillselectionAnswer.skill1:
-                                skill3funktion();
+
+                            case skillselectionAnswer.skill3:
+                                if (stats.skillused == false) {
+                                    skill3funktion();
+                                }
+                                stats.skillused = false;
+
                         }
                         if (stats.Main.namechar == "Samara") {
                             await ƒS.Character.show(characters.Adira, characters.Adira.pose.swordattack1, ƒS.positionPercent(50, 90))

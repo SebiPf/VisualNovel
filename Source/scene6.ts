@@ -2,7 +2,7 @@ namespace fantasyrpg {
     export async function scene6(): ƒS.SceneReturn {
         console.log("Scene 6 Patheway");
         await ƒS.Character.hideAll();
-    await ƒS.update();
+        await ƒS.update();
         ƒS.Sound.play(sound.normal, 0.3, true);
         await ƒS.Location.show(locations.zweigung);
         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
@@ -92,7 +92,7 @@ namespace fantasyrpg {
                 stats.relside3 += 5;
                 scenecount = "scene7";
                 return scenecount
-                
+
             case firstDecisionElementAnswers.right:
                 await ƒS.Character.hideAll();
                 await ƒS.update();
@@ -101,7 +101,7 @@ namespace fantasyrpg {
                 ƒS.Sound.play(sound.steps, 0.3, false);
                 await ƒS.Location.show(locations.fight);
                 await ƒS.update(transition.fight.duration, transition.fight.alpha, transition.fight.edge);
-                ƒS.Sound.fade(sound.normal, 0,1);
+                ƒS.Sound.fade(sound.normal, 0, 1);
                 ƒS.Sound.play(sound.fight, 0.3, true);
                 await ƒS.Text.print("You and your friends jump back");
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(70, 90));
@@ -125,7 +125,7 @@ namespace fantasyrpg {
 
 
                         stats.number = stats.Main.Strength / 10
-                        
+
                         let skillselectionAnswer = {
                             skill1: stats.Main.Skill1,
                             skill2: stats.Main.Skill2,
@@ -139,12 +139,19 @@ namespace fantasyrpg {
 
                                 skill1funktion();
 
-                            case skillselectionAnswer.skill1:
 
-                                skill2funktion();
+                            case skillselectionAnswer.skill2:
+                                if (stats.skillused == false) {
+                                    skill2funktion();
+                                }
 
-                            case skillselectionAnswer.skill1:
-                                skill3funktion();
+
+                            case skillselectionAnswer.skill3:
+                                if (stats.skillused == false) {
+                                    skill3funktion();
+                                }
+                                stats.skillused = false;
+
                         }
                         throwdice();
                         if (stats.random >= 4) {
@@ -158,8 +165,8 @@ namespace fantasyrpg {
                             await ƒS.update();
                             await ƒS.Speech.tell(stats.Main, "Ah that was nothing");
                             await ƒS.Speech.tell(stats.Main, "For you I would do anything");
-                            
-                            
+
+
 
 
 
@@ -172,15 +179,15 @@ namespace fantasyrpg {
                         else {
                             ƒS.Character.hideAll();
                             await ƒS.Text.print("Seems like your to weak to fight the Monster alone");
-                            
+
 
 
 
                             if (stats.Main.namechar == "Samara") {
                                 await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90));
                                 await ƒS.update();
-                                await ƒS.Speech.tell(characters.Adira , "Oh no he is going to die");
-                                await ƒS.Speech.tell(characters.Adira , "I need to help him");
+                                await ƒS.Speech.tell(characters.Adira, "Oh no he is going to die");
+                                await ƒS.Speech.tell(characters.Adira, "I need to help him");
                                 await ƒS.Character.show(characters.Adira, characters.Adira.pose.skystrike1, ƒS.positionPercent(50, 90))
                                 await ƒS.update(0.2);
                                 await ƒS.Character.hideAll();
@@ -207,8 +214,8 @@ namespace fantasyrpg {
                             else {
                                 await ƒS.Character.show(characters.Samara, characters.Samara.pose.normal, ƒS.positionPercent(50, 90));
                                 await ƒS.update();
-                                await ƒS.Speech.tell(characters.Samara , "Oh no he is going to die");
-                                await ƒS.Speech.tell(characters.Samara , "I need to help him");
+                                await ƒS.Speech.tell(characters.Samara, "Oh no he is going to die");
+                                await ƒS.Speech.tell(characters.Samara, "I need to help him");
                                 await ƒS.Character.show(characters.Samara, characters.Samara.pose.fireball1, ƒS.positionPercent(50, 90))
                                 await ƒS.update(0.2);
                                 await ƒS.Character.hideAll();
@@ -276,12 +283,19 @@ namespace fantasyrpg {
 
                                 skill1funktion();
 
-                            case skillselectionAnswer1.skill1:
 
-                                skill2funktion();
+                            case skillselectionAnswer1.skill2:
+                                if (stats.skillused == false) {
+                                    skill2funktion();
+                                }
 
-                            case skillselectionAnswer1.skill1:
-                                skill3funktion();
+
+                            case skillselectionAnswer1.skill3:
+                                if (stats.skillused == false) {
+                                    skill3funktion();
+                                }
+                                stats.skillused = false;
+
                         }
                         if (stats.Main.namechar == "Samara") {
                             await ƒS.Character.show(characters.Adira, characters.Adira.pose.skystrike1, ƒS.positionPercent(50, 90))
@@ -343,7 +357,7 @@ namespace fantasyrpg {
                         await ƒS.Speech.tell(stats.Side2, "I knew together we could do it");
 
 
-                        
+
                         ƒS.Sound.play(sound.fight, 0, true);
                         scenecount = "scene7"
                         return scenecount;

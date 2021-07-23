@@ -7,8 +7,45 @@ namespace fantasyrpg {
         //console.log(ƒS.Inventory.add(items.Healthpotion));
         //console.log(ƒS.Inventory.open())
         //if( FudgeStory.functio) {}
+        stats.Main.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
+        stats.Main.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
+        stats.Main.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
+        stats.Main.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
+        stats.Main.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
+        stats.Main.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
+        stats.Main.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
+        stats.Main.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
+        stats.Main.Skill1 = "Fireball";
+        stats.Main.Skill2 = "Lightning";
+        stats.Main.Skill3 = "Windstrike";
             
-        await
+        let skillselectionAnswer = {
+            skill1: stats.Main.Skill1,
+            skill2: stats.Main.Skill2,
+            skill3: stats.Main.Skill3,
+
+          };
+
+          let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
+          switch (skillselection) {
+            case skillselectionAnswer.skill1:
+
+              skill1funktion();
+
+
+            case skillselectionAnswer.skill2:
+                if(stats.skillused == false){
+                    skill2funktion();
+                }
+              
+
+            case skillselectionAnswer.skill3:
+                if(stats.skillused == false){
+                    skill3funktion();
+                }
+                stats.skillused = false;
+                
+          }
         await ƒS.Speech.tell(stats.Side2, "Hey can we talk for a second?")
                 await ƒS.Speech.tell(stats.Main, "Sure what is bothering you?")
                 await ƒS.Speech.tell(stats.Side2, "I was worried because you said you don`t want to come with us is everything allright?")

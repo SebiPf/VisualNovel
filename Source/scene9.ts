@@ -6,14 +6,14 @@ namespace fantasyrpg {
     //await ƒS.Location.show(locations.cave);
     //await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
     //ƒS.Sound.play(sound.normal, 0.3, true);
-    
+
     //await ƒS.Inventory.add(items.Scroll)
-    
+
     //stats.Main.name = "Samara"
-    
+
     await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(60, 90))
     await ƒS.update();
-    
+
     await ƒS.Speech.tell(stats.Side2, "What do you guys think will we find at the end of this cave?");
     await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(40, 90))
     await ƒS.update();
@@ -34,9 +34,9 @@ namespace fantasyrpg {
     await ƒS.Text.print("After walking for a while you arrive in a huge room");
     await ƒS.Location.show(locations.caveboss);
     await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-    ƒS.Sound.fade(sound.normal, 0,1);
+    ƒS.Sound.fade(sound.normal, 0, 1);
     ƒS.Sound.play(sound.fight, 0.3, true);
-    
+
     ƒS.Sound.play(sound.steps, 0.4, false);
     await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
     await ƒS.update();
@@ -109,6 +109,49 @@ namespace fantasyrpg {
         case firstDecisionElementAnswers.continue:
           stats.bossfight = true;
           await ƒS.Text.print("You and your friends Decided to fight the golem");
+          await ƒS.Text.print("Maybe you have something in your inventory that would help");
+          await ƒS.Text.print("Something to make you stronger");
+          await ƒS.Speech.tell(characters.Narrator, "");
+          await ƒS.Speech.tell(characters.Narrator, "");
+          await ƒS.Speech.tell(characters.Narrator, "");
+          if (stats.scrollused == true) {
+            ƒS.Text.print("Something is happening you feel very strong all of the sudden");
+            ƒS.Text.print("You decide to fire off all your spells");
+            skill1funktion();
+            skill2funktion();
+            skill3funktion();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death2, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death3, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death4, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death5, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death6, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.death7, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            await ƒS.Character.hideAll();
+            await ƒS.update(0.2);
+            await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
+            await ƒS.update(0.2);
+            ƒS.Text.print("You managed to defeat the Golem in one blow");
+            ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
+            ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
+            scenecount = "end";
+            return scenecount;
+
+
+          }
 
           let skillselectionAnswer = {
             skill1: stats.Main.Skill1,
@@ -122,14 +165,20 @@ namespace fantasyrpg {
             case skillselectionAnswer.skill1:
 
               skill1funktion();
-              
+
 
             case skillselectionAnswer.skill2:
+              if (stats.skillused == false) {
+                skill2funktion();
+              }
 
-              skill2funktion();
 
             case skillselectionAnswer.skill3:
-              skill3funktion();
+              if (stats.skillused == false) {
+                skill3funktion();
+              }
+              stats.skillused = false;
+
           }
 
           stats.number = stats.Main.Strength / 10
@@ -297,12 +346,19 @@ namespace fantasyrpg {
 
               skill1funktion();
 
-            case skillselectionAnswer1.skill1:
 
-              skill2funktion();
+            case skillselectionAnswer1.skill2:
+              if (stats.skillused == false) {
+                skill2funktion();
+              }
 
-            case skillselectionAnswer1.skill1:
-              skill3funktion();
+
+            case skillselectionAnswer1.skill3:
+              if (stats.skillused == false) {
+                skill3funktion();
+              }
+              stats.skillused = false;
+
           }
 
           stats.number = stats.Main.Strength / 10
@@ -485,12 +541,19 @@ namespace fantasyrpg {
 
               skill1funktion();
 
-            case skillselectionAnswer2.skill1:
 
-              skill2funktion();
+            case skillselectionAnswer2.skill2:
+              if (stats.skillused == false) {
+                skill2funktion();
+              }
 
-            case skillselectionAnswer2.skill1:
-              skill3funktion();
+
+            case skillselectionAnswer2.skill3:
+              if (stats.skillused == false) {
+                skill3funktion();
+              }
+              stats.skillused = false;
+
           }
 
           stats.number = stats.Main.Strength / 10
@@ -736,28 +799,76 @@ namespace fantasyrpg {
     else {
       stats.bossfight = true;
       await ƒS.Text.print("You and your friends Decided to fight the golem");
+      await ƒS.Text.print("Maybe you have something in your inventory that would help");
+      await ƒS.Text.print("Something to make you stronger");
+      await ƒS.Speech.tell(characters.Narrator, "");
+      await ƒS.Speech.tell(characters.Narrator, "");
+      await ƒS.Speech.tell(characters.Narrator, "");
+      if (stats.scrollused == true) {
+        ƒS.Text.print("Something is happening you feel very strong all of the sudden");
+        ƒS.Text.print("You decide to fire off all your spells");
+        skill1funktion();
+        skill2funktion();
+        skill3funktion();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death2, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death3, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death4, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death5, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death6, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.death7, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        await ƒS.Character.hideAll();
+        await ƒS.update(0.2);
+        await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
+        await ƒS.update(0.2);
+        ƒS.Text.print("You managed to defeat the Golem in one blow");
+        ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
+        ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
+        scenecount = "end";
+        return scenecount;
 
-      let skillselectionAnswer = {
+
+      }
+
+      let skillselectionAnswer3 = {
         skill1: stats.Main.Skill1,
         skill2: stats.Main.Skill2,
         skill3: stats.Main.Skill3,
 
       };
 
-      let skillselection = await ƒS.Menu.getInput(skillselectionAnswer, "dialog");
-      switch (skillselection) {
-        case skillselectionAnswer.skill1:
+      let skillselection3 = await ƒS.Menu.getInput(skillselectionAnswer3, "dialog");
+      switch (skillselection3) {
+        case skillselectionAnswer3.skill1:
 
           skill1funktion();
-          await ƒS.update();
-          await ƒS.Speech.tell(characters.Narrator, "");
 
-        case skillselectionAnswer.skill2:
 
-          skill2funktion();
+        case skillselectionAnswer3.skill2:
+          if (stats.skillused == false) {
+            skill2funktion();
+          }
 
-        case skillselectionAnswer.skill3:
-          skill3funktion();
+
+        case skillselectionAnswer3.skill3:
+          if (stats.skillused == false) {
+            skill3funktion();
+          }
+          stats.skillused = false;
+
       }
 
       stats.number = stats.Main.Strength / 10
@@ -768,6 +879,7 @@ namespace fantasyrpg {
       else {
         if (ƒS.Inventory.getAmount(items.Healthpotion) > 0) {
           stats.potionamount = ƒS.Inventory.getAmount(items.Healthpotion)
+
           await ƒS.Text.print("You did not damage the golem");
           await ƒS.Text.print("The Golem Attacked you and you took a lot of damage");
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack1, ƒS.positionPercent(90, 90))
@@ -794,7 +906,7 @@ namespace fantasyrpg {
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
-          await ƒS.Text.print("One of your friends decides to attack the golem and damages it");
+          await ƒS.Text.print("One of your friends decides to attack the golem");
           if (stats.Main.namechar == "Samara") {
             await ƒS.Character.show(characters.Adira, characters.Adira.pose.skystrike1, ƒS.positionPercent(50, 90))
             await ƒS.update(0.2);
@@ -849,7 +961,7 @@ namespace fantasyrpg {
             await ƒS.Character.hideAll();
             await ƒS.update(0.2);
           }
-          ƒS.Inventory.open();
+          //ƒS.Inventory.open();
           await ƒS.Speech.tell(characters.Narrator, "");
           await ƒS.Speech.tell(characters.Narrator, "");
           if (ƒS.Inventory.getAmount(items.Healthpotion) < stats.potionamount) {
@@ -912,25 +1024,32 @@ namespace fantasyrpg {
       //second dmg phase
 
 
-      let skillselectionAnswer1 = {
+      let skillselectionAnswer4 = {
         skill1: stats.Main.Skill1,
         skill2: stats.Main.Skill2,
         skill3: stats.Main.Skill3,
 
       };
 
-      let skillselection1 = await ƒS.Menu.getInput(skillselectionAnswer1, "dialog");
-      switch (skillselection1) {
-        case skillselectionAnswer1.skill1:
+      let skillselection4 = await ƒS.Menu.getInput(skillselectionAnswer4, "dialog");
+      switch (skillselection4) {
+        case skillselectionAnswer4.skill1:
 
           skill1funktion();
 
-        case skillselectionAnswer1.skill1:
 
-          skill2funktion();
+        case skillselectionAnswer4.skill2:
+          if (stats.skillused == false) {
+            skill2funktion();
+          }
 
-        case skillselectionAnswer1.skill1:
-          skill3funktion();
+
+        case skillselectionAnswer4.skill3:
+          if (stats.skillused == false) {
+            skill3funktion();
+          }
+          stats.skillused = false;
+
       }
 
       stats.number = stats.Main.Strength / 10
@@ -1100,25 +1219,32 @@ namespace fantasyrpg {
       //third dmg phase
 
 
-      let skillselectionAnswer2 = {
+      let skillselectionAnswer5 = {
         skill1: stats.Main.Skill1,
         skill2: stats.Main.Skill2,
         skill3: stats.Main.Skill3,
 
       };
 
-      let skillselection2 = await ƒS.Menu.getInput(skillselectionAnswer2, "dialog");
-      switch (skillselection2) {
-        case skillselectionAnswer2.skill1:
+      let skillselection5 = await ƒS.Menu.getInput(skillselectionAnswer5, "dialog");
+      switch (skillselection5) {
+        case skillselectionAnswer5.skill1:
 
           skill1funktion();
 
-        case skillselectionAnswer2.skill1:
 
-          skill2funktion();
+        case skillselectionAnswer5.skill2:
+          if (stats.skillused == false) {
+            skill2funktion();
+          }
 
-        case skillselectionAnswer2.skill1:
-          skill3funktion();
+
+        case skillselectionAnswer5.skill3:
+          if (stats.skillused == false) {
+            skill3funktion();
+          }
+          stats.skillused = false;
+
       }
 
       stats.number = stats.Main.Strength / 10
