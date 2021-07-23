@@ -175,7 +175,7 @@ namespace fantasyrpg {
     },
     Golem:{
       name: "Golem",
-      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
         normal: "./Images/Characters/Golem/Golem_Normal.png",
         dead: "./Images/Characters/Golem/Golem_Dead.png",
@@ -559,7 +559,7 @@ namespace fantasyrpg {
   }
   export function knifethrow(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 80)},
+      start: { translation: ƒS.positionPercent(80, 65)},
       end: { translation: ƒS.positionPercent(10, 80)},
       duration: 3,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE

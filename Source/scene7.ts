@@ -470,6 +470,8 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Main, "Yea I think you're right");
+                await ƒS.Character.hideAll();
+                await ƒS.update();
                 await ƒS.Location.show(locations.Black);
                 await ƒS.update(1);
                 await ƒS.Text.print("You and your firends went just outside of the city");

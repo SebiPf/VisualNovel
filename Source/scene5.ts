@@ -30,6 +30,7 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.angry, ƒS.positionPercent(90, 90));
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "Stop pushing me and pack your own stuff");
+                await ƒS.Character.hide(stats.Main);
                 await ƒS.Character.show(stats.Main, stats.Main.pose.veryhappy, ƒS.positionPercent(10, 90));
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Main, "I packed my stuff already unlike you I am not a Princess and pack like all I have");

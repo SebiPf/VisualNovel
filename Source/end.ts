@@ -1,7 +1,7 @@
 namespace fantasyrpg {
   export async function end(): ƒS.SceneReturn {
     console.log("end");
-    ƒS.Sound.play(sound.normal, 0.3, true);
+    ƒS.Sound.play(sound.credits, 0.3, true);
     await ƒS.Location.show(locations.Black);
     await ƒS.update(1);
     if(stats.relside1>100){

@@ -40,6 +40,8 @@ namespace fantasyrpg {
             else if(stats.random == 6){
                 await ƒS.Character.animate(characters.dice, characters.dice.pose.dice6, diceani6());
             }
+            await ƒS.Character.hideAll();
+            await ƒS.update(1);
         }
         
         else if(stats.number>3 && stats.number<=9){
@@ -165,6 +167,8 @@ namespace fantasyrpg {
 
                 await ƒS.Character.animate(characters.dice, characters.dice.pose.dice6, diceani6right());
             }
+            await ƒS.Character.hideAll();
+            await ƒS.update(1);
         }
         else if(stats.number>9){
 
@@ -468,6 +472,8 @@ namespace fantasyrpg {
                 await ƒS.Character.animate(characters.dice, characters.dice.pose.dice6, diceani6right());
 
             }
+            await ƒS.Character.hideAll();
+            await ƒS.update(1);
         }
 
 

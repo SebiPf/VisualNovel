@@ -20,7 +20,8 @@ namespace fantasyrpg {
         await ƒS.Speech.tell(stats.Side2, "The left path looks like it is going to lead to a lake");
         await ƒS.Speech.tell(stats.Side2, "What do you think " + stats.Main.name + " where should we go?");
         await ƒS.Text.print("Your friends left the decision where to go to you");
-
+        await ƒS.Character.hideAll();
+        await ƒS.update();
         let firstDecisionElementAnswers = {
             left: "Go Left",
             right: "Go Right",

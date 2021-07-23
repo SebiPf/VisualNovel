@@ -3,13 +3,9 @@ namespace fantasyrpg {
     console.log("scene9 start");
     await ƒS.Character.hideAll();
     await ƒS.update();
-    //await ƒS.Location.show(locations.cave);
-    //await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-    //ƒS.Sound.play(sound.normal, 0.3, true);
-
-    //await ƒS.Inventory.add(items.Scroll)
-
-    //stats.Main.name = "Samara"
+    await ƒS.Location.show(locations.cave);
+    await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
+    ƒS.Sound.play(sound.normal, 0.3, true);
 
     await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(60, 90))
     await ƒS.update();
@@ -180,7 +176,8 @@ namespace fantasyrpg {
               stats.skillused = false;
 
           }
-
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           stats.number = stats.Main.Strength / 10
           throwdice();
           if (stats.random >= 10) {
@@ -212,6 +209,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -239,6 +238,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.2);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.2);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               else {
                 await ƒS.Character.show(characters.Samara, characters.Samara.pose.fireball1, ƒS.positionPercent(50, 90))
@@ -269,6 +270,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.2);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.2);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               ƒS.Inventory.open();
               await ƒS.Speech.tell(characters.Narrator, "");
@@ -314,6 +317,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("You died because of your wounds");
@@ -360,7 +365,8 @@ namespace fantasyrpg {
               stats.skillused = false;
 
           }
-
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           stats.number = stats.Main.Strength / 10
           throwdice();
           if (stats.random >= 10) {
@@ -392,6 +398,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -434,6 +442,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.1);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.1);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               else {
                 await ƒS.Character.show(characters.Samara, characters.Samara.pose.windstrike1, ƒS.positionPercent(50, 90))
@@ -464,6 +474,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.1);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.1);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               ƒS.Inventory.open();
               await ƒS.Speech.tell(characters.Narrator, "");
@@ -509,6 +521,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("You died because of your wounds");
@@ -555,6 +569,8 @@ namespace fantasyrpg {
               stats.skillused = false;
 
           }
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
 
           stats.number = stats.Main.Strength / 10
           throwdice();
@@ -584,8 +600,16 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
             await ƒS.update(0.2);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
             await ƒS.Text.print("Finally the Golem falls to the ground");
             await ƒS.Text.print("You managed to defeat it");
+
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////
+
           }
           else {
             if (ƒS.Inventory.getAmount(items.Healthpotion) > 0) {
@@ -613,6 +637,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -631,6 +657,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.2);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.2);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               else {
                 await ƒS.Character.show(characters.Samara, characters.Samara.pose.lightning1, ƒS.positionPercent(50, 90))
@@ -661,6 +689,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.1);
                 await ƒS.Character.hideAll();
                 await ƒS.update(0.1);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
               }
               ƒS.Inventory.open();
               await ƒS.Speech.tell(characters.Narrator, "");
@@ -691,6 +721,8 @@ namespace fantasyrpg {
                 await ƒS.update(0.2);
                 await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
                 await ƒS.update(0.2);
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
 
                 await ƒS.Text.print("Your friends helped you defeat the Golem");
                 await ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
@@ -724,6 +756,8 @@ namespace fantasyrpg {
                 await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
                 await ƒS.update(0.2);
                 await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+                await ƒS.update();
                 await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
                 await ƒS.update();
 
@@ -763,6 +797,8 @@ namespace fantasyrpg {
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
               await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+              await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
               await ƒS.update();
               await ƒS.Text.print("You died because of your wounds");
@@ -834,6 +870,8 @@ namespace fantasyrpg {
         await ƒS.update(0.2);
         await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
         await ƒS.update(0.2);
+        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+        await ƒS.update();
         ƒS.Text.print("You managed to defeat the Golem in one blow");
         ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
         ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
@@ -903,6 +941,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -930,6 +970,8 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
             await ƒS.update(0.2);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           else {
             await ƒS.Character.show(characters.Samara, characters.Samara.pose.fireball1, ƒS.positionPercent(50, 90))
@@ -960,6 +1002,8 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
             await ƒS.update(0.2);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           //ƒS.Inventory.open();
           await ƒS.Speech.tell(characters.Narrator, "");
@@ -967,6 +1011,12 @@ namespace fantasyrpg {
           if (ƒS.Inventory.getAmount(items.Healthpotion) < stats.potionamount) {
             await ƒS.Text.print("your wounds are healed and you get another chance defeating the golem");
 
+
+
+
+
+
+            ///////////////////////////////////////////////////////////
           }
           else {
             await ƒS.Text.print("You died because of your wounds");
@@ -1005,6 +1055,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("You died because of your wounds");
@@ -1051,6 +1103,8 @@ namespace fantasyrpg {
           stats.skillused = false;
 
       }
+      await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+      await ƒS.update();
 
       stats.number = stats.Main.Strength / 10
       throwdice();
@@ -1083,6 +1137,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -1125,6 +1181,8 @@ namespace fantasyrpg {
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
             await ƒS.update(0.1);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           else {
             await ƒS.Character.show(characters.Samara, characters.Samara.pose.windstrike1, ƒS.positionPercent(50, 90))
@@ -1155,6 +1213,8 @@ namespace fantasyrpg {
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
             await ƒS.update(0.1);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           ƒS.Inventory.open();
           await ƒS.Speech.tell(characters.Narrator, "");
@@ -1200,6 +1260,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("You died because of your wounds");
@@ -1247,6 +1309,8 @@ namespace fantasyrpg {
 
       }
 
+      await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+      await ƒS.update();
       stats.number = stats.Main.Strength / 10
       throwdice();
       if (stats.random >= 10) {
@@ -1275,6 +1339,8 @@ namespace fantasyrpg {
         await ƒS.update(0.2);
         await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
         await ƒS.update(0.2);
+        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+        await ƒS.update();
         await ƒS.Text.print("Finally the Golem falls to the ground");
         await ƒS.Text.print("You managed to defeat it");
       }
@@ -1304,6 +1370,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -1322,6 +1390,8 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
             await ƒS.update(0.2);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           else {
             await ƒS.Character.show(characters.Samara, characters.Samara.pose.lightning1, ƒS.positionPercent(50, 90))
@@ -1352,6 +1422,8 @@ namespace fantasyrpg {
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
             await ƒS.update(0.1);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
           }
           ƒS.Inventory.open();
           await ƒS.Speech.tell(characters.Narrator, "");
@@ -1382,6 +1454,8 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.show(characters.Golem, characters.Golem.pose.dead, ƒS.positionPercent(90, 90))
             await ƒS.update(0.2);
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
 
 
             await ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
@@ -1415,6 +1489,8 @@ namespace fantasyrpg {
             await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
             await ƒS.update(0.2);
             await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 85))
+            await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+            await ƒS.update();
             await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
             await ƒS.update();
 
@@ -1454,6 +1530,8 @@ namespace fantasyrpg {
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
           await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
+          await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
           await ƒS.update();
           await ƒS.Text.print("You died because of your wounds");

@@ -403,7 +403,7 @@ var fantasyrpg;
         },
         Golem: {
             name: "Golem",
-            origin: fantasyrpg.ƒS.ORIGIN.BOTTOMLEFT,
+            origin: fantasyrpg.ƒS.ORIGIN.BOTTOMRIGHT,
             pose: {
                 normal: "./Images/Characters/Golem/Golem_Normal.png",
                 dead: "./Images/Characters/Golem/Golem_Dead.png",
@@ -799,7 +799,7 @@ var fantasyrpg;
     fantasyrpg.diceani6right = diceani6right;
     function knifethrow() {
         return {
-            start: { translation: fantasyrpg.ƒS.positionPercent(80, 80) },
+            start: { translation: fantasyrpg.ƒS.positionPercent(80, 65) },
             end: { translation: fantasyrpg.ƒS.positionPercent(10, 80) },
             duration: 3,
             playmode: fantasyrpg.ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -1205,7 +1205,7 @@ var fantasyrpg;
 (function (fantasyrpg) {
     async function end() {
         console.log("end");
-        fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
+        fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.credits, 0.3, true);
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
         await fantasyrpg.ƒS.update(1);
         if (fantasyrpg.stats.relside1 > 100) {
@@ -2367,6 +2367,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.angry, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "Stop pushing me and pack your own stuff");
+                await fantasyrpg.ƒS.Character.hide(fantasyrpg.stats.Main);
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.veryhappy, fantasyrpg.ƒS.positionPercent(10, 90));
                 await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "I packed my stuff already unlike you I am not a Princess and pack like all I have");
@@ -2524,6 +2525,8 @@ var fantasyrpg;
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "The left path looks like it is going to lead to a lake");
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "What do you think " + fantasyrpg.stats.Main.name + " where should we go?");
         await fantasyrpg.ƒS.Text.print("Your friends left the decision where to go to you");
+        await fantasyrpg.ƒS.Character.hideAll();
+        await fantasyrpg.ƒS.update();
         let firstDecisionElementAnswers = {
             left: "Go Left",
             right: "Go Right",
@@ -3236,6 +3239,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.happy, fantasyrpg.ƒS.positionPercent(10, 90));
                                 await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Yea I think you're right");
+                                await fantasyrpg.ƒS.Character.hideAll();
+                                await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
                                 await fantasyrpg.ƒS.update(1);
                                 await fantasyrpg.ƒS.Text.print("You and your firends went just outside of the city");
@@ -3634,7 +3639,11 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.Text.print("Maybe look at it again a bit later");
                             }
                         }
+                        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
+                        await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
                         await fantasyrpg.ƒS.Text.print("After restocking your supplies you and your friends decided to leave the city by climbing down the Waterfall");
+                        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.waterfall);
+                        await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
                         await fantasyrpg.ƒS.Text.print("At the bottom of the waterfall you see an entrance behind the waterfall");
                         await fantasyrpg.ƒS.Text.print("You and your friends decide to go throught the pond in front of the waterfall and inspect it");
                         await fantasyrpg.ƒS.Text.print("It turns out it is a cave");
@@ -4090,11 +4099,9 @@ var fantasyrpg;
         console.log("scene9 start");
         await fantasyrpg.ƒS.Character.hideAll();
         await fantasyrpg.ƒS.update();
-        //await ƒS.Location.show(locations.cave);
-        //await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-        //ƒS.Sound.play(sound.normal, 0.3, true);
-        //await ƒS.Inventory.add(items.Scroll)
-        //stats.Main.name = "Samara"
+        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.cave);
+        await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
+        fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
         await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.normal, fantasyrpg.ƒS.positionPercent(60, 90));
         await fantasyrpg.ƒS.update();
         await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "What do you guys think will we find at the end of this cave?");
@@ -4241,6 +4248,8 @@ var fantasyrpg;
                             }
                             fantasyrpg.stats.skillused = false;
                     }
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
                     if (fantasyrpg.stats.random >= 10) {
@@ -4272,6 +4281,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -4299,6 +4310,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.2);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.2);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             else {
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -4329,6 +4342,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.2);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.2);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             fantasyrpg.ƒS.Inventory.open();
                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
@@ -4373,6 +4388,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -4407,6 +4424,8 @@ var fantasyrpg;
                             }
                             fantasyrpg.stats.skillused = false;
                     }
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
                     if (fantasyrpg.stats.random >= 10) {
@@ -4438,6 +4457,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -4480,6 +4501,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.1);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.1);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             else {
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -4510,6 +4533,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.1);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.1);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             fantasyrpg.ƒS.Inventory.open();
                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
@@ -4554,6 +4579,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -4588,6 +4615,8 @@ var fantasyrpg;
                             }
                             fantasyrpg.stats.skillused = false;
                     }
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
                     if (fantasyrpg.stats.random >= 10) {
@@ -4616,8 +4645,11 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.dead, fantasyrpg.ƒS.positionPercent(90, 90));
                         await fantasyrpg.ƒS.update(0.2);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                         await fantasyrpg.ƒS.Text.print("Finally the Golem falls to the ground");
                         await fantasyrpg.ƒS.Text.print("You managed to defeat it");
+                        ////////////////////////////////////////////////////////////////////////////////
                     }
                     else {
                         if (fantasyrpg.ƒS.Inventory.getAmount(fantasyrpg.items.Healthpotion) > 0) {
@@ -4645,6 +4677,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -4663,6 +4697,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.2);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.2);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             else {
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -4693,6 +4729,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.1);
                                 await fantasyrpg.ƒS.Character.hideAll();
                                 await fantasyrpg.ƒS.update(0.1);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                             }
                             fantasyrpg.ƒS.Inventory.open();
                             await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
@@ -4723,6 +4761,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.update(0.2);
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.dead, fantasyrpg.ƒS.positionPercent(90, 90));
                                 await fantasyrpg.ƒS.update(0.2);
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Text.print("Your friends helped you defeat the Golem");
                                 await fantasyrpg.ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
                                 await fantasyrpg.ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
@@ -4754,6 +4794,8 @@ var fantasyrpg;
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                                 await fantasyrpg.ƒS.update(0.2);
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                                await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                                 await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -4792,6 +4834,8 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                             await fantasyrpg.ƒS.update(0.2);
                             await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                            await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -4854,6 +4898,8 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.update(0.2);
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.dead, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update(0.2);
+                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                await fantasyrpg.ƒS.update();
                 fantasyrpg.ƒS.Text.print("You managed to defeat the Golem in one blow");
                 fantasyrpg.ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
                 fantasyrpg.ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
@@ -4910,6 +4956,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -4937,6 +4985,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.2);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     else {
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -4967,12 +5017,15 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.2);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     //ƒS.Inventory.open();
                     await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
                     await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
                     if (fantasyrpg.ƒS.Inventory.getAmount(fantasyrpg.items.Healthpotion) < fantasyrpg.stats.potionamount) {
                         await fantasyrpg.ƒS.Text.print("your wounds are healed and you get another chance defeating the golem");
+                        ///////////////////////////////////////////////////////////
                     }
                     else {
                         await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -5011,6 +5064,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -5045,6 +5100,8 @@ var fantasyrpg;
                     }
                     fantasyrpg.stats.skillused = false;
             }
+            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+            await fantasyrpg.ƒS.update();
             fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
             fantasyrpg.throwdice();
             if (fantasyrpg.stats.random >= 10) {
@@ -5076,6 +5133,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -5118,6 +5177,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.1);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.1);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     else {
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -5148,6 +5209,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.1);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.1);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     fantasyrpg.ƒS.Inventory.open();
                     await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
@@ -5192,6 +5255,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -5226,6 +5291,8 @@ var fantasyrpg;
                     }
                     fantasyrpg.stats.skillused = false;
             }
+            await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+            await fantasyrpg.ƒS.update();
             fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
             fantasyrpg.throwdice();
             if (fantasyrpg.stats.random >= 10) {
@@ -5254,6 +5321,8 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.update(0.2);
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.dead, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update(0.2);
+                await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Text.print("Finally the Golem falls to the ground");
                 await fantasyrpg.ƒS.Text.print("You managed to defeat it");
             }
@@ -5283,6 +5352,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("Maybe you have something in your inventory that helps");
@@ -5301,6 +5372,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.2);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     else {
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning1, fantasyrpg.ƒS.positionPercent(50, 90));
@@ -5331,6 +5404,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.1);
                         await fantasyrpg.ƒS.Character.hideAll();
                         await fantasyrpg.ƒS.update(0.1);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                     }
                     fantasyrpg.ƒS.Inventory.open();
                     await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "");
@@ -5361,6 +5436,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.dead, fantasyrpg.ƒS.positionPercent(90, 90));
                         await fantasyrpg.ƒS.update(0.2);
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                         await fantasyrpg.ƒS.Text.print("You and your friends were really happy and proud of what you accomplished on your jerney");
                         await fantasyrpg.ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
                         await fantasyrpg.ƒS.Character.hideAll();
@@ -5391,6 +5468,8 @@ var fantasyrpg;
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                         await fantasyrpg.ƒS.update(0.2);
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 85));
+                        await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                        await fantasyrpg.ƒS.update();
                         await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                         await fantasyrpg.ƒS.update();
                         await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -5429,6 +5508,8 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.attack7, fantasyrpg.ƒS.positionPercent(90, 90));
                     await fantasyrpg.ƒS.update(0.2);
                     await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.ƒS.positionPercent(90, 75));
+                    await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Main, fantasyrpg.stats.Main.pose.normal, fantasyrpg.ƒS.positionPercent(10, 90));
+                    await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.Knife, fantasyrpg.characters.Knife.pose.normal, fantasyrpg.knifethrow());
                     await fantasyrpg.ƒS.update();
                     await fantasyrpg.ƒS.Text.print("You died because of your wounds");
@@ -6241,6 +6322,8 @@ var fantasyrpg;
             else if (fantasyrpg.stats.random == 6) {
                 await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice6, fantasyrpg.diceani6());
             }
+            await fantasyrpg.ƒS.Character.hideAll();
+            await fantasyrpg.ƒS.update(1);
         }
         else if (fantasyrpg.stats.number > 3 && fantasyrpg.stats.number <= 9) {
             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice1, fantasyrpg.diceani1left());
@@ -6357,6 +6440,8 @@ var fantasyrpg;
             else if (fantasyrpg.stats.random == 12) {
                 await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice6, fantasyrpg.diceani6right());
             }
+            await fantasyrpg.ƒS.Character.hideAll();
+            await fantasyrpg.ƒS.update(1);
         }
         else if (fantasyrpg.stats.number > 9) {
             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice1, fantasyrpg.diceani1left());
@@ -6615,6 +6700,8 @@ var fantasyrpg;
             else if (fantasyrpg.stats.random == 18) {
                 await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice6, fantasyrpg.diceani6right());
             }
+            await fantasyrpg.ƒS.Character.hideAll();
+            await fantasyrpg.ƒS.update(1);
         }
     }
     fantasyrpg.throwdice = throwdice;

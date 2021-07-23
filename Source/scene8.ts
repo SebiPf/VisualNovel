@@ -156,8 +156,11 @@ namespace fantasyrpg {
 
 
 
-
+                        await ƒS.Location.show(locations.Black);
+                        await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                         await ƒS.Text.print("After restocking your supplies you and your friends decided to leave the city by climbing down the Waterfall");
+                        await ƒS.Location.show(locations.waterfall);
+                        await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                         await ƒS.Text.print("At the bottom of the waterfall you see an entrance behind the waterfall");
                         await ƒS.Text.print("You and your friends decide to go throught the pond in front of the waterfall and inspect it");
                         await ƒS.Text.print("It turns out it is a cave");
