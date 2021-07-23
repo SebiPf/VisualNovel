@@ -900,11 +900,7 @@ namespace fantasyrpg {
 
 
     let scenes: ƒS.Scenes = [
-      {id: "scene6", scene: testing, name: "scene6"},
-      //{scene: audiouebung, name: "audioübung"}
-      //{ scene: Text, name: "01_Text", next: scenecount.count},
-      //{scene: Decision, name: "02_Test"},
-      //{scene: Animation, name: "animation"},
+      //{id: "scene6", scene: testing, name: "scene6"},
       {id: "scene1", scene: scene1, name: "1stScene", next: scenecount},
       {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
       {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
