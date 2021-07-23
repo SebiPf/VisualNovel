@@ -1,4 +1,4 @@
-# VisualNove
+# VisualNovel
 
 Pages Link:
 https://sebipf.github.io/VisualNovel/
