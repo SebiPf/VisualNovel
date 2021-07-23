@@ -583,7 +583,8 @@ namespace fantasyrpg {
 
 
       case firstDecisionElementAnswers.mountain:
-
+        await ƒS.Character.hideAll();
+        await ƒS.update();
         await ƒS.Location.show(locations.trailtomountain);
         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90))
@@ -654,7 +655,7 @@ namespace fantasyrpg {
 
               await ƒS.Location.show(locations.trailtomountain);
               await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
-              await ƒS.Text.print("After successfully pushing away the rocks you keept waling through the mountains");
+              await ƒS.Text.print("After successfully pushing away the rocks you keept walking through the mountains");
               await ƒS.Location.show(locations.Black);
               await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
               await ƒS.Text.print("when it got darker and darker you decided to make camp and continue tomorrow");
@@ -723,7 +724,7 @@ namespace fantasyrpg {
               await ƒS.Location.show(locations.Black);
               await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
               await ƒS.Text.print("Your friends decided to make camp and continue tomorrow");
-              
+
 
 
 
@@ -745,7 +746,7 @@ namespace fantasyrpg {
 
 
 
-              
+
               stats.number = stats.Main.Strength / 10
               let Throwdice = {
                 Throwdice: "Are you stron enough?",
@@ -758,17 +759,16 @@ namespace fantasyrpg {
 
 
               if (stats.random >= 5) {
-                stats.number = stats.Main.Strength / 10
 
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "wow you managed to push them alone??");
-                await ƒS.Speech.tell(stats.Side1, "I always underestimate your strenght "+ stats.Main.name);
+                await ƒS.Speech.tell(stats.Side1, "I always underestimate your strenght " + stats.Main.name);
                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Yea I can`t belive you did that");
                 await ƒS.Character.hideAll();
-              await ƒS.update();
+                await ƒS.update();
                 await ƒS.Location.show(locations.trailtomountain);
                 await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                 await ƒS.Text.print("After successfully pushing away the rocks you and your friends kept waling through the mountains");

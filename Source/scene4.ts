@@ -1,3 +1,14 @@
+
+//Pre ending from beta(Tag der Medien ending)
+//Not used anymore
+
+
+
+
+
+
+
+
 namespace fantasyrpg {
     export async function scene4(): ƒS.SceneReturn {
         console.log("scene4");
@@ -5,13 +16,13 @@ namespace fantasyrpg {
         ƒS.update();
         await ƒS.Location.show(locations.Black);
         await ƒS.update(1);
-        
+
         await ƒS.Speech.tell(characters.Narrator, "");
         await ƒS.Text.print("You Agreed to go on an Adventure with your friends");
         await ƒS.Text.print("This is the End of this Preview");
         await ƒS.Text.print("Feel free to play again since every choice leads to a different experience");
         await ƒS.Text.print("In this rund you achived the following things");
-        
+
         await ƒS.Text.print("Strength: " + stats.Main.Strength);
         await ƒS.Text.print("Affection to " + stats.Side1.name + ": " + stats.relside1);
         await ƒS.Text.print("Affection to " + stats.Side2.name + ": " + stats.relside2);
@@ -32,9 +43,9 @@ namespace fantasyrpg {
         skill3funktion();
         await ƒS.Speech.tell(characters.Narrator, "");
         await ƒS.Text.print("As well As some charakter development");
-        
 
-        
-        
+
+
+
     }
 }

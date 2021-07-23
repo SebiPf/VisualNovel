@@ -13,7 +13,7 @@ namespace fantasyrpg {
         stats.Main.Skill1 = "Skystrike";
         stats.Main.Skill2 = "Swordattack";
         stats.Main.Skill3 = "Swordslash";
-        
+
 
         stats.Side1.name = "Samara"
         stats.Side1.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
@@ -27,7 +27,7 @@ namespace fantasyrpg {
         stats.Side1.Skill1 = "FireBall";
         stats.Side1.Skill2 = "Lightning";
         stats.Side1.Skill3 = "Windstrike";
-        
+
 
         stats.Side2.name = "Liraz"
         stats.Side2.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
@@ -41,7 +41,7 @@ namespace fantasyrpg {
         stats.Side2.Skill1 = "Blindinglight";
         stats.Side2.Skill2 = "Swordswing";
         stats.Side2.Skill3 = "Windburst";
-        
+
 
         stats.Side3.name = "Hando"
         stats.Side3.pose.normal = "./Images/Characters/Archer/Archer1.png";
@@ -55,14 +55,14 @@ namespace fantasyrpg {
         stats.Side3.Skill1 = "Bowshot";
         stats.Side3.Skill2 = "Fastshot";
         stats.Side3.Skill3 = "Rollshot";
-        
+
         stats.scoreside1 = "Samara"
         stats.scoreside2 = "Liraz"
         stats.scoreside3 = "Hando"
-        
 
 
-        await ƒS.Sound.play(sound.normal, 0.3, true);    
+
+        await ƒS.Sound.play(sound.normal, 0.3, true);
         await ƒS.Location.show(locations.camp);
         await ƒS.update(2);
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));
@@ -73,7 +73,7 @@ namespace fantasyrpg {
         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90));
         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90));
         ƒS.update();
-        
+
         await ƒS.Text.print("They asked you if you want to go with them to the shore to hang out later")
         await ƒS.Character.hide(stats.Side1);
         await ƒS.Character.hide(stats.Side2);
@@ -105,8 +105,8 @@ namespace fantasyrpg {
                 ƒS.update();
 
                 await ƒS.Text.print("A few minutes later " + stats.Side2.name + " walks up to you");
-                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90,90));
-                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10,90));
+                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90));
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
                 ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Hey can we talk for a second?")
                 await ƒS.Speech.tell(stats.Main, "Sure what is bothering you?")
@@ -119,7 +119,7 @@ namespace fantasyrpg {
                     sayYes: "For you I`ll come",
                     sayNo: "Stay strong and don`t go",
                 };
-        
+
                 let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementAnswers, "dialog1");
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
@@ -136,7 +136,7 @@ namespace fantasyrpg {
 
                         scenecount = "scene2";
                         return scenecount
-                        
+
                     case secondDialogueElementAnswers.sayNo:
                         stats.Main.Strength += 10;
                         await ƒS.Character.hide(stats.Side2);
@@ -152,7 +152,7 @@ namespace fantasyrpg {
                             sayYes: "Yes",
                             sayNo: "No",
                         };
-                
+
                         let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
@@ -172,16 +172,16 @@ namespace fantasyrpg {
                                 await ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 scenecount = "scene3";
                                 await ƒS.update();
-                                return scenecount;   
+                                return scenecount;
                         }
-                        
-                        
+
+
 
                         scenecount = "scene3";
                         await ƒS.update();
                         return scenecount
 
-                        
+
                 }
         }
     }

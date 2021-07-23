@@ -2,7 +2,7 @@ namespace fantasyrpg {
     export async function scene5(): ƒS.SceneReturn {
         console.log("scene5");
         await ƒS.Character.hideAll();
-    await ƒS.update();
+        await ƒS.update();
         await ƒS.Sound.play(sound.normal, 0.3, true);
         await ƒS.Location.show(locations.Black);
         await ƒS.update(1);
@@ -38,14 +38,14 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.veryhappy, ƒS.positionPercent(90, 90));
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "Fuck you dude I am almost done");
-                
+
                 await ƒS.Character.hideAll();
                 await ƒS.Text.print("After everyone was done Packing their stuff you and your friends started to walk");
                 await ƒS.Location.show(locations.trail);
                 await ƒS.update(transition.speed.duration, transition.speed.alpha, transition.speed.edge);
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90));
                 await ƒS.update();
-                await ƒS.Speech.tell(stats.Side3, "Hey by the way did you knwow´that there is a new Tavern");
+                await ƒS.Speech.tell(stats.Side3, "Hey by the way did you know that there is a new Tavern");
                 await ƒS.Speech.tell(stats.Side3, "I drank a Met there lately and it was really good");
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(70, 90));
                 await ƒS.Character.hide(stats.Side3);
@@ -92,7 +92,7 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.veryhappy, ƒS.positionPercent(90, 90));
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Fuck you dude I am almost done");
-                
+
                 await ƒS.Character.hideAll();
                 await ƒS.Text.print("After everyone was done Packing their stuff you and your friends started to walk");
                 await ƒS.Location.show(locations.trail);

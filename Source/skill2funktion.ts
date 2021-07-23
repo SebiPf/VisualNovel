@@ -1,9 +1,9 @@
 namespace fantasyrpg {
-    export async function skill2funktion(){
+    export async function skill2funktion() {
         console.log("skill2");
-        stats.skillused= true;
+        stats.skillused = true;
 
-        if(stats.Main.Skill2 == "Swordattack"){
+        if (stats.Main.Skill2 == "Swordattack") {
             await ƒS.Character.show(characters.Adira, characters.Adira.pose.swordattack1, ƒS.positionPercent(10, 90))
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
@@ -17,9 +17,9 @@ namespace fantasyrpg {
             await ƒS.update(0.2);
             await ƒS.Character.hideAll();
             await ƒS.update(0);
-            
+
         }
-        else if(stats.Main.Skill2 == "Fastshot"){
+        else if (stats.Main.Skill2 == "Fastshot") {
             await ƒS.Character.show(characters.Hando, characters.Hando.pose.fastshot1, ƒS.positionPercent(10, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -42,7 +42,7 @@ namespace fantasyrpg {
 
 
         }
-        else if(stats.Main.Skill2 == "Swordswing"){
+        else if (stats.Main.Skill2 == "Swordswing") {
             await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.swordswing1, ƒS.positionPercent(10, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -66,9 +66,9 @@ namespace fantasyrpg {
             await ƒS.Character.hideAll();
             await ƒS.update(0);
 
-            
+
         }
-        else if(stats.Main.Skill2 == "Lightning"){
+        else if (stats.Main.Skill2 == "Lightning") {
             await ƒS.Character.show(characters.Samara, characters.Samara.pose.lightning1, ƒS.positionPercent(10, 90))
             await ƒS.update(0.1);
             await ƒS.Character.hideAll();
@@ -98,7 +98,7 @@ namespace fantasyrpg {
             await ƒS.Character.hideAll();
             await ƒS.update(0);
 
-            
+
         }
     }
 }

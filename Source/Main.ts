@@ -11,7 +11,7 @@ namespace fantasyrpg {
       alpha: "./Images/Transitions/WipesAndOther/cw-side.jpg",
       edge: 1
     },
-    pixel:{
+    pixel: {
       duration: 1,
       alpha: "./Images/Transitions/Others/029.png",
       edge: 1
@@ -126,13 +126,13 @@ namespace fantasyrpg {
 
 
   };
-  
+
   // define Carr
   export let characters = {
     Narrator: {
       name: ""
     },
-    Scroll:{
+    Scroll: {
       name: "Advice",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
@@ -140,35 +140,35 @@ namespace fantasyrpg {
         incave: "./Images/incave.png"
       }
     },
-    Stone:{
+    Stone: {
       name: "Stone",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
         normal: "./Images/Characters/Stone.png"
       }
     },
-    Stone2:{
+    Stone2: {
       name: "Stone1",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
         normal: "./Images/Characters/Stone1.png"
       }
     },
-    Stone3:{
+    Stone3: {
       name: "Stone2",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
         normal: "./Images/Characters/Stone2.png"
       }
     },
-    Knife:{
+    Knife: {
       name: "Knife",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
         normal: "./Images/Characters/Golem/Golem_Knife.png"
       }
     },
-    Golem:{
+    Golem: {
       name: "Golem",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
@@ -192,9 +192,9 @@ namespace fantasyrpg {
 
       }
     },
-    
-    
-    
+
+
+
     Samara: {
       name: "Samara: ",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
@@ -273,7 +273,7 @@ namespace fantasyrpg {
         rollshot11: "./Images/Characters/Archer/RollShot/AA_RollShot_11.png",
         rollshot12: "./Images/Characters/Archer/RollShot/AA_RollShot_12.png",
 
-        
+
       }
     },
     Liraz: {
@@ -312,7 +312,7 @@ namespace fantasyrpg {
         windburst8: "./Images/Characters/Nightstalker/Windburst/NS_Wind_8.png",
         windburst9: "./Images/Characters/Nightstalker/Windburst/NS_Wind_9.png",
 
-        
+
       }
     },
     Adira: {
@@ -343,10 +343,10 @@ namespace fantasyrpg {
         swordslash3: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_3.png",
         swordslash4: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_4.png",
         swordslash5: "./Images/Characters/SwordWhielder/Swordslash/SW_SwordSlash_5.png",
-        
+
       }
     },
-    dice:{
+    dice: {
       name: "dice",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
@@ -358,7 +358,7 @@ namespace fantasyrpg {
         dice6: "./Images/6.png",
       }
     },
-    dice2:{
+    dice2: {
       name: "dice2",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
@@ -370,7 +370,7 @@ namespace fantasyrpg {
         dice6: "./Images/66.png",
       }
     },
-    dice3:{
+    dice3: {
       name: "dice3",
       origin: ƒS.ORIGIN.CENTER,
       pose: {
@@ -383,34 +383,34 @@ namespace fantasyrpg {
       }
     }
   };
-  	//Animation for dice
-    export function stones(): ƒS.AnimationDefinition {
-      return {
-        start: { translation: ƒS.positionPercent(0, 0)},
-        end: { translation: ƒS.positionPercent(40, 120)},
-        duration: 3,
-        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
-      };
-    }
-    export function stones1(): ƒS.AnimationDefinition {
-      return {
-        start: { translation: ƒS.positionPercent(30, 0)},
-        end: { translation: ƒS.positionPercent(70, 120)},
-        duration: 3,
-        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
-      };
-    }
-    export function stones2(): ƒS.AnimationDefinition {
-      return {
-        start: { translation: ƒS.positionPercent(60, 0)},
-        end: { translation: ƒS.positionPercent(120, 120)},
-        duration: 3,
-        playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
-      };
-    }
+  //Animation for dice
+  export function stones(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(0, 0) },
+      end: { translation: ƒS.positionPercent(40, 120) },
+      duration: 3,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function stones1(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(30, 0) },
+      end: { translation: ƒS.positionPercent(70, 120) },
+      duration: 3,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function stones2(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positionPercent(60, 0) },
+      end: { translation: ƒS.positionPercent(120, 120) },
+      duration: 3,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
   export function diceani1(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 80), rotation: 0},
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 0 },
       end: { translation: ƒS.positionPercent(50, 80), rotation: 180 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -418,7 +418,7 @@ namespace fantasyrpg {
   }
   export function diceani2(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 80), rotation: 190},
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 190 },
       end: { translation: ƒS.positionPercent(50, 80), rotation: 360 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -434,7 +434,7 @@ namespace fantasyrpg {
   }
   export function diceani4(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 80), rotation: 550},
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 550 },
       end: { translation: ƒS.positionPercent(50, 80), rotation: 720 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -442,7 +442,7 @@ namespace fantasyrpg {
   }
   export function diceani5(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 80), rotation: 730},
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 730 },
       end: { translation: ƒS.positionPercent(50, 80), rotation: 900 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -450,7 +450,7 @@ namespace fantasyrpg {
   }
   export function diceani6(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(50, 80), rotation: 910},
+      start: { translation: ƒS.positionPercent(50, 80), rotation: 910 },
       end: { translation: ƒS.positionPercent(50, 80), rotation: 1080 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -458,7 +458,7 @@ namespace fantasyrpg {
   }
   export function diceani1left(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(20, 80) , rotation: 0},
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 0 },
       end: { translation: ƒS.positionPercent(20, 80), rotation: 90 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -466,7 +466,7 @@ namespace fantasyrpg {
   }
   export function diceani2left(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(20, 80), rotation: 90},
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 90 },
       end: { translation: ƒS.positionPercent(20, 80), rotation: 180 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -482,7 +482,7 @@ namespace fantasyrpg {
   }
   export function diceani4left(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(20, 80), rotation: 270},
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 270 },
       end: { translation: ƒS.positionPercent(20, 80), rotation: 360 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -490,7 +490,7 @@ namespace fantasyrpg {
   }
   export function diceani5left(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(20, 80), rotation: 360},
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 360 },
       end: { translation: ƒS.positionPercent(20, 80), rotation: 450 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -498,7 +498,7 @@ namespace fantasyrpg {
   }
   export function diceani6left(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(20, 80), rotation: 450},
+      start: { translation: ƒS.positionPercent(20, 80), rotation: 450 },
       end: { translation: ƒS.positionPercent(20, 80), rotation: 360 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -506,7 +506,7 @@ namespace fantasyrpg {
   }
   export function diceani1right(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 80) , rotation: 0},
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 0 },
       end: { translation: ƒS.positionPercent(80, 80), rotation: 90 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -514,7 +514,7 @@ namespace fantasyrpg {
   }
   export function diceani2right(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 80), rotation: 90},
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 90 },
       end: { translation: ƒS.positionPercent(80, 80), rotation: 180 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -530,7 +530,7 @@ namespace fantasyrpg {
   }
   export function diceani4right(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 80), rotation: 270},
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 270 },
       end: { translation: ƒS.positionPercent(80, 80), rotation: 360 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -538,7 +538,7 @@ namespace fantasyrpg {
   }
   export function diceani5right() {
     return {
-      start: { translation: ƒS.positionPercent(80, 80), rotation: 360},
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 360 },
       end: { translation: ƒS.positionPercent(80, 80), rotation: 450 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -546,7 +546,7 @@ namespace fantasyrpg {
   }
   export function diceani6right(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 80), rotation: 450},
+      start: { translation: ƒS.positionPercent(80, 80), rotation: 450 },
       end: { translation: ƒS.positionPercent(80, 80), rotation: 360 },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -554,8 +554,8 @@ namespace fantasyrpg {
   }
   export function knifethrow(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(70, 65)},
-      end: { translation: ƒS.positionPercent(10, 80)},
+      start: { translation: ƒS.positionPercent(70, 65) },
+      end: { translation: ƒS.positionPercent(10, 80) },
       duration: 3,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
@@ -568,64 +568,64 @@ namespace fantasyrpg {
 
   function addfriendship(_event: CustomEvent): void {
     console.log(_event);
-    if(stats.flowercheck == true){
+    if (stats.flowercheck == true) {
       ƒS.Text.print("You give " + stats.chosenrel + " the flower you found");
-      ƒS.Text.print(stats.chosenrel +" really likes them and gives you a kiss");
-      
-      if( stats.chosenrel in stats.Side1){
-        stats.relside1 +=50;
+      ƒS.Text.print(stats.chosenrel + " really likes them and gives you a kiss");
+
+      if (stats.chosenrel in stats.Side1) {
+        stats.relside1 += 50;
         ƒS.Character.show(stats.Side1, stats.Side1.pose.inlove, ƒS.positionPercent(90, 90))
       }
-      else if( stats.chosenrel in stats.Side2){
-        stats.relside2 +=50;
+      else if (stats.chosenrel in stats.Side2) {
+        stats.relside2 += 50;
         ƒS.Character.show(stats.Side2, stats.Side2.pose.inlove, ƒS.positionPercent(90, 90))
       }
-      else if( stats.chosenrel in stats.Side3){
-        stats.relside3 +=50;
+      else if (stats.chosenrel in stats.Side3) {
+        stats.relside3 += 50;
         ƒS.Character.show(stats.Side3, stats.Side3.pose.inlove, ƒS.positionPercent(90, 90))
       }
 
     }
-    else{
+    else {
       //ƒS.Inventory.add(items.Flower)
       ƒS.Speech.tell(characters.Narrator, "You can not use that here");
 
     }
   }
-  
- 
+
+
   function addstrength(_event: CustomEvent): void {
     console.log(_event);
-    stats.Main.Strength += 15
+    stats.Main.Strength += 20
   }
   function openadvice(_event: CustomEvent): void {
     console.log(_event);
-    
-    if(stats.incave == true){
+
+    if (stats.incave == true) {
       let Throwdice = {
-        e1: "Feel Lucky?", 
+        e1: "Feel Lucky?",
       };
       let Dicethrow = ƒS.Menu.getInput(Throwdice, "dialog3");
       Dicethrow = Dicethrow;
-      stats.retreat= true;
-      }
-      else{
-        let Throwdice1 = {
-          e2: "Feel Lucky?", 
-        };
-        let Dicethrow1 = ƒS.Menu.getInput(Throwdice1, "dialog4");
-         Dicethrow1 = Dicethrow1;
-        
-      }    
+      stats.retreat = true;
+    }
+    else {
+      let Throwdice1 = {
+        e2: "Feel Lucky?",
+      };
+      let Dicethrow1 = ƒS.Menu.getInput(Throwdice1, "dialog4");
+      Dicethrow1 = Dicethrow1;
+
+    }
   }
   function usescroll(_event: CustomEvent): void {
     console.log(_event);
-    if(stats.bossfight = true && stats.Main.namechar == "Samara"){
+    if (stats.bossfight = true && stats.Main.namechar == "Samara") {
       stats.scrollused = true;
 
-//das hier war angedacht bei scrolluse aber ich hab es nicht hinbekommen hier in der funktion eine neue Szene aufzurufen, 
-//deshalb hab ich eine notlösung gemacht die zwar funktioniert aber nich so geil ist
-//(jetzt kann man die scroll nur an ganz bestimmten punkten benutzen anstatt während des gesamten endkampfes)
+      //das hier war angedacht bei scrolluse aber ich hab es nicht hinbekommen hier in der funktion eine neue Szene aufzurufen, 
+      //deshalb hab ich eine notlösung gemacht die zwar funktioniert aber nich so geil ist
+      //(jetzt kann man die scroll nur an ganz bestimmten punkten benutzen anstatt während des gesamten endkampfes)
 
       //ƒS.Text.print("Something is happening you feel very strong all of the sudden");
       //ƒS.Text.print("You decide to fire off all your spells");
@@ -637,18 +637,18 @@ namespace fantasyrpg {
       //ƒS.Text.print("You and your friends went back to your hometown and had a big party with the hole village");
       //scenecount = "end";
       //return scenecount; /switch to different scene here
-      
-      
+
+
     }
-    else{
+    else {
       ƒS.Inventory.add(items.Scroll)
       ƒS.Speech.tell(characters.Narrator, "You can not use that here");
     }
   }
-  
-  
 
-  export let items ={
+
+
+  export let items = {
     Healthpotion: {
       name: "Healingpotion",
       description: "Gives you some Health",
@@ -686,10 +686,10 @@ namespace fantasyrpg {
     }
   }
   export let scenecount = "";
-  
 
-  
-  export let stats ={
+
+
+  export let stats = {
     Protagonist: {
       name: "Protagonist"
 
@@ -697,7 +697,7 @@ namespace fantasyrpg {
     char1: {
       points: 0
     },
-    state:{
+    state: {
       a: 0
     },
     bossfight: false,
@@ -713,9 +713,9 @@ namespace fantasyrpg {
     potionamount: 0,
     scrollused: false,
     skillused: false,
-    
-    
-    Main:{
+
+
+    Main: {
       name: "",
       namechar: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
@@ -741,9 +741,9 @@ namespace fantasyrpg {
     relside3: 0,
     scoreside3: "",
     relzwischenablage: 0,
-    
-    
-    Side1:{
+
+
+    Side1: {
       name: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
@@ -760,7 +760,7 @@ namespace fantasyrpg {
       Skill2: "",
       Skill3: ""
     },
-    Side2:{
+    Side2: {
       name: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
@@ -777,7 +777,7 @@ namespace fantasyrpg {
       Skill2: "",
       Skill3: ""
     },
-    Side3:{
+    Side3: {
       name: "",
       origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
@@ -798,20 +798,20 @@ namespace fantasyrpg {
 
   let volume: number = 1.0;
 
-   export function volplus(): void{
-     if (volume < 10){
-       volume += 0.1;
-       ƒS.Sound.setMasterVolume(volume);
-     }
-    
-   }
-   export function volminus(): void{
-     if (volume > 0){
-       volume -= 0.1;
-       ƒS.Sound.setMasterVolume(volume);
-     }
-    
-   }
+  export function volplus(): void {
+    if (volume < 10) {
+      volume += 0.1;
+      ƒS.Sound.setMasterVolume(volume);
+    }
+
+  }
+  export function volminus(): void {
+    if (volume > 0) {
+      volume -= 0.1;
+      ƒS.Sound.setMasterVolume(volume);
+    }
+
+  }
 
 
 
@@ -832,31 +832,31 @@ namespace fantasyrpg {
 
 
 
-  async function buttonfunc(_option: string): Promise<void>{
-    if (_option == inGameMenue.save){
+  async function buttonfunc(_option: string): Promise<void> {
+    if (_option == inGameMenue.save) {
       await ƒS.Progress.save();
     }
-    else if (_option == inGameMenue.load){
+    else if (_option == inGameMenue.load) {
       await ƒS.Progress.load();
     }
-    else if (_option == inGameMenue.close){
+    else if (_option == inGameMenue.close) {
       close();
     }
-     else if (_option == inGameMenue.volplus){
-       volplus();
-     }
-     else if (_option == inGameMenue.volminus){
-       volminus();
-     }
-    else if (_option == inGameMenue.credits){
+    else if (_option == inGameMenue.volplus) {
+      volplus();
+    }
+    else if (_option == inGameMenue.volminus) {
+      volminus();
+    }
+    else if (_option == inGameMenue.credits) {
       credits();
     }
-    else if (_option == inGameMenue.about){
-      
+    else if (_option == inGameMenue.about) {
+
     }
   }
-  
-  
+
+
 
   document.addEventListener("keydown", hndKeypress);
   async function hndKeypress(_event: KeyboardEvent): Promise<void> {
@@ -875,39 +875,39 @@ namespace fantasyrpg {
         await ƒS.Inventory.open();
         break;
     }
-     
+
   }
-  
+
 
 
   window.addEventListener("load", start);
   function start(_event: Event): void {
 
-    gameMenue = 
+    gameMenue =
       ƒS.Menu.create(inGameMenue, buttonfunc, "gameMenue")
 
 
 
     let scenes: ƒS.Scenes = [
       //{id: "scene6", scene: testing, name: "scene6"},
-      {id: "scene1", scene: scene1, name: "1stScene", next: scenecount},
-      {id: "Archer1", scene: option1, name: "Archer1", next: scenecount},
-      {id: "Nightstalker1", scene: option2, name: "Nightstalker1", next: scenecount}, 
-      {id: "ArchMage1", scene: option3, name: "ArchMage1",next: scenecount}, 
-      {id: "Swordwielder1", scene: option4, name: "Swordwielder1", next: scenecount},
-      {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-      {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
-      {id: "scene4", scene: scene4, name: "scene4", next: scenecount},
-      {id: "scene5", scene: scene5, name: "scene5", next: scenecount},
-      {id: "scene6", scene: scene6, name: "scene6", next: scenecount},
-      {id: "scene7", scene: scene7, name: "scene7", next: scenecount},
-      {id: "scene8", scene: scene8, name: "scene8", next: scenecount},
-      {id: "scene9", scene: scene9, name: "scene9", next: scenecount},
-      {id: "end", scene: end, name: "end"},
-      {id: "credits", scene: credits, name: "credits"},
-      
+      { id: "scene1", scene: scene1, name: "1stScene", next: scenecount },
+      { id: "Archer1", scene: option1, name: "Archer1", next: scenecount },
+      { id: "Nightstalker1", scene: option2, name: "Nightstalker1", next: scenecount },
+      { id: "ArchMage1", scene: option3, name: "ArchMage1", next: scenecount },
+      { id: "Swordwielder1", scene: option4, name: "Swordwielder1", next: scenecount },
+      { id: "scene2", scene: scene2, name: "scene2", next: scenecount },
+      { id: "scene3", scene: scene3, name: "scene3", next: scenecount },
+      { id: "scene4", scene: scene4, name: "scene4", next: scenecount },
+      { id: "scene5", scene: scene5, name: "scene5", next: scenecount },
+      { id: "scene6", scene: scene6, name: "scene6", next: scenecount },
+      { id: "scene7", scene: scene7, name: "scene7", next: scenecount },
+      { id: "scene8", scene: scene8, name: "scene8", next: scenecount },
+      { id: "scene9", scene: scene9, name: "scene9", next: scenecount },
+      { id: "end", scene: end, name: "end" },
+      { id: "credits", scene: credits, name: "credits" },
+
     ];
-    let uiElement: HTMLElement =document.querySelector("[type= interface]");
+    let uiElement: HTMLElement = document.querySelector("[type= interface]");
     stats = ƒS.Progress.setData(stats, uiElement);
     //ƒS.Progress.setData(stats);
     ƒS.Progress.go(scenes);

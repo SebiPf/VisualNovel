@@ -41,14 +41,14 @@ namespace fantasyrpg {
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(5, 90));
         ƒS.update(1);
 
-        let firstDialogueElementAnswers ={
+        let firstDialogueElementAnswers = {
             sayYes: "A Great Adventure with my Friends I am in",
             sayNo: "Oh yea that will be great training"
         };
 
         let firstDialogueElement = await ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog");
         //stats.char1.points = stats.char1.points + 5;
-        switch(firstDialogueElement) {
+        switch (firstDialogueElement) {
             case firstDialogueElementAnswers.sayYes:
 
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90));
@@ -66,7 +66,7 @@ namespace fantasyrpg {
                 return scenecount;
                 break;
             case firstDialogueElementAnswers.sayNo:
-                
+
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90));
                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(75, 90));
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(60, 90));
@@ -79,12 +79,12 @@ namespace fantasyrpg {
                 return scenecount;
                 //stats.char1.points = stats.char1.points + 1;
                 break;
-            
+
         }
 
-        
 
-        
-        
+
+
+
     }
 }

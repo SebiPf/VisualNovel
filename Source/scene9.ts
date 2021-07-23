@@ -184,7 +184,7 @@ namespace fantasyrpg {
           await ƒS.update();
           stats.number = stats.Main.Strength / 10
           throwdice();
-          if (stats.random >= 10) {
+          if (stats.random >= 9) {
             await ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
           }
           else {
@@ -373,7 +373,7 @@ namespace fantasyrpg {
           await ƒS.update();
           stats.number = stats.Main.Strength / 10
           throwdice();
-          if (stats.random >= 10) {
+          if (stats.random >= 9) {
             await ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
           }
           else {
@@ -578,7 +578,7 @@ namespace fantasyrpg {
 
           stats.number = stats.Main.Strength / 10
           throwdice();
-          if (stats.random >= 10) {
+          if (stats.random >= 9) {
             await ƒS.Text.print("You Damaged the Golem");
             await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
             await ƒS.update(0.2);
@@ -917,7 +917,7 @@ namespace fantasyrpg {
 
       stats.number = stats.Main.Strength / 10
       throwdice();
-      if (stats.random >= 10) {
+      if (stats.random >= 9) {
         await ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
       }
       else {
@@ -1114,7 +1114,7 @@ namespace fantasyrpg {
 
       stats.number = stats.Main.Strength / 10
       throwdice();
-      if (stats.random >= 10) {
+      if (stats.random >= 9) {
         await ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
       }
       else {
@@ -1319,7 +1319,7 @@ namespace fantasyrpg {
       await ƒS.update();
       stats.number = stats.Main.Strength / 10
       throwdice();
-      if (stats.random >= 10) {
+      if (stats.random >= 9) {
         await ƒS.Text.print("You Damaged the Golem");
         await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
         await ƒS.update(0.2);

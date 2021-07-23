@@ -4,16 +4,16 @@ namespace fantasyrpg {
     ƒS.Sound.play(sound.credits, 0.3, true);
     await ƒS.Location.show(locations.Black);
     await ƒS.update(1);
-    if(stats.relside1>100){
+    if (stats.relside1 > 100) {
       stats.relside1 = 100;
     }
-    if(stats.relside2>100){
+    if (stats.relside2 > 100) {
       stats.relside2 = 100;
     }
-    if(stats.relside3>100){
+    if (stats.relside3 > 100) {
       stats.relside3 = 100;
     }
-    if(stats.Main.Strength>100){
+    if (stats.Main.Strength > 100) {
       stats.Main.Strength = 100;
     }
     await ƒS.Text.print("This is the end of the Story");

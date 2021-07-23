@@ -594,7 +594,7 @@ var fantasyrpg;
     }
     function addstrength(_event) {
         console.log(_event);
-        fantasyrpg.stats.Main.Strength += 15;
+        fantasyrpg.stats.Main.Strength += 20;
     }
     function openadvice(_event) {
         console.log(_event);
@@ -2047,7 +2047,11 @@ var fantasyrpg;
     }
     fantasyrpg.scene3 = scene3;
 })(fantasyrpg || (fantasyrpg = {}));
+//Pre ending from beta(Tag der Medien ending)
+//Not used anymore
 var fantasyrpg;
+//Pre ending from beta(Tag der Medien ending)
+//Not used anymore
 (function (fantasyrpg) {
     async function scene4() {
         console.log("scene4");
@@ -2127,7 +2131,7 @@ var fantasyrpg;
                 await fantasyrpg.ƒS.update(fantasyrpg.transition.speed.duration, fantasyrpg.transition.speed.alpha, fantasyrpg.transition.speed.edge);
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side3, fantasyrpg.stats.Side3.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update();
-                await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "Hey by the way did you knwow´that there is a new Tavern");
+                await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "Hey by the way did you know that there is a new Tavern");
                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side3, "I drank a Met there lately and it was really good");
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.normal, fantasyrpg.ƒS.positionPercent(70, 90));
                 await fantasyrpg.ƒS.Character.hide(fantasyrpg.stats.Side3);
@@ -3094,6 +3098,8 @@ var fantasyrpg;
                     }
                 }
             case firstDecisionElementAnswers.mountain:
+                await fantasyrpg.ƒS.Character.hideAll();
+                await fantasyrpg.ƒS.update();
                 await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.trailtomountain);
                 await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side2, fantasyrpg.stats.Side2.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
@@ -3159,7 +3165,7 @@ var fantasyrpg;
                             await fantasyrpg.ƒS.update();
                             await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.trailtomountain);
                             await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
-                            await fantasyrpg.ƒS.Text.print("After successfully pushing away the rocks you keept waling through the mountains");
+                            await fantasyrpg.ƒS.Text.print("After successfully pushing away the rocks you keept walking through the mountains");
                             await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
                             await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
                             await fantasyrpg.ƒS.Text.print("when it got darker and darker you decided to make camp and continue tomorrow");
@@ -3241,7 +3247,6 @@ var fantasyrpg;
                                     fantasyrpg.throwdice();
                             }
                             if (fantasyrpg.stats.random >= 5) {
-                                fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                                 await fantasyrpg.ƒS.Character.show(fantasyrpg.stats.Side1, fantasyrpg.stats.Side1.pose.normal, fantasyrpg.ƒS.positionPercent(90, 90));
                                 await fantasyrpg.ƒS.update();
                                 await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side1, "wow you managed to push them alone??");
@@ -3604,9 +3609,9 @@ var fantasyrpg;
                 fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.normal, 0, 1);
                 fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.fight, 0.3, true);
                 await fantasyrpg.ƒS.Text.print("On your way beneath the waterfalls you encounter another monster");
-                await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.fight);
                 await fantasyrpg.ƒS.Character.hideAll();
                 await fantasyrpg.ƒS.update();
+                await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.fight);
                 await fantasyrpg.ƒS.update(fantasyrpg.transition.fight.duration, fantasyrpg.transition.fight.alpha, fantasyrpg.transition.fight.edge);
                 await fantasyrpg.ƒS.Text.print("The monster looks like it`s going to attack!");
                 await fantasyrpg.ƒS.Text.print("What are you going to do?");
@@ -4014,7 +4019,7 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
-                    if (fantasyrpg.stats.random >= 10) {
+                    if (fantasyrpg.stats.random >= 9) {
                         await fantasyrpg.ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
                     }
                     else {
@@ -4190,7 +4195,7 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
-                    if (fantasyrpg.stats.random >= 10) {
+                    if (fantasyrpg.stats.random >= 9) {
                         await fantasyrpg.ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
                     }
                     else {
@@ -4381,7 +4386,7 @@ var fantasyrpg;
                     await fantasyrpg.ƒS.update();
                     fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
                     fantasyrpg.throwdice();
-                    if (fantasyrpg.stats.random >= 10) {
+                    if (fantasyrpg.stats.random >= 9) {
                         await fantasyrpg.ƒS.Text.print("You Damaged the Golem");
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.death1, fantasyrpg.ƒS.positionPercent(90, 90));
                         await fantasyrpg.ƒS.update(0.2);
@@ -4691,7 +4696,7 @@ var fantasyrpg;
             }
             fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
             fantasyrpg.throwdice();
-            if (fantasyrpg.stats.random >= 10) {
+            if (fantasyrpg.stats.random >= 9) {
                 await fantasyrpg.ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
             }
             else {
@@ -4868,7 +4873,7 @@ var fantasyrpg;
             await fantasyrpg.ƒS.update();
             fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
             fantasyrpg.throwdice();
-            if (fantasyrpg.stats.random >= 10) {
+            if (fantasyrpg.stats.random >= 9) {
                 await fantasyrpg.ƒS.Text.print("You Damaged the Golem but hes not defeated yet");
             }
             else {
@@ -5059,7 +5064,7 @@ var fantasyrpg;
             await fantasyrpg.ƒS.update();
             fantasyrpg.stats.number = fantasyrpg.stats.Main.Strength / 10;
             fantasyrpg.throwdice();
-            if (fantasyrpg.stats.random >= 10) {
+            if (fantasyrpg.stats.random >= 9) {
                 await fantasyrpg.ƒS.Text.print("You Damaged the Golem");
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.death1, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update(0.2);
@@ -5634,7 +5639,7 @@ var fantasyrpg;
 (function (fantasyrpg) {
     async function throwdice() {
         console.log("throw dice");
-        fantasyrpg.stats.random = Math.floor(Math.random() * fantasyrpg.stats.number + 4);
+        fantasyrpg.stats.random = Math.floor(Math.random() * (fantasyrpg.stats.number + 4));
         console.log("random number is " + fantasyrpg.stats.random);
         if (fantasyrpg.stats.number <= 3) {
             await fantasyrpg.ƒS.Character.animate(fantasyrpg.characters.dice, fantasyrpg.characters.dice.pose.dice1, fantasyrpg.diceani1());

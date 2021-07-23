@@ -413,9 +413,9 @@ namespace fantasyrpg {
                 ƒS.Sound.fade(sound.normal, 0, 1);
                 ƒS.Sound.play(sound.fight, 0.3, true);
                 await ƒS.Text.print("On your way beneath the waterfalls you encounter another monster");
-                await ƒS.Location.show(locations.fight);
                 await ƒS.Character.hideAll();
-                            await ƒS.update();
+                await ƒS.update();
+                await ƒS.Location.show(locations.fight);
                 await ƒS.update(transition.fight.duration, transition.fight.alpha, transition.fight.edge);
                 await ƒS.Text.print("The monster looks like it`s going to attack!");
                 await ƒS.Text.print("What are you going to do?");
@@ -440,7 +440,7 @@ namespace fantasyrpg {
                         await ƒS.update();
                         await ƒS.Speech.tell(stats.Main, "Hold on guys I got this");
                         stats.number = stats.Main.Strength / 10
-                        
+
                         let skillselectionAnswer2 = {
                             skill1: stats.Main.Skill1,
                             skill2: stats.Main.Skill2,
@@ -574,7 +574,7 @@ namespace fantasyrpg {
                         await ƒS.Speech.tell(stats.Main, "wow thats cool");
                         await ƒS.Speech.tell(stats.Main, "Let's explore it");
                         await ƒS.Character.hideAll();
-                                await ƒS.update(0);
+                        await ƒS.update(0);
                         await ƒS.Location.show(locations.cave);
                         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                         ƒS.Sound.play(sound.fight, 0, true);

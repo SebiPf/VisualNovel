@@ -44,7 +44,7 @@ namespace fantasyrpg {
             }
         } while (choice != flip.done);
         ƒS.Text.close();
-        
+
 
     }
 }

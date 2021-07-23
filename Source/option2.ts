@@ -1,5 +1,5 @@
 namespace fantasyrpg {
-    export async function option2(): ƒS.SceneReturn{
+    export async function option2(): ƒS.SceneReturn {
         console.log("2ndScene");
         stats.Main.namechar = "Liraz"
         stats.Main.pose.normal = "./Images/Characters/Nightstalker/Nightstalker.png";
@@ -39,7 +39,7 @@ namespace fantasyrpg {
         stats.Side2.Skill1 = "Bowshot";
         stats.Side2.Skill2 = "Fastshot";
         stats.Side2.Skill3 = "Rollshot";
-        
+
         stats.Side3.name = "Adira"
         stats.Side3.pose.normal = "./Images/Characters/SwordWhielder/SwordWhielder.png";
         stats.Side3.pose.happy = "./Images/Characters/SwordWhielder/SwordWhielderHappy.png";
@@ -69,7 +69,7 @@ namespace fantasyrpg {
         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90));
         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90));
         ƒS.update();
-        
+
         await ƒS.Text.print("They asked you if you want to go with them to the shore to hang out later")
         await ƒS.Character.hide(stats.Side1);
         await ƒS.Character.hide(stats.Side2);
@@ -101,8 +101,8 @@ namespace fantasyrpg {
                 ƒS.update();
 
                 await ƒS.Text.print("A few minutes later " + stats.Side2.name + " walks up to you");
-                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90,90));
-                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10,90));
+                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90));
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
                 ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Hey can we talk for a second?")
                 await ƒS.Speech.tell(stats.Main, "Sure what is bothering you?")
@@ -115,7 +115,7 @@ namespace fantasyrpg {
                     sayYes: "For you I`ll come",
                     sayNo: "Stay strong and don`t go",
                 };
-        
+
                 let secondDialogueElement = await ƒS.Menu.getInput(secondDialogueElementAnswers, "dialog1");
                 //stats.char1.points = stats.char1.points + 5;
                 switch (secondDialogueElement) {
@@ -132,7 +132,7 @@ namespace fantasyrpg {
 
                         scenecount = "scene2";
                         return scenecount
-                        
+
                     case secondDialogueElementAnswers.sayNo:
                         stats.Main.Strength += 10;
                         await ƒS.Character.hide(stats.Side2);
@@ -148,7 +148,7 @@ namespace fantasyrpg {
                             sayYes: "Yes",
                             sayNo: "No",
                         };
-                
+
                         let thirdDialogueElement = await ƒS.Menu.getInput(thirdDialogueElementAnswers, "dialog1");
                         switch (thirdDialogueElement) {
                             case thirdDialogueElementAnswers.sayYes:
@@ -168,17 +168,17 @@ namespace fantasyrpg {
                                 await ƒS.Text.print("You decide to stay with them since you`re already there now.");
                                 scenecount = "scene3";
                                 await ƒS.update();
-                                return scenecount;   
+                                return scenecount;
                         }
-                        
-                        
+
+
                         scenecount = "scene3";
                         await ƒS.update();
                         return scenecount
 
-                        
+
                 }
         }
-        
+
     }
 }
