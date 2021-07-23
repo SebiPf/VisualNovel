@@ -1,238 +1,6 @@
 "use strict";
 var fantasyrpg;
 (function (fantasyrpg) {
-    async function Text() {
-        console.log("Tutorial");
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.seafire);
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positionPercent(30, 100))
-        //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
-        await fantasyrpg.ƒS.update(1);
-        //mit css klasse
-        //await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0000, true, "cssklasse");
-        //await ƒS.Speech.tell(characters.Ryu, "Girl");
-        //await ƒS.Character.hide(characters.Ryu);
-        //await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positionPercent(30, 100))
-        //await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positions.bottomleft)
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Speech.tell(characters.Girl, text.Girl.T0000);
-        //await ƒS.Speech.tell(characters.Girl, "How are you doing");
-        //await ƒS.Character.hide(characters.Girl);
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0001);
-        //await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0002);
-        //await ƒS.Character.hide(characters.Ryu);
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positionPercent(30, 100))
-        await fantasyrpg.ƒS.update(1);
-        //await ƒS.Speech.tell(characters.Girl, text.Girl.T0001);
-        //await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0001);
-        //await ƒS.Character.hide(characters.Girl);
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
-        await fantasyrpg.ƒS.update(fantasyrpg.transition.clock.duration, fantasyrpg.transition.clock.alpha, fantasyrpg.transition.clock.edge);
-        //await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
-    }
-    fantasyrpg.Text = Text;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function scene1() {
-        console.log("scene1");
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.white);
-        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
-        await fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Text.print("Please enter your Name");
-        //names eingabe
-        //stats.Protagonist.name = await ƒS.Speech.getInput();
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.whitename);
-        await fantasyrpg.ƒS.update();
-        fantasyrpg.stats.Main.name = await fantasyrpg.ƒS.Speech.getInput();
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.white);
-        await fantasyrpg.ƒS.update();
-        //characters.Main.name += ":  ";
-        //ƒS.Inventory.add(items.Healthpotion);
-        //ƒS.Inventory.add(items.Scroll);
-        //ƒS.Inventory.add(items.WaterBottle);
-        //ƒS.Inventory.add(items.EmptyBottle);
-        //ƒS.Inventory.add(items.Apple);
-        //ƒS.Inventory.add(items.Flower);
-        //await ƒS.Inventory.open();
-        //await ƒS.Character.show(characters.Samara, characters.Samara.pose.normal, ƒS.positionPercent(10, 90))
-        //await ƒS.Character.show(characters.Hando, characters.Hando.pose.normal, ƒS.positionPercent(35, 90))
-        //await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.normal, ƒS.positionPercent(65, 90))
-        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
-        await fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Text.print("Welcome to your Adventure " + fantasyrpg.stats.Main.name);
-        await fantasyrpg.ƒS.Text.print("The first think you need to do is choose a Class");
-        await fantasyrpg.ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure");
-        await fantasyrpg.ƒS.Text.print("Even if some decisions seem insignificant");
-        await fantasyrpg.ƒS.Text.print("So always choose wisely");
-        await fantasyrpg.ƒS.Text.print("You may open your Inventory with I");
-        // text ohne schreib animation
-        //await ƒS.Location.show(locations.charselect);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Speech.hide();
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
-        await fantasyrpg.ƒS.update();
-        //ƒS.Sound.play(sound.click, 1);
-        await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
-        let firstDialogueElementAnswers = {
-            Char1: "char 1",
-            Char2: "char 2",
-            Char3: "char 3",
-            Char4: "char 4"
-        };
-        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog2");
-        //stats.char1.points = stats.char1.points + 5;
-        switch (firstDialogueElement) {
-            case firstDialogueElementAnswers.Char1:
-                //continue write on this path here
-                fantasyrpg.scenecount = "Archer1";
-                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
-                return fantasyrpg.scenecount;
-                break;
-            case firstDialogueElementAnswers.Char2:
-                fantasyrpg.scenecount = "Nightstalker1";
-                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
-                return fantasyrpg.scenecount;
-                //stats.char1.points = stats.char1.points + 1;
-                break;
-            case firstDialogueElementAnswers.Char3:
-                fantasyrpg.scenecount = "ArchMage1";
-                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
-                return fantasyrpg.scenecount;
-                break;
-            case firstDialogueElementAnswers.Char4:
-                fantasyrpg.scenecount = "Swordwielder1";
-                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
-                //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
-                //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;
-                //characters.Main.pose.skystrike3 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png" ;
-                //characters.Main.pose.skystrike4 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png" ;
-                //characters.Main.pose.skystrike5 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_5.png" ;
-                //characters.Main.pose.skystrike6 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_6.png" ;
-                //characters.Main.pose.skystrike7 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_7.png" ;
-                return fantasyrpg.scenecount;
-                break;
-        }
-        //Musik aus
-        //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
-        //await ƒS.Speech.tell(characters.Narrator, stats.char1.points.toString())
-    }
-    fantasyrpg.scene1 = scene1;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function Animation() {
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst1, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst2);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst2, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst3);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst3, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst4);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst4, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst5);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst5, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst6);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst6, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst7);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst7, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst8);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst8, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst9);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst9, fantasyrpg.ƒS.positionPercent(50, 90));
-        await fantasyrpg.ƒS.update(0.1, fantasyrpg.characters.Liraz.pose.windburst9);
-        await fantasyrpg.ƒS.Character.hideAll();
-        await fantasyrpg.ƒS.update(0.1);
-    }
-    fantasyrpg.Animation = Animation;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function Decision() {
-        console.log("Tutorial");
-        //let text = {
-        //    Adria: {
-        //        T0000: "Are you going to the park today?",
-        //        T0001: "Yes"
-        //    }
-        //};
-        //verzögerung
-        //let signaldelay2: ƒS.Signal = ƒS.Progress.defineSignal([()=> ƒS.Progress.delay(2)]);
-        //aufruf
-        //await signaldelay2();
-        //ƒS.Text.addClass("cssClass");
-        //await ƒS.Text.print("HiHoy ich bin ein Text");
-        //ƒS.Text.close();
-        //ƒS.Inventory.add(items.Healthpotion)
-        //ƒS.Inventory.open();
-        //ƒS.Speech.setTickerDelays(30, 2)
-        //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.seafire);
-        await fantasyrpg.ƒS.update(fantasyrpg.transition.clock.duration, fantasyrpg.transition.clock.alpha, fantasyrpg.transition.clock.edge);
-        // await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
-        await fantasyrpg.ƒS.update();
-        //names eingabe
-        //stats.Protagonist.name = await ƒS.Speech.getInput();
-        // text ohne schreib animation
-        //await ƒS.Speech.set(characters.Ryu, text.Girl.T0000)
-        //ƒS.Sound.play(sound.click, 1);
-        let firstDialogueElementAnswers = {
-            ISayYes: "Yes",
-            ISayNo: "No"
-        };
-        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "class");
-        //stats.char1.points = stats.char1.points + 5;
-        switch (firstDialogueElement) {
-            case firstDialogueElementAnswers.ISayYes:
-                //continue write on this path here
-                //await ƒS.Character.hide(characters.Ryu);
-                await fantasyrpg.ƒS.update();
-                //await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positionPercent(30, 100))
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Speech.tell(characters.Girl, "Nice do you want to go together?");
-                //ƒS.Character.hide(characters.Girl);
-                fantasyrpg.ƒS.Speech.clear();
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Speech.tell(characters.Ryu, "sure")
-                fantasyrpg.stats.char1.points = fantasyrpg.stats.char1.points + 5;
-                break;
-            case firstDialogueElementAnswers.ISayNo:
-                //await ƒS.Character.hide(characters.Ryu);
-                await fantasyrpg.ƒS.update();
-                //await ƒS.Character.show(characters.Girl, characters.Girl.pose.normal, ƒS.positionPercent(30, 100))
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Speech.tell(characters.Ryu, "Sad maybe next time then?");
-                //ƒS.Character.hide(characters.Girl);
-                //ƒS.Character.hide(characters.Ryu);
-                fantasyrpg.ƒS.Speech.clear();
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positions.bottomright)
-                await fantasyrpg.ƒS.update(1);
-                //await ƒS.Speech.tell(characters.Ryu, "yea");
-                fantasyrpg.stats.char1.points = fantasyrpg.stats.char1.points + 1;
-                break;
-        }
-        //Musik aus
-        //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, fantasyrpg.stats.char1.points.toString());
-    }
-    fantasyrpg.Decision = Decision;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
     fantasyrpg.ƒ = FudgeCore;
     fantasyrpg.ƒS = FudgeStory;
     console.log("FudgeStory template starting");
@@ -262,17 +30,12 @@ var fantasyrpg;
     //define sound
     fantasyrpg.sound = {
         //musik
-        classroom: "./sound/classroom.wav",
-        bell: "./sound/schoolbell.wav",
-        break: "./sound/schoolbreak.mp3",
-        teacher: "./sound/teacherscream.wav",
-        steps: "./sound/stomp.wav",
         normal: "./sound/08travel2.wav",
         fight: "./sound/Boss.wav",
         town: "./sound/01town1.wav",
         credits: "./sound/10credits1.wav",
         //Sound
-        click: ""
+        steps: "./sound/stomp.wav",
     };
     fantasyrpg.locations = {
         seafire: {
@@ -825,13 +588,13 @@ var fantasyrpg;
             }
         }
         else {
-            fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Flower);
+            //ƒS.Inventory.add(items.Flower)
             fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "You can not use that here");
         }
     }
     function addstrength(_event) {
         console.log(_event);
-        fantasyrpg.stats.Main.Strength += 10;
+        fantasyrpg.stats.Main.Strength += 15;
     }
     function openadvice(_event) {
         console.log(_event);
@@ -850,9 +613,6 @@ var fantasyrpg;
             let Dicethrow1 = fantasyrpg.ƒS.Menu.getInput(Throwdice1, "dialog4");
             Dicethrow1 = Dicethrow1;
         }
-        fantasyrpg.ƒS.Character.hideAll();
-        fantasyrpg.ƒS.update(5);
-        console.log("test");
     }
     function usescroll(_event) {
         console.log(_event);
@@ -915,9 +675,6 @@ var fantasyrpg;
         }
     };
     fantasyrpg.scenecount = "";
-    fantasyrpg.scenecount2 = "";
-    fantasyrpg.test = 0;
-    fantasyrpg.teststring = "";
     fantasyrpg.stats = {
         Protagonist: {
             name: "Protagonist"
@@ -1091,13 +848,10 @@ var fantasyrpg;
         let scenes = [
             //{id: "scene6", scene: testing, name: "scene6"},
             { id: "scene1", scene: fantasyrpg.scene1, name: "1stScene", next: fantasyrpg.scenecount },
-            { id: "Archer1", scene: fantasyrpg.option1, name: "1stScene", next: fantasyrpg.scenecount },
-            { id: "Nightstalker1", scene: fantasyrpg.option2, name: "2ndScene", next: fantasyrpg.scenecount },
-            { id: "ArchMage1", scene: fantasyrpg.option3, name: "3rdScene", next: fantasyrpg.scenecount },
-            { id: "Swordwielder1", scene: fantasyrpg.option4, name: "4thScene", next: fantasyrpg.scenecount },
-            { id: "skill1", scene: fantasyrpg.skill1, name: "skill1", next: fantasyrpg.scenecount },
-            { id: "skill2", scene: fantasyrpg.skill2, name: "skill2", next: fantasyrpg.scenecount },
-            { id: "skill3", scene: fantasyrpg.skill3, name: "skill3", next: fantasyrpg.scenecount },
+            { id: "Archer1", scene: fantasyrpg.option1, name: "Archer1", next: fantasyrpg.scenecount },
+            { id: "Nightstalker1", scene: fantasyrpg.option2, name: "Nightstalker1", next: fantasyrpg.scenecount },
+            { id: "ArchMage1", scene: fantasyrpg.option3, name: "ArchMage1", next: fantasyrpg.scenecount },
+            { id: "Swordwielder1", scene: fantasyrpg.option4, name: "Swordwielder1", next: fantasyrpg.scenecount },
             { id: "scene2", scene: fantasyrpg.scene2, name: "scene2", next: fantasyrpg.scenecount },
             { id: "scene2b", scene: fantasyrpg.scene2b, name: "scene2b", next: fantasyrpg.scenecount },
             { id: "scene3", scene: fantasyrpg.scene3, name: "scene3", next: fantasyrpg.scenecount },
@@ -1107,7 +861,6 @@ var fantasyrpg;
             { id: "scene7", scene: fantasyrpg.scene7, name: "scene7", next: fantasyrpg.scenecount },
             { id: "scene8", scene: fantasyrpg.scene8, name: "scene8", next: fantasyrpg.scenecount },
             { id: "scene9", scene: fantasyrpg.scene9, name: "scene9", next: fantasyrpg.scenecount },
-            { id: "getinput", scene: fantasyrpg.getinput, name: "getinput", next: fantasyrpg.scenecount },
             { id: "credits", scene: fantasyrpg.credits, name: "credits" },
             { id: "end", scene: fantasyrpg.end, name: "end" },
         ];
@@ -1116,37 +869,6 @@ var fantasyrpg;
         //ƒS.Progress.setData(stats);
         fantasyrpg.ƒS.Progress.go(scenes);
     }
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function scene() {
-        console.log("FudgeStory Template Scene starting");
-    }
-    fantasyrpg.scene = scene;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function audiouebung() {
-        let signalDelay2s = fantasyrpg.ƒS.Progress.defineSignal([() => fantasyrpg.ƒS.Progress.delay(2)]);
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
-        await fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Speech.set(fantasyrpg.characters.Narrator, "Wir sollten uns solangsam beeilen, du weißt Herr Peters ist immer sehr streng was Pünktlichkeit angeht.");
-        fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.break, 0);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.break, 0.3, 4);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.bell, 1, 1);
-        signalDelay2s();
-        await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.steps, 0.6, true);
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
-        fantasyrpg.ƒS.update(2);
-        await fantasyrpg.ƒS.update(fantasyrpg.transition.clock.duration, fantasyrpg.transition.clock.alpha, fantasyrpg.transition.clock.edge);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.steps, 0, 0);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.break, 0, 1);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.classroom, 0.1, 2);
-        await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.teacher, 0.001, false);
-        await fantasyrpg.ƒS.Sound.fade(fantasyrpg.sound.classroom, 0.0, 5);
-    }
-    fantasyrpg.audiouebung = audiouebung;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
@@ -1234,28 +956,6 @@ var fantasyrpg;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
-    async function getinput() {
-        if (fantasyrpg.stats.incave == true) {
-            fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Scroll, fantasyrpg.characters.Scroll.pose.incave, fantasyrpg.ƒS.positionPercent(50, 50));
-            fantasyrpg.ƒS.update();
-        }
-        else {
-            fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Scroll, fantasyrpg.characters.Scroll.pose.normal, fantasyrpg.ƒS.positionPercent(50, 50));
-            fantasyrpg.ƒS.update();
-        }
-        fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "Can you decifer it?");
-        fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "try it");
-        fantasyrpg.stats.message = await fantasyrpg.ƒS.Speech.getInput();
-        if (fantasyrpg.stats.message == "You can't defeat the Golem") {
-            await fantasyrpg.ƒS.Text.print("Thats the right Message but what does it mean?");
-            fantasyrpg.stats.retreat = true;
-        }
-        fantasyrpg.ƒS.Character.hide(fantasyrpg.characters.Scroll);
-    }
-    fantasyrpg.getinput = getinput;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
     async function loveending() {
         console.log("end");
         fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
@@ -1287,18 +987,6 @@ var fantasyrpg;
         await fantasyrpg.ƒS.Text.print("Friendship strength to " + fantasyrpg.stats.Side3.name + ": " + fantasyrpg.stats.relside3);
     }
     fantasyrpg.loveending = loveending;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function meter() {
-        console.log("4thScene");
-        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.seafire);
-        fantasyrpg.ƒS.update();
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "hi");
-        fantasyrpg.stats.state.a += 55;
-        fantasyrpg.ƒS.update();
-    }
-    fantasyrpg.meter = meter;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
@@ -1969,12 +1657,90 @@ var fantasyrpg;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
-    async function returnscene() {
-        fantasyrpg.scenecount2 = fantasyrpg.scenecount;
-        fantasyrpg.scenecount = "getinput";
-        return fantasyrpg.scenecount;
+    async function scene1() {
+        console.log("scene1");
+        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.white);
+        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(50, 90))
+        await fantasyrpg.ƒS.update();
+        await fantasyrpg.ƒS.Text.print("Please enter your Name");
+        //names eingabe
+        //stats.Protagonist.name = await ƒS.Speech.getInput();
+        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.whitename);
+        await fantasyrpg.ƒS.update();
+        fantasyrpg.stats.Main.name = await fantasyrpg.ƒS.Speech.getInput();
+        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.white);
+        await fantasyrpg.ƒS.update();
+        //characters.Main.name += ":  ";
+        //ƒS.Inventory.add(items.Healthpotion);
+        //ƒS.Inventory.add(items.Scroll);
+        //ƒS.Inventory.add(items.WaterBottle);
+        //ƒS.Inventory.add(items.EmptyBottle);
+        //ƒS.Inventory.add(items.Apple);
+        //ƒS.Inventory.add(items.Flower);
+        //await ƒS.Inventory.open();
+        //await ƒS.Character.show(characters.Samara, characters.Samara.pose.normal, ƒS.positionPercent(10, 90))
+        //await ƒS.Character.show(characters.Hando, characters.Hando.pose.normal, ƒS.positionPercent(35, 90))
+        //await ƒS.Character.show(characters.Liraz, characters.Liraz.pose.normal, ƒS.positionPercent(65, 90))
+        //await ƒS.Character.show(characters.Adira, characters.Adira.pose.normal, ƒS.positionPercent(90, 90))
+        await fantasyrpg.ƒS.update();
+        await fantasyrpg.ƒS.Text.print("Welcome to your Adventure " + fantasyrpg.stats.Main.name);
+        await fantasyrpg.ƒS.Text.print("The first think you need to do is choose a Class");
+        await fantasyrpg.ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure");
+        await fantasyrpg.ƒS.Text.print("Even if some decisions seem insignificant");
+        await fantasyrpg.ƒS.Text.print("So always choose wisely");
+        await fantasyrpg.ƒS.Text.print("You may open your Inventory with I");
+        // text ohne schreib animation
+        //await ƒS.Location.show(locations.charselect);
+        await fantasyrpg.ƒS.Character.hideAll();
+        await fantasyrpg.ƒS.Speech.hide();
+        await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.Black);
+        await fantasyrpg.ƒS.update();
+        //ƒS.Sound.play(sound.click, 1);
+        await fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
+        let firstDialogueElementAnswers = {
+            Char1: "char 1",
+            Char2: "char 2",
+            Char3: "char 3",
+            Char4: "char 4"
+        };
+        let firstDialogueElement = await fantasyrpg.ƒS.Menu.getInput(firstDialogueElementAnswers, "dialog2");
+        //stats.char1.points = stats.char1.points + 5;
+        switch (firstDialogueElement) {
+            case firstDialogueElementAnswers.Char1:
+                //continue write on this path here
+                fantasyrpg.scenecount = "Archer1";
+                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
+                return fantasyrpg.scenecount;
+                break;
+            case firstDialogueElementAnswers.Char2:
+                fantasyrpg.scenecount = "Nightstalker1";
+                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
+                return fantasyrpg.scenecount;
+                //stats.char1.points = stats.char1.points + 1;
+                break;
+            case firstDialogueElementAnswers.Char3:
+                fantasyrpg.scenecount = "ArchMage1";
+                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
+                return fantasyrpg.scenecount;
+                break;
+            case firstDialogueElementAnswers.Char4:
+                fantasyrpg.scenecount = "Swordwielder1";
+                console.log("hello my scenecount ist " + fantasyrpg.scenecount);
+                //characters.Main.pose.skystrike1 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_1.png" ;
+                //characters.Main.pose.skystrike2 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_2.png" ;
+                //characters.Main.pose.skystrike3 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_3.png" ;
+                //characters.Main.pose.skystrike4 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_4.png" ;
+                //characters.Main.pose.skystrike5 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_5.png" ;
+                //characters.Main.pose.skystrike6 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_6.png" ;
+                //characters.Main.pose.skystrike7 = "./Images/Characters/SwordWhielder/SkyStrike/SW_SkyStrike_7.png" ;
+                return fantasyrpg.scenecount;
+                break;
+        }
+        //Musik aus
+        //ƒS.Sound.fade(sound.backgroundTheme, 0,1)
+        //await ƒS.Speech.tell(characters.Narrator, stats.char1.points.toString())
     }
-    fantasyrpg.returnscene = returnscene;
+    fantasyrpg.scene1 = scene1;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
@@ -3264,7 +3030,7 @@ var fantasyrpg;
                     let Throwdice = {
                         Throwdice: "Feel Lucky?",
                     };
-                    let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog");
+                    let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog1");
                     switch (Dicethrow) {
                         case Throwdice.Throwdice:
                             fantasyrpg.throwdice();
@@ -4099,6 +3865,7 @@ var fantasyrpg;
         console.log("scene9 start");
         await fantasyrpg.ƒS.Character.hideAll();
         await fantasyrpg.ƒS.update();
+        await fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Scroll);
         await fantasyrpg.ƒS.Location.show(fantasyrpg.locations.cave);
         await fantasyrpg.ƒS.update(fantasyrpg.transition.pixel.duration, fantasyrpg.transition.pixel.alpha, fantasyrpg.transition.pixel.edge);
         fantasyrpg.ƒS.Sound.play(fantasyrpg.sound.normal, 0.3, true);
@@ -4197,7 +3964,9 @@ var fantasyrpg;
                         fantasyrpg.ƒS.Text.print("Something is happening you feel very strong all of the sudden");
                         fantasyrpg.ƒS.Text.print("You decide to fire off all your spells");
                         fantasyrpg.skill1funktion();
+                        fantasyrpg.stats.skillused = false;
                         fantasyrpg.skill2funktion();
+                        fantasyrpg.stats.skillused = false;
                         fantasyrpg.skill3funktion();
                         await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.death1, fantasyrpg.ƒS.positionPercent(90, 90));
                         await fantasyrpg.ƒS.update(0.2);
@@ -4872,7 +4641,9 @@ var fantasyrpg;
                 fantasyrpg.ƒS.Text.print("Something is happening you feel very strong all of the sudden");
                 fantasyrpg.ƒS.Text.print("You decide to fire off all your spells");
                 fantasyrpg.skill1funktion();
+                fantasyrpg.stats.skillused = false;
                 fantasyrpg.skill2funktion();
+                fantasyrpg.stats.skillused = false;
                 fantasyrpg.skill3funktion();
                 await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Golem, fantasyrpg.characters.Golem.pose.death1, fantasyrpg.ƒS.positionPercent(90, 90));
                 await fantasyrpg.ƒS.update(0.2);
@@ -5538,129 +5309,6 @@ var fantasyrpg;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
-    function setscene() {
-        fantasyrpg.teststring = fantasyrpg.scenecount2.match(/\d+/)[0];
-        fantasyrpg.test = parseInt(fantasyrpg.teststring);
-        fantasyrpg.test += 1;
-        console.log(fantasyrpg.test);
-        fantasyrpg.scenecount = "scene" + String(fantasyrpg.test);
-        console.log(fantasyrpg.scenecount);
-        return fantasyrpg.scenecount;
-    }
-    fantasyrpg.setscene = setscene;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function skill1() {
-        console.log("skill1");
-        if (fantasyrpg.stats.Main.Skill1 == "Skystrike") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.skystrike7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill1 == "Bowshot") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.bowshot6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill1 == "Blindinglight") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.blindinglight7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill1 == "Fireball") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball8, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.fireball9, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "Test");
-        fantasyrpg.ƒS.update();
-        fantasyrpg.setscene();
-        return fantasyrpg.scenecount;
-    }
-    fantasyrpg.skill1 = skill1;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
     async function skill1funktion() {
         console.log("skill1");
         fantasyrpg.stats.skillused = true;
@@ -5768,107 +5416,6 @@ var fantasyrpg;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
-    async function skill2() {
-        console.log("skill2");
-        if (fantasyrpg.stats.Main.Skill2 == "Swordattack") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordattack1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.2);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordattack2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.2);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordattack3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.2);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordattack4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.2);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.2);
-        }
-        else if (fantasyrpg.stats.Main.Skill2 == "Fastshot") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.fastshot6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill2 == "Swordswing") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.swordswing7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill2 == "Lightning") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning8, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.lightning9, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "Test");
-        fantasyrpg.ƒS.update();
-        fantasyrpg.setscene();
-        return fantasyrpg.scenecount;
-    }
-    fantasyrpg.skill2 = skill2;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
     async function skill2funktion() {
         console.log("skill2");
         fantasyrpg.stats.skillused = true;
@@ -5964,134 +5511,6 @@ var fantasyrpg;
         }
     }
     fantasyrpg.skill2funktion = skill2funktion;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function skill3() {
-        console.log("skill3");
-        if (fantasyrpg.stats.Main.Skill3 == "Swordslash") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordslash1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordslash2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordslash3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordslash4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Adira, fantasyrpg.characters.Adira.pose.swordslash5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill3 == "Rollshot") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot8, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot9, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot10, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot11, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Hando, fantasyrpg.characters.Hando.pose.rollshot12, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill3 == "Windburst") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst8, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Liraz, fantasyrpg.characters.Liraz.pose.windburst9, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        else if (fantasyrpg.stats.Main.Skill3 == "Windstrike") {
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike1, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike2, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike3, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike4, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike5, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike6, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike7, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike8, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.Character.show(fantasyrpg.characters.Samara, fantasyrpg.characters.Samara.pose.windstrike9, fantasyrpg.ƒS.positionPercent(50, 90));
-            await fantasyrpg.ƒS.update(0.1);
-            await fantasyrpg.ƒS.Character.hideAll();
-            await fantasyrpg.ƒS.update(0.1);
-        }
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.characters.Narrator, "Test");
-        fantasyrpg.ƒS.update();
-        fantasyrpg.setscene();
-        return fantasyrpg.scenecount;
-    }
-    fantasyrpg.skill3 = skill3;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {
@@ -6217,75 +5636,6 @@ var fantasyrpg;
         }
     }
     fantasyrpg.skill3funktion = skill3funktion;
-})(fantasyrpg || (fantasyrpg = {}));
-var fantasyrpg;
-(function (fantasyrpg) {
-    async function testing() {
-        console.log("Iam here");
-        fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.advice);
-        fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Flower);
-        fantasyrpg.ƒS.Inventory.add(fantasyrpg.items.Scroll);
-        //console.log(ƒS.Inventory.add(items.Healthpotion));
-        //console.log(ƒS.Inventory.open())
-        //if( FudgeStory.functio) {}
-        fantasyrpg.stats.Main.pose.normal = "./Images/Characters/ArchMage/ArchMage.png";
-        fantasyrpg.stats.Main.pose.happy = "./Images/Characters/ArchMage/ArchMageHappy.png";
-        fantasyrpg.stats.Main.pose.veryhappy = "./Images/Characters/ArchMage/ArchMageVeryHappy.png";
-        fantasyrpg.stats.Main.pose.unhappy = "./Images/Characters/ArchMage/ArchMageUnHappy.png";
-        fantasyrpg.stats.Main.pose.angry = "./Images/Characters/ArchMage/ArchMageAngry.png";
-        fantasyrpg.stats.Main.pose.arrogant = "./Images/Characters/ArchMage/ArchMageArrogant.png";
-        fantasyrpg.stats.Main.pose.mediumlove = "./Images/Characters/ArchMage/ArchMageMediumLove.png";
-        fantasyrpg.stats.Main.pose.inlove = "./Images/Characters/ArchMage/ArchMageInLove.png";
-        fantasyrpg.stats.Main.Skill1 = "Fireball";
-        fantasyrpg.stats.Main.Skill2 = "Lightning";
-        fantasyrpg.stats.Main.Skill3 = "Windstrike";
-        let skillselectionAnswer = {
-            skill1: fantasyrpg.stats.Main.Skill1,
-            skill2: fantasyrpg.stats.Main.Skill2,
-            skill3: fantasyrpg.stats.Main.Skill3,
-        };
-        let skillselection = await fantasyrpg.ƒS.Menu.getInput(skillselectionAnswer, "dialog1");
-        switch (skillselection) {
-            case skillselectionAnswer.skill1:
-                fantasyrpg.skill1funktion();
-            case skillselectionAnswer.skill2:
-                if (fantasyrpg.stats.skillused == false) {
-                    fantasyrpg.skill2funktion();
-                }
-            case skillselectionAnswer.skill3:
-                if (fantasyrpg.stats.skillused == false) {
-                    fantasyrpg.skill3funktion();
-                }
-                fantasyrpg.stats.skillused = false;
-        }
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "Hey can we talk for a second?");
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Sure what is bothering you?");
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "I was worried because you said you don`t want to come with us is everything allright?");
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Yea I am just a bit tired thats all");
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Side2, "Ah thats fine I just really hoped you would come");
-        await fantasyrpg.ƒS.Speech.tell(fantasyrpg.stats.Main, "Mh let me think about it for a second");
-        //if(ƒS.Inventory.querySelector("ul").includes("Potion"))
-        await fantasyrpg.ƒS.Text.print("Clarifikation Images and story is not final");
-        fantasyrpg.stats.number = 10;
-        let Throwdice = {
-            Throwdice: "Feel Lucky?",
-        };
-        let Dicethrow = await fantasyrpg.ƒS.Menu.getInput(Throwdice, "dialog1");
-        switch (Dicethrow) {
-            case Throwdice.Throwdice:
-                fantasyrpg.throwdice();
-        }
-        await fantasyrpg.ƒS.Text.print("Clarifikation Images and story is not final");
-        await fantasyrpg.ƒS.Text.print("This is only a Preview of what direktion the Novel will take");
-        await fantasyrpg.ƒS.Text.print("Welcome to your Adventure " + fantasyrpg.stats.Main.name);
-        await fantasyrpg.ƒS.Text.print("The first think you need to do is choose a Class");
-        await fantasyrpg.ƒS.Text.print("But be aware all your choices will have a effect on the outcome of your Adventure");
-        await fantasyrpg.ƒS.Text.print("Even if some decisions seem insignificant");
-        await fantasyrpg.ƒS.Text.print("So always choose wisely");
-        console.log(fantasyrpg.stats.relside1);
-        await fantasyrpg.ƒS.Text.print("You may open your Inventory with I");
-    }
-    fantasyrpg.testing = testing;
 })(fantasyrpg || (fantasyrpg = {}));
 var fantasyrpg;
 (function (fantasyrpg) {

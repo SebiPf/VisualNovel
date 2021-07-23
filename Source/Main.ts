@@ -31,17 +31,12 @@ namespace fantasyrpg {
   //define sound
   export let sound = {
     //musik
-    classroom: "./sound/classroom.wav",
-    bell: "./sound/schoolbell.wav",
-    break: "./sound/schoolbreak.mp3",
-    teacher: "./sound/teacherscream.wav",
-    steps: "./sound/stomp.wav",
     normal: "./sound/08travel2.wav",
     fight: "./sound/Boss.wav",
     town: "./sound/01town1.wav",
     credits: "./sound/10credits1.wav",
     //Sound
-    click: ""
+    steps: "./sound/stomp.wav",
   };
   export let locations = {
     seafire: {
@@ -592,7 +587,7 @@ namespace fantasyrpg {
 
     }
     else{
-      ƒS.Inventory.add(items.Flower)
+      //ƒS.Inventory.add(items.Flower)
       ƒS.Speech.tell(characters.Narrator, "You can not use that here");
 
     }
@@ -601,7 +596,7 @@ namespace fantasyrpg {
  
   function addstrength(_event: CustomEvent): void {
     console.log(_event);
-    stats.Main.Strength += 10
+    stats.Main.Strength += 15
   }
   function openadvice(_event: CustomEvent): void {
     console.log(_event);
@@ -621,11 +616,7 @@ namespace fantasyrpg {
         let Dicethrow1 = ƒS.Menu.getInput(Throwdice1, "dialog4");
          Dicethrow1 = Dicethrow1;
         
-      }
-
-    ƒS.Character.hideAll();
-    ƒS.update(5);
-    console.log("test")
+      }    
   }
   function usescroll(_event: CustomEvent): void {
     console.log(_event);
@@ -695,9 +686,7 @@ namespace fantasyrpg {
     }
   }
   export let scenecount = "";
-  export let scenecount2 = "";
-  export let test = 0;
-  export let teststring = "";
+  
 
   
   export let stats ={
@@ -902,13 +891,10 @@ namespace fantasyrpg {
     let scenes: ƒS.Scenes = [
       //{id: "scene6", scene: testing, name: "scene6"},
       {id: "scene1", scene: scene1, name: "1stScene", next: scenecount},
-      {id: "Archer1", scene: option1, name: "1stScene", next: scenecount},
-      {id: "Nightstalker1", scene: option2, name: "2ndScene", next: scenecount}, 
-      {id: "ArchMage1", scene: option3, name: "3rdScene",next: scenecount}, 
-      {id: "Swordwielder1", scene: option4, name: "4thScene", next: scenecount},
-      {id: "skill1", scene: skill1, name: "skill1", next: scenecount},
-      {id: "skill2", scene: skill2, name: "skill2", next: scenecount},
-      {id: "skill3", scene: skill3, name: "skill3", next: scenecount},
+      {id: "Archer1", scene: option1, name: "Archer1", next: scenecount},
+      {id: "Nightstalker1", scene: option2, name: "Nightstalker1", next: scenecount}, 
+      {id: "ArchMage1", scene: option3, name: "ArchMage1",next: scenecount}, 
+      {id: "Swordwielder1", scene: option4, name: "Swordwielder1", next: scenecount},
       {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
       {id: "scene2b", scene: scene2b, name: "scene2b", next: scenecount},
       {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
@@ -918,7 +904,6 @@ namespace fantasyrpg {
       {id: "scene7", scene: scene7, name: "scene7", next: scenecount},
       {id: "scene8", scene: scene8, name: "scene8", next: scenecount},
       {id: "scene9", scene: scene9, name: "scene9", next: scenecount},
-      {id: "getinput", scene: getinput, name: "getinput", next: scenecount},
       {id: "credits", scene: credits, name: "credits"},
       {id: "end", scene: end, name: "end"},
       

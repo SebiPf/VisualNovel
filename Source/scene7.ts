@@ -498,7 +498,7 @@ namespace fantasyrpg {
           let Throwdice = {
             Throwdice: "Feel Lucky?",
           };
-          let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog");
+          let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog1");
           switch (Dicethrow) {
             case Throwdice.Throwdice:
               throwdice();

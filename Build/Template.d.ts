@@ -1,16 +1,4 @@
 declare namespace fantasyrpg {
-    function Text(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
-    function scene1(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
-    function Animation(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
-    function Decision(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
     export let transition: {
@@ -36,16 +24,11 @@ declare namespace fantasyrpg {
         };
     };
     export let sound: {
-        classroom: string;
-        bell: string;
-        break: string;
-        teacher: string;
-        steps: string;
         normal: string;
         fight: string;
         town: string;
         credits: string;
-        click: string;
+        steps: string;
     };
     export let locations: {
         seafire: {
@@ -454,9 +437,6 @@ declare namespace fantasyrpg {
         };
     };
     export let scenecount: string;
-    export let scenecount2: string;
-    export let test: number;
-    export let teststring: string;
     export let stats: {
         Protagonist: {
             name: string;
@@ -563,25 +543,13 @@ declare namespace fantasyrpg {
     export {};
 }
 declare namespace fantasyrpg {
-    function scene(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
-    function audiouebung(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     function credits(): Promise<void>;
 }
 declare namespace fantasyrpg {
     function end(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
-    function getinput(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     function loveending(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
-    function meter(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
     function option1(): ƒS.SceneReturn;
@@ -596,7 +564,7 @@ declare namespace fantasyrpg {
     function option4(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
-    function returnscene(): Promise<string>;
+    function scene1(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
     function scene2(): ƒS.SceneReturn;
@@ -626,28 +594,13 @@ declare namespace fantasyrpg {
     function scene9(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
-    function setscene(): string;
-}
-declare namespace fantasyrpg {
-    function skill1(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     function skill1funktion(): Promise<void>;
-}
-declare namespace fantasyrpg {
-    function skill2(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
     function skill2funktion(): Promise<void>;
 }
 declare namespace fantasyrpg {
-    function skill3(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     function skill3funktion(): Promise<void>;
-}
-declare namespace fantasyrpg {
-    function testing(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
     function throwdice(): Promise<void>;

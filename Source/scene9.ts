@@ -3,6 +3,7 @@ namespace fantasyrpg {
     console.log("scene9 start");
     await ƒS.Character.hideAll();
     await ƒS.update();
+    await ƒS.Inventory.add(items.Scroll);
     await ƒS.Location.show(locations.cave);
     await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
     ƒS.Sound.play(sound.normal, 0.3, true);
@@ -114,7 +115,9 @@ namespace fantasyrpg {
             ƒS.Text.print("Something is happening you feel very strong all of the sudden");
             ƒS.Text.print("You decide to fire off all your spells");
             skill1funktion();
+            stats.skillused = false;
             skill2funktion();
+            stats.skillused = false;
             skill3funktion();
             await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
             await ƒS.update(0.2);
@@ -844,7 +847,9 @@ namespace fantasyrpg {
         ƒS.Text.print("Something is happening you feel very strong all of the sudden");
         ƒS.Text.print("You decide to fire off all your spells");
         skill1funktion();
+        stats.skillused = false;
         skill2funktion();
+        stats.skillused = false;
         skill3funktion();
         await ƒS.Character.show(characters.Golem, characters.Golem.pose.death1, ƒS.positionPercent(90, 90))
         await ƒS.update(0.2);
