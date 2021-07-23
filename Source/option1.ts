@@ -102,14 +102,13 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.unhappy, ƒS.positionPercent(70, 90));
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.unhappy, ƒS.positionPercent(90, 90));
                 ƒS.update();
-                await ƒS.Character.hide(stats.Side1);
-                await ƒS.Character.hide(stats.Side2);
-                await ƒS.Character.hide(stats.Side3);
+                await ƒS.Character.hideAll();
+                
                 ƒS.update(1);
 
                 await ƒS.Text.print("A few minutes later " + stats.Side2.name + " walks up to you");
                 await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90,90));
-                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(90,90));
+                await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10,90));
                 ƒS.update(1);
                 await ƒS.Speech.tell(stats.Side2, "Hey can we talk for a second?")
                 await ƒS.Speech.tell(stats.Main, "Sure what is bothering you?")
@@ -164,7 +163,7 @@ namespace fantasyrpg {
                                 await ƒS.Text.print("You arrive just as your frinds are starting the Fire");
                                 await ƒS.Text.print("They are really happy that you came to look after them");
                                 await ƒS.Text.print("You decide to stay with them since you`re already there now.");
-                                //ƒS.Inventory.add(items.EmptyBottle);
+                                ƒS.Inventory.add(items.EmptyBottle);
                                 scenecount = "scene3";
                                 return scenecount
                             case thirdDialogueElementAnswers.sayNo:

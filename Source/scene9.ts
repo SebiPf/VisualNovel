@@ -7,6 +7,7 @@ namespace fantasyrpg {
     await ƒS.Location.show(locations.cave);
     await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
     ƒS.Sound.play(sound.normal, 0.3, true);
+    stats.incave = true;
 
     await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(60, 90))
     await ƒS.update();
@@ -211,7 +212,7 @@ namespace fantasyrpg {
               await ƒS.Character.hideAll();
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
-              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
               await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
               await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -319,7 +320,7 @@ namespace fantasyrpg {
               await ƒS.Character.hideAll();
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
-              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
               await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
               await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -523,7 +524,7 @@ namespace fantasyrpg {
               await ƒS.Character.hideAll();
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
-              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
               await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
               await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -799,7 +800,7 @@ namespace fantasyrpg {
               await ƒS.Character.hideAll();
               await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
               await ƒS.update(0.2);
-              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+              await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
               await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
               await ƒS.update();
               await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -945,7 +946,7 @@ namespace fantasyrpg {
           await ƒS.Character.hideAll();
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
-          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
           await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
           await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -1059,7 +1060,7 @@ namespace fantasyrpg {
           await ƒS.Character.hideAll();
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
-          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
           await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
           await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -1264,7 +1265,7 @@ namespace fantasyrpg {
           await ƒS.Character.hideAll();
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
-          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
           await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
           await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());
@@ -1534,7 +1535,7 @@ namespace fantasyrpg {
           await ƒS.Character.hideAll();
           await ƒS.Character.show(characters.Golem, characters.Golem.pose.attack7, ƒS.positionPercent(90, 90))
           await ƒS.update(0.2);
-          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(90, 75))
+          await ƒS.Character.show(characters.Knife, characters.Knife.pose.normal, ƒS.positionPercent(70, 65))
           await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
           await ƒS.update();
           await ƒS.Character.animate(characters.Knife, characters.Knife.pose.normal, knifethrow());

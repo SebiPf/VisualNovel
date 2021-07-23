@@ -79,7 +79,7 @@ namespace fantasyrpg {
                     case secondDialogueElementAnswers.sayYes:
                         await ƒS.Speech.tell(stats.Main, "Lets go back I think we have enough wood");
                         await ƒS.Speech.tell(stats.Side3, "Yes I think so too");
-                        stats.relside3 += 5;
+                        stats.relside3 += 10;
                         await ƒS.Character.hideAll();
                         await ƒS.update();
                         scenecount = "scene3";
@@ -94,7 +94,7 @@ namespace fantasyrpg {
                         await ƒS.Speech.tell(stats.Main, "I never really talked with anybody about it. So I felt like I can talk woth you about it");
                         await ƒS.Speech.tell(stats.Side3, "Yea");
                         await ƒS.Text.print("You and " + stats.Side3.name + " had a long conversation about your parents and their accident");
-                        stats.relside3 += 10;
+                        stats.relside3 += 20;
                         await ƒS.Location.show(locations.Black);
                         await ƒS.Character.hideAll();
                         ƒS.update(1);
@@ -115,7 +115,7 @@ namespace fantasyrpg {
             case firstDialogueElementAnswers.sayNo:
                 await ƒS.Text.print("You decided to stay and let " + stats.Side3.name + "get the wood");
                 await ƒS.Text.print("You walk up to " + stats.Side1.name + " and " + stats.Side2.name + " and decide to start a conversation");
-                await ƒS.Text.print("You who do you want to start a conversation with?");
+                await ƒS.Text.print("Who do you want to start a conversation with?");
 
                 let thirdDialogueElementAnswers = {
                     sayYes: "1. " + stats.Side1.name, 
@@ -210,7 +210,7 @@ namespace fantasyrpg {
                                 await ƒS.Character.hideAll();
                                 await ƒS.update();
                                 stats.relside2 -= 5;
-                                stats.relside1 += 10;
+                                stats.relside1 += 15;
                                 scenecount = "scene3";
                                 return scenecount;  
                         }

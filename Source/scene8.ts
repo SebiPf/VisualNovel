@@ -413,12 +413,16 @@ namespace fantasyrpg {
                 ƒS.Sound.fade(sound.normal, 0, 1);
                 ƒS.Sound.play(sound.fight, 0.3, true);
                 await ƒS.Text.print("On your way beneath the waterfalls you encounter another monster");
+                await ƒS.Location.show(locations.fight);
+                await ƒS.Character.hideAll();
+                            await ƒS.update();
+                await ƒS.update(transition.fight.duration, transition.fight.alpha, transition.fight.edge);
                 await ƒS.Text.print("The monster looks like it`s going to attack!");
                 await ƒS.Text.print("What are you going to do?");
                 await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side3, "Guys quick we need to do something");
-                await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
+                await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(70, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "Let's attack it together!");
 
@@ -432,21 +436,11 @@ namespace fantasyrpg {
                 let secondDecisionElement = await ƒS.Menu.getInput(secondDecisionElementAnswers, "dialog");
                 switch (secondDecisionElement) {
                     case secondDecisionElementAnswers.alone:
-
-                        await ƒS.Location.show(locations.fight);
-                        await ƒS.update(transition.fight.duration, transition.fight.alpha, transition.fight.edge);
-                        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(90, 90))
+                        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
                         await ƒS.update();
                         await ƒS.Speech.tell(stats.Main, "Hold on guys I got this");
                         stats.number = stats.Main.Strength / 10
-                        let Throwdice = {
-                            Throwdice: "Can you defeat it?",
-                        };
-                        let Dicethrow = await ƒS.Menu.getInput(Throwdice, "dialog1");
-                        switch (Dicethrow) {
-                            case Throwdice.Throwdice:
-                                throwdice();
-                        }
+                        
                         let skillselectionAnswer2 = {
                             skill1: stats.Main.Skill1,
                             skill2: stats.Main.Skill2,
@@ -475,7 +469,7 @@ namespace fantasyrpg {
 
                         }
 
-
+                        throwdice();
                         if (stats.random >= 6) {
                             stats.number = stats.Main.Strength / 10
                             await ƒS.Text.print("You defeated the monster");
@@ -486,7 +480,7 @@ namespace fantasyrpg {
                             await ƒS.Speech.tell(stats.Side3, "You should let us help you sometimes");
                             await ƒS.Speech.tell(stats.Side3, "It is dangerous to fight alone");
 
-                            stats.Main.Strength += 10;
+                            stats.Main.Strength += 20;
 
                         }
                         else {
@@ -579,9 +573,15 @@ namespace fantasyrpg {
                         await ƒS.Speech.tell(stats.Side3, "looks like a cave");
                         await ƒS.Speech.tell(stats.Main, "wow thats cool");
                         await ƒS.Speech.tell(stats.Main, "Let's explore it");
+                        await ƒS.Character.hideAll();
+                                await ƒS.update(0);
                         await ƒS.Location.show(locations.cave);
                         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                         ƒS.Sound.play(sound.fight, 0, true);
+                        stats.relside1 += 5;
+                        stats.relside2 += 5;
+                        stats.relside3 += 5;
+                        stats.Main.Strength += 10
                         scenecount = "scene9"
                         return scenecount
 
@@ -666,6 +666,10 @@ namespace fantasyrpg {
                         await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90))
                         await ƒS.update();
                         await ƒS.Speech.tell(stats.Side2, "we did it guys");
+                        stats.Main.Strength += 10
+                        stats.relside1 += 10;
+                        stats.relside2 += 10;
+                        stats.relside3 += 10;
                         await ƒS.Speech.tell(stats.Side2, "Do you see that there is something behind that waterfall");
                         await ƒS.Speech.tell(stats.Side2, "Lets see if what that is");
                         await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(90, 90))

@@ -88,9 +88,9 @@ namespace fantasyrpg {
                 await ƒS.Speech.tell(stats.Side3, "but I did not give it back so we had a little dispute");
                 await ƒS.Speech.tell(stats.Main, "Ahh a \"little\" dispute");
 
-                stats.relside1 += 5;
-                stats.relside2 += 5;
-                stats.relside3 += 5;
+                stats.relside1 += 10;
+                stats.relside2 += 10;
+                stats.relside3 += 10;
                 scenecount = "scene7";
                 return scenecount
 
@@ -120,7 +120,7 @@ namespace fantasyrpg {
                 let thirdDecisionElement = await ƒS.Menu.getInput(thirdDecisionElementAnswers, "dialog");
                 switch (thirdDecisionElement) {
                     case thirdDecisionElementAnswers.alone:
-                        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(70, 90));
+                        await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90));
                         await ƒS.update();
                         await ƒS.Speech.tell(stats.Main, "Don't worry I will defeat it");
 
@@ -172,7 +172,7 @@ namespace fantasyrpg {
 
 
 
-                            stats.Main.Strength += 10;
+                            stats.Main.Strength += 20;
                             ƒS.Sound.play(sound.fight, 0, true);
                             scenecount = "scene7"
                             return scenecount;
@@ -250,8 +250,10 @@ namespace fantasyrpg {
                             await ƒS.update();
                             await ƒS.Speech.tell(stats.Main, "Thank you for helping me I would not have made it without you");
 
+                            stats.relside1 += 5;
                             stats.relside2 += 5;
-                            stats.Main.Strength += 5
+                            stats.relside3 += 5;
+                            stats.Main.Strength += 10
                             ƒS.Sound.play(sound.fight, 0, true);
                             scenecount = "scene7"
                             return scenecount;
@@ -356,9 +358,10 @@ namespace fantasyrpg {
                         await ƒS.update();
                         await ƒS.Speech.tell(stats.Side2, "Yea we did it we defeated the Monster");
                         await ƒS.Speech.tell(stats.Side2, "I knew together we could do it");
-
-
-
+                        stats.relside1 += 5;
+                        stats.relside2 += 5;
+                        stats.relside3 += 10;
+                        stats.Main.Strength += 10
                         ƒS.Sound.play(sound.fight, 0, true);
                         scenecount = "scene7"
                         return scenecount;

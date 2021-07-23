@@ -12,7 +12,6 @@
       "../Source/option4.ts",
       "../Source/scene1.ts",
       "../Source/scene2.ts",
-      "../Source/scene2b.ts",
       "../Source/scene3.ts",
       "../Source/scene4.ts",
       "../Source/scene5.ts",
@@ -35,7 +34,7 @@
         },
         {
           "pos": 15,
-          "end": 491009,
+          "end": 490950,
           "kind": "text"
         }
       ],
@@ -63,7 +62,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 17527,
+          "end": 17451,
           "kind": "text"
         }
       ]

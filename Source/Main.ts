@@ -170,7 +170,7 @@ namespace fantasyrpg {
     },
     Golem:{
       name: "Golem",
-      origin: ƒS.ORIGIN.BOTTOMRIGHT,
+      origin: ƒS.ORIGIN.BOTTOMCENTER,
       pose: {
         normal: "./Images/Characters/Golem/Golem_Normal.png",
         dead: "./Images/Characters/Golem/Golem_Dead.png",
@@ -554,7 +554,7 @@ namespace fantasyrpg {
   }
   export function knifethrow(): ƒS.AnimationDefinition {
     return {
-      start: { translation: ƒS.positionPercent(80, 65)},
+      start: { translation: ƒS.positionPercent(70, 65)},
       end: { translation: ƒS.positionPercent(10, 80)},
       duration: 3,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
@@ -896,7 +896,6 @@ namespace fantasyrpg {
       {id: "ArchMage1", scene: option3, name: "ArchMage1",next: scenecount}, 
       {id: "Swordwielder1", scene: option4, name: "Swordwielder1", next: scenecount},
       {id: "scene2", scene: scene2, name: "scene2", next: scenecount},
-      {id: "scene2b", scene: scene2b, name: "scene2b", next: scenecount},
       {id: "scene3", scene: scene3, name: "scene3", next: scenecount},
       {id: "scene4", scene: scene4, name: "scene4", next: scenecount},
       {id: "scene5", scene: scene5, name: "scene5", next: scenecount},
@@ -904,8 +903,8 @@ namespace fantasyrpg {
       {id: "scene7", scene: scene7, name: "scene7", next: scenecount},
       {id: "scene8", scene: scene8, name: "scene8", next: scenecount},
       {id: "scene9", scene: scene9, name: "scene9", next: scenecount},
-      {id: "credits", scene: credits, name: "credits"},
       {id: "end", scene: end, name: "end"},
+      {id: "credits", scene: credits, name: "credits"},
       
     ];
     let uiElement: HTMLElement =document.querySelector("[type= interface]");

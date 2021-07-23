@@ -66,7 +66,7 @@ namespace fantasyrpg {
                 await ƒS.Speech.tell(stats.Main, "Haha Yea you might be right with that");
 
 
-                stats.relside1 += 10;
+                stats.relside1 += 15;
                 await ƒS.Character.hideAll();
                 await ƒS.Sound.play(sound.normal, 0, true);
                 scenecount = "scene6";
@@ -123,7 +123,7 @@ namespace fantasyrpg {
 
 
                 await ƒS.Character.hideAll();
-                stats.relside2 += 10;
+                stats.relside2 += 15;
                 await ƒS.Sound.play(sound.normal, 0, true);
                 scenecount = "scene6";
                 return scenecount
@@ -184,7 +184,7 @@ namespace fantasyrpg {
 
                 await ƒS.Character.hideAll();
                 await ƒS.Sound.play(sound.normal, 0, true);
-                stats.relside3 += 10;
+                stats.relside3 += 15;
                 scenecount = "scene6";
                 return scenecount
         }

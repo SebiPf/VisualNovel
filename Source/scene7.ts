@@ -163,7 +163,7 @@ namespace fantasyrpg {
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Side2, "Here I got you something");
                       ƒS.Inventory.add(items.Apple);
-                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(90, 90))
+                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Main, "Oh thanks");
                       await ƒS.Speech.tell(stats.Side2, "Just so you get big and strong");
@@ -262,7 +262,7 @@ namespace fantasyrpg {
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Side2, "Here I got you something");
                       ƒS.Inventory.add(items.Apple);
-                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(90, 90))
+                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Main, "Oh thanks");
                       await ƒS.Speech.tell(stats.Side2, "Just so you get big and strong");
@@ -362,7 +362,7 @@ namespace fantasyrpg {
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Side2, "Here I got you something");
                       ƒS.Inventory.add(items.Apple);
-                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(90, 90))
+                      await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
                       await ƒS.update();
                       await ƒS.Speech.tell(stats.Main, "Oh thanks");
                       await ƒS.Speech.tell(stats.Side2, "Just so you get big and strong");
@@ -436,7 +436,7 @@ namespace fantasyrpg {
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Here I got you something");
                 ƒS.Inventory.add(items.Apple);
-                await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(90, 90))
+                await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Main, "Oh thanks");
                 await ƒS.Speech.tell(stats.Side2, "Just so you get big and strong");
@@ -524,7 +524,7 @@ namespace fantasyrpg {
             await ƒS.update();
             await ƒS.Speech.tell(stats.Side2, "Here I got you something");
             ƒS.Inventory.add(items.Apple);
-            await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(90, 90))
+            await ƒS.Character.show(stats.Main, stats.Main.pose.happy, ƒS.positionPercent(10, 90))
             await ƒS.update();
             await ƒS.Speech.tell(stats.Main, "Oh thanks");
             await ƒS.Speech.tell(stats.Side2, "Just so you get big and strong");
@@ -603,7 +603,7 @@ namespace fantasyrpg {
         await ƒS.Location.show(locations.trailblocked);
         await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
         await ƒS.Text.print("Seems like some rocks block your way");
-        await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
+        await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(50, 90))
         await ƒS.update();
         await ƒS.Speech.tell(stats.Side1, "Oh no what are we going to do now?");
         await ƒS.Speech.tell(stats.Side1, "I don't want to go all the way back to go around it");
@@ -613,7 +613,7 @@ namespace fantasyrpg {
         await ƒS.Character.show(stats.Main, stats.Main.pose.normal, ƒS.positionPercent(10, 90))
         await ƒS.update();
         await ƒS.Speech.tell(stats.Main, "No I don`t think so the stones have no grip at all");
-        await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(50, 90))
+        await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90))
         await ƒS.update();
         await ƒS.Speech.tell(stats.Side2, "Maybe we can push them away");
         await ƒS.Character.hideAll();
@@ -689,7 +689,7 @@ namespace fantasyrpg {
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Main, "Guys do you see that lake there?");
                 await ƒS.Speech.tell(stats.Main, "It seems like it is shimmering");
-                await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(50, 90))
+                await ƒS.Character.show(stats.Side3, stats.Side3.pose.normal, ƒS.positionPercent(70, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side3, "Oh wow that must be the kind of water that is used to make potions");
                 await ƒS.Speech.tell(stats.Main, "Really do you think we can use the flower we found to make a potion with it?");
@@ -703,7 +703,6 @@ namespace fantasyrpg {
                   console.log("nice it worker")
                   ƒS.Inventory.add(items.Healthpotion);
                   await ƒS.Text.print("You put the flower in the Bottle you found and filled it with water");
-                  ƒS.Inventory.add(items.Healthpotion);
                   await ƒS.Speech.tell(stats.Side3, "Wow it looks like it is working it is turning red");
                   await ƒS.Speech.tell(stats.Side3, "I think it is a Healing potion");
                   await ƒS.Speech.tell(stats.Side3, "Could come in handy at some point");
@@ -764,10 +763,12 @@ namespace fantasyrpg {
                 await ƒS.Character.show(stats.Side1, stats.Side1.pose.normal, ƒS.positionPercent(90, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side1, "wow you managed to push them alone??");
-                await ƒS.Speech.tell(stats.Side1, "I always underestimate your strenght "+ stats.Main);
-                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(90, 90))
+                await ƒS.Speech.tell(stats.Side1, "I always underestimate your strenght "+ stats.Main.name);
+                await ƒS.Character.show(stats.Side2, stats.Side2.pose.normal, ƒS.positionPercent(70, 90))
                 await ƒS.update();
                 await ƒS.Speech.tell(stats.Side2, "Yea I can`t belive you did that");
+                await ƒS.Character.hideAll();
+              await ƒS.update();
                 await ƒS.Location.show(locations.trailtomountain);
                 await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                 await ƒS.Text.print("After successfully pushing away the rocks you and your friends kept waling through the mountains");
@@ -775,7 +776,7 @@ namespace fantasyrpg {
                 await ƒS.update(transition.pixel.duration, transition.pixel.alpha, transition.pixel.edge);
                 await ƒS.Text.print("when it got darker and darker you decided to make camp and continue tomorrow");
                 check = true;
-                stats.Main.Strength += 10;
+                stats.Main.Strength += 15;
                 ƒS.Sound.play(sound.normal, 0, true);
                 scenecount = "scene8"
                 return scenecount;

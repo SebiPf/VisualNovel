@@ -570,9 +570,6 @@ declare namespace fantasyrpg {
     function scene2(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
-    function scene2b(): ƒS.SceneReturn;
-}
-declare namespace fantasyrpg {
     function scene3(): ƒS.SceneReturn;
 }
 declare namespace fantasyrpg {
